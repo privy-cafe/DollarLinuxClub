@@ -1,2 +1,2 @@
 # kernel.999.999.999
-Debian kernel
+Hardened & Anti-fingerprinting kernel, configs, tools and others.
