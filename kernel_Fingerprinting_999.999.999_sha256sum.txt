@@ -1,0 +1,10 @@
+e7f10ff4c8b1ea70be20f5bc9c40e3dcab6c991407a584ef31c954308b722eac  linux-headers-999.999.999_0.0_amd64.deb / sha256sum
+e093a7383b30b15e227bec60e30b2a4f7bfbbb347d6cfd2bebf0e6daac49faf9  linux-image-999.999.999_0.0_amd64.deb / sha256sum
+
+ad96046dfdd9261d1b69084ec470932c10b27d4a  linux-headers-999.999.999_0.0_amd64.deb / sha1sum
+eb5fc29f1106696ffeb19ac2f07d3b2337a8e9b3  linux-image-999.999.999_0.0_amd64.deb / sha1sum
+
+e739fe306b1d96a8910617a03f18f124  linux-headers-999.999.999_0.0_amd64.deb / md5sum
+429be62aa2f55566a2b3895d08b7b067  linux-image-999.999.999_0.0_amd64.deb / md5sum
+
+
