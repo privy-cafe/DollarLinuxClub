@@ -1,0 +1,5 @@
+Flask==0.12.2
+xvfbwrapper==0.2.9
+pylint==1.8.1
+python-dotenv==0.7.1
+gunicorn==19.7
