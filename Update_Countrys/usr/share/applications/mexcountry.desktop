@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Block Country Mexico
+Encoding=UTF-8
+Exec=sh -c "countrymx"
+Icon=/usr/share/icons/mexicoz.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+

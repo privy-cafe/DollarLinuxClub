@@ -1,0 +1,23 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: Wipeinactive
+# Short-Description: inactive del modulo wipe
+# Description: inactividad por completo del modulo wipe , cuando la actividad es segura.
+### END INIT INFO
+ 
+ sudo echo "Inactivando Modulo Wipe Actividad segura";
+ sudo chmod -R 400 /usr/bin/WipeARMY
+ sudo chmod -R 400 /usr/bin/WipeBSI
+ sudo chmod -R 400 /usr/bin/WipeDisk
+ sudo chmod -R 400 /usr/bin/WipeDOD
+ sudo chmod -R 400 /usr/bin/WipeHard
+ sudo chmod -R 400 /usr/bin/WipeMET7
+ sudo chmod -R 400 /usr/bin/WipeMET33
+ sudo chmod -R 400 /usr/bin/WipeNSA
+ sudo chmod -R 400 /usr/bin/WipeSAC
+ sudo chmod -R 400 /usr/bin/wipetools
+ sudo chmod -R 400 /usr/bin/WipeXtreme;
+
+
+

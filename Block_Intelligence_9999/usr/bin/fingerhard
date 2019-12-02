@@ -1,0 +1,10 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: hardware fingerprinting
+# Short-Description: hardware Estadisticas
+# Description: hardware Status Profile sistem.
+### END INIT INFO
+ 
+ sudo  echo "Hardware Fingerprinting Active";
+ sudo  sh /usr/bin/hwdb;

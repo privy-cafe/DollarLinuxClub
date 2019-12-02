@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Saudi Arabia
+Encoding=UTF-8
+Exec=sh -c "countrysaudi"
+Icon=/usr/share/icons/Saudi-Arabia.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country United Kingdom
+Encoding=UTF-8
+Exec=sh -c "countryuk"
+Icon=/usr/share/icons/United-Kingdom.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

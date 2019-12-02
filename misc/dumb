@@ -1,0 +1,220 @@
+####### Domain #######
+did911.com
+####### DNS Servers #######
+edna.ns.cloudflare.com. (173.245.58.109) CLOUDFLARENET - Cloudflare, Inc. United States
+max.ns.cloudflare.com. (173.245.59.132) CLOUDFLARENET - Cloudflare, Inc. United States
+
+####### MX Records #######
+20 farming.did911.com. (149.56.12.202) OVHCanada  Canada
+10 aliases.did911.com. (149.56.12.202) OVHCanada  Canada
+Name Servers	Organization	First Seen	Last Seen	Duration Seen
+max.ns.cloudflare.com 
+edna.ns.cloudflare.com 
+Cloudflare, Inc.
+2019-02-21 (8 months ago)	2019-10-27 (10 hours ago)	8 months
+dns102.registrar-servers.com 
+dns101.registrar-servers.com 
+Namecheap, Inc.
+2019-02-03 (8 months ago)	2019-02-21 (8 months ago)	18 days
+####### Host Records (A) #######
+did911.com (139.180.221.194.iomtt.com) (139.180.221.194) AS-CHOOPA - Choopa, LLC Singapore
+farming.did911.com (anji.did911.com) (149.56.12.202) OVHCanada  Canada
+patreon.did911.com (irc.fagz.net) (158.69.197.147) OVHCanada  Canada
+trump.did911.com (trump.did911.com) (139.99.157.254) OVHAustralia  Australia
+aliases.did911.com (anji.did911.com) (149.56.12.202) OVHCanada  Canada
+comments.did911.com (irc.fagz.net) (158.69.197.147) OVHCanada  Canada
+www.did911.com (104.27.186.249) CLOUDFLARENET - Cloudflare, Inc. United States
+TXT Values	First Seen	Last Seen	Duration Seen
+v=spf1 include:spf.efwd.registrar-servers.com ~all
+ca3-dd695804e253442daf86c47aba55e0b6
+2019-02-21 (8 months ago)	2019-10-27 (10 hours ago)	8 months
+v=spf1 include:spf.efwd.registrar-servers.com ~all
+2017-05-25 (2 years ago)	2019-02-21 (8 months ago)	1 year
+IP Addresses	Organization	First Seen	Last Seen	Duration Seen
+139.180.221.194 
+Choopa, LLC
+2019-07-07 (3 months ago)	2019-10-27 (10 hours ago)	3 months
+104.27.187.249 
+104.27.186.249 
+Cloudflare, Inc.
+2019-02-21 (8 months ago)	2019-07-07 (3 months ago)	4 months
+198.54.117.200 
+198.54.117.199 
+198.54.117.198 
+198.54.117.197 
+Namecheap, Inc.
+2019-02-03 (8 months ago)	2019-02-21 (8 months ago)	18 days
+104.27.187.249 
+104.27.186.249 
+Cloudflare, Inc.
+2016-02-03 (3 years ago)	2019-02-03 (8 months ago)	3 years
+64.74.223.34 
+Internap Corporation
+2014-12-09 (4 years ago)	2016-02-03 (3 years ago)	1 year
+104.28.15.126 
+104.28.14.126 
+Cloudflare, Inc.
+2014-07-15 (5 years ago)	2014-11-13 (4 years ago)	4 months
+####### TXT Records #######
+"v=spf1 include:spf.efwd.registrar-servers.com ~all"
+"ca3-dd695804e253442daf86c47aba55e0b6"
+Address       = 149.56.12.202
+Network       = 149.56.12.202 / 32
+Netmask       = 255.255.255.255
+Broadcast     = not needed on Point-to-Point links
+Wildcard Mask = 0.0.0.0
+Hosts Bits    = 0
+Max. Hosts    = 1   (2^0 - 0)
+Host Range    = { 149.56.12.202 - 149.56.12.202 }
+#	Domain	Alexa Rank	Hosting Provider	Mail Provider
+1	eyerc.did911.com	‐	
+OVH SAS
+‐
+2	mail.did911.com	‐	‐	‐
+3	anji.did911.com	‐	
+OVH SAS
+‐
+4	farming.did911.com	‐	
+OVH SAS
+‐
+5	mail2.did911.com	‐	‐	‐
+6	aliases.did911.com	‐	
+OVH SAS
+‐
+7	trump.did911.com	‐	
+OVH SAS
+‐
+8	patreon.did911.com	‐	
+OVH SAS
+‐
+9	www.did911.com	‐	
+Cloudflare, Inc.
+‐
+10	comments.did911.com	‐	
+OVH SAS
+‐
+11	did911.com	‐	
+Choopa, LLC
+OVH SAS
+12	irc.did911.com	‐	
+OVH SAS
+‐
+
+[+] Site :> 149.56.12.202
+[+] Site :> 202.ip-149-56-12.net
+[+] Site :> aliases.did911.com
+[+] Site :> farming.did911.com
+[+] Site :> irc.supernets.org
+[+] Site :> vps129695.vps.ovh.ca
+[+] Site :> vps226304.vps.ovh.ca
+[+] Received : trump.did911.com => (139.99.157.254)
+[+] Received : www.did911.com => (192.99.55.197)
+[+] Received : jews.did911.com => (79.137.37.33)
+
+
+
+
+
+
+
+
+
+
+
+fagz.com
+####### Domain #######
+fagz.net
+####### DNS Servers #######
+dns2.stabletransit.com. (65.61.188.4) RACKSPACE-LONUnited States United States
+dns1.stabletransit.com. (69.20.95.4) RACKSPACE - Rackspace Hosting United States
+
+####### MX Records #######
+
+####### Host Records (A) #######
+fagz.net (67-23-0-195.static.cloud-ips.com) (67.23.0.195) RMH-14 - Rackspace Hosting United States
+
+####### TXT Records #######
+
+ [+] IP Address : 67.23.0.195
+ [+] Country : United States
+ [+] State : Texas
+ [+] City : San Antonio
+
+
+ [+] Latitude : 29.4963
+ [+] Longitude : -98.4004
+[✈️] www.iomtt.com
+[✈️] cdn.iomtt.com
+[✈️] shop.iomtt.com
+[✈️] auctions.iomtt.com
+[✈️] staging.iomtt.com
+[✈️] images.iomtt.com
+[✈️] cdn2.iomtt.com
+[✈️] ttlive-origin.iomtt.com
+[✈️] www.shop.iomtt.com
+[✈️] email.iomtt.com
+[✈️] ttlive.iomtt.com
+
+[+] Detected X-Frame-Options - 'X-Frame-Options: SAMEORIGIN' (OK)
+ [-] Content-Security-Policy not present (Not OK)
+ [-] X-XSS-Protection not present (Not OK)
+ [-] X-Content-Type-Options not present (Not OK)
+ [-] Referrer-Policy not present (Not OK)
+ [-] Strict-Transport-Security not present (Not OK)
+ [-] Public-Key-Pins not present (Not OK)
+
+Initiating NSE at 13:54
+Completed NSE at 13:54, 0.00s elapsed
+Nmap scan report for 37.120.205.238
+Host is up, received user-set (0.014s latency).
+Scanned at 2019-10-28 13:21:57 EDT for 1966s
+Not shown: 65528 closed ports
+Reason: 65528 resets
+PORT     STATE    SERVICE      REASON      VERSION
+25/tcp   filtered smtp         no-response
+53/tcp   filtered domain       no-response
+137/tcp  filtered netbios-ns   no-response
+138/tcp  filtered netbios-dgm  no-response
+139/tcp  filtered netbios-ssn  no-response
+445/tcp  filtered microsoft-ds no-response
+1022/tcp filtered exp2         no-response
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: phone|broadband router|storage-misc|WAP|general purpose
+Running: Google Android 5.X, Linksys embedded, Linux 2.4.X|2.6.X, TP-LINK embedded
+OS CPE: cpe:/o:google:android:5.0.1 cpe:/h:linksys:wrv200 cpe:/h:linksys:nas200 cpe:/o:linux:linux_kernel:2.4.36 cpe:/o:linux:linux_kernel:2.6.22 cpe:/h:tp-link:tl-wa801nd
+OS details: Android 5.0.1, Linksys WRV200 wireless broadband router, Linksys NAS200 NAS device, DD-WRT v24-sp2 (Linux 2.4.36), Linux 2.6.22 (Kubuntu, x86), Linux 2.6.25 (openSUSE 11.0), Linux 2.6.32, TP-LINK TL-WA801ND WAP (Linux 2.6.36)
+TCP/IP fingerprint:
+OS:SCAN(V=7.70%E=4%D=10/28%OT=%CT=1%CU=44565%PV=N%DS=1%DC=I%G=N%TM=5DB72B63
+OS:%P=x86_64-pc-linux-gnu)T5(R=N)T6(R=N)T7(R=N)U1(R=Y%DF=N%T=40%IPL=164%UN=
+OS:0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+
+
+####### Domain #######
+iomtt.com
+####### DNS Servers #######
+abby.ns.cloudflare.com. (173.245.58.100) CLOUDFLARENET - Cloudflare, Inc. United States
+duke.ns.cloudflare.com. (173.245.59.110) CLOUDFLARENET - Cloudflare, Inc. United States
+
+####### MX Records #######
+1 aspmx.l.google.com. (173.194.66.26) GOOGLE - Google LLC United States
+5 alt1.aspmx.l.google.com. (64.233.186.27) GOOGLE - Google LLC United States
+5 alt2.aspmx.l.google.com. (74.125.193.27) GOOGLE - Google LLC United States
+10 alt3.aspmx.l.google.com. (64.233.184.27) GOOGLE - Google LLC United States
+10 alt4.aspmx.l.google.com. (172.217.218.26) GOOGLE - Google LLC United States
+
+####### Host Records (A) #######
+iomtt.com (104.25.59.22) CLOUDFLARENET - Cloudflare, Inc. United States
+cdn2.iomtt.com (104.25.58.22) CLOUDFLARENET - Cloudflare, Inc. United States
+ttlive.iomtt.com (104.25.58.22) CLOUDFLARENET - Cloudflare, Inc. United States
+email.iomtt.com (104.25.58.22) CLOUDFLARENET - Cloudflare, Inc. United States
+shop.iomtt.com (104.25.58.22) CLOUDFLARENET - Cloudflare, Inc. United States
+www.shop.iomtt.com (104.25.58.22) CLOUDFLARENET - Cloudflare, Inc. United States
+auctions.iomtt.com (188.65.114.122) UKWEB-EQXUnited Kingdom United Kingdom
+www.iomtt.com (104.25.58.22) CLOUDFLARENET - Cloudflare, Inc. United States
+
+####### TXT Records #######
+"v=spf1 ip4:109.70.46.69 ip4:109.70.46.74 ip4:216.200.145.0/26 include:mailgun.org include:_spf.google.com ~all"
+"google-site-verification=IWYNrx8qUrXUUmw1UYfe3n7qU7i7x5Tlzts0If5_uqA"
+"575645764-3583324"
+"facebook-domain-verification=b53r45q3snpiou3c5fxxy5dxiced4a"

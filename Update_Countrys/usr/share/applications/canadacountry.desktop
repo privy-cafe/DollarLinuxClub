@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Canada
+Encoding=UTF-8
+Exec=sh -c "countrycan"
+Icon=/usr/share/icons/Canada.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

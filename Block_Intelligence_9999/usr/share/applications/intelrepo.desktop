@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Intelligence Report 
+Encoding=UTF-8
+Exec=sh -c "intelligencerepo ;${SHELL:-bash}"
+Icon=/usr/share/icons/hackteamzzz.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+

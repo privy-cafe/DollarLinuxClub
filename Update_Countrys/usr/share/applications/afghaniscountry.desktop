@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Afghanistan
+Encoding=UTF-8
+Exec=sh -c "countryafgh"
+Icon=/usr/share/icons/Afghanistan.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Brazil
+Encoding=UTF-8
+Exec=sh -c "countrybraz"
+Icon=/usr/share/icons/brazilz.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

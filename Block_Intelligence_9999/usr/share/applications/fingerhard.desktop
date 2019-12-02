@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Fingerprinting Hardware
+Encoding=UTF-8
+Exec=sh -c "fingerhard"
+Icon=/usr/share/icons/hard1.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy
+
+
+

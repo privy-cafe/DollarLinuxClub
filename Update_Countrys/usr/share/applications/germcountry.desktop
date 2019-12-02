@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Germany
+Encoding=UTF-8
+Exec=sh -c "countryger"
+Icon=/usr/share/icons/Germany.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

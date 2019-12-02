@@ -1,0 +1,9 @@
+server:
+
+stub-zone:
+    name: "."
+    stub-addr: 127.0.6.1@55   #  Authorative Slave DNS server
+    stub-addr: 127.0.6.2@55
+    stub-addr: 127.0.6.3@55
+    stub-addr: 127.0.6.4@55
+    stub-prime: no

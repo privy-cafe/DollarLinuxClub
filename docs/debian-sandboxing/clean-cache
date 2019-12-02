@@ -1,0 +1,5 @@
+#!/bin/sh
+for f in $(ls $(dirname $0)/sandboxs/bin)
+do
+echo rm -fr .cache | $(dirname $0)/shell-of $f
+done

@@ -1,0 +1,12 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: Block country niger
+# Short-Description:  Block country niger
+# Description:  Block country prevent Target Attacks in sistem.
+### END INIT INFO
+ 
+ sudo echo "Block Nigeria Country";
+ sudo ipset restore -! < /etc/sysconfig/ipset.niger
+ sudo iptables -I FORWARD -m set --match-set blockniger src -j DROP
+ sudo iptables -I INPUT -m set --match-set blockniger src -j DROP;

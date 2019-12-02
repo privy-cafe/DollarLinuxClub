@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Wipe BSI
+Encoding=UTF-8
+Exec=sh -c "WipeBSI"
+Icon=/usr/share/icons/preferences-system-sharing.svg
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=GNOME;System;Filesystem;
+Keywords=clean;performances;free;privacy;
+

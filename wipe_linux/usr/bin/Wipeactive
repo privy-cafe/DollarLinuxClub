@@ -1,0 +1,23 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: Wipeactive
+# Short-Description: active del modulo wipe
+# Description: Modulo wipe activo , cuando la actividad es insegura.
+### END INIT INFO
+ 
+ sudo echo "Activando Modulo Wipe Actividad insegura";
+ sudo chmod -R 777 /usr/bin/WipeARMY
+ sudo chmod -R 777 /usr/bin/WipeBSI
+ sudo chmod -R 777 /usr/bin/WipeDisk
+ sudo chmod -R 777 /usr/bin/WipeDOD
+ sudo chmod -R 777 /usr/bin/WipeHard
+ sudo chmod -R 777 /usr/bin/WipeMET7
+ sudo chmod -R 777 /usr/bin/WipeMET33
+ sudo chmod -R 777 /usr/bin/WipeNSA
+ sudo chmod -R 777 /usr/bin/WipeSAC
+ sudo chmod -R 777 /usr/bin/wipetools
+ sudo chmod -R 777 /usr/bin/WipeXtreme;
+
+
+

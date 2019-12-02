@@ -1,0 +1,20 @@
+[Unit]
+Description=dnscrypt-wrapper %I
+After=syslog.target network.target
+Before=nginx.target
+
+[Service]
+Type=simple
+#ExecStart=/etc/dnscrypt-wrapper/doh-proxy --listen-address 127.0.5.2:8541 --server-address 127.0.2.2:53
+WorkingDirectory=/etc/dnscrypt-wrapper
+ExecStart=/usr/local/sbin/dnscrypt-wrapper  --resolver-address=127.0.0.1 --listen-address=127.0.5.1:8441  \
+                   --provider-name=2.dnscrypt-cert.ibksturm \
+                   --crypt-secretkey-file=/etc/dnscrypt-wrapper/1.key,/etc/dnscrypt-wrapper/2.key \
+                  --provider-cert-file=/etc/dnscrypt-wrapper/1.cert,/etc/dnscrypt-wrapper/2.cert --no-tcp --nolog --nofilter --dnssec
+
+Restart=allways
+#User=dnscrypt
+#Group=dnscrypt
+
+[Install]
+WantedBy=multi-user.target

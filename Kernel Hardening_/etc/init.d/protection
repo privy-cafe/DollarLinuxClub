@@ -1,0 +1,89 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: scriptname
+# Required-Start: $remote_fs $syslog
+# Required-Stop: $remote_fs $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Start daemon at boot time
+# Description: Enable service provided by daemon.
+### END INIT INFO
+ 
+echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all
+echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_broadcasts
+echo 1 > /proc/sys/net/ipv4/icmp_ignore_bogus_error_responses
+echo 0 > /proc/sys/net/ipv4/tcp_timestamps
+echo 0 > /proc/sys/net/ipv4/conf/all/accept_redirects
+echo 0 > /proc/sys/net/ipv4/conf/all/accept_source_route
+echo 0 > /proc/sys/net/ipv4/tcp_synack_retries
+echo 1 > /proc/sys/net/ipv4/tcp_syncookies
+echo 0 > /proc/sys/net/ipv4/ip_forward
+echo 2048 > /proc/sys/net/ipv4/tcp_max_syn_backlog
+echo 1 > /proc/sys/net/ipv4/conf/all/rp_filter
+echo 0 > /proc/sys/net/ipv4/conf/all/accept_source_route
+echo 0 > /proc/sys/net/ipv4/conf/default/accept_source_route
+echo 0 > /proc/sys/net/ipv6/conf/all/autoconf
+echo 0 > /proc/sys/net/ipv6/conf/all/accept_ra
+echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+echo 2 > /proc/sys/kernel/randomize_va_space
+echo 0 > /proc/sys/net/ipv4/conf/all/send_redirects
+echo 0 > /proc/sys/net/ipv4/conf/default/send_redirects
+echo 1 > /proc/sys/net/ipv4/conf/all/log_martians
+echo 1 > /proc/sys/net/ipv4/conf/default/log_martians
+echo 255 > /proc/sys/net/ipv4/ip_default_ttl
+echo 1 > /proc/sys/net/ipv4/conf/all/arp_ignore
+echo 2 > /proc/sys/net/ipv4/conf/all/arp_announce
+echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+echo 1 > /proc/sys/net/ipv6/conf/default/disable_ipv6
+echo 1 > /proc/sys/net/ipv6/conf/lo/disable_ipv6
+echo 1 > /proc/sys/net/ipv6/conf/wlan0/disable_ipv6
+echo 1 > /proc/sys/net/ipv6/conf/eth0/disable_ipv6
+echo 0 > /proc/sys/net/ipv6/conf/all/forwarding
+echo 0 > /proc/sys/net/ipv4/conf/all/forwarding
+echo 1 > /proc/sys/net/ipv4/tcp_rfc1337
+echo 2 > /proc/sys/kernel/kptr_restrict
+echo 1 > /proc/sys/kernel/kexec_load_disabled
+echo 1 > /proc/sys/kernel/unprivileged_bpf_disabled
+echo 1 > /proc/sys/kernel/dmesg_restrict
+echo 3 > /proc/sys/kernel/yama/ptrace_scope
+echo 0 > /proc/sys/kernel/sysrq
+echo 16 > /proc/sys/vm/mmap_rnd_compat_bits
+echo 32 > /proc/sys/vm/mmap_rnd_bits
+echo 1 > /proc/sys/net/core/bpf_jit_enable
+echo 2 > /proc/sys/net/core/bpf_jit_harden
+echo 1 > /proc/sys/net/core/bpf_jit_kallsyms
+echo 3 > /proc/sys/kernel/perf_event_paranoid
+echo 0 > /proc/sys/user/max_user_namespaces
+echo 1 > /proc/sys/fs/protected_symlinks
+echo 1 > /proc/sys/fs/protected_hardlinks
+echo 2 > /proc/sys/fs/protected_fifos
+echo 2 > /proc/sys/fs/protected_regular
+echo 0 > /proc/sys/net/ipv4/tcp_sack
+echo 0 > /proc/sys/net/ipv4/tcp_dsack
+echo 0 > /proc/sys/net/ipv4/tcp_fack
+echo 0 > /proc/sys/fs/suid_dumpable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

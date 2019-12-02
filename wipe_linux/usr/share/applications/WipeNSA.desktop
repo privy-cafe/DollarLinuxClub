@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Wipe NSA
+Encoding=UTF-8
+Exec=sh -c "WipeNSA"
+Icon=/usr/share/icons/leocad.svg
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=GNOME;System;Filesystem;
+Keywords=clean;performances;free;privacy;
+

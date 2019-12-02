@@ -1,0 +1,11 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: wipefreespace
+# Short-Description: wipe ram not recovery
+# Description: wipe permanent ram disk shutdowm.
+### END INIT INFO
+ 
+ sudo echo "Eliminando Ram al apagar el sistema!";
+ sudo sdmem -v;
+ sudo shutdown -h now;

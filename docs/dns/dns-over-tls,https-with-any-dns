@@ -1,0 +1,130 @@
+ Configuring DNS-over-TLS and DNS-over-HTTPS with any DNS Server
+
+The new DNS-over-TLS (DoT)(https://en.wikipedia.org/wiki/DNS_over_TLS) and DNS-over-HTTPS (DoH)(https://en.wikipedia.org/wiki/DNS_over_HTTPS) protocols are available for enabling end user's privacy and security given the fact that most DNS clients use UDP or TCP protocols which are prone to eavesdropping, vulnerable to Man-in-the-Middle (MitM) attacks and, are frequently abused by ISPs in many countries with Internet censorship.
+
+Public DNS providers like Cloudflare & Quad9, have already deployed these protocols and web browsers like Mozilla Firefox has built in DoH support. 
+However, most operating systems and applications do not support them but, end users can still use these protocols on their computer by installing Technitium DNS Server locally(https://technitium.com/dns/) , stubby( https://getdnsapi.net,https://dnsprivacy.org/wiki/display/DP) ...other solutions... and configuring any DoT or DoH provider as a forwarder to bypass ISP's control over DNS https://blog.technitium.com/2018/06/configuring-dns-server-for-privacy.html.
+
+Both these protocols are IETF standards and are equally secure considering the fact that HTTPS itself runs over TLS. However, both protocols have slightly different ideas and there are a lot of arguments between engineers over the reason why DoH protocol exists in first place when a superior DoT protocol exists that implements RFC 7766 guidelines. The argument of having DoH is more political since DNS requests over DoH look just like normal HTTPS traffic over port 443 and thus hard to stop unlike DoT running on port 853. This makes DoH protocol desirable to users in countries with Internet censorship.
+
+In this post we will explore configuring both these protocols for any DNS server that you already have running on your network. Both these services require SSL certificates which can be obtained for free using
+https://technitium.com/ssl/  Let's Encrypt certificate authority which is trusted by all major web browsers. You can configure Certbot for automatic Let's Encrypt certificate renewal or manually generate one using Get HTTPS For Free utility.
+DNS-over-TLS (DoT)
+
+DNS-over-TLS standard is specified in RFC 7858 https://tools.ietf.org/html/rfc7858  which is very straight forward to implement. Essentially, the standard specifies to use the existing DNS-over-TCP protocol support, that most DNS servers already have and, add TLS to it. DoT support can be available as a addon feature in your DNS server software or you can use Nginx web server to enable it.
+
+Nginx supports SSL termination for TCP upstream(https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-tcp/) which I will be using to enable DoT to use with Technitium DNS Server. I am using Ubuntu Server 18.04 LTS for this setup but, you should be able to do similar config on any Linux distro.
+
+First install the nginx web server:
+
+sudo apt-get -y install nginx
+
+Now all you need to configure DoT is to copy the following stream config block in your /etc/nginx/nginx.conf file and save the certificate and key files to path given as in the config. Don't forget to update the upstream DNS server IP addresses to your existing DNS servers.
+
+stream {
+    upstream dns-servers {
+        server    10.10.1.5:53;
+        server    10.10.1.6:53;
+    }
+
+    server {
+        listen 853 ssl;
+        proxy_pass dns-servers;
+
+        ssl_certificate            /etc/nginx/ssl/dot-server.crt;
+        ssl_certificate_key        /etc/nginx/ssl/dot-server.key;
+
+        ssl_protocols        TLSv1.2;
+        ssl_ciphers          HIGH:!aNULL:!MD5;
+        
+        ssl_handshake_timeout    10s;
+        ssl_session_cache        shared:SSL:20m;
+        ssl_session_timeout      4h;
+    }
+}
+
+Once done, reload nginx web server to finish the configuration:
+
+sudo service nginx reload
+
+DNS-over-HTTPS (DoH)
+
+DNS-over-HTTPS standard is specified in RFC 8484 and is a bit different to implement since it uses HTTP protocol. The DNS queries are send in wire format as a HTTP POST method or as a base64 encoded HTTP GET parameter. Using GET method allows caching of the response which may be undesirable considering that the DNS protocol controls expiry using TTL values which may get overridden by a HTTP based cache server.
+
+Technitium has released DNS-over-HTTPS (DoH) open source web application that can be used with any DNS server. The web application can be deployed on Windows IIS Web Server or the cross-platform .NET Core version can be deployed on any supported platforms (Windows/macOS/Linux).
+
+Installation on Windows IIS Web Server is as simple as deploying any other website. Just create the website from the IIS console, download the DNS-over-HTTPS ASP.NET web application zip file and extract it to the website root folder. Configure SSL certificate for IIS just like you would do for any website. Finally, you will need to configure the Web.config file's application settings, shown in the snippet below, to point the web app to your DNS server. You can use any of the supported protocols (Udp, Tcp, Tls or Https) to connect to the specified DNS server.
+
+<applicationSettings>
+    <DNS_over_HTTPS.Properties.Settings>
+      <setting name="DnsServerProtocol" serializeAs="String">
+        <value>Udp</value>
+      </setting>
+      <setting name="DnsTimeout" serializeAs="String">
+        <value>2000</value>
+      </setting>
+      <setting name="DnsServer" serializeAs="String">
+        <value>127.0.0.1</value>
+      </setting>
+    </DNS_over_HTTPS.Properties.Settings>
+</applicationSettings> 
+
+The DoH cross-platform web app runs using ASP.NET Core and can be deployed on Windows, Linux or macOS. I am using Ubuntu Server 18.04 LTS to deploy this web app but, you can follow similar steps on any other Linux distro. ASP.NET Core Web Applications run as a separate process with its own built in web server. We would need to combine nginx for SSL termination for this web app to support HTTPS protocol.
+
+To deploy the DoH ASP.NET Core app, you would first need to install the latest .NET Core Runtime. Once this is done, follow these steps below to install the DoH web app.
+
+sudo mkdir -p /var/aspnetcore/doh
+cd /var/aspnetcore/doh
+sudo wget https://download.technitium.com/doh/doh-aspnetcore.zip
+sudo apt-get -y install unzip
+sudo unzip doh-aspnetcore.zip
+
+Edit the appsettings.json app settings config file to specify your DNS server and supported protocol. You can use any of the supported protocols (Udp, Tcp, Tls or Https) to connect to the specified DNS server.
+
+sudo nano appsettings.json
+
+Install the DoH web app as a systemd service:
+
+sudo cp systemd.service /etc/systemd/system/doh.service
+sudo systemctl enable doh.service
+sudo systemctl start doh.service
+
+Or, if your distro does not support systemd then you can use supervisor instead:
+
+sudo apt-get -y install supervisor
+sudo cp supervisor.conf /etc/supervisor/conf.d/doh.conf
+sudo service supervisor restart
+
+You can now confirm if the DoH web app is running on port 8053:
+
+sudo netstat -nlpt | grep ":8053"
+
+If the DoH web app is not running with systemd, run the following command to get details:
+
+journalctl --unit doh --follow
+
+The final step is to configure nginx web server for SSL termination. First install the nginx web server:
+
+sudo apt-get -y install nginx
+
+Create a config file for your domain name at /etc/nginx/sites-enabled/doh.example.com with the config shown below. Save the certificate and key files to path given as in the config.
+
+server {
+    listen 443 ssl;
+    server_name doh.example.com;
+
+    ssl_certificate /etc/nginx/ssl/doh-server.crt;
+    ssl_certificate_key /etc/nginx/ssl/doh-server.key;
+
+    location / {
+        proxy_pass http://127.0.0.1:8053;
+    }
+}
+
+Reload nginx web server to finish the configuration:
+
+sudo service nginx reload
+
+And Its Ready!
+
+You can now use the DoT service (dot.example.com:853) or DoH service (https://doh.example.com/dns-query) with any supported DNS client or as a forwarder with Technitium DNS Server. 

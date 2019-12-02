@@ -1,0 +1,20 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = ssh://git@10.10.1.69:29418/joe/thisisjoes.site.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[branch "standard-rewrite"]
+	remote = origin
+	merge = refs/heads/standard-rewrite
+[branch "blog-css"]
+	remote = origin
+	merge = refs/heads/blog-css
+[branch "development"]
+	remote = origin
+	merge = refs/heads/development

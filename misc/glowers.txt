@@ -1,0 +1,11 @@
+HostIP:157.245.9.169
+HostName:glowers.club
+
+Gathered TCP Port information for 157.245.9.169
+---------------------------------
+
+ Port		State
+22/tcp		open
+80/tcp		open
+
+Portscan Finished: Scanned 150 ports, 144 ports were in state closed

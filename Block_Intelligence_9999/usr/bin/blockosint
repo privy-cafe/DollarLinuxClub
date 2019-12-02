@@ -1,0 +1,13 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: OSchange-D
+# Short-Description: Modulo de evasion
+# Description: Modulo de evasion y status de denegacion de protocolos OSINT:
+### END INIT INFO
+ 
+ echo "Blokeando Actividad OSINT";
+ sudo iptables -t mangle -A POSTROUTING -j TTL --ttl-set 32
+ sudo iptables -t mangle -A POSTROUTING -j TTL --ttl-set 30
+ sudo iptables -t mangle -A POSTROUTING -j TTL --ttl-set 254;
+ exit

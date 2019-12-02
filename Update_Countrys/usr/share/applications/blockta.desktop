@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Block Malware Target APT
+Encoding=UTF-8
+Exec=sh -c "blockmalware"
+Icon=/usr/share/icons/hackteam.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+

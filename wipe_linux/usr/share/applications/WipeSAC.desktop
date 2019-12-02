@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Wipe SAC
+Encoding=UTF-8
+Exec=sh -c "WipeSAC"
+Icon=/usr/share/icons/ccsm.svg
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=GNOME;System;Filesystem;
+Keywords=clean;performances;free;privacy;
+

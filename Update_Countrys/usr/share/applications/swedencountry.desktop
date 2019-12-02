@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Sweden
+Encoding=UTF-8
+Exec=sh -c "countrysweden"
+Icon=/usr/share/icons/Sweden.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: APTsec
+# Short-Description: Activity status IPtables block
+# Description: Mostrar actividad del sistema Prevent Target Attacks  NSA in sistem.
+### END INIT INFO
+ 
+ sudo echo "Prevention de NSA Surveillance / Show statics block. ";
+ sudo iptables -L;

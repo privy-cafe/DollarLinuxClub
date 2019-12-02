@@ -1,0 +1,5 @@
+93afe872c43fd82a52ffef5ca15148c237b37b923b491bd2ae2b59268b821d20  caja-wipe_0.8.9_all.deb - sha256sum
+36bc9ccd6afb2270aadee47412bea432bd312ae1  caja-wipe_0.8.9_all.deb - sha1sum
+78a649377870defbaa433afb03d3e201  caja-wipe_0.8.9_all.deb - md5sum
+
+

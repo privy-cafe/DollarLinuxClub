@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Iceland
+Encoding=UTF-8
+Exec=sh -c "countryicelan"
+Icon=/usr/share/icons/Iceland.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

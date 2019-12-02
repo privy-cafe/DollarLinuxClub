@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country South Korea
+Encoding=UTF-8
+Exec=sh -c "countrykoreas"
+Icon=/usr/share/icons/Korea-South.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

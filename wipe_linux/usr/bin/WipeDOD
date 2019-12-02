@@ -1,0 +1,19 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: WipeDOD
+# Short-Description: wipe all hard disk
+# Description: wipe hard disk complete for extreme security no recovery.
+### END INIT INFO
+ 
+ sudo echo "Eliminando informacion del disco duro! DoD 5220.22-M";
+
+ sudo scrub -p dod /dev/sda
+ sudo scrub -p dod /dev/sda1
+ sudo scrub -p dod /dev/sda2
+ sudo scrub -p dod /dev/sda3
+ sudo scrub -p dod /dev/sda4
+ sudo scrub -p dod /dev/sda5
+ sudo scrub -p dod /dev/hda
+ sudo scrub -p dod /dev/hda1
+ sudo scrub -p dod /dev/hda2;

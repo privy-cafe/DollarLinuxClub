@@ -1,0 +1,39 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: hwdb
+# Required-Start: $remote_fs $syslog
+# Required-Stop: $remote_fs $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Start daemon at boot time
+# Description: Enable service provided by daemon.
+### END INIT INFO
+
+sudo mount -o bind /lib/udev/hwdb/20-acpi-vendor.hwdb /lib/udev/hwdb.d/20-acpi-vendor.hwdb	      
+sudo mount -o bind /lib/udev/hwdb/20-usb-vendor-model.hwdb /lib/udev/hwdb.d/20-usb-vendor-model.hwdb 
+sudo mount -o bind /lib/udev/hwdb/20-bluetooth-vendor-product.hwdb /lib/udev/hwdb.d/20-bluetooth-vendor-product.hwdb
+sudo mount -o bind /lib/udev/hwdb/60-evdev.hwdb /lib/udev/hwdb.d/60-evdev.hwdb
+sudo mount -o bind /lib/udev/hwdb/20-libgphoto2-6.hwdb /lib/udev/hwdb.d/20-libgphoto2-6.hwdb		  
+sudo mount -o bind /lib/udev/hwdb/60-keyboard.hwdb /lib/udev/hwdb.d/60-keyboard.hwdb
+sudo mount -o bind /lib/udev/hwdb/20-net-ifname.hwdb /lib/udev/hwdb.d/20-net-ifname.hwdb 
+sudo mount -o bind /lib/udev/hwdb/60-sensor.hwdb /lib/udev/hwdb.d/60-sensor.hwdb
+sudo mount -o bind /lib/udev/hwdb/20-OUI.hwdb /lib/udev/hwdb.d/20-OUI.hwdb	  
+sudo mount -o bind /lib/udev/hwdb/69-libmtp.hwdb /lib/udev/hwdb.d/69-libmtp.hwdb
+sudo mount -o bind /lib/udev/hwdb/20-pci-classes.hwdb /lib/udev/hwdb.d/20-pci-classes.hwdb
+sudo mount -o bind /lib/udev/hwdb/70-joystick.hwdb /lib/udev/hwdb.d/70-joystick.hwdb
+sudo mount -o bind /lib/udev/hwdb/20-pci-vendor-model.hwdb /lib/udev/hwdb.d/20-pci-vendor-model.hwdb
+sudo mount -o bind /lib/udev/hwdb/70-mouse.hwdb /lib/udev/hwdb.d/70-mouse.hwdb
+sudo mount -o bind /lib/udev/hwdb/20-sdio-classes.hwdb /lib/udev/hwdb.d/20-sdio-classes.hwdb	  
+sudo mount -o bind /lib/udev/hwdb/70-pointingstick.hwdb /lib/udev/hwdb.d/70-pointingstick.hwdb
+sudo mount -o bind /lib/udev/hwdb/20-sdio-vendor-model.hwdb /lib/udev/hwdb.d/20-sdio-vendor-model.hwdb
+sudo mount -o bind /lib/udev/hwdb/70-touchpad.hwdb /lib/udev/hwdb.d/70-touchpad.hwdb
+sudo mount -o bind /lib/udev/hwdb/20-usb-classes.hwdb /lib/udev/hwdb.d/20-usb-classes.hwdb
+sudo mount -o bind /lib/udev/hwdb/90-libinput-model-quirks.hwdb /lib/udev/hwdb.d/90-libinput-model-quirks.hwdb
+sudo udevadm hwdb --update
+sudo udevadm control --reload-rules
+
+
+
+
+

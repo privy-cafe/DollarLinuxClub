@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Japan
+Encoding=UTF-8
+Exec=sh -c "countryjapan"
+Icon=/usr/share/icons/Japan.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

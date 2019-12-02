@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=wipe shutdown
+Encoding=UTF-8
+Exec=sh -c "wipeshutdown"
+Icon=/usr/share/icons/openxcom.svg
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=GNOME;System;Filesystem;
+Keywords=clean;performances;free;privacy;
+
+
+

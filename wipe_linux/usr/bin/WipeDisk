@@ -1,0 +1,19 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: WipeDisk
+# Short-Description: wipe all hard disk Badblocks
+# Description: wipe hard disk complete for extreme security no recovery - Badblocks.
+### END INIT INFO
+ 
+ sudo echo "Eliminando informacion del disco duro! Badblocks";
+
+ sudo badblocks -wsvf /dev/sda
+ sudo badblocks -wsvf /dev/sda1
+ sudo badblocks -wsvf /dev/sda2
+ sudo badblocks -wsvf /dev/sda3
+ sudo badblocks -wsvf /dev/sda4
+ sudo badblocks -wsvf /dev/sda5
+ sudo badblocks -wsvf /dev/hda
+ sudo badblocks -wsvf /dev/hda1
+ sudo badblocks -wsvf /dev/hda2;

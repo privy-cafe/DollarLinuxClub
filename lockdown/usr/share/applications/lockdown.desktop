@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Lockdown Module
+Encoding=UTF-8
+Exec=mate-terminal -e "sh -c 'lockdown ;${SHELL:-bash}'"
+Icon=lockdown.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=wsecurity;
+Keywords=clean;performances;free;privacy;
+
+
+

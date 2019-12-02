@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Denmark
+Encoding=UTF-8
+Exec=sh -c "countrydenm"
+Icon=/usr/share/icons/Denmark.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

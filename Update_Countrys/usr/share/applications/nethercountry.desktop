@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Netherlands
+Encoding=UTF-8
+Exec=sh -c "countrynether"
+Icon=/usr/share/icons/Netherlands.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

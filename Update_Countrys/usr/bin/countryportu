@@ -1,0 +1,12 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: Block country portu
+# Short-Description:  Block country portu
+# Description:  Block country prevent Target Attacks in sistem.
+### END INIT INFO
+ 
+ sudo echo "Block Portugal Country";
+ sudo ipset restore -! < /etc/sysconfig/ipset.portu
+ sudo iptables -I FORWARD -m set --match-set blockportugal src -j DROP
+ sudo iptables -I INPUT -m set --match-set blockportugal src -j DROP;

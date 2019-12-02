@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Wipe MET7
+Encoding=UTF-8
+Exec=sh -c "WipeMET7"
+Icon=/usr/share/icons/octave.svg
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=GNOME;System;Filesystem;
+Keywords=clean;performances;free;privacy;
+

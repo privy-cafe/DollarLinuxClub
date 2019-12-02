@@ -1,0 +1,59 @@
+
+### dnscrypt
+stream {
+        server {
+            listen 8443 udp  reuseport;
+            proxy_pass dnscrypt-backends;
+	    proxy_buffer_size 1k;
+	    proxy_connect_timeout 10s;
+	    proxy_timeout 10s;
+          }
+
+        upstream dnscrypt-backends {
+	least_conn;
+            server 127.0.5.1:8441;
+            server 127.0.5.1:8442;
+            server 127.0.5.1:8440;
+        }
+
+
+
+##### dns over tls
+
+	server {
+		listen 8543;
+		proxy_pass dns_dot_servers;
+            proxy_buffer_size 1k;
+            proxy_connect_timeout 20s;
+            proxy_timeout 20s;
+
+       }
+
+	
+	upstream dns_dot_servers {
+	least_conn;
+	server 127.0.0.2:8530;
+	server 127.0.0.2:8531;
+	server 127.0.0.2:8532;
+        }
+
+
+##### dns over https
+
+        server {
+                listen 192.168.0.191:8443 reuseport;
+                proxy_pass dns_doh_servers;
+            proxy_buffer_size 2k;
+            proxy_connect_timeout 10s;
+            proxy_timeout 10s;
+       }
+
+
+        upstream dns_doh_servers {
+	least_conn;
+        server 127.0.0.2:8540;
+	server 127.0.0.2:8541;
+	server 127.0.0.2:8542;
+        }
+}
+

@@ -1,0 +1,11 @@
+[Unit]
+Description=Mounts /proc with hidepid=2
+Requires=local-fs.target
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/mount -o remount,nosuid,nodev,noexec,hidepid=2 /proc
+
+[Install]
+WantedBy=multi-user.target

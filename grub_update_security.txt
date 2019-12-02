@@ -1,0 +1,15 @@
+Edit /etc/default/grub
+
+
+GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+
+
+##add lines . 
+
+GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1 net.ifnames=0 apparmor=1 security=apparmor slab_nomerge slub_debug=FZP mce=0 page_poison=1 pti=on mds=full,nosmt module.sig_enforce=1 audit=1 components union=overlay vsyscall=none init_on_alloc=1 init_on_free=1 l1tf=full,force spectre_v2=on spec_store_bypass_disable=seccomp extra_latent_entropy quiet"
+
+
+
+open terminal 
+sudo update-grub
+

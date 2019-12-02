@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Block Country New Zealand
+Encoding=UTF-8
+Exec=sh -c "countrynewz"
+Icon=/usr/share/icons/New-Zealand.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+

@@ -1,0 +1,21 @@
+Mueve el script a la carpeta correspondiente
+Abrir Terminal 
+sudo /etc/init.d/protection start
+
+sudo update-rc.d protection defaults 10
+sudo update-rc.d protection defaults 10
+sudo update-rc.d protection defaults 10
+sudo update-rc.d protection defaults 10
+
+sudo /etc/init.d/coredumps start
+
+sudo update-rc.d coredumps defaults 10
+sudo update-rc.d coredumps defaults 10
+sudo update-rc.d coredumps defaults 10
+sudo update-rc.d coredumps defaults 10
+
+
+sudo reboot 
+
+
+

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Norway
+Encoding=UTF-8
+Exec=sh -c "countrynorw"
+Icon=/usr/share/icons/Norway.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

@@ -1,0 +1,10 @@
+Necesary macchanger / apt-get install macchanger
+
+open terminal
+
+systemctl enable macspoof@wlan0.service
+systemctl enable macspoof@eth0.service
+
+chmod +x /etc/NetworkManager/dispatcher.d/random_mac.sh 
+chmod +x /etc/NetworkManager/dispatcher.d/random_mac_eth0.sh
+

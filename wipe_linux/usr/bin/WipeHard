@@ -1,0 +1,19 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: WipeHard
+# Short-Description: wipe all hard disk
+# Description: wipe hard disk complete for extreme security no recovery.
+### END INIT INFO
+ 
+ sudo echo "Eliminando informacion del disco duro! shred";
+
+ sudo shred -n 1 -vz /dev/sda
+ sudo shred -n 1 -vz /dev/sda1
+ sudo shred -n 1 -vz /dev/sda2
+ sudo shred -n 1 -vz /dev/sda3
+ sudo shred -n 1 -vz /dev/sda4
+ sudo shred -n 1 -vz /dev/sda5
+ sudo shred -n 1 -vz /dev/hda
+ sudo shred -n 1 -vz /dev/hda1
+ sudo shred -n 1 -vz /dev/hda2;

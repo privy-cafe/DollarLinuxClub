@@ -1,0 +1,11 @@
+# NSD configuration file for Debian.
+#
+# See the nsd.conf(5) man page.
+#
+# See /usr/share/doc/nsd/examples/nsd.conf for a commented
+# reference config file.
+#
+# The following line includes additional configuration files from the
+# /etc/nsd/nsd.conf.d directory.
+
+include: "/etc/nsd/nsd.conf.d/*.conf"

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=wipe USB
+Encoding=UTF-8
+Exec=sh -c "WipeUSB"
+Icon=/usr/share/icons/gprename.svg
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=GNOME;System;Filesystem;
+Keywords=clean;performances;free;privacy;
+

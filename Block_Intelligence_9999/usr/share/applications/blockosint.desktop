@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Block Intelligence OSINT
+Encoding=UTF-8
+Exec=sh -c "blockosint"
+Icon=/usr/share/icons/boxx.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+

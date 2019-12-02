@@ -1,0 +1,12 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: Block country afgh
+# Short-Description:  Block country afgh
+# Description:  Block country prevent Target Attacks in sistem.
+### END INIT INFO
+ 
+ sudo echo "Block Afghanistan Country";
+ sudo ipset restore -! < /etc/sysconfig/ipset.afgh
+ sudo iptables -I FORWARD -m set --match-set blockafghanistan src -j DROP
+ sudo iptables -I INPUT -m set --match-set blockafghanistan src -j DROP;

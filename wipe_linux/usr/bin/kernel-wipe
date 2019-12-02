@@ -1,0 +1,12 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: kernel-wipe shutdown
+# Short-Description:  Block country usa
+# Description:  WIPE prevent Target Attacks o Forence Analisis in sistem.
+### END INIT INFO
+ 
+ sudo echo "Iniciando Modulo Al apagar el equipo Wipe - kernel ";
+ sudo service sdmem start;
+
+

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=APT security
+Encoding=UTF-8
+Exec=sh -c "APTsec ;${SHELL:-bash}"
+Icon=/usr/share/icons/iptables.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+

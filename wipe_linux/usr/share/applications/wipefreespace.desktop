@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=wipe free space
+Encoding=UTF-8
+Exec=sh -c "wipefreespace"
+Icon=/usr/share/icons/fluid.svg
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=GNOME;System;Filesystem;
+Keywords=clean;performances;free;privacy;
+
+
+

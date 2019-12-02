@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Romania
+Encoding=UTF-8
+Exec=sh -c "countryroman"
+Icon=/usr/share/icons/Romania.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

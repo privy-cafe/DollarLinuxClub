@@ -1,0 +1,4 @@
+cacfe72c414427e3681b37a303905f4ee2263de5acc6438f566c5d2046924ea7   sha256sum opensnitch_1.0.deb
+77f82402a232e0306f891d3bfdf32fea88d25e6d   sha1sum opensnitch_1.0.deb
+8bf5891702c730d42ce288fd5a93b113   md5sum opensnitch_1.0.deb
+

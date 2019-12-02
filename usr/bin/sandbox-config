@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+echo "Configuring sandbox profiles...."
+[ ! -x /usr/bin/firecfg ] || /usr/bin/firecfg > /dev/null || true
+echo "Sandbox profiles updated!"

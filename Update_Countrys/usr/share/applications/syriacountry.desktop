@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Syria
+Encoding=UTF-8
+Exec=sh -c "countrysyria"
+Icon=/usr/share/icons/Syria.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

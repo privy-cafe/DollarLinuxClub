@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Block Intelligence Recognition
+Encoding=UTF-8
+Exec=sh -c "blockintelligence"
+Icon=/usr/share/icons/hackteamzz.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+

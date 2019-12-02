@@ -1,0 +1,10 @@
+lockdown security
+
+edit /etc/apt/sources.list
+deb http://ftp.debian.org/debian sid main contrib non-free
+#or unstable devuan/debian repo
+deb http://deb.devuan.org/merge unstable main contrib non-free
+
+apt install lockdown
+
+

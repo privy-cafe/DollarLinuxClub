@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=wipe os
+Encoding=UTF-8
+Exec=mate-terminal -e "sh -c 'wipeos ;${SHELL:-bash}'"
+Icon=/usr/share/icons/mlcad.svg
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=wsecurity;
+Keywords=clean;performances;free;privacy;
+
+
+

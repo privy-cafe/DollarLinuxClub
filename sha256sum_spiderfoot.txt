@@ -1,0 +1,3 @@
+e4c0b949a44f0b0402965c3c23383c9cf2cad61b21e29401db7752968fd25071  spiderfoot_2.12.deb  sha256sum
+af7763e5b5800b2d37b7c4fe4cfcd6c4d468baf7  spiderfoot_2.12.de sha1sum
+5b8aa0581e96a2385c89bbfc478a28da  spiderfoot_2.12.deb md5sum

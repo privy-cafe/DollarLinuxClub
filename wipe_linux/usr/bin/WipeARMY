@@ -1,0 +1,19 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: WipeARMY
+# Short-Description: wipe all hard disk
+# Description: wipe hard disk complete for extreme security no recovery.
+### END INIT INFO
+ 
+ sudo echo "Eliminando informacion del disco duro! US Army AR380-19";
+
+ sudo scrub -p usarmy /dev/sda
+ sudo scrub -p usarmy /dev/sda1
+ sudo scrub -p usarmy /dev/sda2
+ sudo scrub -p usarmy /dev/sda3
+ sudo scrub -p usarmy /dev/sda4
+ sudo scrub -p usarmy /dev/sda5
+ sudo scrub -p usarmy /dev/hda
+ sudo scrub -p usarmy /dev/hda1
+ sudo scrub -p usarmy /dev/hda2;

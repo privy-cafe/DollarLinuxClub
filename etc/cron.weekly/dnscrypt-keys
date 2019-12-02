@@ -1,0 +1,63 @@
+#! /bin/sh
+
+KEYS_DIR="/etc/dnscrypt-wrapper"
+STKEYS_DIR="${KEYS_DIR}/short-keys"
+LISTS_DIR="/etc/dnscrypt-wrapper/"
+BLACKLIST="${LISTS_DIR}/blacklist.txt"
+
+prune() {
+    /usr/bin/find "$STKEYS_DIR" -type f -cmin +80160 -exec rm -f {} \;
+}
+
+rotation_needed() {
+    if [ $(/usr/bin/find "$STKEYS_DIR" -name '*_2.cert' -type f -cmin -10080 -print -quit | wc -l | sed 's/[^0-9]//g') -le 0 ]; then
+        echo true
+    else
+        echo false
+    fi
+}
+
+new_key() {
+    ts=$(date '+%s')
+    /etc/dnscrypt-wrapper/dnscrypt-wrapper --gen-crypt-keypair \
+        --crypt-secretkey-file="${STKEYS_DIR}/${ts}_2.key" &&
+    /etc/dnscrypt-wrapper/dnscrypt-wrapper --gen-cert-file \
+        --xchacha20 \
+	--nolog \
+	--nofilter \
+	--dnssec \
+        --provider-publickey-file="${KEYS_DIR}/public.key" \
+        --provider-secretkey-file="${KEYS_DIR}/secret.key" \
+        --crypt-secretkey-file="${STKEYS_DIR}/${ts}_2.key" \
+        --provider-cert-file="${STKEYS_DIR}/${ts}_2.cert" \
+        --cert-file-expire-days=7
+    [ $? -ne 0 ] && rm -f "${STKEYS_DIR}/${ts}_2.key" "${STKEYS_DIR}/${ts}_2.cert" 
+
+     cp "${STKEYS_DIR}/${ts}_2.key" "${KEYS_DIR}/2.key"
+     cp "${STKEYS_DIR}/${ts}_2.cert" "${KEYS_DIR}/2.cert"
+}
+
+stkeys_files() {
+    res=""
+    for file in $(ls "$STKEYS_DIR"/[0-9]*.key); do
+        res="${res}${file},"
+    done
+    echo "$res"
+}
+
+stcerts_files() {
+    res=""
+    for file in $(ls "$STKEYS_DIR"/[0-9]*.cert); do
+        res="${res}${file},"
+    done
+    echo "$res"
+}
+
+if [ ! -f "$KEYS_DIR/provider_name" ]; then
+    exit 1
+fi
+provider_name=$(cat "$KEYS_DIR/provider_name")
+
+mkdir -p "$STKEYS_DIR"
+prune
+[ $(rotation_needed) = true ] && new_key

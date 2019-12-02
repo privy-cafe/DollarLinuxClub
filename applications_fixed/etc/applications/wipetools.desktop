@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=wipe tools
+Encoding=UTF-8
+Exec=mate-terminal -e "sh -c 'wipetools ;${SHELL:-bash}'"
+Icon=/usr/share/icons/atom-beta.svg
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=wsecurity;
+Keywords=clean;performances;free;privacy;
+

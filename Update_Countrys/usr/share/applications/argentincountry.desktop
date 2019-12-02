@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Argentina
+Encoding=UTF-8
+Exec=sh -c "countryargen"
+Icon=/usr/share/icons/argentinaz.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

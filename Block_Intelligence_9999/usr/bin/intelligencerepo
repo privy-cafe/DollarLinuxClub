@@ -1,0 +1,10 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: intelligencerepo
+# Short-Description: Show List Activity Attack Government u Attack Red toR
+# Description: Mostrar actividad del sistema Prevent Target Attacks  NSA in sistem and kids attacks armitage u scanning you computer NIT - Identification
+### END INIT INFO
+ 
+ sudo echo " IPS Que intentan Atacarte / IPS Blokeadas / Network Block Attacks ";
+ sudo ipset list;

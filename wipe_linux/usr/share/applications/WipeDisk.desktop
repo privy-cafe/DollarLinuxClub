@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Wipe Disk
+Encoding=UTF-8
+Exec=sh -c "WipeDisk"
+Icon=/usr/share/icons/openshot.svg
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=GNOME;System;Filesystem;
+Keywords=clean;performances;free;privacy;
+

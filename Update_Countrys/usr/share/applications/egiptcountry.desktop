@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Egypt
+Encoding=UTF-8
+Exec=sh -c "countryegipt"
+Icon=/usr/share/icons/Egypt.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

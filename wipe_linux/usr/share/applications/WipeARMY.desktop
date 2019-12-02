@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Wipe ARMY
+Encoding=UTF-8
+Exec=sh -c "WipeARMY"
+Icon=/usr/share/icons/phatch.svg
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=GNOME;System;Filesystem;
+Keywords=clean;performances;free;privacy;
+

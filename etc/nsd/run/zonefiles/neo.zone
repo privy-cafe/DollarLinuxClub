@@ -1,0 +1,210 @@
+; zone neo written by NSD 4.1.27 on Sun Jun  9 21:57:54 2019
+; received update to serial 2017110300 at 2019-06-09T19:20:33 from 45.56.115.189
+$ORIGIN .
+neo	86400	IN	SOA	ns3.opennic.glue. admin.opennic.neo. (
+		2017110300 10 3600 604800 38400 )
+	86400	IN	NS	ns2.opennic.glue.
+	86400	IN	NS	ns3.opennic.glue.
+	86400	IN	NS	ns4.opennic.glue.
+	86400	IN	NS	ns5.opennic.glue.
+	86400	IN	NS	ns6.opennic.glue.
+	86400	IN	NS	ns7.opennic.glue.
+	86400	IN	NS	ns8.opennic.glue.
+	86400	IN	NS	ns9.opennic.glue.
+	86400	IN	NS	ns10.opennic.glue.
+	86400	IN	TXT	".neo TLD, via OpenNIC. General/Global/Misc. TLD. General Purpose, meant for anyone and everyone."
+$ORIGIN neo.
+a-folha	86400	IN	NS	dns1.rede124.com.
+	86400	IN	NS	dns2.rede124.com.
+	86400	IN	NS	dns3.rede124.com.
+	86400	IN	NS	dns4.rede124.com.
+animegeo	86400	IN	A	151.80.41.141
+$ORIGIN animegeo.neo.
+\042	86400	IN	A	151.80.41.141
+$ORIGIN neo.
+cainet	86400	IN	A	62.192.240.154
+$ORIGIN cainet.neo.
+\042	86400	IN	A	62.192.240.154
+cloud	86400	IN	A	62.192.240.154
+home	86400	IN	A	62.192.240.154
+www	86400	IN	A	62.192.240.154
+$ORIGIN neo.
+crumax	86400	IN	A	127.0.0.1
+$ORIGIN crumax.neo.
+\042	86400	IN	A	127.0.0.1
+$ORIGIN neo.
+da	86400	IN	A	94.228.216.119
+$ORIGIN da.neo.
+\042	86400	IN	A	94.228.216.119
+$ORIGIN neo.
+dumeng	86400	IN	A	198.27.64.125
+	86400	IN	AAAA	2607:5300:60:197d::1
+$ORIGIN dumeng.neo.
+\042	86400	IN	A	198.27.64.125
+	86400	IN	AAAA	2607:5300:60:197d::1
+qi	86400	IN	A	198.27.64.125
+	86400	IN	AAAA	2607:5300:60:197d::1
+$ORIGIN qi.dumeng.neo.
+\042	86400	IN	A	198.27.64.125
+	86400	IN	AAAA	2607:5300:60:197d::1
+$ORIGIN neo.
+example	86400	IN	A	104.168.144.17
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN example.neo.
+\042	86400	IN	A	104.168.144.17
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN neo.
+flare183	86400	IN	A	176.31.79.251
+$ORIGIN flare183.neo.
+\042	86400	IN	A	176.31.79.251
+$ORIGIN neo.
+flyingrub	86400	IN	A	178.62.188.172
+$ORIGIN flyingrub.neo.
+\042	86400	IN	A	178.62.188.172
+$ORIGIN neo.
+fox	86400	IN	CNAME	pwnfox.duckdns.org.
+$ORIGIN fox.neo.
+\042	86400	IN	CNAME	pwnfox.duckdns.org.
+$ORIGIN neo.
+isitup	86400	IN	A	206.217.203.82
+$ORIGIN isitup.neo.
+\042	86400	IN	A	206.217.203.82
+$ORIGIN neo.
+libertybsd	86400	IN	A	210.50.9.151
+$ORIGIN libertybsd.neo.
+\042	86400	IN	A	210.50.9.151
+$ORIGIN neo.
+localhost	86400	IN	A	127.0.0.1
+	86400	IN	AAAA	::1
+$ORIGIN localhost.neo.
+\042	86400	IN	A	127.0.0.1
+	86400	IN	AAAA	::1
+$ORIGIN neo.
+mail	86400	IN	A	173.234.168.164
+	86400	IN	MX	10 mail.neo.
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN mail.neo.
+\042	86400	IN	A	173.234.168.164
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN neo.
+monltbldkj	86400	IN	A	80.87.25.42
+$ORIGIN monltbldkj.neo.
+\042	86400	IN	A	80.87.25.42
+$ORIGIN neo.
+multi-vpn	86400	IN	A	195.211.221.49
+$ORIGIN multi-vpn.neo.
+\042	86400	IN	A	195.211.221.49
+$ORIGIN neo.
+multivpn	86400	IN	A	195.211.221.49
+$ORIGIN multivpn.neo.
+\042	86400	IN	A	195.211.221.49
+$ORIGIN neo.
+neks	86400	IN	A	46.48.185.182
+$ORIGIN neks.neo.
+\042	86400	IN	A	46.48.185.182
+$ORIGIN neo.
+neo	86400	IN	A	104.168.144.17
+	86400	IN	MX	10 mail.neo.
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN neo.neo.
+\042	86400	IN	A	104.168.144.17
+	86400	IN	AAAA	2001:470:8269::1
+cdn	86400	IN	CNAME	cdn.neo.yt.neo.
+$ORIGIN neo.
+nethostel	86400	IN	A	96.30.35.100
+$ORIGIN nethostel.neo.
+\042	86400	IN	A	96.30.35.100
+$ORIGIN neo.
+nic	86400	IN	A	104.168.144.17
+	86400	IN	MX	10 mail.neo.
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN nic.neo.
+\042	86400	IN	A	104.168.144.17
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN neo.
+nitram	86400	IN	A	52.167.214.135
+$ORIGIN nitram.neo.
+\042	86400	IN	A	52.167.214.135
+$ORIGIN neo.
+opennic	86400	IN	A	104.168.144.17
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN opennic.neo.
+\042	86400	IN	A	104.168.144.17
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN neo.
+opennictest	86400	IN	A	202.83.95.228
+$ORIGIN opennictest.neo.
+\042	86400	IN	A	202.83.95.228
+$ORIGIN neo.
+palm	86400	IN	CNAME	palm.ddnss.de.
+$ORIGIN palm.neo.
+\042	86400	IN	CNAME	palm.ddnss.de.
+$ORIGIN neo.
+prime	86400	IN	CNAME	www.dotnclan.de.
+$ORIGIN prime.neo.
+admin	86400	IN	CNAME	admin.dotnclan.de.
+$ORIGIN neo.
+raveradio	86400	IN	A	104.168.144.17
+	86400	IN	MX	10 mail.neo.
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN raveradio.neo.
+\042	86400	IN	A	104.168.144.17
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN neo.
+readycode	86400	IN	CNAME	readycodenull.rf.gd.
+$ORIGIN readycode.neo.
+\042	86400	IN	CNAME	readycodenull.rf.gd.
+$ORIGIN neo.
+register	86400	IN	A	104.168.144.17
+	86400	IN	MX	10 mail.neo.
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN register.neo.
+\042	86400	IN	A	104.168.144.17
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN neo.
+root-servers	86400	IN	A	104.168.144.17
+rrn	86400	IN	A	104.168.144.17
+	86400	IN	MX	10 mail.neo.
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN rrn.neo.
+\042	86400	IN	A	104.168.144.17
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN neo.
+scorpide	86400	IN	A	108.61.185.144
+$ORIGIN scorpide.neo.
+\042	86400	IN	A	108.61.185.144
+mx	86400	IN	A	108.61.185.144
+www	86400	IN	A	108.61.185.144
+$ORIGIN neo.
+syntazia	86400	IN	A	89.68.66.178
+$ORIGIN syntazia.neo.
+\042	86400	IN	A	89.68.66.178
+www	86400	IN	A	89.68.66.178
+$ORIGIN neo.
+tbpchan	86400	IN	A	73.26.146.117
+$ORIGIN tbpchan.neo.
+\042	86400	IN	A	73.26.146.117
+$ORIGIN neo.
+tinyrss	86400	IN	CNAME	rss-rschat.rhcloud.com.
+$ORIGIN tinyrss.neo.
+\042	86400	IN	CNAME	rss-rschat.rhcloud.com.
+$ORIGIN neo.
+tunnel	86400	IN	CNAME	volkan.smfhelper.org.
+$ORIGIN tunnel.neo.
+\042	86400	IN	CNAME	volkan.smfhelper.org.
+$ORIGIN neo.
+v10lator	86400	IN	NS	dns.v10lator.neo.
+$ORIGIN v10lator.neo.
+dns	86400	IN	A	192.168.2.5
+	86400	IN	AAAA	2001:a61:20ad:c000:325a:3aff:fe7f:8464
+$ORIGIN neo.
+www	86400	IN	A	104.168.144.17
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN www.neo.
+\042	86400	IN	A	104.168.144.17
+	86400	IN	AAAA	2001:470:8269::1
+$ORIGIN neo.
+yannkaelig	86400	IN	A	89.68.66.178
+$ORIGIN yannkaelig.neo.
+\042	86400	IN	A	89.68.66.178
+www	86400	IN	A	89.68.66.178

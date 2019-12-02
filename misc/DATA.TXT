@@ -1,0 +1,602 @@
+https://www.youtube.com/watch?v=Rn4Rupla11M
+
+Your informations could be used where you expect it the less to be used.
+
+https://www.youtube.com/watch?v=F7pYHN9iC9I
+
+nmap on steroid
+
+sandmap is a tool supporting network and system reconnaissance using the massive Nmap engine. It provides a user-friendly interface, automates and speeds up scanning and allows you to easily use many advanced scanning techniques.
+Key Features
+
+    simple CLI with the ability to run pure Nmap engine
+    predefined scans included in the modules
+    support Nmap Scripting Engine (NSE) with scripts arguments
+    TOR support (with proxychains)
+    multiple scans at one time
+    at this point: 31 modules with 459 scan profiles
+
+How To Use
+
+It's simple:
+
+# Clone this repository
+git clone --recursive https://github.com/trimstray/sandmap
+
+# Go into the repository
+cd sandmap
+
+# Install
+./setup.sh install
+
+# Run the app
+sandmap
+
+        symlink to bin/sandmap is placed in /usr/local/bin
+        man page is placed in /usr/local/man/man8
+
+Command Line
+
+Before using the sandmap read the Command Line introduction.
+Configuration
+
+The etc/main.cfg configuration file has the following structure:
+
+# shellcheck shell=bash
+
+# Specifies the default destination.
+# Examples:
+#   - dest="127.0.0.1,8.8.8.8"
+dest="127.0.0.1"
+
+# Specifies the extended Nmap parameters.
+# Examples:
+#   - params="--script ssl-ccs-injection -p 443"
+params=""
+
+# Specifies the default output type and path.
+# Examples:
+#   - report="xml"
+report=""
+
+# Specifies the TOR connection.
+# Examples:
+#   - tor="true"
+tor=""
+
+# Specifies the terminal type.
+# Examples:
+#   - terminal="internal"
+terminal="internal"
+
+Requirements
+
+sandmap uses external utilities to be installed before running:
+
+    nmap
+    xterm
+    proxychains
+
+This tool working with:
+
+    GNU/Linux (testing on Debian and CentOS)
+    Bash (testing on 4.4.19)
+    Nmap (testing on 7.70)
+
+Also you will need root access.
+
+
+
+What is a subdomain takeover?
+
+    Subdomain takeover vulnerabilities occur when a subdomain (subdomain.example.com) is pointing to a service (e.g. GitHub pages, Heroku, etc.) that has been removed or deleted. This allows an attacker to set up a page on the service that was being used and point their page to that subdomain. For example, if subdomain.example.com was pointing to a GitHub page and the user decided to delete their GitHub page, an attacker can now create a GitHub page, add a CNAME file containing subdomain.example.com, and claim subdomain.example.com.
+
+You can read up more about subdomain takeovers here:
+
+    https://labs.detectify.com/2014/10/21/hostile-subdomain-takeover-using-herokugithubdesk-more/
+    https://www.hackerone.com/blog/Guide-Subdomain-Takeovers
+    https://0xpatrik.com/subdomain-takeover-ns/
+
+
+https://github.com/chrismaddalena/ODIN/wiki/Graphing-Data
+https://github.com/chrismaddalena/ODIN
+Observe, Detect, and Investigate Networks
+
+ODIN performs this in multiple phases:
+Phase 1 - Asset Discovery
+
+    Collect basic organization information from sources like the Full Contact marketing database.
+    Check DNS Dumpster, Netcraft, and TLS certificates to discover subdomains for the provided domains.
+    Resolve domain and subdomains to IP addresses via socket connections and DNS records.
+    Collect information for all IP addresses, such as ownership and organization data, from RDAP, whois, and other data sources.
+    Lookup domains and search for IP addresses on Shodan to collect additional data, such as operating systems, service banners, and open ports.
+    Check for the possibility of takeovers and domain fronting with the domains and subdomains.
+
+Phase 2 - Employee Discovery
+
+    Harvest email addresses and employee names for the target organization.
+    Link employees to social media profiles via search engines and the Twitter API.
+    Cross check discovered email addresses with Troy Hunt's Have I Been Pwned.
+
+Phase 3 - Cloud and Web Services
+
+    Hunt for Office files and PDFs under the target domain, download them, and extract metadata.
+    Search for AWS S3 buckets and Digital Ocean Spaces using keywords related to the organization.
+    Take screenshots of discovered web services for a quick, early review of services.
+
+Phase 4 - Reporting
+
+    Save all data to a SQLite3 database to allow the data to be easily queried.
+    Generate an HTML report using default SQL queries to make it simple to peruse the data in a web browser.
+    Create a Neo4j graph database that ties all of the discovered entities (IP addresses, domains, subdomains, ports, and certificates) together with relationships (e.g. RESOLVES_TO, HAS_PORT).
+https://github.com/chrismaddalena/ODIN/wiki/Graphing-Data
+
+
+Badkarma https://user-images.githubusercontent.com/635790/47499886-82a3cb80-d861-11e8-8186-6f090eb2471f.png
+badKarma is an open source GUI based network reconnaissance toolkit which aims to assist penetration testers during network infrastructure assessments.
+install Kali linux dependecies:
+
+# apt install python3-pip python3-gi phantomjs mitmproxy ffmpeg gir1.2-gtk-vnc-2.0 \
+gir1.2-gtksource-3.0 gir1.2-vte-2.91 gir1.2-osmgpsmap-1.0 gir1.2-webkit2-4.0 
+
+clone the repository:
+
+$ git clone https://github.com/r3vn/badKarma.git
+
+install python dependecies:
+
+# cd badKarma
+# pip3 install -r requirements.txt
+
+Run
+
+$ chmod +x badkarma.py
+$ ./badkarma.py
+
+
+
+fsociety Hacking Tools Pack – A Penetration Testing Framework
+Menu
+
+    Information Gathering
+    Password Attacks
+    Wireless Testing
+    Exploitation Tools
+    Sniffing & Spoofing
+    Web Hacking
+    Private Web Hacking
+    Post Exploitation
+    Contributors
+    Install & Update
+
+Information Gathering:
+
+    Nmap
+    Setoolkit
+    Host To IP
+    WPScan
+    CMS Scanner
+    XSStrike
+    Dork - Google Dorks Passive Vulnerability Auditor
+    Scan A server's Users
+    Crips
+
+Password Attacks:
+
+    Cupp
+    Ncrack
+
+Wireless Testing:
+
+    Reaver
+    Pixiewps
+    Bluetooth Honeypot
+
+Exploitation Tools:
+
+    ATSCAN
+    sqlmap
+    Shellnoob
+    Commix
+    FTP Auto Bypass
+    JBoss Autopwn
+
+Sniffing & Spoofing:
+
+    Setoolkit
+    SSLtrip
+    pyPISHER
+    SMTP Mailer
+
+Web Hacking:
+
+    Drupal Hacking
+    Inurlbr
+    Wordpress & Joomla Scanner
+    Gravity Form Scanner
+    File Upload Checker
+    Wordpress Exploit Scanner
+    Wordpress Plugins Scanner
+    Shell and Directory Finder
+    Joomla! 1.5 - 3.4.5 remote code execution
+    Vbulletin 5.X remote code execution
+    BruteX - Automatically brute force all services running on a target
+    Arachni - Web Application Security Scanner Framework
+
+Private Web Hacking:
+
+    Get all websites
+    Get joomla websites
+    Get wordpress websites
+    Control Panel Finder
+    Zip Files Finder
+    Upload File Finder
+    Get server users
+    SQli Scanner
+    Ports Scan (range of ports)
+    Ports Scan (common ports)
+    Get server Info
+    Bypass Cloudflare
+
+Post Exploitation:
+
+    Shell Checker
+    POET
+    Weeman
+
+Installation
+Installation Linux alt tag
+
+bash <(wget -qO- https://git.io/vAtmB)
+
+Follow This Video HackerSploit
+Installation
+
+Download Termux
+
+bash <(wget -qO- https://git.io/vAtmB)
+
+
+ OSINT Tool for All-In-One Web Reconnaissance - FINALRECON
+https://camo.githubusercontent.com/18f3f7b4bc27b1e6530646afc73ede2cfbcedd31/68747470733a2f2f692e696d6775722e636f6d2f52456d676a47702e706e67
+
+  
+Installation
+
+git clone https://github.com/thewhiteh4t/FinalRecon.git
+cd FinalRecon
+pip3 install -r requirements.txt
+
+
+
+https://github.com/michenriksen/aquatone/releases/tag/v1.7.0
+https://github.com/0xInfection/TIDoS-Framework
+The Offensive Manual Web Application Penetration Testing Framework.
+
+
+
+Here is some light on what the framework is all about:
+
+    A complete versatile framework to cover up everything from Reconnaissance to Vulnerability Analysis.
+    Has 5 main phases, subdivided into 14 sub-phases consisting a total of 108 modules.
+    Reconnaissance Phase has 50 modules of its own (including active and passive recon, information disclosure modules).
+    Scanning & Enumeration Phase has got 16 modules (including port scans, WAF analysis, etc)
+    Vulnerability Analysis Phase has 37 modules (including most common vulnerabilites in action).
+    Exploits Castle has only 1 exploit. (purely developmental)
+    And finally, Auxillaries have got 4 modules. more under development
+    All four phases each have a Auto-Awesome module which automates every module for you.
+    You just need the domain, and leave everything is to this tool.
+    TIDoS has full verbose out support, so you'll know whats going on.
+    Fully user friendly interaction environment. (no shits)
+
+Global Installation:
+
+    NOTE:
+
+    Presently, for installing globally, you will need to default your Python version to 2.x. However, the work of migration from Python2 to Python3 is already underway.
+
+    Clone the repository locally and navigate there:
+
+git clone https://github.com/0xinfection/tidos-framework.git
+cd tidos-framework
+
+    Install the dependencies:
+
+chmod +x install
+./install
+
+
+https://camo.githubusercontent.com/3ffb51e48d159123672f3a45a0337c9e8b773344/68747470733a2f2f696d6167652e666c617469636f6e2e636f6d2f69636f6e732f7376672f3130382f3130383636392e737667
+https://raw.githubusercontent.com/j3ssie/Osmedeus/master/imgs/osmedeus-architecture.png
+
+
+Installation
+
+git clone https://github.com/j3ssie/Osmedeus
+cd Osmedeus
+./install.sh
+
+This install only focus on Kali linux, check more install on Usage page
+How to use
+
+If you have no idea what are you doing just type the command below or check out the Advanced Usage
+
+./osmedeus.py -t example.com
+
+https://camo.githubusercontent.com/9e00aa1900ddbe3e5724c14de3aad453035aa734/68747470733a2f2f696d6167652e6962622e636f2f646b4171344a2f726163636f6f6e2e706e67
+https://github.com/evyatarmeged/Raccoon
+Features
+
+    DNS details
+    DNS visual mapping using DNS dumpster
+    WHOIS information
+    TLS Data - supported ciphers, TLS versions, certificate details and SANs
+    Port Scan
+    Services and scripts scan
+    URL fuzzing and dir/file detection
+    Subdomain enumeration - uses Google dorking, DNS dumpster queries, SAN discovery and bruteforce
+    Web application data retrieval:
+        CMS detection
+        Web server info and X-Powered-By
+        robots.txt and sitemap extraction
+        Cookie inspection
+        Extracts all fuzzable URLs
+        Discovers HTML forms
+        Retrieves all Email addresses
+        Scans target for vulnerable S3 buckets and enumerates them for sensitive files
+    Detects known WAFs
+    Supports anonymous routing through Tor/Proxies
+    Uses asyncio for improved performance
+    Saves output to files - separates targets by folders and modules by filesInstallation
+
+For the latest stable version:
+
+pip install raccoon-scanner
+# To run:
+raccoon [OPTIONS]
+
+Please note Raccoon requires Python3.5+ so may need to use pip3 install raccoon-scanner.
+You can also clone the GitHub repository for the latest features and changes:
+
+git clone https://github.com/evyatarmeged/Raccoon.git
+cd Raccoon
+python setup.py install # Subsequent changes to the source code will not be reflected in calls to raccoon when this is used
+# Or
+python setup.py develop # Changes to code will be reflected in calls to raccoon. This can be undone by using python setup.py develop --uninstall
+# Finally
+raccoon [OPTIONS] [TARGET]
+
+
+Cr3dOv3r https://raw.githubusercontent.com/D4Vinci/Cr3dOv3r/master/Data/Email1.png
+Installing and requirements
+To make the tool work at its best you must have :
+
+    Python 3.x or 2.x (preferred 3).
+    Linux or Windows system.
+    Worked on some machines with MacOS and python3.
+    The requirements mentioned in the next few lines.
+
+Installing
+
++For windows : (After downloading ZIP and upzip it)
+
+cd Cr3dOv3r-master
+python -m pip install -r win_requirements.txt
+python Cr3d0v3r.py -h
+
++For Linux :
+
+git clone https://github.com/D4Vinci/Cr3dOv3r.git
+cd Cr3dOv3r
+python3 -m pip install -r requirements.txt
+python3 Cr3d0v3r.py -h
+
++For docker :
+
+git clone https://github.com/D4Vinci/Cr3dOv3r.git
+docker build -t cr3dov3r Cr3dOv3r/
+docker run -it cr3dov3r "test@example.com"
+
+One-Lin3r PyPI Python Core
+https://raw.githubusercontent.com/D4Vinci/One-Lin3r/master/screenshots/1.png
+One-Lin3r is simple modular and light-weight framework gives you all the one-liners that you will need while penetration testing (Windows, Linux, macOS or even BSD systems) or hacking generally with a lot of new features to make all of this fully automated (ex: you won't even need to copy the one-liners).
+
+
+Prerequisites before installing
+
+    Python 3.x.
+    Any OS, it should work on all but it's tested on Kali 2018+, Ubuntu 18+, Windows 10, Android with termux and MacOs 10.11
+
+Installing and running
+
+    Using pip (The best way to install on any OS):
+
+pip install one-lin3r
+one-lin3r -h
+
+CTFR
+
+Do you miss AXFR technique? This tool allows to get the subdomains from a HTTPS website in a few seconds.
+How it works? CTFR does not use neither dictionary attack nor brute-force, it just abuses of Certificate Transparency logs.
+For more information about CT logs, check www.certificate-transparency.org and crt.sh.
+Getting Started
+
+Please, follow the instructions below for installing and run CTFR.
+Pre-requisites
+
+Make sure you have installed the following tools:
+
+Python 3.0 or later.
+pip3 (sudo apt-get install python3-pip).
+
+Installing
+
+$ git clone https://github.com/UnaPibaGeek/ctfr.git
+$ cd ctfr
+$ pip3 install -r requirements.txt
+
+
+
+0rbit blockchain investigation tool
+https://github.com/s0md3v/Orbit As Orbit uses Quark to render the graph
+https://camo.githubusercontent.com/35e872fefb4a81d40415eb355a3d279c6222ad14/68747470733a2f2f692e6962622e636f2f705a47323476542f53637265656e73686f742d323031392d30372d32362d30382d30372d31302e706e67
+XAttacker Tool
+
+Version Stage Build
+
+X Attacker Tool ☣ Website Vulnerability Scanner & Auto Exploiter
+You can use this tool to check the security by finding the vulnerability in your website or you can use this tool to Get Shells | Sends | Deface | cPanels | Databases
+
+Installation Linux alt tag
+
+https://camo.githubusercontent.com/3308cc84a8e96856fc55c1f059fa030db1eeb805/68747470733a2f2f692e696d6775722e636f6d2f474e57774d46622e706e67
+https://www.youtube.com/watch?v=Jt9kBFiJDrE
+
+
+
+Installation Linux alt tag
+
+git clone https://github.com/Moham3dRiahi/XAttacker.git
+cd XAttacker
+perl XAttacker.pl
+
+
+https://user-images.githubusercontent.com/7676267/35123376-283d5a3e-fcb7-11e7-9b1c-92b78ed4fecc.gif
+OWASP Nettacker project is created to automate information gathering, vulnerability scanning and eventually generating a report for networks, including services, bugs, vulnerabilities, misconfigurations, and other information. This software will utilize TCP SYN, ACK, ICMP and many other protocols in order to detect and bypass Firewall/IDS/IPS devices. By leveraging a unique method in OWASP Nettacker for discovering protected services and devices such as SCADA. It would make a competitive edge compared to other scanner making it one of the bests.
+
+    OWASP Page: https://www.owasp.org/index.php/OWASP_Nettacker
+    Home: http://nettacker.z3r0d4y.com/
+    Github: https://github.com/zdresearch/OWASP-Nettacker
+
+
+
+https://raw.githubusercontent.com/trimstray/otseca/master/static/img/otseca_logo.png
+The main goal
+
+The main assumption of creating this tool was easier and faster delivery of commands sets to be performed on customer environments. As a result of such a scan I wanted to get the most useful information about system components that will be subjected to penetration tests and audits at a later time.
+For whom
+
+Otseca facilitates collection of many important information about a given system.
+
+It is useful for:
+
+    ballot_box_with_check system administrators
+    ballot_box_with_check security researchers
+    ballot_box_with_check security professionals
+    ballot_box_with_check pentesters
+    ballot_box_with_check hackers
+
+How To Use
+
+It's simple:
+
+# Clone this repository
+git clone https://github.com/trimstray/otseca
+
+# Go into the repository
+cd otseca
+
+# Install
+./setup.sh install
+
+# Run the app
+otseca --ignore-failed --tasks system,network --output /tmp/report
+https://raw.githubusercontent.com/trimstray/otseca/master/static/img/otseca_output.png
+
+
+Vulnx : CMS & Vulnerabilities Detector & An Intelligent Bot Auto Shell Injector
+https://1.bp.blogspot.com/-UW-Q53uq0EQ/XO7JNIQ3W2I/AAAAAAAAAlE/a3SBfbN4SroJEr3aRLbOu3Lg-2eqcF6HACLcBGAs/s1600/Vulnx.png
+$ git clone https://github.com/anouarbensaad/vulnx.git
+$ cd VulnX
+$ chmod +x install.sh
+$ ./install.sh
+
+
+identYwaf is an identification tool that can recognise web protection type (i.e. WAF) based on blind inference.
+https://i1.wp.com/kalilinuxtutorials.com/wp-content/uploads/2019/01/identYwaf1-1.png?resize=640%2C158&ssl=1
+git clone –depth 1 https://github.com/stamparm/identYwaf.git
+
+
+A Brutality is a fuzzer for any GET entries and following are the features ;
+
+    Multi-threading on demand
+    Fuzzing, bruteforcing GET params
+    Find admin panels
+    Colored output
+    Hide results by return code, word numbers
+    Proxy support
+    Big wordlist
+git clone https://github.com/ManhNho/brutality.git
+chmod 755 -R brutality/
+cd brutality/
+pip install -r requirements.txt
+
+
+
+
+Kaboom is a script that automates the penetration test. It performs several tasks for each phases of pentest:
+https://raw.githubusercontent.com/Leviathan36/kaboom/master/kaboom_images/screenshots/interactive_mode.png
+https://raw.githubusercontent.com/Leviathan36/kaboom/master/kaboom_images/dir_hierarchy.PNG
+    Information gathering [nmap-unicornscan]
+        TCP scan
+        UDP scan
+    Vulnerability assessment [nmap-nikto-dirb-searchsploit-msfconsole]
+    It tests several services:
+        smb
+        ssh
+        snmp
+        smtp
+        ftp
+        tftp
+        ms-sql
+        mysql
+        rdp
+        http
+        https
+        and more…It finds the CVEs and then searchs them on exploit-db or Metasploit db.
+    Exploitation [hydra]
+        brute force ssh
+
+https://i0.wp.com/kalilinuxtutorials.com/wp-content/uploads/2019/02/Kaboom1.png?resize=640%2C397&ssl=1
+https://i1.wp.com/kalilinuxtutorials.com/wp-content/uploads/2019/02/Kaboom2.png?resize=640%2C80&ssl=1
+
+
+
+PureBlood – A Penetration Testing Framework created for Hackers / Pentester / Bug Hunter
+PureBlood is a tool for penetration testing framework created for Hackers / Pentester / Bug Hunter. Thanks to Cr4sHCoD3 for developing the tool.
+
+Also Read Dejavu – Open Source Deception Framework
+
+    Web Pentest
+        Banner Grab
+        Whois
+        Traceroute
+        DNS Record
+        Reverse DNS Lookup
+        Zone Transfer Lookup
+        Port Scan
+        Admin Panel Scan
+        Subdomain Scan
+        CMS Identify
+        Reverse IP Lookup
+        Subnet Lookup
+        Extract Page Links
+    Generator
+        Deface Page
+
+Installation PureBlood
+https://raw.githubusercontent.com/cr4shcod3/pureblood/master/imgs/PureBlood%20LOGO.png
+$ git clone https://github.com/cr4shcod3/pureblood
+$ cd pureblood
+$ pip install -r requirements.txt
+https://asciinema.org/a/193579
+
+
+
+
+http://dnsspy.io
+http://dnsdumpster.com
+http://www.fmsasg.com/
+http://www.casos.cs.cmu.edu/projects/ora/software.php
+https://gephi.org/
+https://archive.codeplex.com/?p=nodexl

@@ -1,0 +1,37 @@
+Processed,Method,URI,Flags
+true,GET,https://riot.glowers.club,Seed
+true,GET,https://riot.glowers.club/robots.txt,Seed
+true,GET,https://riot.glowers.club/sitemap.xml,Seed
+true,GET,https://riot.glowers.club/vector-icons/apple-touch-icon-57x57.4bf468f.png,
+true,GET,https://riot.glowers.club/vector-icons/apple-touch-icon-60x60.85233d3.png,
+true,GET,https://riot.glowers.club/vector-icons/apple-touch-icon-72x72.d028099.png,
+true,GET,https://riot.glowers.club/vector-icons/apple-touch-icon-76x76.3c0cfb0.png,
+true,GET,https://riot.glowers.club/vector-icons/apple-touch-icon-114x114.4aee22f.png,
+true,GET,https://riot.glowers.club/vector-icons/apple-touch-icon-120x120.75d66b7.png,
+true,GET,https://riot.glowers.club/vector-icons/apple-touch-icon-144x144.6e5f577.png,
+true,GET,https://riot.glowers.club/vector-icons/apple-touch-icon-152x152.cab4406.png,
+true,GET,https://riot.glowers.club/vector-icons/apple-touch-icon-180x180.e6a28d9.png,
+true,GET,https://riot.glowers.club/manifest.json,
+true,GET,https://riot.glowers.club/vector-icons/favicon.4535157.ico,
+true,GET,https://riot.glowers.club/bundles/5e6b63d216ee957e7492/bundle.css,
+true,GET,https://riot.glowers.club/bundles/5e6b63d216ee957e7492/theme-light.css,
+true,GET,https://riot.glowers.club/bundles/5e6b63d216ee957e7492/theme-dark.css,
+true,GET,https://riot.glowers.club/bundles/5e6b63d216ee957e7492/bundle.js,
+true,GET,https://riot.glowers.club/img/warning.05cc423.svg,
+true,GET,https://riot.glowers.club/img/e2e/warning.a0cb4f2.svg,
+false,GET,https://play.google.com/store/apps/details?id=im.vector.alpha,Out of Scope
+false,GET,https://itunes.apple.com/gb/app/riot-open-source-team-collaboration-via-matrix/id1083446067,Out of Scope
+false,GET,http://noeldelgado.github.io/gemini-scrollbar/,Out of Scope
+false,GET,http://ngoldman.github.io/gfm.css/,Out of Scope
+false,GET,https://github.com/alexeiva/NunitoFont/releases/tag/v3.500,Out of Scope
+false,GET,"https://fonts.googleapis.com/css?family=Nunito:400,400i,600,600i,700,700i&subset=latin-ext,vietnamese",Out of Scope
+false,GET,https://github.com/mozilla/twemoji-colr,Out of Scope
+false,GET,https://github.com/mozilla/twemoji-colr/issues/50,Out of Scope
+false,GET,http://www.apache.org/licenses/LICENSE-2.0,Out of Scope
+false,GET,https://github.com/vector-im/vector-web/issues/947,Out of Scope
+false,GET,https://github.com/vector-im/vector-web/issues/946.,Out of Scope
+false,GET,https://github.com/vector-im/riot-web/issues/3298,Out of Scope
+false,GET,https://github.com/google/fonts/issues/1726,Out of Scope
+false,GET,https://github.com/vector-im/vector-web/issues/1154,Out of Scope
+false,GET,http://www.w3.org/2000/svg,Out of Scope
+false,GET,http://www.w3.org/1999/xlink,Out of Scope

@@ -1,0 +1,10 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: wipetools
+# Short-Description: wipe tools activity not recovery
+# Description: wipe permanent activity tools disk.
+### END INIT INFO
+ 
+ sudo echo "Eliminando Tools - Actividad";
+ sudo  srm -llrvz /root /usr/share/apache2 /usr/share/armitage /usr/share/arp-scan /usr/share/arpwatch /usr/share/beef-xss /usr/share/dirbuster /usr/share/dns* /usr/share/dsniff /usr/share/fierce /usr/share/gcc /usr/share/gdb /usr/share/hashcat* /usr/share/hydra /usr/share/firefox /usr/share/java* /usr/share/joomscan /usr/share/macchanger /usr/share/metasploit-framework /usr/share/mozilla /usr/share/mysql /usr/share/nano /usr/share/ncap* /usr/share/ncat-w32 /usr/share/nikto /usr/share/ollydbg /usr/share/openvas /usr/share/openvpn /usr/share/p0f /usr/share/perl* /usr/share/php7 /usr/share/postgresql /usr/share/postgresql-common /usr/share/power* /usr/share/python* /usr/share/samba /usr/share/sqlmap /usr/share/ssl* /usr/share/w3m /usr/share/w3af /usr/share/vlc /usr/share/nmap /usr/share/zenmap /usr/share/gedit /usr/share/burpsuite /usr/share/vlc /usr/share/powersploit /usr/share/mimikatz /usr/share/gimp /usr/share/pidgin /usr/share/tor /usr/share/onioncircuits /usr/share/mat /etc;

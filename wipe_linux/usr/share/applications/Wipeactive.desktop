@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Wipe Active
+Encoding=UTF-8
+Exec=sh -c "Wipeactive"
+Icon=/usr/share/icons/latexila.svg
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=GNOME;System;Filesystem;
+Keywords=clean;performances;free;privacy;
+
+

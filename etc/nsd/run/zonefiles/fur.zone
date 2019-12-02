@@ -1,0 +1,576 @@
+; zone fur written by NSD 4.1.27 on Fri Jun 21 03:25:07 2019
+; received update to serial 592097 at 2019-06-21T02:59:19 from 161.97.219.84
+$ORIGIN .
+fur	300	IN	SOA	ns15.nic.fur. furnic-operators.fellig.org. (
+		592097 604800 86400 2419200 1200 )
+	300	IN	NS	ns2.opennic.glue.
+	300	IN	NS	ns4.opennic.glue.
+	300	IN	NS	ns8.nic.fur.
+	300	IN	NS	ns8.opennic.glue.
+	300	IN	NS	ns12.nic.fur.
+	300	IN	NS	ns13.nic.fur.
+	300	IN	NS	ns15.ns.ph2.eu.
+	300	IN	NS	ns15.nic.fur.
+	300	IN	TXT	"test=1375673070"
+$ORIGIN fur.
+0wx	300	IN	NS	ns1.0wx.org.
+	300	IN	NS	ns2.0wx.org.
+	300	IN	NS	ns3.0wx.org.
+aaaaaaaaaa	300	IN	CNAME	rjpublikationen.de.
+$ORIGIN aaaaaaaaaa.fur.
+www	300	IN	CNAME	www.rjpublikationen.de.
+$ORIGIN fur.
+afr	300	IN	CNAME	uservice.fellig.org.
+$ORIGIN afr.fur.
+www	300	IN	CNAME	www.uservice.fellig.org.
+$ORIGIN fur.
+aguilaguardian	300	IN	CNAME	www.androidcolombia.com.
+$ORIGIN aguilaguardian.fur.
+www	300	IN	CNAME	www.www.androidcolombia.com.
+$ORIGIN fur.
+amped	300	IN	A	173.230.240.100
+$ORIGIN amped.fur.
+www	300	IN	A	173.230.240.100
+$ORIGIN fur.
+anime	300	IN	CNAME	new.fur.
+$ORIGIN anime.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+anonymous	300	IN	NS	a.dns.anonymous.support.
+	300	IN	NS	c.dns.anonymous.support.
+anti	300	IN	A	131.234.194.142
+$ORIGIN anti.fur.
+www	300	IN	A	131.234.194.142
+$ORIGIN fur.
+anubis	300	IN	CNAME	new.fur.
+$ORIGIN anubis.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+anumidium	300	IN	A	108.174.99.112
+$ORIGIN anumidium.fur.
+www	300	IN	A	108.174.99.112
+$ORIGIN fur.
+artexia	300	IN	A	212.116.72.8
+$ORIGIN artexia.fur.
+www	300	IN	A	212.116.72.8
+$ORIGIN fur.
+arthusu	300	IN	CNAME	new.fur.
+$ORIGIN arthusu.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+axis	300	IN	CNAME	new.fur.
+$ORIGIN axis.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+azanet	300	IN	A	129.21.131.20
+$ORIGIN azanet.fur.
+www	300	IN	A	129.21.131.20
+$ORIGIN fur.
+becker	300	IN	CNAME	becker-nrw.de.
+$ORIGIN becker.fur.
+www	300	IN	CNAME	www.becker-nrw.de.
+$ORIGIN fur.
+belkir	300	IN	A	217.77.56.141
+$ORIGIN belkir.fur.
+www	300	IN	A	217.77.56.141
+$ORIGIN fur.
+blinkythebear	300	IN	CNAME	new.fur.
+$ORIGIN blinkythebear.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+brandonsailor	300	IN	CNAME	new.fur.
+$ORIGIN brandonsailor.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+brasshopper	300	IN	CNAME	brass-hopper.tumblr.com.
+$ORIGIN brasshopper.fur.
+www	300	IN	CNAME	www.brass-hopper.tumblr.com.
+$ORIGIN fur.
+carpintino	300	IN	CNAME	new.fur.
+$ORIGIN carpintino.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+ced	300	IN	CNAME	fennecweb.net.
+$ORIGIN ced.fur.
+www	300	IN	CNAME	www.fennecweb.net.
+$ORIGIN fur.
+cerealatnight	300	IN	CNAME	jsworld.noblogs.org.
+$ORIGIN cerealatnight.fur.
+www	300	IN	CNAME	www.jsworld.noblogs.org.
+$ORIGIN fur.
+clear	300	IN	CNAME	new.fur.
+$ORIGIN clear.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+connecticut	300	IN	NS	b.prrum.org.
+	300	IN	NS	c.prrum.org.
+console	300	IN	CNAME	uservice.fellig.org.
+$ORIGIN console.fur.
+www	300	IN	CNAME	www.uservice.fellig.org.
+$ORIGIN fur.
+coyo	300	IN	A	71.164.138.249
+$ORIGIN coyo.fur.
+www	300	IN	A	71.164.138.249
+$ORIGIN fur.
+crumax	300	IN	A	127.3.8.7
+$ORIGIN crumax.fur.
+www	300	IN	A	127.3.8.7
+$ORIGIN fur.
+cyrus	300	IN	CNAME	lambdacore.de.
+$ORIGIN cyrus.fur.
+www	300	IN	CNAME	www.lambdacore.de.
+$ORIGIN fur.
+d2k5	300	IN	A	91.121.81.199
+	300	IN	MX	10 mail.d2k5.com.
+$ORIGIN d2k5.fur.
+www	300	IN	A	91.121.81.199
+$ORIGIN fur.
+daniel	300	IN	CNAME	perlhuhn.dyndns-ip.com.
+$ORIGIN daniel.fur.
+www	300	IN	CNAME	www.perlhuhn.dyndns-ip.com.
+$ORIGIN fur.
+darkdaskin	300	IN	A	188.134.6.66
+$ORIGIN darkdaskin.fur.
+www	300	IN	A	188.134.6.66
+$ORIGIN fur.
+delicious	300	IN	A	68.206.32.64
+$ORIGIN delicious.fur.
+www	300	IN	A	68.206.32.64
+$ORIGIN fur.
+diti	300	IN	CNAME	new.fur.
+$ORIGIN diti.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+ditsibits	300	IN	CNAME	new.fur.
+$ORIGIN ditsibits.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+dogpatchpress	300	IN	CNAME	dogpatch.press.
+$ORIGIN dogpatchpress.fur.
+www	300	IN	CNAME	www.dogpatch.press.
+$ORIGIN fur.
+dracobark	300	IN	A	84.28.21.42
+$ORIGIN dracobark.fur.
+www	300	IN	A	84.28.21.42
+$ORIGIN fur.
+dragon	300	IN	NS	ns1.sourpuss.net.
+	300	IN	NS	ns2.sourpuss.net.
+dragonjake	300	IN	NS	ns.dragonjake.net.
+	300	IN	NS	ns2.dragonjake.net.
+eeepc	300	IN	CNAME	new.fur.
+$ORIGIN eeepc.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+elch	300	IN	CNAME	new.fur.
+$ORIGIN elch.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+example	300	IN	CNAME	uservice.fellig.org.
+$ORIGIN example.fur.
+www	300	IN	CNAME	www.uservice.fellig.org.
+$ORIGIN fur.
+fellig	300	IN	CNAME	fellig.org.
+$ORIGIN fellig.fur.
+www	300	IN	CNAME	www.fellig.org.
+$ORIGIN fur.
+fellig-con	300	IN	CNAME	fellig-con.org.
+$ORIGIN fellig-con.fur.
+www	300	IN	CNAME	www.fellig-con.org.
+$ORIGIN fur.
+frinkel	300	IN	A	38.242.7.51
+$ORIGIN frinkel.fur.
+www	300	IN	A	38.242.7.51
+$ORIGIN fur.
+furnic	300	IN	NS	ns8.nic.fur.
+	300	IN	NS	ns15.nic.fur.
+$ORIGIN furnic.fur.
+ns10	300	IN	A	178.63.26.172
+	300	IN	AAAA	2a01:4f8:141:4281::150
+ns12	300	IN	A	178.63.145.230
+	300	IN	AAAA	2a01:4f8:101:3062::5:2
+ns13	300	IN	A	151.236.24.112
+ns15	300	IN	A	178.63.145.236
+	300	IN	AAAA	2a01:4f8:221:1e01::1f:12
+ns8	300	IN	A	188.40.132.212
+$ORIGIN fur.
+furpro	300	IN	CNAME	new.fur.
+$ORIGIN furpro.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+furriesoffirst	300	IN	CNAME	new.fur.
+$ORIGIN furriesoffirst.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+furry-os	300	IN	NS	ns10.nic.fur.
+	300	IN	NS	ns15.nic.fur.
+fusl	300	IN	NS	ns1.r4ns.com.
+	300	IN	NS	ns2.r4ns.net.
+hack13	300	IN	NS	ns3.hack13.me.
+	300	IN	NS	ns4.hack13.me.
+halcyon	300	IN	CNAME	new.fur.
+$ORIGIN halcyon.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+hentai	300	IN	CNAME	new.fur.
+$ORIGIN hentai.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+hermes	300	IN	CNAME	new.fur.
+$ORIGIN hermes.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+hundert-prozent	300	IN	A	85.13.147.97
+$ORIGIN hundert-prozent.fur.
+www	300	IN	A	85.13.147.97
+$ORIGIN fur.
+jackalcub	300	IN	CNAME	new.fur.
+$ORIGIN jackalcub.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+jamaic	300	IN	A	89.103.206.20
+$ORIGIN jamaic.fur.
+www	300	IN	A	89.103.206.20
+$ORIGIN fur.
+jocelyn-wolf	300	IN	CNAME	new.fur.
+$ORIGIN jocelyn-wolf.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+jonasmoeller	300	IN	NS	ns1.frankenhost.net.
+	300	IN	NS	ns2.frankenhost.net.
+jordyhusky	300	IN	CNAME	new.fur.
+$ORIGIN jordyhusky.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+kai	300	IN	NS	ns1.fastnameserver.eu.
+	300	IN	NS	ns2.fastnameserver.eu.
+key	300	IN	CNAME	www.keyfur.com.
+$ORIGIN key.fur.
+www	300	IN	CNAME	www.www.keyfur.com.
+$ORIGIN fur.
+kinggoon	300	IN	CNAME	www.kinggoon.net.
+$ORIGIN kinggoon.fur.
+www	300	IN	CNAME	www.www.kinggoon.net.
+$ORIGIN fur.
+kirk	300	IN	NS	ns1.kbocek.com.
+	300	IN	NS	ns2.kbocek.com.
+koriko	300	IN	CNAME	new.fur.
+$ORIGIN koriko.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+lins	300	IN	CNAME	new.fur.
+$ORIGIN lins.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+lion	300	IN	CNAME	uservice.fellig.org.
+$ORIGIN lion.fur.
+www	300	IN	CNAME	www.uservice.fellig.org.
+$ORIGIN fur.
+localhost	300	IN	A	127.0.0.1
+$ORIGIN localhost.fur.
+www	300	IN	A	127.0.0.1
+$ORIGIN fur.
+lolicon	300	IN	CNAME	new.fur.
+$ORIGIN lolicon.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+loomy	300	IN	CNAME	new.fur.
+$ORIGIN loomy.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+mat	300	IN	CNAME	leopaws.tk.
+$ORIGIN mat.fur.
+www	300	IN	CNAME	www.leopaws.tk.
+$ORIGIN fur.
+meeko	300	IN	A	81.96.111.116
+$ORIGIN meeko.fur.
+www	300	IN	A	81.96.111.116
+$ORIGIN fur.
+meganet	300	IN	CNAME	new.fur.
+$ORIGIN meganet.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+mikasi	300	IN	CNAME	mikasi.net.
+$ORIGIN mikasi.fur.
+www	300	IN	CNAME	www.mikasi.net.
+$ORIGIN fur.
+mileskjeller	300	IN	CNAME	www.mileskjeller.net.
+$ORIGIN mileskjeller.fur.
+www	300	IN	CNAME	www.www.mileskjeller.net.
+$ORIGIN fur.
+mleobs	300	IN	NS	ns01.000webhost.com.
+	300	IN	NS	ns02.000webhost.com.
+mobianlegends	300	IN	NS	ns1.mobianlegends.com.
+	300	IN	NS	ns2.mobianlegends.com.
+molehost	300	IN	CNAME	new.fur.
+$ORIGIN molehost.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+morphforest	300	IN	CNAME	new.fur.
+$ORIGIN morphforest.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+mysti	300	IN	CNAME	new.fur.
+$ORIGIN mysti.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+nekomimi	300	IN	A	10.22.34.98
+$ORIGIN nekomimi.fur.
+www	300	IN	A	10.22.34.98
+$ORIGIN fur.
+new	300	IN	A	178.63.145.230
+	300	IN	MX	10 localhost.fur.
+$ORIGIN new.fur.
+www	300	IN	A	178.63.145.230
+$ORIGIN fur.
+newedgetb	300	IN	CNAME	new.fur.
+$ORIGIN newedgetb.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+nic	300	IN	NS	ns8.nic.fur.
+	300	IN	NS	ns15.nic.fur.
+$ORIGIN nic.fur.
+ns10	300	IN	A	178.63.26.172
+	300	IN	AAAA	2a01:4f8:141:4281::150
+ns12	300	IN	A	178.63.145.230
+	300	IN	AAAA	2a01:4f8:101:3062::5:2
+ns13	300	IN	A	151.236.24.112
+ns15	300	IN	A	178.63.145.236
+	300	IN	AAAA	2a01:4f8:221:1e01::1f:12
+ns8	300	IN	A	188.40.132.212
+$ORIGIN fur.
+nicole	300	IN	CNAME	new.fur.
+$ORIGIN nicole.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+niel	300	IN	CNAME	wehmeyer.fur.
+$ORIGIN niel.fur.
+www	300	IN	CNAME	www.wehmeyer.fur.
+$ORIGIN fur.
+nightfox	300	IN	NS	ns1.nightfox.ws.
+	300	IN	NS	ns2.nightfox.ws.
+noodleninja	300	IN	A	64.146.135.21
+$ORIGIN noodleninja.fur.
+www	300	IN	A	64.146.135.21
+$ORIGIN fur.
+noumenon	300	IN	A	188.40.132.245
+$ORIGIN noumenon.fur.
+www	300	IN	A	188.40.132.245
+$ORIGIN fur.
+nyaan	300	IN	A	195.201.76.62
+$ORIGIN nyaan.fur.
+www	300	IN	A	195.201.76.62
+$ORIGIN fur.
+oklomsy	300	IN	CNAME	new.fur.
+$ORIGIN oklomsy.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+opennictest	300	IN	NS	ns2.ns.stejau.de.
+	300	IN	NS	ns4.ns.stejau.de.
+pamelaanderson	300	IN	NS	ns.kevinkatovic.pirate.
+	300	IN	NS	ns1.kevinkatovic.pirate.
+pets-de	300	IN	A	81.169.145.65
+$ORIGIN pets-de.fur.
+www	300	IN	A	81.169.145.65
+$ORIGIN fur.
+ph2	300	IN	NS	ns8.nic.fur.
+	300	IN	NS	ns15.nic.fur.
+ph3	300	IN	CNAME	ph3-der-loewe.vm.fellig.org.
+$ORIGIN ph3.fur.
+www	300	IN	CNAME	www.ph3-der-loewe.vm.fellig.org.
+$ORIGIN fur.
+phoxden	300	IN	CNAME	new.fur.
+$ORIGIN phoxden.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+pietro	300	IN	CNAME	advicenet.info.
+$ORIGIN pietro.fur.
+www	300	IN	CNAME	www.advicenet.info.
+$ORIGIN fur.
+pixint	300	IN	NS	fns1.42.pl.
+	300	IN	NS	fns2.42.pl.
+play	300	IN	CNAME	new.fur.
+$ORIGIN play.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+pleroma	300	IN	NS	ns31.cloudns.net.
+	300	IN	NS	ns32.cloudns.net.
+pool	300	IN	A	178.63.145.230
+$ORIGIN pool.fur.
+www	300	IN	A	178.63.145.230
+$ORIGIN fur.
+priderock	300	IN	A	178.63.145.239
+$ORIGIN priderock.fur.
+www	300	IN	A	178.63.145.239
+$ORIGIN fur.
+pussy	300	IN	CNAME	new.fur.
+$ORIGIN pussy.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+raku	300	IN	CNAME	raku.party.
+$ORIGIN raku.fur.
+www	300	IN	CNAME	www.raku.party.
+$ORIGIN fur.
+reedych	300	IN	CNAME	reedych.neocities.org.
+$ORIGIN reedych.fur.
+www	300	IN	CNAME	www.reedych.neocities.org.
+$ORIGIN fur.
+register	300	IN	CNAME	nic.fur.
+$ORIGIN register.fur.
+www	300	IN	CNAME	www.nic.fur.
+$ORIGIN fur.
+rem	300	IN	CNAME	new.fur.
+$ORIGIN rem.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+reotip	300	IN	CNAME	reotip.cf.
+$ORIGIN reotip.fur.
+www	300	IN	CNAME	www.reotip.cf.
+$ORIGIN fur.
+rnf	300	IN	CNAME	v3.fellig.org.
+$ORIGIN rnf.fur.
+www	300	IN	CNAME	www.v3.fellig.org.
+$ORIGIN fur.
+rop	300	IN	NS	ns1.cloudns.net.
+	300	IN	NS	ns2.cloudns.net.
+rozene	300	IN	CNAME	new.fur.
+$ORIGIN rozene.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+salticid	300	IN	CNAME	new.fur.
+$ORIGIN salticid.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+scratch	300	IN	CNAME	new.fur.
+$ORIGIN scratch.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+secure	300	IN	NS	ns1.us.editdns.net.
+	300	IN	NS	ns2.us.editdns.net.
+sergal	300	IN	A	185.13.38.139
+$ORIGIN sergal.fur.
+www	300	IN	A	185.13.38.139
+$ORIGIN fur.
+shadowdrake	300	IN	NS	ns1.draconis.ovh.
+	300	IN	NS	ns2.draconis.ovh.
+skykun	300	IN	CNAME	new.fur.
+$ORIGIN skykun.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+sonic	300	IN	CNAME	mobianlegends.com.
+$ORIGIN sonic.fur.
+www	300	IN	CNAME	www.mobianlegends.com.
+$ORIGIN fur.
+sparky	300	IN	CNAME	new.fur.
+$ORIGIN sparky.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+squeakerade	300	IN	NS	ns01.000webhost.com.
+	300	IN	NS	ns02.000webhost.com.
+stejau	300	IN	CNAME	stejau.de.
+$ORIGIN stejau.fur.
+www	300	IN	CNAME	www.stejau.de.
+$ORIGIN fur.
+suriname	300	IN	CNAME	www.kinggoon.net.
+$ORIGIN suriname.fur.
+www	300	IN	CNAME	www.www.kinggoon.net.
+$ORIGIN fur.
+syllabear	300	IN	CNAME	syllabear.tk.
+$ORIGIN syllabear.fur.
+www	300	IN	CNAME	www.syllabear.tk.
+$ORIGIN fur.
+taris	300	IN	A	173.201.243.128
+$ORIGIN taris.fur.
+www	300	IN	A	173.201.243.128
+$ORIGIN fur.
+thhunder	300	IN	A	5.9.124.211
+$ORIGIN thhunder.fur.
+www	300	IN	A	5.9.124.211
+$ORIGIN fur.
+tiara	300	IN	CNAME	uservice.fellig.org.
+$ORIGIN tiara.fur.
+www	300	IN	CNAME	www.uservice.fellig.org.
+$ORIGIN fur.
+timothyvyper	300	IN	NS	ns3.hack13.me.
+	300	IN	NS	ns4.hack13.me.
+timothyvyper\033deleted	300	IN	NS	ns101.cloudns.net.
+	300	IN	NS	ns102.cloudns.net.
+travishusky	300	IN	A	54.84.8.38
+$ORIGIN travishusky.fur.
+www	300	IN	A	54.84.8.38
+$ORIGIN fur.
+trulyfoxy	300	IN	CNAME	new.fur.
+$ORIGIN trulyfoxy.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+tvos	300	IN	NS	ns1.tvos.eu.
+	300	IN	NS	ns2.tvos.eu.
+	300	IN	NS	ns3.tvos.eu.
+ukitconsultant	300	IN	CNAME	new.fur.
+$ORIGIN ukitconsultant.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+utanith	300	IN	A	209.141.47.40
+$ORIGIN utanith.fur.
+www	300	IN	A	209.141.47.40
+$ORIGIN fur.
+vos-systems	300	IN	NS	ns1.vos-systems.net.
+	300	IN	NS	ns2.vos-systems.net.
+waytt	300	IN	CNAME	new.fur.
+$ORIGIN waytt.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+wehmeyer	300	IN	A	78.47.46.230
+$ORIGIN wehmeyer.fur.
+www	300	IN	A	78.47.46.230
+$ORIGIN fur.
+weich	300	IN	A	178.63.145.230
+$ORIGIN weich.fur.
+www	300	IN	A	178.63.145.230
+$ORIGIN fur.
+wiredzax	300	IN	CNAME	new.fur.
+$ORIGIN wiredzax.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+wolfe	300	IN	NS	ns1.r4ns.com.
+	300	IN	NS	ns2.r4ns.net.
+wolfi	300	IN	CNAME	new.fur.
+$ORIGIN wolfi.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+working4	300	IN	CNAME	working2.sytes.net.
+$ORIGIN working4.fur.
+www	300	IN	CNAME	www.working2.sytes.net.
+$ORIGIN fur.
+wuestenrotfuchs	300	IN	CNAME	uservice.fellig.org.
+$ORIGIN wuestenrotfuchs.fur.
+www	300	IN	CNAME	www.uservice.fellig.org.
+$ORIGIN fur.
+wuskyfoxx	300	IN	A	87.106.255.241
+$ORIGIN wuskyfoxx.fur.
+www	300	IN	A	87.106.255.241
+$ORIGIN fur.
+xeoda	300	IN	NS	ns1.xeoda.fur.
+	300	IN	NS	xeodafur.xeoda.fur.
+xn--mxahc1d	300	IN	CNAME	uservice.fellig.org.
+$ORIGIN xn--mxahc1d.fur.
+www	300	IN	CNAME	www.uservice.fellig.org.
+$ORIGIN fur.
+yerf	300	IN	A	178.63.145.230
+$ORIGIN yerf.fur.
+www	300	IN	A	178.63.145.230
+$ORIGIN fur.
+yukicanis	300	IN	CNAME	yukicanis.crabdance.com.
+$ORIGIN yukicanis.fur.
+www	300	IN	CNAME	www.yukicanis.crabdance.com.
+$ORIGIN fur.
+yurilizarazo	300	IN	CNAME	new.fur.
+$ORIGIN yurilizarazo.fur.
+www	300	IN	CNAME	www.new.fur.
+$ORIGIN fur.
+zia	300	IN	A	216.155.145.144
+$ORIGIN zia.fur.
+www	300	IN	A	216.155.145.144
+$ORIGIN fur.
+zzyzx	300	IN	CNAME	new.fur.
+$ORIGIN zzyzx.fur.
+www	300	IN	CNAME	www.new.fur.

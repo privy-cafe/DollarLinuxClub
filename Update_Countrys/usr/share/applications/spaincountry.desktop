@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Spain
+Encoding=UTF-8
+Exec=sh -c "countryspain"
+Icon=/usr/share/icons/spainz.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

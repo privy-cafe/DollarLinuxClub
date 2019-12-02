@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Ricochet IM
+Categories=Network;InstantMessaging;Chat;FileTransfer;Qt
+Comment=Anonymous instant messaging
+Icon=ricochet
+Exec=sudo firejail ricochet
+

@@ -1,0 +1,426 @@
+; zone cyb written by NSD 4.1.27 on Sun Jul 14 21:25:06 2019
+; received update to serial 1563135181 at 2019-07-14T20:32:31 from 45.56.115.189
+$ORIGIN .
+cyb	86400	IN	SOA	ns12.opennic.glue. hostmaster.opennic.cyb. (
+		1563135181 1800 15 604800 3600 )
+	86400	IN	AAAA	2001:19f0:7401:8563::1
+	86400	IN	A	95.179.207.86
+	86400	IN	RP	cyb. cyb.zm.is.
+	86400	IN	NS	ns2.opennic.glue.
+	86400	IN	NS	ns3.opennic.glue.
+	86400	IN	NS	ns4.opennic.glue.
+	86400	IN	NS	ns8.opennic.glue.
+	86400	IN	NS	ns9.opennic.glue.
+	86400	IN	NS	ns10.opennic.glue.
+	86400	IN	NS	ns11.opennic.glue.
+	86400	IN	NS	ns12.opennic.glue.
+$ORIGIN cyb.
+0	86400	IN	AAAA	2a0a:e5c0:0:4:47:4ff:fe82:2bd5
+$ORIGIN 0f0t.cyb.
+record	86400	IN	A	54.39.33.80
+$ORIGIN cyb.
+0h	86400	IN	A	185.52.0.82
+$ORIGIN 0h.cyb.
+www	86400	IN	A	185.52.0.82
+$ORIGIN cyb.
+0x00	86400	IN	AAAA	2a02:ab8a:f040:8180::c0de:cafe
+0x01	86400	IN	AAAA	2a0a:e5c0:0:4:47:4ff:fe82:2bd5
+0x03	86400	IN	AAAA	2a02:ab8a:f040:8180::3
+2f30	86400	IN	A	51.15.7.208
+$ORIGIN 2f30.cyb.
+irc	86400	IN	CNAME	irc.cyb.
+$ORIGIN cyb.
+a	86400	IN	A	192.30.252.153
+	86400	IN	A	192.30.252.154
+$ORIGIN a.cyb.
+www	86400	IN	CNAME	a.cyb.
+$ORIGIN cyb.
+a-sila	86400	IN	A	85.255.10.192
+abraham	86400	IN	A	5.39.20.236
+$ORIGIN abraham.cyb.
+www	86400	IN	CNAME	abraham.cyb.
+$ORIGIN cyb.
+abysmal	86400	IN	A	162.243.149.95
+adler	86400	IN	AAAA	2001:470:70:a2f::2
+admin	86400	IN	CNAME	tiuxo.netlify.com.
+admov	86400	IN	A	85.255.10.192
+adrien	86400	IN	A	192.168.1.61
+albino	86400	IN	A	192.30.252.153
+	86400	IN	A	192.30.252.154
+$ORIGIN albino.cyb.
+www	86400	IN	CNAME	albino.cyb.
+$ORIGIN cyb.
+aldnox	86400	IN	A	192.168.88.250
+alt	86400	IN	A	192.168.0.69
+$ORIGIN anime.cyb.
+www	86400	IN	CNAME	archive.ishygddt.xyz.
+$ORIGIN cyb.
+apason	86400	IN	A	5.39.20.236
+$ORIGIN apason.cyb.
+www	86400	IN	CNAME	apason.cyb.
+$ORIGIN cyb.
+aragon	86400	IN	A	198.100.149.191
+austere	86400	IN	A	104.167.107.173
+b	86400	IN	A	80.211.213.11
+$ORIGIN b.cyb.
+www	86400	IN	A	80.211.213.11
+$ORIGIN b3nsn0w.cyb.
+test	86400	IN	CNAME	sotetjovo.blog.hu.
+$ORIGIN cyb.
+baidu	86400	IN	A	103.201.27.10
+$ORIGIN baidu.cyb.
+www	86400	IN	CNAME	baidu.cyb.
+$ORIGIN cyb.
+barash	86400	IN	A	80.211.213.113
+$ORIGIN barash.cyb.
+www	86400	IN	A	80.211.213.113
+$ORIGIN cyb.
+bbs	86400	IN	A	103.201.27.10
+$ORIGIN bbs.cyb.
+www	86400	IN	CNAME	bbs.cyb.
+$ORIGIN cyb.
+bc	86400	IN	CNAME	tiuxo.netlify.com.
+begzar	86400	IN	A	1.1.1.1
+bl	86400	IN	A	5.9.155.75
+block	86400	IN	A	5.9.155.75
+blockchain	86400	IN	A	5.9.155.75
+blogs	86400	IN	A	198.100.149.191
+breclove	86400	IN	A	5.39.20.236
+$ORIGIN breclove.cyb.
+www	86400	IN	CNAME	breclove.cyb.
+$ORIGIN cyb.
+brian	86400	IN	CNAME	tiuxo.netlify.com.
+c	86400	IN	CNAME	tiuxo.netlify.com.
+c0bra	86400	IN	A	5.83.163.194
+$ORIGIN c0bra.cyb.
+git	86400	IN	CNAME	c0bra.cyb.
+$ORIGIN cyb.
+c0de	86400	IN	NS	ns1.afraid.org.
+	86400	IN	NS	ns2.afraid.org.
+	86400	IN	NS	ns3.afraid.org.
+	86400	IN	NS	ns4.afraid.org.
+	86400	IN	AAAA	2a03:4d40:1337:3:f816:3eff:fe7e:c15d
+	86400	IN	A	5.83.163.194
+$ORIGIN c0de.cyb.
+cloud	86400	IN	CNAME	c0de.cyb.
+mail	86400	IN	CNAME	c0de.cyb.
+pad	86400	IN	CNAME	c0de.cyb.
+root	86400	IN	A	5.83.163.194
+$ORIGIN cyb.
+change	86400	IN	A	5.9.155.75
+$ORIGIN chat.cyb.
+www	86400	IN	CNAME	chat.cyb.
+$ORIGIN cyb.
+cirno	86400	IN	A	73.7.219.68
+clemens	86400	IN	CNAME	tiuxo.netlify.com.
+closet	86400	IN	A	47.215.144.102
+cls2	86400	IN	NS	socle2.c-l.io.
+	86400	IN	A	46.105.114.9
+$ORIGIN cls2.cyb.
+ns1	86400	IN	A	46.105.114.9
+ns2	86400	IN	A	46.105.114.9
+$ORIGIN cyb.
+code	86400	IN	CNAME	c0de.cyb.
+codevoid	86400	IN	A	176.9.40.102
+cosa	86400	IN	CNAME	cosarara.me.
+criptotrem	86400	IN	CNAME	criptotrem.org.
+cyb	86400	IN	A	198.100.149.191
+cyber	86400	IN	A	176.9.40.102
+$ORIGIN cyber.cyb.
+cyber	86400	IN	A	176.9.40.102
+$ORIGIN cyb.
+d3p74	86400	IN	A	66.226.74.35
+db	86400	IN	A	51.77.124.180
+deangelisalex	86400	IN	CNAME	deangelisalex.me.
+dekadenz	86400	IN	A	134.249.152.4
+devtal	86400	IN	A	80.86.174.81
+diamond	86400	IN	A	2.94.188.164
+didownload	86400	IN	CNAME	didownload.cyb.herokudns.com.
+$ORIGIN didownload.cyb.
+www	86400	IN	CNAME	didownload.cyb.herokudns.com.
+$ORIGIN cyb.
+dimqua	86400	IN	AAAA	2001:15e8:110:4224::1
+	86400	IN	A	80.211.195.36
+$ORIGIN dimqua.cyb.
+ipv4	86400	IN	A	80.211.195.36
+ipv6	86400	IN	AAAA	2001:15e8:110:4224::1
+www	86400	IN	CNAME	dimqua.cyb.
+$ORIGIN dm.cyb.
+r10t	86400	IN	CNAME	hq.dm4g3.geek.
+$ORIGIN cyb.
+domain	86400	IN	A	67.211.219.228
+dra	86400	IN	A	192.30.252.153
+	86400	IN	A	192.30.252.154
+driveplay	86400	IN	CNAME	driveplayus.herokuapp.com.
+$ORIGIN driveplay.cyb.
+www	86400	IN	CNAME	driveplayus.herokuapp.com.
+$ORIGIN cyb.
+edu	86400	IN	CNAME	xjp.dzta.pw.
+$ORIGIN edu.cyb.
+www	86400	IN	CNAME	edu.cyb.
+$ORIGIN cyb.
+erethon	86400	IN	A	163.172.24.171
+escabox	86400	IN	NS	ns1.freewha.com.
+	86400	IN	NS	ns2.freewha.com.
+$ORIGIN escabox.cyb.
+box	86400	IN	NS	ns1.freewha.com.
+	86400	IN	NS	ns2.freewha.com.
+$ORIGIN cyb.
+exchange	86400	IN	A	5.9.155.75
+fbi	86400	IN	A	73.77.209.151
+fclub	86400	IN	A	176.126.70.248
+$ORIGIN fclub.cyb.
+www	86400	IN	CNAME	fclub.cyb.
+$ORIGIN cyb.
+fheutest	86400	IN	A	185.176.43.84
+$ORIGIN fheutest.cyb.
+www	86400	IN	A	185.176.43.84
+$ORIGIN cyb.
+fiber	86400	IN	A	149.56.156.92
+$ORIGIN fiber.cyb.
+www	86400	IN	CNAME	fiber.cyb.
+$ORIGIN cyb.
+freemail	86400	IN	A	82.165.115.132
+$ORIGIN freemail.cyb.
+www	86400	IN	A	82.165.115.132
+$ORIGIN cyb.
+gay	86400	IN	A	140.143.208.147
+$ORIGIN gay.cyb.
+www	86400	IN	CNAME	gay.cyb.
+$ORIGIN cyb.
+gp	86400	IN	A	188.37.50.77
+gz	86400	IN	NS	ruth.ns.cloudflare.com.
+	86400	IN	NS	aiden.ns.cloudflare.com.
+haskal	86400	IN	A	35.237.4.96
+$ORIGIN haskal.cyb.
+www	86400	IN	CNAME	haskal.cyb.
+$ORIGIN cyb.
+heropunch	86400	IN	AAAA	2a01:4f8:10a:19a1::2
+	86400	IN	A	88.99.105.98
+$ORIGIN heropunch.cyb.
+www	86400	IN	CNAME	heropunch.io.
+$ORIGIN cyb.
+hundert-prozent	86400	IN	CNAME	hundert-prozent.net.
+i	86400	IN	A	104.198.14.52
+i-love-ruby	86400	IN	NS	ns1.freewha.com.
+	86400	IN	NS	ns2.freewha.com.
+$ORIGIN i4c.cyb.
+ns1	86400	IN	A	35.242.137.239
+ns2	86400	IN	A	35.242.137.239
+$ORIGIN cyb.
+iash	86400	IN	A	163.172.144.110
+icnsoft	86400	IN	CNAME	cloud.appaton.com.
+$ORIGIN icnsoft.cyb.
+www	86400	IN	CNAME	icnsoft.cyb.
+$ORIGIN cyb.
+idc	86400	IN	A	103.201.27.10
+$ORIGIN idc.cyb.
+www	86400	IN	CNAME	idc.cyb.
+$ORIGIN in.cyb.
+chromebook	86400	IN	A	10.100.0.253
+nixos-master	86400	IN	A	10.100.0.10
+router	86400	IN	A	10.100.0.1
+turtaw	86400	IN	A	10.100.0.254
+$ORIGIN indonesia.cyb.
+ns1	86400	IN	A	27.124.94.88
+$ORIGIN cyb.
+inksu	86400	IN	AAAA	2a01:4f9:2a:14e2:5f:e608:b47a:d9b5
+insight	86400	IN	A	51.77.124.183
+irc	86400	IN	NS	a.resolv.is.
+	86400	IN	NS	u.resolv.is.
+$ORIGIN iss.cyb.
+test	86400	IN	A	185.127.24.107
+$ORIGIN cyb.
+jeffutf8	86400	IN	A	1.1.1.1
+jonah	86400	IN	NS	ns1.jonah.cyb.
+	86400	IN	NS	ns2.jonah.cyb.
+$ORIGIN jonah.cyb.
+ns1	86400	IN	A	174.138.48.29
+ns2	86400	IN	A	174.138.48.29
+$ORIGIN cyb.
+jonaharagon	86400	IN	A	198.100.149.191
+josuah	86400	IN	CNAME	josuah.net.
+kenneth	86400	IN	NS	ns1.geoscaling.com.
+	86400	IN	NS	ns2.geoscaling.com.
+	86400	IN	NS	ns3.geoscaling.com.
+	86400	IN	NS	ns4.geoscaling.com.
+	86400	IN	NS	ns5.geoscaling.com.
+kliv	86400	IN	A	83.212.110.9
+kunago	86400	IN	A	5.39.20.236
+$ORIGIN kunago.cyb.
+www	86400	IN	CNAME	kunago.cyb.
+$ORIGIN l.cyb.
+mc	86400	IN	A	35.192.209.218
+$ORIGIN cyb.
+lainfaith	86400	IN	A	35.237.4.96
+$ORIGIN lainfaith.cyb.
+www	86400	IN	CNAME	lainfaith.cyb.
+$ORIGIN cyb.
+lanodan	86400	IN	NS	minion.hacktivis.me.
+laubacher	86400	IN	A	178.192.40.60
+learning-ruby	86400	IN	NS	ns1.freewha.com.
+	86400	IN	NS	ns2.freewha.com.
+lets	86400	IN	A	5.9.155.75
+$ORIGIN lexo.cyb.
+vpn	86400	IN	A	66.70.189.98
+$ORIGIN cyb.
+list	86400	IN	AAAA	2606:4700:4700::1001
+	86400	IN	AAAA	2606:4700:4700::1111
+	86400	IN	A	1.0.0.1
+	86400	IN	A	1.1.1.1
+llnu	86400	IN	CNAME	642e07d43fac.sn.mynetname.net.
+ltd	86400	IN	A	123.249.6.166
+$ORIGIN ltd.cyb.
+www	86400	IN	A	123.249.6.166
+$ORIGIN cyb.
+luso	86400	IN	A	186.207.75.102
+$ORIGIN luso.cyb.
+www	86400	IN	A	186.207.75.102
+$ORIGIN cyb.
+m	86400	IN	NS	ns1.moderntld.com.
+	86400	IN	NS	ns2.moderntld.com.
+$ORIGIN mail.cyb.
+www	86400	IN	CNAME	mail.cyb.
+$ORIGIN cyb.
+matrix	86400	IN	A	198.100.149.191
+me	86400	IN	AAAA	2001:19f0:7401:8563::1
+	86400	IN	A	95.179.207.86
+megumin	86400	IN	A	185.199.109.153
+	86400	IN	A	185.199.109.154
+$ORIGIN megumin.cyb.
+www	86400	IN	CNAME	megumin.cyb.
+$ORIGIN cyb.
+merristasis	86400	IN	A	213.186.33.50
+metalyr	86400	IN	NS	ns1.he.net.
+	86400	IN	NS	ns2.he.net.
+	86400	IN	NS	ns3.he.net.
+	86400	IN	NS	ns4.he.net.
+	86400	IN	NS	ns5.he.net.
+moderntld	86400	IN	A	8.8.8.8
+	86400	IN	A	198.100.149.191
+mrdetonia	86400	IN	A	188.165.212.152
+mt	86400	IN	AAAA	2a00:1768:1006::eeef
+	86400	IN	A	46.166.129.4
+neo	86400	IN	A	127.0.0.1
+neonbox	86400	IN	A	52.15.194.28
+nexus	86400	IN	A	108.2.166.111
+noderunner	86400	IN	AAAA	2604:a880:cad:d0::4fff:8001
+	86400	IN	A	159.203.23.93
+nullinspace	86400	IN	A	95.216.205.239
+$ORIGIN l.b.i.n.o.cyb.
+a	86400	IN	A	192.168.1.1
+$ORIGIN cyb.
+oda	86400	IN	CNAME	tiuxo.netlify.com.
+okashi	86400	IN	CNAME	okashi.me.
+$ORIGIN onion.cyb.
+www	86400	IN	CNAME	onion.cyb.
+$ORIGIN cyb.
+open	86400	IN	AAAA	2a02:ab8a:f040:8180::c0de:cafe
+opennic	86400	IN	MX	0 hal.zm.is.
+	86400	IN	A	79.124.7.81
+	86400	IN	AAAA	2a01:8740:1:ff13::ae67
+$ORIGIN opennic.cyb.
+www	86400	IN	A	79.124.7.81
+	86400	IN	AAAA	2a01:8740:1:ff13::ae67
+$ORIGIN cyb.
+own	86400	IN	NS	ns.own.cyb.
+$ORIGIN own.cyb.
+ns	86400	IN	A	90.44.166.248
+$ORIGIN cyb.
+patate	86400	IN	NS	ns1.infomaniak.ch.
+	86400	IN	NS	ns2.infomaniak.ch.
+$ORIGIN piratbit.cyb.
+pic	86400	IN	A	78.46.45.120
+test	86400	IN	CNAME	piratbit.org.
+$ORIGIN cyb.
+police	86400	IN	A	5.9.155.75
+pool33	86400	IN	A	98.117.34.105
+porn	86400	IN	CNAME	tiuxo.netlify.com.
+registry	86400	IN	A	198.100.149.191
+resist	86400	IN	A	185.199.108.153
+	86400	IN	A	185.199.109.153
+	86400	IN	A	185.199.110.153
+	86400	IN	A	185.199.111.153
+rf	86400	IN	NS	ns1.box.r3df0x.net.
+	86400	IN	NS	ns2.box.r3df0x.net.
+root	86400	IN	CNAME	0x99-ddns2.ddnsfree.com.
+rpi	86400	IN	A	192.168.1.61
+ruby-guide	86400	IN	NS	ns1.freewha.com.
+	86400	IN	NS	ns2.freewha.com.
+searx	86400	IN	CNAME	captcha.website.
+searxes	86400	IN	CNAME	captcha.website.
+security	86400	IN	A	78.139.212.32
+senri	86400	IN	AAAA	2001:470:0:193::4
+	86400	IN	A	184.105.242.4
+$ORIGIN i.open.senri.cyb.
+karigurashi	86400	IN	A	172.16.1.3
+$ORIGIN cyb.
+serverpars	86400	IN	A	1.1.1.1
+$ORIGIN shell.cyb.
+c29c77bed	86400	IN	AAAA	2a01:4f9:c010:1f5::
+	86400	IN	A	95.216.137.245
+c6cee31a3	86400	IN	AAAA	2a01:4f8:1c17:5be7::
+	86400	IN	A	88.198.150.130
+c7ec622ef	86400	IN	AAAA	2a01:4f8:1c1c:e86::
+	86400	IN	A	195.201.134.127
+c7edea0ca	86400	IN	AAAA	2a04:c46:e00:32e0:4f4:baff:fe00:270
+	86400	IN	A	89.145.162.162
+cf43fd205	86400	IN	AAAA	2a04:c45:e00:32e0:4c2:42ff:fe00:a8
+	86400	IN	A	185.150.8.218
+cfa5bc24d	86400	IN	AAAA	2a04:c43:e00:32e0:4c3:eeff:fe00:5f9
+	86400	IN	A	159.100.242.84
+$ORIGIN cyb.
+shroom	86400	IN	A	164.132.54.61
+$ORIGIN shroom.cyb.
+famine	86400	IN	A	164.132.54.61
+$ORIGIN cyb.
+sites	86400	IN	A	198.100.149.191
+somedomainname	86400	IN	A	127.0.0.1
+$ORIGIN somedomainname.cyb.
+dns	86400	IN	A	1.1.1.1
+	86400	IN	A	8.8.8.8
+$ORIGIN cyb.
+space	86400	IN	A	98.129.229.99
+ssl	86400	IN	CNAME	ssl.geek.
+$ORIGIN ssl.cyb.
+www	86400	IN	CNAME	ssl.geek.
+$ORIGIN cyb.
+stavkray	86400	IN	CNAME	stavkray.com.
+su	86400	IN	A	5.9.155.75
+$ORIGIN sympa.cyb.
+www	86400	IN	A	90.44.162.114
+$ORIGIN technofriend.cyb.
+www	86400	IN	A	185.27.134.222
+$ORIGIN cyb.
+tenery	86400	IN	A	94.158.47.194
+thewebsite	86400	IN	A	192.71.144.235
+tiuxo	86400	IN	CNAME	tiuxo.netlify.com.
+toromino	86400	IN	CNAME	toromino.de.
+$ORIGIN toromino.cyb.
+social	86400	IN	CNAME	social.toromino.de.
+$ORIGIN cyb.
+twsicommunity	86400	IN	A	67.189.101.107
+vertige	86400	IN	A	82.242.221.122
+w	86400	IN	NS	ns101.cloudns.net.
+	86400	IN	NS	ns102.cloudns.net.
+whitedwarf	86400	IN	A	67.249.202.109
+widepapers	86400	IN	AAAA	2a00:d0c0:200:0:b9:1a:9c:3d
+	86400	IN	A	185.26.156.62
+	86400	IN	NS	ns1.edelundfrei.tech.
+	86400	IN	NS	ns2.edelundfrei.tech.
+	86400	IN	NS	ns3.edelundfrei.tech.
+	86400	IN	NS	ns4.edelundfrei.tech.
+	86400	IN	NS	ns5.edelundfrei.tech.
+worstguyat	86400	IN	CNAME	antoine.kallab.com.
+www	86400	IN	A	122.114.249.128
+$ORIGIN www.cyb.
+mail	86400	IN	A	122.114.249.128
+www	86400	IN	CNAME	www.cyb.
+$ORIGIN cyb.
+xman	86400	IN	A	149.129.57.87
+$ORIGIN xman.cyb.
+xman	86400	IN	A	149.129.57.87
+$ORIGIN cyb.
+xn--hlrw28c	86400	IN	A	198.55.114.189
+y0sh	86400	IN	A	37.59.61.135
+z	86400	IN	CNAME	tiuxo.netlify.com.

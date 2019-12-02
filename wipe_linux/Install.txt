@@ -1,0 +1,19 @@
+NECESARY WIPE -
+
+apt-get install secure-delete 
+apt-get install wipe 
+
+Wipe module is graphical anti-forence 
+module delete permanently  hard-disk , sdcard and usb memory
+
+Scripts automatic delete all hard-disk and partitions 
++ Have script disable o enable module wipe for security 
+
+Terminal 
+
+update-rc.d kernel-wip defaults 10
+update-rc.d kernel-wip defaults 10
+update-rc.d kernel-wip defaults 10
+update-rc.d kernel-wip defaults 10
+
+

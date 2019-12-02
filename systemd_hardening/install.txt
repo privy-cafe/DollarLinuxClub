@@ -1,0 +1,8 @@
+#/bin/bash
+#open a terminal then install mount and start it
+sudo apt install mount 
+sudo service mount start
+sudo systemctl enable mount.service
+
+
+

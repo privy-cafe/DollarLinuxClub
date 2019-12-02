@@ -1,0 +1,10 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: wipefreespace
+# Short-Description: wipe space not recovery
+# Description: wipe permanent space disk.
+### END INIT INFO
+ 
+ sudo echo "Eliminando Disco!";
+ sudo sfill -v /;

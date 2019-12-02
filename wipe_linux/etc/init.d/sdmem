@@ -1,0 +1,59 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          sdmem
+# Required-Start:
+# Required-Stop:     umountroot
+# Should-Start:
+# Should-Stop:       halt reboot
+# Default-Start:
+# Default-Stop:      0 6
+# Short-Description: Wipe the memory after unmounting everything.
+# Description:       Wipe the memory using the sdmem binary from
+#                    secure-delete at system shutdown/reboot.
+### END INIT INFO
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+[ -f /etc/default/sdmem ] && . /etc/default/sdmem
+
+. /lib/lsb/init-functions
+
+# Quit quietly, if $ENABLED is 0.
+test "$ENABLED" != "0" || exit 0
+
+tweak_sysctl() {
+	echo 3   > /proc/sys/kernel/printk
+	echo 4   > /proc/sys/vm/drop_caches
+	echo 256 > /proc/sys/vm/min_free_kbytes
+	echo 1   > /proc/sys/vm/overcommit_memory
+	echo 1   > /proc/sys/vm/oom_kill_allocating_task
+	echo 0   > /proc/sys/vm/oom_dump_tasks
+}
+
+do_stop () {
+	tweak_sysctl
+	echo " * La memoria del sistema va a ser borrada en pocos minutos..."
+	sdmem $SDMEM_OPTS
+	# Wait for sdmem jobs to complete.
+	wait
+}
+
+case "$1" in
+  start)
+	# No-op
+        echo " * Iniciando la eliminacion de Memoria ram porfavor espere..."
+	;;
+  restart|reload|force-reload)
+	echo "Error: argument '$1' not supported" >&2
+	exit 3
+	;;
+  stop)
+	do_stop
+	;;
+  *)
+	echo "Usage: $0 {start|stop}" >&2
+	exit 3
+	;;
+esac
+
+:

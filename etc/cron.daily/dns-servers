@@ -1,0 +1,14 @@
+#! /bin/sh
+echo "dnsserver"
+
+rm /var/log/nginx/*
+
+sudo service nginx restart
+
+sudo service nsd restart
+
+sudo service unbound-1 restart
+
+sudo service AdGuardHome restart
+
+echo "finished @" $(date) 

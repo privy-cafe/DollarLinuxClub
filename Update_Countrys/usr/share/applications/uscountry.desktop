@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Unites States
+Encoding=UTF-8
+Exec=sh -c "countryusa"
+Icon=/usr/share/icons/United-States-of-America.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

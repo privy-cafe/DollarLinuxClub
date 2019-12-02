@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country Grece
+Encoding=UTF-8
+Exec=sh -c "countrygrece"
+Icon=/usr/share/icons/Grecee.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

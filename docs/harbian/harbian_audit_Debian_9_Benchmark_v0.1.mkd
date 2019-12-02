@@ -1,0 +1,1934 @@
+# harbian audit Debian GNU/Linux 9 Benchmark 
+## Version 0.1   
+This document is a description of the additions to the sections not included in the CIS reference documentation. Includes STIG reference documentation and additional checks recommended by the HardenedLinux community. 
+
+## 1.2 Enable Option for signature of packages from a repository (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description
+The operating system must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization.
+
+### Rationale
+Changes to any software components can have significant effects on the overall security of the operating system. This requirement ensures the software has not been tampered with and that it has been provided by a trusted vendor. Accordingly, patches, service packs, device drivers, or operating system components must be signed with a certificate recognized and approved by the organization. Verifying the authenticity of the software prior to installation validates the integrity of the patch or upgrade received from a vendor. This verifies the software has not been tampered with and that it has been provided by a trusted vendor. Self-signed certificates are disallowed by this requirement. The operating system should not have to verify the software again. This requirement does not mandate DoD certificates for this purpose; however, the certificate used to verify the software must be from an approved CA.
+
+### Aduit
+Verify the operating system prevents the installation of patches, service packs, device drivers, or operating system components from a repository without verification that they have been digitally signed using a certificate that is recognized and approved by the organization. Check that apt verifies the signature of packages from a repository prior to install with the following command:
+```
+$ sudo grep AllowUnauthenticated /etc/apt/ -r 
+APT::Get::AllowUnauthenticated "true";
+```
+If "AllowUnauthenticated" is set to "true", this is a finding.
+
+### Remediation
+Delete the configuration line containing "AllowUnauthenticated".
+
+## 1.3 Enable verify the signature of local packages (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description
+The operating system must prevent the installation of software, patches, service packs, device drivers, or operating system components of local packages without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization.
+
+### Rationale
+Changes to any software components can have significant effects on the overall security of the operating system. This requirement ensures the software has not been tampered with and that it has been provided by a trusted vendor. Accordingly, patches, service packs, device drivers, or operating system components must be signed with a certificate recognized and approved by the organization. Verifying the authenticity of the software prior to installation validates the integrity of the patch or upgrade received from a vendor. This verifies the software has not been tampered with and that it has been provided by a trusted vendor. Self-signed certificates are disallowed by this requirement. The operating system should not have to verify the software again. This requirement does not mandate DoD certificates for this purpose; however, the certificate used to verify the software must be from an approved CA.
+
+### Aduit
+Verify the operating system prevents the installation of patches, service packs, device drivers, or operating system components from a repository without verification that they have been digitally signed using a certificate that is recognized and approved by the organization. Check that apt verifies the signature of packages from a repository prior to install with the following command:
+```
+$ sudo grep -v "^#" /etc/dpkg/dpkg.cfg | grep no-debsig
+no-debsig
+```
+If "no-debsig" is set, this is a finding.
+
+### Remediation
+Delete the configuration line containing "no-debsig".
+
+## 1.4 Set no allow insecure repository when by apt update (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description
+The operating system must prevent the installation of software, patches, service packs, device drivers, or operating system components of packages without verification of the repository metadata.
+
+### Rationale
+Changes to any software components can have significant effects on the overall security of the operating system. This requirement ensures the software has not been tampered with and that it has been provided by a trusted vendor. Accordingly, patches, service packs, device drivers, or operating system components must be signed with a certificate recognized and approved by the organization. Verifying the authenticity of the software prior to installation validates the integrity of the patch or upgrade received from a vendor. This ensures the software has not been tampered with and that it has been provided by a trusted vendor. Self-signed certificates are disallowed by this requirement. The operating system should not have to verify the software again. This requirement does not mandate DoD certificates for this purpose; however, the certificate used to verify the software must be from an approved Certificate Authority.
+
+### Aduit
+
+Verify the operating system prevents the installation of patches, service packs, device drivers, or operating system components of local packages without verification of the repository metadata. Check that apt verifies the package metadata prior to install with the following command:
+```
+$ sudo grep AllowInsecureRepositories /etc/apt/ -r 
+Acquire::AllowInsecureRepositories "true";
+```
+If "AllowInsecureRepositories" is set to "true", this is a finding.
+
+### Remediation
+Configure the operating system to verify the repository metadata by setting the following options in the "/etc/apt/[conf-file]" file:
+```
+Acquire::AllowInsecureRepositories "false";
+```
+
+## 2.26 Set nosuid option for /home filesystem/Partition (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description
+File systems that contain user home directories must be mounted to prevent files with the setuid and setgid bit set from being executed.
+
+### Rationale
+The "nosuid" mount option causes the system to not execute setuid and setgid files with owner privileges. This option must be used for mounting any file system not containing approved setuid and setguid files. Executing files from untrusted file systems increases the opportunity for unprivileged users to attain unauthorized administrative access.
+
+### Aduit
+Verify file systems that contain user home directories are mounted with the "nosuid" option. Find the file system(s) that contain the user home directories with the following command:
+Note: If a separate file system has not been created for the user home directories (user home directories are mounted under "/"), this is not a finding as the "nosuid" option cannot be used on the "/" system.
+```
+$ sudo cut -d: -f 1,3,6 /etc/passwd | egrep ":[1-4][0-9]{3}"
+smithj:1001:/home/smithj
+thomasr:1002:/home/thomasr
+```
+
+Check the file systems that are mounted at boot time with the following command:
+```
+$ sudo more /etc/fstab
+UUID=a411dc99-f2a1-4c87-9e05-184977be8539 /home   ext4   rw,relatime,discard,data=ordered,nosuid 0 2
+```     
+
+### Remediation
+Configure the "/etc/fstab" to use the "nosuid" option on file systems that contain user home directories.
+
+## 2.27 Set nosuid option for nfs/nfs4 filesystem/Partition (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description
+File systems that are being imported via Network File System (NFS) must be mounted to prevent files with the setuid and setgid bit set from being executed.
+
+### Rationale
+The "nosuid" mount option causes the system to not execute "setuid" and "setgid" files with owner privileges. This option must be used for mounting any file system not containing approved "setuid" and "setguid" files. Executing files from untrusted file systems increases the opportunity for unprivileged users to attain unauthorized administrative access.
+
+### Aduit
+Verify file systems that are being NFS exported are mounted with the "nosuid" option. Find the file system(s) that contain the directories being exported with the following command:
+```
+$ sudo more /etc/fstab | grep nfs
+UUID=59754be2-37c0-4938-973f-e8865dc84d10 /hardenedlinux               nfs    errors=remount-ro 0       2
+arrakis.internal.falcot.com:/shared /srv/shared               nfs4  rw 0       2
+```
+If a file system found in "/etc/fstab" refers to NFS and it does not have the "nosuid" option set, this is a finding.
+
+### Remediation
+Configure the "/etc/fstab" to use the "nosuid" option on file systems that are being exported via NFS/NFS4.
+
+## 2.28 Set noexec option for nfs/nfs4 filesystem/Partition (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description
+File systems that are being imported via Network File System (NFS) must be mounted to prevent binary files from being executed.
+
+### Rationale
+The "noexec" mount option causes the system to not execute binary files. This option must be used for mounting any file system not containing approved binary files as they may be incompatible. Executing files from untrusted file systems increases the opportunity for unprivileged users to attain unauthorized administrative access.
+
+### Aduit
+Verify file systems that are being NFS exported are mounted with the "noexec" option. Find the file system(s) that contain the directories being exported with the following command:
+```
+$ sudo more /etc/fstab | grep nfs
+UUID=59754be2-37c0-4938-973f-e8865dc84d10 /hardenedlinux               nfs    errors=remount-ro 0       2
+arrakis.internal.falcot.com:/shared /srv/shared               nfs4  rw 0       2
+```
+If a file system found in "/etc/fstab" refers to NFS and it does not have the "noexec" option set, and use of NFS exported binaries is not documented with the Information System Security Officer (ISSO) as an operational requirement, this is a finding.
+
+### Remediation
+Configure the "/etc/fstab" to use the "noexec" option on file systems that are being exported via NFS/NFS4.
+
+## 2.29 Set RPCSEC_GSS option for nfs/nfs4 filesystem/Partition (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description
+The Network File System (NFS) must be configured to use RPCSEC_GSS.
+
+### Rationale
+When an NFS server is configured to use RPCSEC_SYS, a selected userid and groupid are used to handle requests from the remote user. The userid and groupid could mistakenly or maliciously be set incorrectly. The RPCSEC_GSS method of authentication uses certificates on the server and client systems to more securely authenticate the remote mount request.
+
+### Aduit
+Verify "AUTH_GSS" is being used to authenticate NFS mounts. To check if the system is importing an NFS file system, look for any entries in the "/etc/fstab" file that have a file system type of "nfs" with the following command:
+```
+$ sudo cat /etc/fstab | grep nfs
+192.168.21.5:/mnt/export /data1 nfs4 rw,sync ,soft,sec=krb5:krb5i:krb5p
+```
+If the system is mounting file systems via NFS and has the sec option without the "krb5:krb5i:krb5p" settings, the "sec" option has the "sys" setting, or the "sec" option is missing, this is a finding.
+
+### Remediation
+Update the "/etc/fstab" file so the option "sec" is defined for each NFS mounted file system and the "sec" option does not have the "sys" setting. \n\nEnsure the "sec" option is defined as "krb5:krb5i:krb5p"
+
+## 4.6  Disable USB Devices (scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+USB Devices must be disabled.
+
+### Rationale
+USB Devices permits easy introduction of unknown devices, thereby facilitating malicious activity.
+
+### Aduit
+If there is an HBSS with a Device Control Module and a Data Loss Prevention mechanism, this requirement is not applicable. Verify the operating system disables the ability to use USB devices. Check to see if USB Devices is disabled with the following command:
+```
+$ sudo grep '^ACTION=="add", SUBSYSTEMS=="usb", TEST=="authorized_default", ATTR{authorized_default}="0"' /etc/udev/rules.d/ -r
+/etc/udev/rules.d/CIS_4.6_usb_devices.conf:ACTION=="add", SUBSYSTEMS=="usb", TEST=="authorized_default", ATTR{authorized_default}="0"
+```
+If the command does not return any output, and use of USB storage devices is not documented with the Information System Security Officer (ISSO) as an operational requirement, this is a finding.
+
+### Remediation
+Configure the operating system to disable the ability to use USB devices.
+```
+$ sudo vim /etc/udev/rules.d/CIS_4.6_usb_devices.conf
+```
+Add or update the line:
+```
+# By default, disable all.
+ACTION=="add", SUBSYSTEMS=="usb", TEST=="authorized_default", ATTR{authorized_default}="0"
+
+# Enable hub devices.
+ACTION=="add", ATTR{bDeviceClass}=="09", TEST=="authorized", ATTR{authorized}="1"
+
+# Enables keyboard devices
+ACTION=="add", ATTR{product}=="*[Kk]eyboard*", TEST=="authorized", ATTR{authorized}="1"
+
+# PS2-USB converter
+ACTION=="add", ATTR{product}=="*Thinnet TM*", TEST=="authorized", ATTR{authorized}="1"
+```
+
+## 5.7 Install screen (scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+A session time-out lock is a temporary action taken when a user stops work and moves away from the immediate physical vicinity of the information system but does not log out because of the temporary nature of the absence. Rather than relying on the user to manually lock their operating system session prior to vacating the vicinity, operating systems need to be able to identify when a user's session has idled and take action to initiate the session lock. The screen package allows for a session lock to be implemented and configured.
+
+### Rationale
+You can use the lock function of the screen to lock the current terminal and prevent the current session from exiting due to timeout. 
+
+### Aduit
+Verify the operating system has the screen package installed. Check to see if the screen package is installed with the following command:
+```
+# dpkg -s screen | grep  '^Status: install'
+```
+
+### Remediation
+Install the screen program (if it is not on the system) with the following command:
+```
+# apt-get install screen
+```
+The console can now be locked with the following key combination: ctrl+a x 
+
+## 5.8 Ensure openssh server is enabled (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description
+All networked systems must have SSH installed.
+
+### Rationale
+Without protection of the transmitted information, confidentiality and integrity may be compromised because unprotected communications can be intercepted and either read or altered. This requirement applies to both internal and external networks and all types of information system components from which information can be transmitted (e.g., servers, mobile devices, notebook computers, printers, copiers, scanners, and facsimile machines). Communication paths outside the physical protection of a controlled boundary are exposed to the possibility of interception and modification. Protecting the confidentiality and integrity of organizational information can be accomplished by physical means (e.g., employing physical distribution systems) or by logical means (e.g., employing cryptographic techniques). If physical means of protection are employed, logical means (cryptography) do not have to be employed, and vice versa.
+
+### Aduit
+Check to see if sshd is installed with the following command:
+```
+# dpkg -s openssh-server | grep '^Status: install'
+Status: install ok installed
+# dpkg -s openssh-client | grep '^Status: install'
+Status: install ok installed
+```
+If the "openssh-server" package is not installed, this is a finding. If the "openssh-client" package is not installed, this is a finding.
+
+### Remediation
+Install SSH packages onto the host with the following commands:
+```
+# apt-get install -y openssh-server openssh-client
+```
+
+## 5.9 Ensure ctrl-alt-del key sequence is disabled (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description
+The x86 Ctrl-Alt-Delete key sequence must be disabled.
+
+### Rationale
+A locally logged-on user who presses Ctrl-Alt-Delete, when at the console, can reboot the system. If accidentally pressed, as could happen in the case of a mixed OS environment, this can create the risk of short-term loss of availability of systems due to unintentional reboot. In the GNOME graphical environment, risk of unintentional reboot from the Ctrl-Alt-Delete sequence is reduced because the user will be prompted before any action is taken.
+
+### Aduit
+Verify the operating system is not configured to reboot the system when Ctrl-Alt-Delete is pressed. Check that the ctrl-alt-del.service is not active with the following command:
+```
+# find /lib/systemd/ /etc/systemd/ -name ctrl-alt-del.target -exec ls -l {} \;| grep -v "/dev/null" | awk '{print $NF}'
+/lib/systemd/system/ctrl-alt-del.target
+/etc/systemd/system/ctrl-alt-del.target
+```
+If the ctrl-alt-del.target is not link to /dev/null, this is a finding.
+
+### Remediation
+Configure the system to disable the Ctrl-Alt_Delete sequence for the command line with the following command:
+if config file is in /lib/systemd/:
+```
+# rm /lib/systemd/system/ctrl-alt-del.target
+# systemctl daemon-reload
+```
+if config file is in /etc/systemd/:
+```
+# systemctl mask /etc/systemd/ctrl-alt-del.target
+# systemctl daemon-reload
+```
+
+## 5.10 Ensure sudo is installed (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description
+Systems must have sudo installed.
+
+### Rationale
+The su command allows a user to run a command or shell as another user. The program has been superseded by sudo, which allows for more granular control over privileged access. 
+
+### Aduit
+Verify the operating system has the sudo package installed. Check to see if the sudo package is installed with the following command:
+```
+# dpkg -s sudo | grep  '^Status: install'
+```
+
+### Remediation
+Install the sudo program (if it is not on the system) with the following command:
+```
+# apt-get install sudo
+```
+
+## 6.17 ensure virul scan server is enabled (scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+The system must use a virus scan program.
+
+### Rationale
+Virus scanning software can be used to protect a system from penetration from computer viruses and to limit their spread through intermediate systems.  The virus scanning software should be configured to perform scans dynamically on accessed files. If this capability is not available, the system must be configured to scan, at a minimum, all altered files on the system on a daily basis.
+
+### Aduit
+Verify the system is using a virus scan program. check for the presence of "clamav" on the system with the following command:
+```
+# systemctl | grep clamav-daemon
+clamav-daemon.service                                                                         loaded active running   Clam AntiVirus userspace daemon 
+```
+If neither of these applications are loaded and active, ask the System Administrator if there is an antivirus package installed and active on the system. If no antivirus scan program is active on the system, this is a finding.
+
+### Remediation
+Install the clamav program (if it is not on the system) with the following command:
+```
+# apt-get install -y clamav-daemon
+```
+
+## 6.18 ensure virul scan server update is enabled (scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+The system must update the virus scan program every seven days or more frequently.
+
+### Rationale
+Virus scanning software can be used to protect a system from penetration from computer viruses and to limit their spread through intermediate systems.  The virus scanning software should be configured to check for software and virus definition updates with a frequency no longer than seven days. If a manual process is required to update the virus scan software or definitions, it must be documented with the Information System Security Officer (ISSO).
+
+### Aduit
+Verify the system is using a virus scan program and the virus definition file is less than seven days old. Check for the presence of "clamav" on the system with the following command:
+```
+# systemctl | grep clamav
+clamav-daemon.service                                                                            loaded active running   Clam AntiVirus userspace daemon 
+```
+If "clamav" is active on the system, check the dates of the virus database with the following commands:
+```
+# grep -i databasedirectory /etc/clamav/clamd.conf
+DatabaseDirectory /var/lib/clamav
+# ls -al /var/lib/clamav/daily.cvd 
+-rw-r--r-- 1 clamav clamav 51698014 Oct 26  2018 /var/lib/clamav/daily.cvd
+```
+If the database file has a date older than seven days from the current date, this is a finding.
+
+### Remediation
+Update the virus scan software and virus definition files, enable clamav-freshclam service.
+
+## 7.1.3  Disable promiscuous mode for network interface (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description
+Network interfaces must not be in promiscuous mode.
+
+### Rationale
+Network interfaces in promiscuous mode allow for the capture of all network traffic visible to the system. If unauthorized individuals can access these applications, it may allow then to collect information such as logon IDs, passwords, and key exchanges between systems. If the system is being used to perform a network troubleshooting function, the use of these tools must be documented with the Information System Security Officer (ISSO) and restricted to only authorized personnel.
+
+### Aduit
+Verify network interfaces are not in promiscuous mode unless approved by the ISSO and documented. Check for the status with the following command: 
+```
+# ip link | grep -i promisc
+```
+If network interfaces are found on the system in promiscuous mode and their use has not been approved by the ISSO and documented, this is a finding.
+
+### Remediation
+Configure network interfaces to turn off promiscuous mode unless approved by the ISSO and documented. Set the promiscuous mode of an interface to off with the following command:
+```
+#ip link set dev <devicename> multicast off promisc off
+```
+
+## 7.7.2 Ensure the Firewall is set rules (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description
+The host must be configured to prohibit or restrict the use of functions, ports, protocols, and/or services, as defined in the Ports, Protocols, and Services Management Component Local Service Assessment (PPSM CLSA) and vulnerability assessments.
+
+### Rationale
+In order to prevent unauthorized connection of devices, unauthorized transfer of information, or unauthorized tunneling (i.e., embedding of data types within data types), organizations must disable or restrict unused or unnecessary physical and logical ports/protocols on information systems. Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services provided by default may not be necessary to support essential organizational operations. Additionally, it is sometimes convenient to provide multiple services from a single component (e.g., VPN and IPS); however, doing so increases risk over limiting the services provided by any one component. To support the requirements and principles of least functionality, the operating system must support the organizational requirements, providing only essential capabilities and limiting the use of ports, protocols, and/or services to only those required, authorized, and approved to conduct official business or to address authorized quality of life issues.
+
+### Aduit
+Inspect the firewall configuration and running services to verify that it is configured to prohibit or restrict the use of functions, ports, protocols, and/or services that are unnecessary or prohibited. Check which services are currently active with the following command:
+```
+# /sbin/iptables -S | grep -Ec "^-A|^-I"
+100
+```
+If rules count is equal 0, this is a finding.
+
+### Remediation
+Create a direct firewall rule to protect against DoS attacks need administrator add rules.
+
+## 7.7.3 Ensure the Firewall is set rules of protect DOS attacks (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description
+The operating system must protect against or limit the effects of Denial of Service (DoS) attacks by validating the operating system is implementing rate-limiting measures on impacted network interfaces.
+
+### Rationale
+DoS is a condition when a resource is not available for legitimate users. When this occurs, the organization either cannot accomplish its mission or must operate at degraded capacity. This requirement addresses the configuration of the operating system to mitigate the impact of DoS attacks that have occurred or are ongoing on system availability. For each system, known and potential DoS attacks must be identified and solutions for each type implemented. A variety of technologies exist to limit or, in some cases, eliminate the effects of DoS attacks (e.g., limiting processes or establishing memory partitions). Employing increased capacity and bandwidth, combined with service redundancy, may reduce the susceptibility to some DoS attacks.
+
+### Aduit
+Verify the operating system protects against or limits the effects of DoS attacks by ensuring the operating system is implementing rate-limiting measures on impacted network interfaces. Check the firewall configuration with the following command:
+```
+# /sbin/iptables -S | grep -E "\-m.*limit" | grep -Ec "\-\-limit-burst"
+```
+If a rule with both the limit and limit-burst arguments parameters does not exist, this is a finding.
+
+### Remediation
+Create a direct firewall rule to protect against DoS attacks need administrator add rules.
+
+## 8.1.1.4 Set failure mode of audit service (scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+The operating system must shut down upon audit processing failure, unless availability is an overriding concern. If availability is a concern, the system must alert the designated staff (System Administrator [SA] and Information System Security Officer [ISSO] at a minimum) in the event of an audit processing failure.
+
+### Rationale
+It is critical for the appropriate personnel to be aware if a system is at risk of failing to process audit logs as required. Without this notification, the security personnel may be unaware of an impending failure of the audit capability, and system operation may be adversely affected. Audit processing failures include software/hardware errors, failures in the audit capturing mechanisms, and audit storage capacity being reached or exceeded. This requirement applies to each audit data storage repository (i.e., distinct information system component where audit records are stored), the centralized audit storage capacity of organizations (i.e., all audit data storage repositories combined), or both.
+
+### Aduit
+Confirm the audit configuration regarding how auditing processing failures are handled. Check to see what level "auditctl" is set to with following command: 
+```
+# auditctl -s | grep -i "fail"
+failure 2
+```
+If the value of "failure" is set to "2", the system is configured to panic (shut down) in the event of an auditing failure. If the value of "failure" is set to "1", the system is configured to only send information to the kernel log regarding the failure. If the "failure" setting is not set, this is a CAT I finding. If the "failure" setting is set to any value other than "1" or "2", this is a CAT II finding. If the "failure" setting is set to "1" but the availability concern is not documented or there is no monitoring of the kernel log, this is a CAT III finding.
+
+### Remediation
+Configure the operating system to shut down in the event of an audit processing failure. Add or correct the option to shut down the operating system with the following command:
+```
+# auditctl -f 2
+```
+Edit the "/etc/audit/rules.d/audit.rules" file and add the following line:
+```
+-f 2
+```
+If availability has been determined to be more important, and this decision is documented with the ISSO, configure the operating system to notify system administration staff and ISSO staff in the event of an audit processing failure with the following command:
+```
+# auditctl -f 1
+```
+Edit the "/etc/audit/rules.d/audit.rules" file and add the following line:
+```
+-f 1
+```
+Kernel log monitoring must also be configured to properly alert designated staff. The audit daemon must be restarted for the changes to take effect.
+
+## 8.1.1.5 Ensure set remote_server for audit service (scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+The operating system must off-load audit records onto a different system or media from the system being audited.
+
+### Rationale
+Information stored in one location is vulnerable to accidental or incidental deletion or alteration. Off-loading is a common process in information systems with limited audit storage capacity.
+
+### Aduit
+Verify the operating system off-loads audit records onto a different system or media from the system being audited. To determine the remote server that the records are being sent to, use the following command:
+```
+# grep -i remote_server /etc/audisp/audisp-remote.conf
+remote_server = 10.0.21.1 
+```
+If a remote server is not configured, or the line is commented out, ask the System Administrator to indicate how the audit logs are off-loaded to a different system or media. If there is no evidence that the audit logs are being off-loaded to another system or media, this is a finding.
+
+### Remediation (Need manual fix)
+Configure the operating system to off-load audit records onto a different system or media from the system being audited. Set the remote server option in "/etc/audisp/audisp-remote.conf" with the IP address of the log aggregation server.
+
+## 8.1.1.6 Ensure enable_krb5 set to yes for remote audit service (scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+The operating system must encrypt the transfer of audit records off-loaded onto a different system or media from the system being audited.
+
+### Rationale
+Information stored in one location is vulnerable to accidental or incidental deletion or alteration.\n\nOff-loading is a common process in information systems with limited audit storage capacity.
+
+### Aduit
+Verify the operating system encrypts audit records off-loaded onto a different system or media from the system being audited. To determine if the transfer is encrypted, use the following command:
+```
+# grep -i enable_krb5 /etc/audisp/audisp-remote.conf
+enable_krb5 = yes
+```
+If the value of the "enable_krb5" option is not set to "yes" or the line is commented out, ask the System Administrator to indicate how the audit logs are off-loaded to a different system or media. If there is no evidence that the transfer of the audit logs being off-loaded to another system or media is encrypted, this is a finding.
+
+### Remediation (Need manual fix)
+Configure the operating system to encrypt the transfer of off-loaded audit records onto a different system or media from the system being audited. Uncomment the "enable_krb5" option in "/etc/audisp/audisp-remote.conf" and set it with the following line:
+```
+enable_krb5 = yes
+```
+
+## 8.1.1.7 Ensure set action for audit storage volume is fulled (scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+The audit system must take appropriate action when the audit storage volume is full.
+
+### Rationale
+Taking appropriate action in case of a filled audit storage volume will minimize the possibility of losing audit records.
+
+### Aduit
+Verify the action the operating system takes if the disk the audit records are written to becomes full. To determine the action that takes place if the disk is full on the remote server, use the following command:
+```
+# grep -i disk_full_action /etc/audisp/audisp-remote.conf
+disk_full_action = single
+```
+If the value of the "disk_full_action" option is not "syslog", "single", or "halt", or the line is commented out, this is a finding.
+
+### Remediation (Need manual fix)
+Configure the action the operating system takes if the disk the audit records are written to becomes full. Uncomment or edit the "disk_full_action" option in "/etc/audisp/audisp-remote.conf" and set it to "syslog", "single", or "halt", such as the following line:
+```
+disk_full_action = syslog
+```
+
+## 8.1.1.8 Ensure set action for network failure on remote audit service (scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+The audit system must take appropriate action when the network connection fails.
+
+### Rationale
+Taking appropriate action in case of network connection is failure.
+
+### Aduit
+Verify the action the operating system takes if the network connection fails. To determine the action that takes place if the network connection failure on the remote server, use the following command:
+```
+# grep -i network_failure_action /etc/audisp/audisp-remote.conf
+network_failure_action = single
+```
+If the value of the "network_failure_action" option is not "syslog", "single", or "halt", or the line is commented out, this is a finding.
+
+### Remediation (Need manual fix)
+Configure the action the operating system takes if the network connection is failure. Uncomment or edit the "network_failure_action" option in "/etc/audisp/audisp-remote.conf" and set it to "syslog", "single", or "halt", such as the following line:
+```
+network_failure_action = syslog
+```
+
+## 8.1.1.9 Set space left for auditd service  (scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+The operating system must immediately notify the System Administrator (SA) and Information System Security Officer ISSO (at a minimum) when allocated audit record storage volume reaches 75% of the repository maximum audit record storage capacity.
+
+### Rationale
+If security personnel are not notified immediately when storage volume reaches 75 percent utilization, they are unable to plan for audit record storage capacity expansion.
+
+### Aduit
+Verify the operating system immediately notifies the SA and ISSO (at a minimum) when allocated audit record storage volume reaches 75 percent of the repository maximum audit record storage capacity. Check the system configuration to determine the partition the audit records are being written to with the following command:
+```
+# grep log_file /etc/audit/auditd.conf
+log_file = /var/log/audit/audit.log
+```
+Check the size of the partition that audit records are written to (with the example being "/var/log/audit/"):
+```
+# df -B 1m /var/log/audit/
+Filesystem     1M-blocks  Used Available Use% Mounted on
+/dev/sda1          18015  2002     15076  12% /
+```
+Determine what the threshold is for the system to take action when 75 percent of the repository maximum audit record storage capacity is reached:
+```
+# grep -i space_left /etc/audit/auditd.conf
+space_left = 225 
+```
+If the value of the "space_left" keyword is not equal or greater to 25 percent of the total partition size, this is a finding.
+
+### Remediation 
+Configure the operating system to immediately notify the SA and ISSO (at a minimum) when allocated audit record storage volume reaches 75 percent of the repository maximum audit record storage capacity. Check the system configuration to determine the partition the audit records are being written to: 
+```
+# grep log_file /etc/audit/auditd.conf
+```
+Determine the size of the partition that audit records are written to (with the example being "/var/log/audit/"):
+```
+# df -B 1m /var/log/audit/
+Filesystem     1M-blocks  Used Available Use% Mounted on
+/dev/sda1          18015  2002     15076  12% /
+```
+Set the value of the "space_left" keyword in "/etc/audit/auditd.conf" to 25 percent of the partition size.
+
+## 8.1.19 Recored ssh-keysign command usage (scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+All uses of the ssh-keysign command must be audited.
+
+### Rationale
+Reconstruction of harmful events or forensic analysis is not possible if audit records do not contain enough information. At a minimum, the organization must audit the full-text recording of privileged ssh commands. The organization must maintain audit trails in sufficient detail to reconstruct events to determine the cause and impact of compromise.
+
+### Aduit
+Verify the operating system generates audit records when successful/unsuccessful attempts to use the "ssh-keysign" command occur. Check for the following system call being audited by performing the following command to check the file system rules in "/etc/audit/audit.rules": 
+```
+# grep -i /usr/lib/openssh/ssh-keysign /etc/audit/audit.rules
+-a always,exit -F path=/usr/lib/openssh/ssh-keysign -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-ssh
+```
+If the command does not return any output, this is a finding.
+
+### Remediation
+Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "ssh-keysign" command occur. Add or update the following rule in "/etc/audit/rules.d/audit.rules": 
+```
+-a always,exit -F path=/usr/lib/openssh/ssh-keysign -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-ssh
+```
+The audit daemon must be restarted for the changes to take effect.
+
+## 8.1.20 Recored open_by_handle_at syscall (scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+All uses of the open_by_handle_at commands must be audited.
+
+### Rationale
+Without generating audit records that are specific to the security and mission needs of the organization, it would be difficult to establish, correlate, and investigate the events relating to an incident or identify those responsible for one. Audit records can be generated from various components within the information system (e.g., module or policy filter).
+
+### Aduit
+Verify the operating system generates audit records when successful/unsuccessful attempts to use the "open_by_handle_at" command occur. Check the file system rules in "/etc/audit/audit.rules" with the following commands:
+```
+# grep -iw open_by_handle_at /etc/audit/audit.rules
+-a always,exit -F arch=b64 -S open_by_handle_at -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access 
+-a always,exit -F arch=b64 -S open_by_handle_at -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+```
+If there are no audit rules defined for the open_by_handle_at syscall, this is a finding. If the output does not produce a rule containing -F exit=-EPERM, this is a finding. If the output does not produce a rule containing -F exit=-EACCES, this is a finding.
+
+### Remediation
+Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "open_by_handle_at" command occur. Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+```
+-a always,exit -F arch=b64 -S open_by_handle_at -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+-a always,exit -F arch=b64 -S open_by_handle_at -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+```
+The audit daemon must be restarted for the changes to take effect.
+
+## 8.1.21 Recored Events that privileged-pasdsw command usage (Scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+All uses of the privileged-passwd commands must be audited.
+
+### Rationale
+Reconstruction of harmful events or forensic analysis is not possible if audit records do not contain enough information. At a minimum, the organization must audit the full-text recording of privileged password commands. The organization must maintain audit trails in sufficient detail to reconstruct events to determine the cause and impact of compromise.
+
+### Aduit
+Verify the operating system generates audit records when successful/unsuccessful attempts to use the "privileged-passwd" commands occur. Check the file system rule in "/etc/audit/audit.rules" with the following command:
+```
+# grep -i /usr/bin/passwd /etc/audit/audit.rules
+-a always,exit -F path=/usr/bin/passwd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-passwd
+# grep -i /sbin/unix_chkpwd /etc/audit/audit.rules
+-a always,exit -F path=/sbin/unix_chkpwd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-passwd
+# grep -i /usr/bin/gpasswd /etc/audit/audit.rules
+-a always,exit -F path=/usr/bin/gpasswd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-passwd
+# grep -i /usr/bin/chage /etc/audit/audit.rules
+-a always,exit -F path=/usr/bin/chage -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-passwd'
+```
+If the command does not return any output, this is a finding.
+
+### Remediation
+Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "privileged-passwd" commands occur. Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+```
+-a always,exit -F path=/usr/bin/passwd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-passwd
+-a always,exit -F path=/sbin/unix_chkpwd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-passwd
+-a always,exit -F path=/usr/bin/gpasswd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-passwd
+-a always,exit -F path=/usr/bin/chage -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-passwd
+```
+The audit daemon must be restarted for the changes to take effect.
+
+## 8.1.22 Recored Events that privileged-priv-change command usage (Scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+All uses of the privileged-priv-change commands must be audited.
+
+### Rationale
+Reconstruction of harmful events or forensic analysis is not possible if audit records do not contain enough information. At a minimum, the organization must audit the full-text recording of privileged access commands. The organization must maintain audit trails in sufficient detail to reconstruct events to determine the cause and impact of compromise.
+
+### Aduit
+Verify the operating system generates audit records when successful/unsuccessful attempts to use the "privileged-priv-change" commands occur. Check for the following system call being audited by performing the following command to check the file system rules in "/etc/audit/audit.rules": 
+```
+# grep -i /bin/su /etc/audit/audit.rules
+-a always,exit -F path=/bin/su -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change
+# grep -i /usr/bin/sudo /etc/audit/audit.rules
+-a always,exit -F path=/usr/bin/sudo -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change
+# grep -i /usr/bin/newgrp /etc/audit/audit.rules
+-a always,exit -F path=/usr/bin/newgrp -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change
+# grep -i /usr/bin/chsh /etc/audit/audit.rules
+-a always,exit -F path=/usr/bin/chsh -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change
+# grep -i /usr/bin/sudoedit /etc/audit/audit.rules
+-a always,exit -F path=/usr/bin/sudoedit -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change
+```
+If the command does not return any output, this is a finding.
+
+### Remediation
+Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "privileged-priv-change" commands occur. Add or update the following rule in "/etc/audit/rules.d/audit.rules": 
+```
+-a always,exit -F path=/bin/su -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change
+-a always,exit -F path=/usr/bin/sudo -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change
+-a always,exit -F path=/usr/bin/newgrp -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change
+-a always,exit -F path=/usr/bin/chsh -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change
+-a always,exit -F path=/usr/bin/sudoedit -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change
+```
+The audit daemon must be restarted for the changes to take effect.
+
+## 8.1.23 Recored Events that privileged-postfix commands usage (Scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+All uses of the privileged-postfix commands must be audited.
+
+### Rationale
+Reconstruction of harmful events or forensic analysis is not possible if audit records do not contain enough information. At a minimum, the organization must audit the full-text recording of privileged postfix commands. The organization must maintain audit trails in sufficient detail to reconstruct events to determine the cause and impact of compromise.
+
+### Aduit
+Verify the operating system generates audit records when successful/unsuccessful attempts to use the "privileged-postfix" commands occur.Check for the following system call being audited by performing the following command to check the file system rules in "/etc/audit/audit.rules": 
+```
+# grep -i /usr/sbin/postdrop /etc/audit/audit.rules
+-a always,exit -F path=/usr/sbin/postdrop -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-postfix
+# grep -i /usr/sbin/postqueue /etc/audit/audit.rules
+-a always,exit -F path=/usr/sbin/postqueue -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-postfix
+```
+If the command does not return any output, this is a finding.
+
+### Remediation 
+Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "privileged-postfix" commands occur. Add or update the following rule in "/etc/audit/rules.d/audit.rules": 
+```
+-a always,exit -F path=/usr/sbin/postdrop -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-postfix
+-a always,exit -F path=/usr/sbin/postqueue -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-postfix
+```
+
+The audit daemon must be restarted for the changes to take effect.
+
+## 8.1.24 Recored crontab command usage (scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+All uses of the crontab command must be audited.
+
+### Rationale
+Reconstruction of harmful events or forensic analysis is not possible if audit records do not contain enough information. At a minimum, the organization must audit the full-text recording of privileged commands. The organization must maintain audit trails in sufficient detail to reconstruct events to determine the cause and impact of compromise.
+
+### Aduit
+Verify the operating system generates audit records when successful/unsuccessful attempts to use the "crontab" command occur. Check for the following system call being audited by performing the following command to check the file system rules in "/etc/audit/audit.rules": 
+```
+# grep -i /usr/bin/crontab /etc/audit/audit.rules
+-a always,exit -F path=/usr/bin/crontab -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-cron
+```
+If the command does not return any output, this is a finding.
+
+### Remediation
+Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "crontab" command occur. Add or update the following rule in "/etc/audit/rules.d/audit.rules": 
+```
+-a always,exit -F path=/usr/bin/crontab -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-cron
+```
+
+The audit daemon must be restarted for the changes to take effect.
+
+## 8.1.25 Recored pam_timestamp_check command usage (scored) 
+
+### Profile Applicability
+Level 4
+
+### Description
+All uses of the pam_timestamp_check command must be audited.
+
+### Rationale
+Without generating audit records that are specific to the security and mission needs of the organization, it would be difficult to establish, correlate, and investigate the events relating to an incident or identify those responsible for one.
+
+### Aduit
+Verify the operating system generates audit records when successful/unsuccessful attempts to use the "pam_timestamp_check" command occur. Check the auditing rules in "/etc/audit/audit.rules" with the following command:
+```
+# grep -i "/sbin/pam_timestamp_check" /etc/audit/audit.rules
+-a always,exit -F path=/usr/sbin/pam_timestamp_check -F perm=x -F auid>=1000 -F auid!=4294967295  -k privileged-pam
+```
+If the command does not return any output, this is a finding.
+
+### Remediation 
+Fixtext: Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "pam_timestamp_check" command occur. Add or update the following rule in "/etc/audit/rules.d/audit.rules": 
+```
+-a always,exit -F path=/usr/sbin/pam_timestamp_check -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-pam
+```
+The audit daemon must be restarted for the changes to take effect.
+
+## 8.1.26 Recored pam_tally/pam_tally2 command usage (scored)
+
+### Profile Applicability
+Level 4
+
+### Description
+All uses of the pam_tally/pam_tally2 command must be audited.
+
+### Rationale
+Without generating audit records that are specific to the security and mission needs of the organization, it would be difficult to establish, correlate, and investigate the events relating to an incident or identify those responsible for one.
+
+### Aduit
+Verify the operating system generates audit records when successful/unsuccessful attempts to use the "pam_tally/pam_tally2" command occur. Check the auditing rules in "/etc/audit/audit.rules" with the following command:
+```
+# grep "/sbin/pam_tally[2]*" /etc/audit/audit.rules
+-a always,exit -F path=/sbin/pam_tally -F perm=wxa -F auid>=1000 -F auid!=4294967295  -k privileged-pam
+-a always,exit -F path=/sbin/pam_tally2 -F perm=wxa -F auid>=1000 -F auid!=4294967295  -k privileged-pam
+```
+If the command does not return any output, this is a finding.
+
+### Remediation 
+Fixtext: Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "pam_tally/pam_tally2" command occur. Add or update the following rule in "/etc/audit/rules.d/audit.rules": 
+```
+-a always,exit -F path=/sbin/pam_tally -F perm=wxa -F auid>=1000 -F auid!=4294967295  -k privileged-pam
+-a always,exit -F path=/sbin/pam_tally2 -F perm=wxa -F auid>=1000 -F auid!=4294967295  -k privileged-pam
+```
+The audit daemon must be restarted for the changes to take effect.
+
+## 8.1.27 Record Events That Modify configuration files (scored)
+
+### Profile Applicability
+Level 4
+
+### Description
+Record events affecting the auditd, grub, fstab, pam, systectl configuration files. th
+
+### Rationale
+Unexpected changes to these files could be an indication that the system has been compromised and that an unauthorized user is attempting to hide their activities or compromise additional accounts.
+
+### Aduit
+Verify the operating system generates audit records that modify configuration. Check the auditing rules in "/etc/audit/audit.rules" with the following command:
+```
+# grep "config_file_change" /etc/audit/audit.rules
+-w /etc/audisp/audisp-remote.conf -p wa -k config_file_change
+-w /etc/audit/auditd.conf -p wa -k config_file_change
+-w /etc/audit/rules.d/ -p wa -k config_file_change
+-w /etc/default/grub -p wa -k config_file_change
+-w /etc/fstab -p wa -k config_file_change
+-w /etc/hosts.deny -p wa -k config_file_change
+-w /etc/login.defs -p wa -k config_file_change
+-w /etc/pam.d/ -p wa -k config_file_change
+-w /etc/profile -p wa -k config_file_change
+-w /etc/profile.d/ -p wa -k config_file_change
+-w /etc/security/ -p wa -k config_file_change
+-w /etc/iptables/ -p wa -k config_file_change
+-w /etc/sysctl.conf -p wa -k config_file_change
+```
+If the command does not return any output, this is a finding.
+
+### Remediation 
+Fixtext: Configure the operating system to generate audit records that modify configuration files. Add or update the following rule in "/etc/audit/rules.d/audit.rules": 
+```
+-w /etc/audisp/audisp-remote.conf -p wa -k config_file_change
+-w /etc/audit/auditd.conf -p wa -k config_file_change
+-w /etc/audit/rules.d/ -p wa -k config_file_change
+-w /etc/default/grub -p wa -k config_file_change
+-w /etc/fstab -p wa -k config_file_change
+-w /etc/hosts.deny -p wa -k config_file_change
+-w /etc/login.defs -p wa -k config_file_change
+-w /etc/pam.d/ -p wa -k config_file_change
+-w /etc/profile -p wa -k config_file_change
+-w /etc/profile.d/ -p wa -k config_file_change
+-w /etc/security/ -p wa -k config_file_change
+-w /etc/iptables/ -p wa -k config_file_change
+-w /etc/sysctl.conf -p wa -k config_file_change
+```
+The audit daemon must be restarted for the changes to take effect.
+
+## 8.1.28 Recored setfacl and chacl commands usage (scored)
+
+### Profile Applicability
+Level 4
+
+### Description
+All uses of the setfacl and chacl commands must be audited.
+
+### Rationale
+Without generating audit records that are specific to the security and mission needs of the organization, it would be difficult to establish, correlate, and investigate the events relating to an incident or identify those responsible for one. Audit records can be generated from various components within the information system (e.g., module or policy filter).
+
+### Aduit
+Verify the operating system generates an audit record when successful/unsuccessful attempts to use the "setfacl" and "chacl" command occur. Check that the following calls are being audited by performing the following command to check the file system rules in "/etc/audit/rules.d/audit.rules":
+```
+$ sudo grep -w setfacl /etc/audit/rules.d/audit.rules
+-a always,exit -F arch=b32 path=/usr/bin/setfacl -F perm=x -F auid>=1000 -F auid!=4294967295 -k perm_chng
+-a always,exit -F arch=b64 path=/usr/bin/setfacl -F perm=x -F auid>=1000 -F auid!=4294967295 -k perm_chng
+$ sudo grep -w chacl /etc/audit/rules.d/audit.rules
+-a always,exit -F arch=b32 path=/usr/bin/chacl -F perm=x -F auid>=1000 -F auid!=4294967295 -k perm_chng
+-a always,exit -F arch=b64 path=/usr/bin/chacl -F perm=x -F auid>=1000 -F auid!=4294967295 -k perm_chng
+```
+If the command does not return a line, or the line is commented out, this is a finding.
+
+### Remediation 
+Configure the audit system to generate an audit event for any successful/unsuccessful use of the "setfacl" and "chacl" command.  Add or update the following rules in the "/etc/audit/rules.d/audit.rules" file:
+```
+-a always,exit -F arch=b32 path=/usr/bin/setfacl -F perm=x -F auid>=1000 -F auid!=4294967295 -k perm_chng
+-a always,exit -F arch=b64 path=/usr/bin/setfacl -F perm=x -F auid>=1000 -F auid!=4294967295 -k perm_chng
+-a always,exit -F arch=b32 path=/usr/bin/chacl -F perm=x -F auid>=1000 -F auid!=4294967295 -k perm_chng
+-a always,exit -F arch=b64 path=/usr/bin/chacl -F perm=x -F auid>=1000 -F auid!=4294967295 -k perm_chng
+```
+The audit daemon must be restarted for the changes to take effect. To restart the audit daemon, run the following command:
+```
+$ sudo systemctl restart auditd.service
+```
+If The audit system is in immutable mode, the operating system  must be reboot for the changes to take effect.
+
+## 8.1.29 Recored usermod command usage (scored)
+
+### Profile Applicability
+Level 4
+
+### Description
+All uses of the usermod command must be audited.
+
+### Rationale
+Without generating audit records that are specific to the security and mission needs of the organization, it would be difficult to establish, correlate, and investigate the events relating to an incident or identify those responsible for one. Audit records can be generated from various components within the information system (e.g., module or policy filter).
+
+### Aduit
+Verify that an audit event is generated for any successful/unsuccessful use of the "usermod" command. Check for the following system call being audited by performing the following command to check the file system rules in "/etc/audit/rules.d/audit.rules":
+```
+$ sudo grep -w usermod /etc/audit/rules.d/audit.rules
+-a always,exit -F arch=b32 path=/usr/sbin/usermod -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-usermod
+-a always,exit -F arch=b64 path=/usr/sbin/usermod -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-usermod
+```
+If the command does not return a line, or the line is commented out, this is a finding.
+
+### Remediation 
+Configure the audit system to generate an audit event for any successful/unsuccessful uses of the "usermod" command. Add or update the following rules in the "/etc/audit/rules.d/audit.rules" file:
+```
+-a always,exit -F arch=b32 path=/usr/sbin/usermod -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-usermod
+-a always,exit -F arch=b64 path=/usr/sbin/usermod -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-usermod
+```
+The audit daemon must be restarted for the changes to take effect. To restart the audit daemon, run the following command:
+```
+$ sudo systemctl restart auditd.service
+```
+If The audit system is in immutable mode, the operating system  must be reboot for the changes to take effect.
+
+## 8.1.30 Recored unix_update command usage (scored)
+
+### Profile Applicability
+Level 4
+
+### Description
+All uses of the usermod command must be audited.
+
+### Rationale
+Reconstruction of harmful events or forensic analysis is not possible if audit records do not contain enough information. At a minimum, the organization must audit the full-text recording of privileged commands. The organization must maintain audit trails in sufficient detail to reconstruct events to determine the cause and impact of compromise. 
+
+### Aduit
+Verify that an audit event is generated for any successful/unsuccessful use of the "unix_update" command.\n\nCheck for the following system call being audited by performing the following command to check the file system rules in "/etc/audit/rules.d/audit.rules":
+```
+$ sudo grep -w "unix_update" /etc/audit/rules.d/audit.rules
+-a always,exit -F path=/sbin/unix_update -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-unix-update
+```
+If the command does not return a line, or the line is commented out, this is a finding.
+
+### Remediation 
+Configure the audit system to generate an audit event for any successful/unsuccessful uses of the "unix_update" command. Add or update the following rules in the "/etc/audit/rules.d/audit.rules" file:
+```
+-a always,exit -F path=/sbin/unix_update -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-unix-update
+```
+The audit daemon must be restarted for the changes to take effect. To restart the audit daemon, run the following command:
+```
+$ sudo systemctl restart auditd.service
+```
+If The audit system is in immutable mode, the operating system  must be reboot for the changes to take effect.
+
+## 8.1.31 Record Events the execve systemcall usage (scored)
+
+### Profile Applicability
+Level 4
+
+### Description
+The audit system must be configured to audit the execution of privileged functions and prevent all software from executing at higher privilege levels than users executing the software.
+
+### Rationale
+Misuse of privileged functions, either intentionally or unintentionally by authorized users, or by unauthorized external entities that have compromised information system accounts, is a serious and ongoing concern and can have significant adverse impacts on organizations. Auditing the use of privileged functions is one way to detect such misuse and identify the risk from insider threats and the advanced persistent threat.
+
+### Aduit
+Verify the operating system audits the execution of privilege functions. Check if the operating system is configured to audit the execution of the "execve" system call, by running the following command:
+```
+$ sudo grep execve /etc/audit/rules.d/audit.rules
+-a always,exit -F arch=b32 -S execve -C uid!=euid -F key=execpriv 
+-a always,exit -F arch=b64 -S execve -C uid!=euid -F key=execpriv
+-a always,exit -F arch=b32 -S execve -C gid!=egid -F key=execpriv 
+-a always,exit -F arch=b64 -S execve -C gid!=egid -F key=execpriv
+```
+If the command does not return all lines, or the lines are commented out, this is a finding. 
+
+### Remediation 
+Configure the operating system to audit the execution of the "execve" system call. Add or update the following file system rules to "/etc/audit/rules.d/audit.rules":
+```
+-a always,exit -F arch=b32 -S execve -C uid!=euid -F key=execpriv
+-a always,exit -F arch=b64 -S execve -C uid!=euid -F key=execpriv
+-a always,exit -F arch=b32 -S execve -C gid!=egid -F key=execpriv
+-a always,exit -F arch=b64 -S execve -C gid!=egid -F key=execpriv
+```
+The audit daemon must be restarted for the changes to take effect. To restart the audit daemon, run the following command:
+```
+$ sudo systemctl restart auditd.service
+```
+If The audit system is in immutable mode, the operating system  must be reboot for the changes to take effect.
+
+## 8.7 Verifies integrity all packages (scored) 
+
+### Profile Applicability
+Level 5
+
+### Description
+Without cryptographic integrity protections, system command and files can be altered by unauthorized users without detection. Cryptographic mechanisms used for protecting the integrity of information include, for example, signed hash functions using asymmetric cryptography enabling distribution of the public key to verify the hash information while maintaining the confidentiality of the key used to generate the hash.
+
+### Rationale
+Verify integrity all packages features to to monitor the files of the packages installed by the system.
+
+### Aduit
+Perform the following to determine(example):
+```
+$ sudo dpkg -V 
+??5?????? c /etc/sudoers
+??5?????? c /etc/vim/vimrc
+```
+
+### Remediation
+Run the following command to determine which package owns the file:
+```
+$ sudo  dpkg -S <filename>
+```
+If the confirmation is not modified by owner, the package can be reinstalled from a apt repository using the command:
+```
+$ sudo apt-get --reinstall <packagename> 
+```
+
+## 9.2.1  Set password creation requirement Parameters Using pam_cracklib: retry option (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+When user at 3 times enter error password, returning error. 
+
+### Rationale 
+Prevent multiple attempts and guess the password. 
+
+### Aduit
+The "retry" option sets the number of attempt password times. Check for the value of the "retry" option in "/etc/pam.d/common-password" with the following command: 
+```
+$ sudo grep retry /etc/pam.d/common-password 
+password	  requisite			pam_cracklib.so retry=3 minlen=8 difok=3
+```
+If the value of "retry" is set to more than "3", this is a finding.
+
+### Remediation
+Add the following line to "/etc/pam.d/common-password" (or modify the line to have the required value): 
+```
+password	  requisite			pam_cracklib.so retry=3 minlen=8 difok=3 
+```
+
+## 9.2.2  Set password creation requirement Parameters Using pam_cracklib: minlen option (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+Passwords must be a minimum of 14 characters in length.
+
+### Rationale 
+The shorter the password, the lower the number of possible combinations that need to be tested before the password is compromised. Password complexity, or strength, is a measure of the effectiveness of a password in resisting attempts at guessing and brute-force Passwords are one factor of several that helps to determine strength and how long it takes to crack a password. Use of more characters in a password helps to exponentially increase the time and/or resources required to compromise the password.
+
+### Aduit
+Verify the operating system enforces a minimum 14-character password length. The "minlen" option sets the minimum number of characters in a new password. Check for the value of the "minlen" option in "/etc/pam.d/common-password " with the following command:
+```
+$ sudo grep minlen /etc/pam.d/common-password 
+password	  requisite			pam_cracklib.so retry=3 minlen=8 difok=3 
+```
+If the command does not return a "minlen" value of 14 or greater, this is a finding.
+
+### Remediation 
+Configure operating system to enforce a minimum 14-character password length. Add the following line to "/etc/pam.d/common-password" (or modify the line to have the required value): 
+```
+password	  requisite			pam_cracklib.so retry=3 minlen=14 difok=3
+```
+
+## 9.2.3  Set password creation requirement Parameters Using pam_cracklib: dcredit option (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+When passwords are changed or new passwords are assigned, the new password must contain at least one numeric character. 
+
+### Rationale 
+Use of a complex password helps to increase the time and resources required to compromise the password. Password complexity, or strength, is a measure of the effectiveness of a password in resisting attempts at guessing and brute-force attacks. Password complexity is one factor of several that determines how long it takes to crack a password. The more complex the password, the greater the number of possible combinations that need to be tested before the password is compromised. 
+
+### Aduit
+The value to require a number of numeric characters to be set is expressed as a negative number in "/etc/pam.d/common-password ". Check the value for "dcredit" in "/etc/pam.d/common-password" with the following command:
+```
+$ sudo grep dcredit /etc/pam.d/common-password  
+password	  requisite			pam_cracklib.so retry=3 minlen=8 difok=3  dcredit=-1
+```
+If the value of "dcredit" is not set to a negative value, this is a finding. 
+
+### Remediation
+Configure the operating system to enforce password complexity by requiring that at least one numeric character be used by setting the "dcredit" option. Add the following line to /etc/pam.d/common-password (or modify the line to have the required value): 
+```
+password	  requisite			pam_cracklib.so retry=3 minlen=8 difok=3  dcredit=-1
+```
+
+## 9.2.4  Set password creation requirement Parameters Using pam_cracklib: ucredit option (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+When passwords are changed or new passwords are established, the new password must contain at least one upper-case character.
+
+### Rationale 
+Use of a complex password helps to increase the time and resources required to compromise the password. Password complexity, or strength, is a measure of the effectiveness of a password in resisting attempts at guessing and brute-force attacks. Password complexity is one factor of several that determines how long it takes to crack a password. The more complex the password, the greater the number of possible combinations that need to be tested before the password is compromised.
+
+### Aduit 
+The value to require a number of upper-case characters to be set is expressed as a negative number in "/etc/pam.d/common-password". Check the value for "ucredit" in "/etc/pam.d/common-password" with the following command: 
+```
+$ sudo grep ucredit /etc/pam.d/common-password 
+password	  requisite			pam_cracklib.so retry=3 minlen=8 difok=3 ucredit=-1 
+```
+If the value of "ucredit" is not set to a negative value, this is a finding.
+
+### Remediation
+Add the following line to "/etc/pam.d/common-password" (or modify the line to have the required value): 
+```
+password	  requisite			pam_cracklib.so retry=3 minlen=8 difok=3 ucredit=-1
+```
+
+## 9.2.5  Set password creation requirement Parameters Using pam_cracklib: ocredit option (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+When passwords are changed or new passwords are assigned, the new password must contain at least one special character.
+
+### Rationale 
+Use of a complex password helps to increase the time and resources required to compromise the password. Password complexity, or strength, is a measure of the effectiveness of a password in resisting attempts at guessing and brute-force attacks. Password complexity is one factor of several that determines how long it takes to crack a password. The more complex the password, the greater the number of possible combinations that need to be tested before the password is compromised. 
+
+### Aduit 
+Verify the operating system enforces password complexity by requiring that at least one special character be used. Note: The value to require a number of special characters to be set is expressed as a negative number in "/etc/pam.d/common-password". Check the value for "ocredit" in "/etc/pam.d/common-password" with the following command:
+```
+$ sudo grep ocredit /etc/pam.d/common-password 
+password	  requisite			pam_cracklib.so retry=3 minlen=8 difok=3 nocredit=-1
+```
+If the value of "ocredit" is not set to a negative value, this is a finding.
+
+### Remediation
+Add the following line to "/etc/pam.d/common-password" (or modify the line to have the required value): 
+```
+password	  requisite			pam_cracklib.so retry=3 minlen=8 difok=3 ocredit=-1 
+```
+
+## 9.2.6  Set password creation requirement Parameters Using pam_cracklib: lcredit option (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+When passwords are changed or new passwords are established, the new password must contain at least one lower-case character. 
+
+### Rationale 
+Use of a complex password helps to increase the time and resources required to compromise the password. Password complexity, or strength, is a measure of the effectiveness of a password in resisting attempts at guessing and brute-force attacks. Password complexity is one factor of several that determines how long it takes to crack a password. The more complex the password, the greater the number of possible combinations that need to be tested before the password is compromised.
+
+### Aduit
+The value to require a number of lower-case characters to be set is expressed as a negative number in "/etc/pam.d/common-password ". Check the value for "lcredit" in "/etc/pam.d/common-password " with the following command: 
+```
+$ sudo grep lcredit /etc/pam.d/common-password 
+password	   requisite			pam_cracklib.so retry=3 minlen=8 difok=3 lcredit=-1 
+```
+If the value of "lcredit" is not set to a negative value, this is a finding.
+
+### Remediation
+Add the following line to "/etc/pam.d/common-password" (or modify the line to have the required value): 
+```
+password  	requisite			pam_cracklib.so retry=3 minlen=8 difok=3 lcredit=-1 
+```
+
+## 9.2.7  Set password creation requirement Parameters Using pam_cracklib: difok option (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+When passwords are changed a minimum of eight of the total number of characters must be changed. 
+
+### Rationale 
+Use of a complex password helps to increase the time and resources required to compromise the password. Password complexity, or strength, is a measure of the effectiveness of a password in resisting attempts at guessing and brute-force attacks. Password complexity is one factor of several that determines how long it takes to crack a password. The more complex the password, the greater the number of possible combinations that need to be tested before the password is compromised.
+
+### Aduit 
+The "difok" option sets the number of characters in a password that must not be present in the old password. Check for the value of the "difok" option in "/etc/pam.d/common-password" with the following command:
+```
+$ sudo grep difok /etc/pam.d/common-password 
+password  	requisite			pam_cracklib.so retry=3 minlen=8 difok=3
+```
+If the value of "difok" is set to less than "8", this is a finding.
+
+### Remediation
+Add the following line to "/etc/pam.d/common-password" (or modify the line to have the required value):
+```
+password  	requisite			pam_cracklib.so retry=3 minlen=8 difok=8
+```
+
+## 9.2.8  Set password creation requirement Parameters Using pam_cracklib: minclass option (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+When passwords are changed a minimum of four character classes must be changed.
+
+### Rationale 
+Use of a complex password helps to increase the time and resources required to compromise the password. Password complexity, or strength, is a measure of the effectiveness of a password in resisting attempts at guessing and brute-force attacks. Password complexity is one factor of several that determines how long it takes to crack a password. The more complex the password, the greater the number of possible combinations that need to be tested before the password is compromised.
+ 
+### Aduit
+The "minclass" option sets the minimum number of required classes of characters for the new password (digits, upper-case, lower-case, others). Check for the value of the "minclass" option in "/etc/pam.d/common-password" with the following command:
+```
+$ sudo grep minclass /etc/pam.d/common-password
+password  	requisite			pam_cracklib.so retry=3 minlen=8 difok=8 minclass=4
+```
+If the value of "minclass" is set to less than "4", this is a finding.
+
+### Remediation
+Configure the operating system to require the change of at least four character classes when passwords are changed by setting the "minclass" option. Add the following line to "/etc/pam.d/common-password" (or modify the line to have the required value): 
+```
+password  	requisite			pam_cracklib.so retry=3 minlen=8 difok=8 minclass=4 
+```
+
+## 9.2.9  Set password creation requirement Parameters Using pam_cracklib: maxrepeat option (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+When passwords are changed the number of repeating consecutive characters must not be more than three characters. 
+
+### Rationale 
+Use of a complex password helps to increase the time and resources required to compromise the password. Password complexity, or strength, is a measure of the effectiveness of a password in resisting attempts at guessing and brute-force attacks. Password complexity is one factor of several that determines how long it takes to crack a password. The more complex the password, the greater the number of possible combinations that need to be tested before the password is compromised.
+
+### Aduit
+The "maxrepeat" option sets the maximum number of allowed same consecutive characters in a new password. Check for the value of the "maxrepeat" option in "/etc/pam.d/common-password" with the following command:
+```
+$ sudo grep maxrepeat /etc/pam.d/common-password 
+password  	requisite			pam_cracklib.so retry=3 minlen=8 difok=8 maxrepeat=3
+```
+If the value of "maxrepeat" is set to more than "3", this is a finding.
+
+### Remediation
+Configure the operating system to require the change of the number of repeating consecutive characters when passwords are changed by setting the "maxrepeat" option. Add the following line to "/etc/pam.d/common-password" (or modify the line to have the required value): 
+```
+password  	requisite			pam_cracklib.so retry=3 minlen=8 difok=8 maxrepeat=3
+```
+
+## 9.2.10  Set password creation requirement Parameters Using pam_cracklib: maxclassrepeat option (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+When passwords are changed the number of repeating characters of the same character class must not be more than four characters. 
+
+### Rationale 
+Use of a complex password helps to increase the time and resources required to compromise the password. Password complexity, or strength, is a measure of the effectiveness of a password in resisting attempts at guessing and brute-force attacks. Password complexity is one factor of several that determines how long it takes to crack a password. The more complex the password, the greater the number of possible combinations that need to be tested before the password is compromised. 
+
+### Aduit 
+The "maxclassrepeat" option sets the maximum number of allowed same consecutive characters in the same class in the new password. Check for the value of the "maxclassrepeat" option in "/etc/pam.d/common-password" with the following command:
+```
+$ sudo grep maxclassrepeat /etc/pam.d/common-password
+password	requisite			pam_cracklib.so retry=3 minlen=8 difok=3 maxclassrepeat=4
+```
+If the value of "maxclassrepeat" is set to more than "4", this is a finding.
+
+### Remediation
+Configure the operating system to require the change of the number of repeating characters of the same character class when passwords are changed by setting the "maxclassrepeat" option. Add the following line to "/etc/pam.d/common-password" conf (or modify the line to have the required value):
+```
+password	requisite			pam_cracklib.so retry=3 minlen=8 difok=3 maxclassrepeat=4
+```
+
+## 9.2.11 Set deny times for Password Attempts  (scored) 
+
+### Profile Applicability
+Level 3
+
+### Description 
+Accounts subject to three unsuccessful logon attempts must be deny login.
+
+### Rationale 
+By limiting the number of failed logon attempts, the risk of unauthorized system access via user password guessing, otherwise known as brute-forcing, is reduced. 
+
+### Aduit 
+Check that the system deny an account for the maximum period after three unsuccessful logon attempts with the following command:
+```
+$ sudo grep -w "^auth.*pam_tally2.so.*deny" /etc/pam.d/common-auth
+auth required pam_tally2.so deny=3 unlock_time=900 
+```
+If the "deny" setting is less than or equal to "3" on both lines with the "pam_tally2.so" module name or is missing from a line, this is a finding.
+
+### Remediation
+Configure the operating system to deny an account when three unsuccessful logon attempts are made. Modify "/etc/pam.d/common-auth" files to match the following lines:
+```
+auth required pam_tally2.so deny=3 unlock_time=900 
+```
+
+## 9.2.13  Set password creation requirement Parameters Using pam_unix: sha512 option (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+The PAM system service must be configured to store only encrypted representations of passwords. 
+
+### Rationale 
+Passwords need to be protected at all times, and encryption is the standard method for protecting passwords. If passwords are not encrypted, they can be plainly read (i.e., clear text) and easily compromised. Passwords encrypted with a weak algorithm are no more protected than if they are kept in plain text. 
+
+### Aduit 
+Verify the PAM system service is configured to store only encrypted representations of passwords. The strength of encryption that must be used to hash passwords for all accounts is SHA512. Check that the system is configured to create SHA512 hashed passwords with the following command:
+```
+$ sudo grep "password.*pam_unix.*sha512" /etc/pam.d/common-password    
+password	[success=1 default=ignore]	pam_unix.so obscure use_authtok try_first_pass sha512
+```
+If the "/etc/pam.d/common-password" configuration files allow for password hashes other less than SHA512 to be used, this is a finding.
+
+### Remediation
+Configure the operating system to store only SHA512 encrypted representations of passwords. Add the following line in "/etc/pam.d/common-password": 
+```
+password	[success=1 default=ignore]	pam_unix.so obscure use_authtok try_first_pass sha512
+```
+
+## 9.2.14  Check auth config is not blank or null passwords using pam_unix (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+The system must not have accounts configured with blank or null passwords.
+
+### Rationale 
+If an account has an empty password, anyone could log on and run commands with the privileges of that account. Accounts with empty passwords should never be used in operational environments. 
+
+### Aduit 
+To verify that null passwords cannot be used, run the following command: 
+```
+$ sudo grep nullok /etc/pam.d/common-auth
+$ sudo grep nullok_secure /etc/pam.d/common-auth
+```
+If this produces any output, it may be possible to log on with accounts with empty passwords. If null passwords can be used, this is a finding.
+
+### Remediation
+If an account is configured for password authentication but does not have an assigned password, it may be possible to log on to the account without authenticating. Remove any instances of the "nullok" option in "/etc/pam.d/common-auth" to prevent logons with empty passwords. 
+```
+$ sudo sed -ie "s/nullok//"  /etc/pam.d/common-auth
+$ sudo sed -ie "s/nullok_secure//"  /etc/pam.d/common-auth
+```
+
+## 9.2.15  Set login display the date and time of last fail logon using pam_lastlog (scored) 
+
+### Profile Applicability
+Level 3
+
+### Description 
+The system must display the date and time of the last successful account logon upon logon.
+
+### Rationale 
+Providing users with feedback on when account accesses last occurred facilitates user recognition and reporting of unauthorized account use.
+
+### Aduit 
+Verify users are provided with feedback on when account accesses last occurred. Check that "pam_lastlog" is used and not silent with the following command:
+```
+$ sudo grep pam_lastlog /etc/pam.d/login
+session optional pam_lastlog.so showfailed
+```
+If "pam_lastlog" is missing from "/etc/pam.d/login" file, this is a finding.
+
+### Remediation
+Configure the operating system to provide users with feedback on when account accesses last occurred by setting the required configuration options in "/etc/pam.d/login". Add the following line to the top of "/etc/pam.d/login":
+```
+session     optional      pam_lastlog.so showfailed
+```
+
+## 9.2.16 Set lockout time for Failed Password Attempts (scored) 
+
+### Profile Applicability
+Level 3
+
+### Description 
+Accounts subject to three unsuccessful login attempts must be set unlock_time for associated account.
+
+### Rationale 
+By limiting the number of failed login attempts, the risk of unauthorized system access via user password guessing, otherwise known as brute-forcing, is reduced. Limits are imposed by locking the account.
+
+### Aduit 
+Check that the system unlock_time an account for the maximum period after three unsuccessful logon attempts with the following command:
+```
+$ sudo grep -w "^auth.*pam_tally2.so.*unlock_time" /etc/pam.d/common-auth
+auth required pam_tally2.so deny=3 unlock_time=900 
+```
+If the "unlock_time" setting is less than "900" on both lines with the "pam_tally2.so" module name or is missing from a line, this is a finding.
+
+### Remediation
+Configure the operating system to deny an account when three unsuccessful logon attempts are made. Modify "/etc/pam.d/common-auth" files to match the following lines:
+```
+auth required pam_tally2.so deny=3 unlock_time=900 
+```
+
+## 9.2.17 Ensure unsuccessful root login occur the associated account must be locked  (scored) 
+
+### Profile Applicability
+Level 3
+
+### Description 
+Accounts subject to three unsuccessful root login attempts must be deny login.
+
+### Rationale 
+By limiting the number of failed logon attempts, the risk of unauthorized system access via user password guessing, otherwise known as brute-forcing, is reduced. 
+
+### Aduit 
+Check that the system deny an account for the maximum period after three unsuccessful logon attempts with the following command:
+```
+$ sudo grep -w "^auth.*pam_tally2.so.*even_deny_root" /etc/pam.d/common-auth
+auth required pam_tally2.so deny=3 unlock_time=900 even_deny_root
+```
+If the "even_deny_root" is missing from a line, this is a finding.
+
+### Remediation
+Configure the operating system to deny an account when three unsuccessful logon attempts are made. Modify "/etc/pam.d/common-auth" files to match the following lines:
+```
+auth required pam_tally2.so deny=3 unlock_time=900 even_deny_root
+```
+
+## 9.3.15 Set login display the date and time of last fail logon using pam_lastlog (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+The system must display the date and time of the last successful account logon upon an SSH logon.
+
+### Rationale 
+Providing users with feedback on when account accesses via SSH last occurred facilitates user recognition and reporting of unauthorized account use.
+
+### Aduit 
+Verify SSH provides users with feedback on when account accesses last occurred. Check that "PrintLastLog" keyword in the sshd daemon configuration file is used and set to "yes" with the following command:
+```
+$ sudo grep -i printlastlog /etc/ssh/sshd_config
+PrintLastLog yes
+```
+If the "PrintLastLog" keyword is set to "no", is missing, or is commented out, this is a finding.
+
+### Remediation
+Add the following line to "/etc/ssh/sshd_config":
+```
+PrintLastLog yes
+```
+The SSH service must be restarted for changes to "sshd_config" to take effect.
+
+## 9.3.16 Set SSHD ignoreuserknownhosts to yes (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+The SSH daemon must not allow authentication using known hosts authentication.
+
+### Rationale 
+Configuring this setting for the SSH daemon provides additional assurance that remote logon via SSH will require a password, even in the event of misconfiguration elsewhere.
+
+### Aduit 
+Verify the SSH daemon does not allow authentication using known hosts authentication. To determine how the SSH daemon's "IgnoreUserKnownHosts" option is set, run the following command:
+```
+$ sudo grep -i IgnoreUserKnownHosts /etc/ssh/sshd_config
+IgnoreUserKnownHosts yes
+```
+If the value is returned as "no", the returned line is commented out, or no output is returned, this is a finding.
+
+### Remediation
+Configure the SSH daemon to not allow authentication using known hosts authentication. Add the following line in "/etc/ssh/sshd_config", or uncomment the line and set the value to "yes":
+```
+IgnoreUserKnownHosts yes
+```
+The SSH service must be restarted for changes to take effect.
+
+## 9.3.17 Set SSHD GSSAPIAuthentication to yes (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+The SSH daemon must not permit Generic Security Service Application Program Interface (GSSAPI) authentication unless needed.
+
+### Rationale 
+GSSAPI authentication is used to provide additional authentication mechanisms to applications. Allowing GSSAPI authentication through SSH exposes the systems GSSAPI to remote hosts, increasing the attack surface of the system. GSSAPI authentication must be disabled unless needed.
+
+### Aduit 
+Verify the SSH daemon does not permit GSSAPI authentication unless approved. Check that the SSH daemon does not permit GSSAPI authentication with the following command:
+```
+$ sudo grep -i gssapiauth /etc/ssh/sshd_config
+GSSAPIAuthentication no
+```
+If the "GSSAPIAuthentication" keyword is missing, is set to "yes" and is not documented with the Information System Security Officer (ISSO), or the returned line is commented out, this is a finding.
+
+### Remediation
+Uncomment the "GSSAPIAuthentication" keyword in "/etc/ssh/sshd_config" (this file may be named differently or be in a different location if using a version of SSH that is provided by a third-party vendor) and set the value to "no": 
+```
+GSSAPIAuthentication no
+```
+The SSH service must be restarted for changes to take effect. If GSSAPI authentication is required, it must be documented, to include the location of the configuration file, with the ISSO.
+
+
+## 9.3.18 Set SSHD KerberosAuthentication to yes (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+The SSH daemon must not permit Kerberos authentication unless needed.
+
+### Rationale 
+Kerberos authentication for SSH is often implemented using Generic Security Service Application Program Interface (GSSAPI). If Kerberos is enabled through SSH, the SSH daemon provides a means of access to the system's Kerberos implementation. Vulnerabilities in the system's Kerberos implementation may then be subject to exploitation. To reduce the attack surface of the system, the Kerberos authentication mechanism within SSH must be disabled for systems not using this capability.
+
+### Aduit 
+Verify the SSH daemon does not permit Kerberos to authenticate passwords unless approved. Check that the SSH daemon does not permit Kerberos to authenticate passwords with the following command:
+```
+$ sudo grep -i kerberosauth /etc/ssh/sshd_config
+KerberosAuthentication no
+```
+If the "KerberosAuthentication" keyword is missing, or is set to "yes" and is not documented with the Information System Security Officer (ISSO), or the returned line is commented out, this is a finding.
+
+### Remediation
+Uncomment the "KerberosAuthentication" keyword in "/etc/ssh/sshd_config" (this file may be named differently or be in a different location if using a version of SSH that is provided by a third-party vendor) and set the value to "no":
+```
+KerberosAuthentication no
+```
+The SSH service must be restarted for changes to take effect. If Kerberos authentication is required, it must be documented, to include the location of the configuration file, with the ISSO.
+
+## 9.3.19 Set SSHD StrictModes to yes (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+The SSH daemon must perform strict mode checking of home directory configuration files.
+
+### Rationale 
+If other users have access to modify user-specific SSH configuration files, they may be able to log on to the system as another user.
+
+### Aduit 
+Verify the SSH daemon performs strict mode checking of home directory configuration files. The location of the "sshd_config" file may vary if a different daemon is in use. Inspect the "sshd_config" file with the following command:
+```
+$ sudo grep -i strictmodes /etc/ssh/sshd_config
+StrictModes yes
+```
+If "StrictModes" is set to "no", is missing, or the returned line is commented out, this is a finding.
+
+### Remediation
+Uncomment the "StrictModes" keyword in "/etc/ssh/sshd_config" (this file may be named differently or be in a different location if using a version of SSH that is provided by a third-party vendor) and set the value to "yes":
+```
+StrictModes yes
+```
+The SSH service must be restarted for changes to take effect.
+
+## 9.3.20 Set SSHD UsePrivilegeSeparation to sandbox (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+The SSH daemon must use privilege separation.
+
+### Rationale 
+SSH daemon privilege separation causes the SSH process to drop root privileges when not needed, which would decrease the impact of software vulnerabilities in the unprivileged section.
+
+### Aduit 
+Verify the SSH daemon performs privilege separation. Check that the SSH daemon performs privilege separation with the following command:
+```
+$ sudo grep -i usepriv /etc/ssh/sshd_config
+UsePrivilegeSeparation sandbox
+```
+If the "UsePrivilegeSeparation" keyword is set to "no", is missing, or the retuned line is commented out, this is a finding.
+
+### Remediation
+Uncomment the "UsePrivilegeSeparation" keyword in "/etc/ssh/sshd_config" (this file may be named differently or be in a different location if using a version of SSH that is provided by a third-party vendor) and set the value to "sandbox":
+```
+UsePrivilegeSeparation sandbox
+```
+The SSH service must be restarted for changes to take effect.
+
+## 9.3.21 Set SSHD Compression to no  (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+The SSH daemon must not allow compression or must only allow compression after successful authentication.
+
+### Rationale 
+If compression is allowed in an SSH connection prior to authentication, vulnerabilities in the compression software could result in compromise of the system from an unauthenticated connection, potentially with root privileges.
+
+### Aduit 
+Verify the SSH daemon performs compression after a user successfully authenticates. Check that the SSH daemon performs compression after a user successfully authenticates with the following command:
+```
+$ sudo grep -i compression /etc/ssh/sshd_config
+Compression delayed
+```
+If the "Compression" keyword is set to "yes", is missing, or the retuned line is commented out, this is a finding.
+
+### Remediation
+Uncomment the "Compression" keyword in "/etc/ssh/sshd_config" (this file may be named differently or be in a different location if using a version of SSH that is provided by a third-party vendor) on the system and set the value to "no":
+```
+Compression no
+```
+The SSH service must be restarted for changes to take effect.
+
+## 9.3.22 Set SSHD MACs to hmac-sha2-256,hmac-sha2-512  (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+The SSH daemon must be configured to only use Message Authentication Codes (MACs) employing FIPS 140-2 approved cryptographic hash algorithms.
+
+### Rationale 
+DoD information systems are required to use FIPS 140-2 approved cryptographic hash functions. The only SSHv2 hash algorithm meeting this requirement is SHA.
+
+### Aduit 
+Verify the SSH daemon is configured to only use MACs employing FIPS 140-2-approved ciphers. Check that the SSH daemon is configured to only use MACs employing FIPS 140-2-approved ciphers with the following command:
+```
+$ sudo grep -i macs /etc/ssh/sshd_config
+MACs hmac-sha2-256,hmac-sha2-512
+```
+If any ciphers other than "hmac-sha2-256" or "hmac-sha2-512" are listed or the retuned line is commented out, this is a finding.
+
+### Remediation
+Edit the "/etc/ssh/sshd_config" file to uncomment or add the line for the "MACs" keyword and set its value to "hmac-sha2-256" and/or "hmac-sha2-512" (this file may be named differently or be in a different location if using a version of SSH that is provided by a third-party vendor):
+```
+MACs hmac-sha2-256,hmac-sha2-512
+```
+The SSH service must be restarted for changes to take effect. 
+
+## 9.3.23 Check SSH public host key permission  (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+The SSH public host key files must have mode 0644 or less permissive.
+
+### Rationale 
+If a public host key file is modified by an unauthorized user, the SSH service may be compromised.
+
+### Aduit 
+Verify the SSH public host key files have mode "0644" or less permissive. Note: SSH public key files may be found in other directories on the system depending on the installation. The following command will find all SSH public key files on the system:
+```
+$ sudo find /etc/ssh/ -name "*key.pub" -perm /133 -exec ls -l {} \;
+-rw-rw-rw- 1 root root 91 Jun 13 00:40 /etc/ssh/ssh_host_ed25519_key.pub
+-rw-rw-rw- 1 root root 391 Jun 13 00:40 /etc/ssh/ssh_host_rsa_key.pub
+```
+If any file has a mode more permissive than "0644", this is a finding.
+
+### Remediation
+Note: SSH public key files may be found in other directories on the system depending on the installation. Change the mode of public host key files under "/etc/ssh" to "0644" with the following command:
+```
+$ sudo chmod 0644 /etc/ssh/*.key.pub
+```
+
+## 9.3.24 Check SSH private host key permission  (scored) 
+
+### Profile Applicability
+Level 2
+
+### Description 
+The SSH private host key files must have mode 0600 or less permissive.
+
+### Rationale 
+If an unauthorized user obtains the private SSH host key file, the host could be impersonated.
+
+### Aduit 
+Verify the SSH private host key files have mode "0600" or less permissive. Check the mode of the private host key files under "/etc/ssh" file with the following command:
+```
+$ sudo find /etc/ssh/ -type f -name "*ssh_host*key" -exec ls -l {} \;
+-rwxrwxrwx 1 root root 399 Jun 13 00:40 /etc/ssh/ssh_host_ed25519_key
+-rwxrwxrwx 1 root root 1679 Jun 13 00:40 /etc/ssh/ssh_host_rsa_key
+-rwxrwxrwx 1 root root 227 Jun 13 00:40 /etc/ssh/ssh_host_ecdsa_key
+```
+
+If any file has a mode more permissive than "0600", this is a finding.
+
+### Remediation
+Configure the mode of SSH private host key files under "/etc/ssh" to "0600" with the following command:
+```
+# chmod 0600 /etc/ssh/ssh_host*key
+```
+
+## 10.1.4 Set encrypt method (Scored) 
+
+### Profile Applicability
+Level 3
+
+### Description
+The shadow file must be configured to store only encrypted representations of passwords. 
+
+### Rationale
+Passwords need to be protected at all times, and encryption is the standard method for protecting passwords. If passwords are not encrypted, they can be plainly read (i.e., clear text) and easily compromised. Passwords encrypted with a weak algorithm are no more protected than if they are kept in plain text.
+
+### Aduit
+Verify the system's shadow file is configured to store only encrypted representations of passwords. The strength of encryption that must be used to hash passwords for all accounts is SHA512. Check that the system is configured to create SHA512 hashed passwords with the following command:
+```
+$ sudo grep -i encrypt /etc/login.defs
+ENCRYPT_METHOD SHA512
+```
+If the "/etc/login.defs" configuration file does not exist or allows for password hashes other than SHA512 to be used, this is a finding.
+
+### Remediation
+Configure the operating system to store only SHA512 encrypted representations of passwords. Add or update the following line in "/etc/login.defs": 
+```
+ENCRYPT_METHOD SHA512
+```
+
+## 10.1.6 Remove(Replace) NOPASSWD to PASSWD in the sudoers config file (Scored) 
+
+### Profile Applicability
+Level 3
+
+### Description
+Users must provide a password for privilege escalation.
+
+### Rationale
+Without re-authentication, users may access resources or perform tasks for which they do not have authorization. When operating systems provide the capability to escalate a functional capability, it is critical the user re-authenticate. 
+
+### Aduit
+If passwords are not being used for authentication, this is Not Applicable. Verify the operating system requires users to supply a password for privilege escalation. Check the configuration of the "/etc/sudoers" and "/etc/sudoers.d/*" files with the following command: 
+```
+$ sudo grep -i nopasswd /etc/sudoers /etc/sudoers.d/*
+```
+If any uncommented line is found with a "NOPASSWD" tag, this is a finding.
+
+### Remediation
+Replace any occurrences of "NOPASSWD" tags to "PASSWD" tags in the file.
+
+## 10.1.7 Remove(Replace) not authenticate(!authenticate) to authenticate in the sudoers config file (Scored) 
+
+### Profile Applicability
+Level 3
+
+### Description
+Users must re-authenticate for privilege escalation.
+
+### Rationale
+Without re-authentication, users may access resources or perform tasks for which they do not have authorization. When operating systems provide the capability to escalate a functional capability, it is critical the user reauthenticate.
+
+### Aduit
+Verify the operating system requires users to reauthenticate for privilege escalation. Check the configuration of the "/etc/sudoers" and "/etc/sudoers.d/*" files with the following command:
+```
+$ sudo grep -i authenticate /etc/sudoers /etc/sudoers.d/*
+```
+If any line is found with a "!authenticate" tag, this is a finding.
+
+### Remediation
+Replace any occurrences of "!authenticate" tags to "authenticate" tags in the file.
+
+## 10.1.8  Set FAIL_DELAY to wait to allow login when the last login failed (Scored) 
+
+### Profile Applicability
+Level 2
+
+### Description
+The delay between logon prompts following a failed console logon attempt must be at least four seconds.
+
+### Rationale
+Configuring the operating system to implement organization-wide security implementation guides and security checklists verifies compliance with federal standards and establishes a common security baseline across DoD that reflects the most restrictive security posture consistent with operational requirements. Configuration settings are the set of parameters that can be changed in hardware, software, or firmware components of the system that affect the security posture and/or functionality of the system. Security-related parameters are those parameters impacting the security state of the system, including the parameters required to satisfy other security control requirements. Security-related parameters include, for example, registry settings; account, file, and directory permission settings; and settings for functions, ports, protocols, services, and remote connections.
+
+### Aduit
+Verify the operating system enforces a delay of at least four seconds between console logon prompts following a failed logon attempt. Check the value of the "delay" parameter in the "/etc/pam.d/login" file with the following command:
+```
+$ sudo grep -i delay /etc/pam.d/login
+auth       optional   pam_faildelay.so delay=4000000
+```
+If the value of "delay" is not set to "4000000" or greater, this is a finding.
+
+### Remediation
+Configure the operating system to enforce a delay of at least four seconds between logon prompts following a failed console logon attempt. Modify the "/etc/pam.d/login" file to set the "delay" parameter to "4000000" or greater: 
+```
+auth       optional   pam_faildelay.so delay=4000000
+```
+
+## 10.1.9  Set create home bool to yes (Scored) 
+
+### Profile Applicability
+Level 3
+
+### Description
+All local interactive user accounts, upon creation, must be assigned a home directory.
+
+### Rationale
+If local interactive users are not assigned a valid home directory, there is no place for the storage and control of files they should own.
+
+### Aduit
+Verify all local interactive users on the system are assigned a home directory upon creation. Check to see if the system is configured to create home directories for local interactive users with the following command:
+```
+$ sudo grep -i create_home /etc/login.defs
+CREATE_HOME yes
+```
+If the value for "CREATE_HOME" parameter is not set to "yes", the line is missing, or the line is commented out, this is a finding.
+
+### Remediation
+Configure the operating system to assign home directories to all new local interactive users by setting the "CREATE_HOME" parameter in "/etc/login.defs" to "yes" as follows.
+```
+CREATE_HOME yes
+```
+
+## 10.1.10 Set maxlogins for all accounts (Scored) 
+
+### Profile Applicability
+Level 2
+
+### Description
+The operating system must limit the number of concurrent sessions to 10 for all accounts and/or account types.
+
+### Rationale
+Operating system management includes the ability to control the number of users and user sessions that utilize an operating system. Limiting the number of allowed users and sessions per user is helpful in reducing the risks related to DoS attacks. This requirement addresses concurrent sessions for information system accounts and does not address concurrent sessions by single users via multiple system accounts. The maximum number of concurrent sessions should be defined based on mission needs and the operational environment for each system.
+
+### Aduit
+Verify the operating system limits the number of concurrent sessions to "10" for all accounts and/or account types by issuing the following command:
+```
+$ sudo grep "maxlogins" /etc/security/limits.conf
+* hard maxlogins 10
+```
+This can be set as a global domain (with the * wildcard) but may be set differently for multiple domains. If the "maxlogins" item is missing or the value is not set to "10" or less for all domains that have the "maxlogins" item assigned, this is a finding.
+
+### Remediation
+Configure the operating system to limit the number of concurrent sessions to "10" for all accounts and/or account types. Add the following line to the top of the /etc/security/limits.conf:
+```
+* hard maxlogins 10
+```
+
+## 10.1.11 Ensure no shosts configure file on system (Scored) 
+
+### Profile Applicability
+Level 3
+
+### Description
+There must be no .shosts and shosts.equiv files on the system.
+
+### Rationale
+The .shosts and shosts.equiv files are used to configure host-based authentication for individual users or the system via SSH. Host-based authentication is not sufficient for preventing unauthorized access to the system, as it does not require interactive identification and authentication of a connection request, or for the use of two-factor authentication.
+
+### Aduit
+Verify there are no ".shosts" and "shosts.equiv" files on the system. Check the system for the existence of these files with the following command:
+```
+$ sudo find / -name .shosts
+$ sudo find / -name shosts.equiv
+```
+If any ".shosts" and "shosts.equiv" files are found on the system, this is a finding.
+
+### Remediation
+Remove any found ".shosts" and "shosts.equiv" files from the system.
+```
+# rm /[path]/[to]/[file]/.shosts
+# rm /[path]/[to]/[file]/shosts.equiv
+```
+
+## 10.5 Set Timeout on ttys (Scored) 
+
+### Profile Applicability
+Level 2
+
+### Description
+All network connections associated with a communication session must be terminated at the end of the session or after 10 minutes of inactivity from the user at a command prompt, except to fulfill documented and validated mission requirements.
+
+### Rationale
+Terminating an idle session within a short time period reduces the window of opportunity for unauthorized personnel to take control of a management session enabled on the console or console port that has been left unattended. In addition, quickly terminating an idle session will also free up resources committed by the managed network element. Terminating network connections associated with communications sessions includes, for example, de-allocating associated TCP/IP address/port pairs at the operating system level and de-allocating networking assignments at the application level if multiple application sessions are using a single operating system-level network connection. This does not mean that the operating system terminates all sessions or network access; it only ends the inactive session and releases the resources associated with that session. 
+
+### Aduit
+Verify the operating system terminates all network connections associated with a communications session at the end of the session or based on inactivity. Check the value of the system inactivity timeout with the following command: 
+```
+$ sudo grep -i tmout /etc/bashrc /etc/profile.d/*
+TMOUT=600
+```
+If "TMOUT" is not set to "600" or less in "/etc/bashrc" or in a script created to enforce session termination after inactivity, this is a finding.
+
+### Remediation
+Configure the operating system to terminate all network connections associated with a communications session at the end of the session or after a period of inactivity. Add or update the following lines in "/etc/profile". 
+```
+TMOUT=600
+readonly TMOUT
+export TMOUT
+```
+Or create a script to enforce the inactivity timeout (for example /etc/profile.d/tmout.sh) such as:
+```
+#!/bin/bash
+TMOUT=600
+readonly TMOUT
+export TMOUT
+``` 
+

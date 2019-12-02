@@ -1,0 +1,10 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: wipefreespace
+# Short-Description: wipe ram not recovery
+# Description: wipe permanent ram disk.
+### END INIT INFO
+ 
+ sudo echo "Eliminando Ram!";
+ sudo sdmem -v;

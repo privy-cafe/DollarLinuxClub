@@ -1,0 +1,19 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: WipeNSA
+# Short-Description: wipe all hard disk
+# Description: wipe hard disk complete for extreme security no recovery.
+### END INIT INFO
+ 
+ sudo echo "Eliminando informacion del disco duro! NAP-14.1-C";
+
+ sudo scrub -p nnsa /dev/sda
+ sudo scrub -p nnsa /dev/sda1
+ sudo scrub -p nnsa /dev/sda2
+ sudo scrub -p nnsa /dev/sda3
+ sudo scrub -p nnsa /dev/sda4
+ sudo scrub -p nnsa /dev/sda5
+ sudo scrub -p nnsa /dev/hda
+ sudo scrub -p nnsa /dev/hda1
+ sudo scrub -p nnsa /dev/hda2;

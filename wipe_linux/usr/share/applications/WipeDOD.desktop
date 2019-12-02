@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Wipe DOD
+Encoding=UTF-8
+Exec=sh -c "WipeDOD"
+Icon=/usr/share/icons/gcolor2.svg
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=GNOME;System;Filesystem;
+Keywords=clean;performances;free;privacy;
+

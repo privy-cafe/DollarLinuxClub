@@ -1,0 +1,51 @@
+#!/bin/bash
+app="$1"
+id=$RANDOM
+id2username(){
+echo $1_sandbox
+}
+id_usr=$(id2username $id)
+me=$(whoami)
+mygroup=$(id -gn)
+
+mkdir -p sandboxs/bin
+mkdir -p sandboxs/data
+mkdir -p sandboxs/uninstall
+
+[ -d sandboxs ] || exit
+chmod 700 sandboxs || exit
+cd sandboxs || exit
+root="$PWD"
+[ -d data ] || exit
+chmod 700 data || exit
+[ -d bin ] || exit
+chmod 700 bin || exit
+[ -d uninstall ] || exit
+chmod 700 uninstall || exit
+
+sudo useradd -m -d "/home/$id_usr" --shell /bin/bash --user-group $id_usr || exit
+sudo chmod 770 "/home/$id_usr" || exit
+sudo chown $id_usr:$mygroup "/home/$id_usr" || exit
+[ ! -f /etc/sudoers.d/$id_usr ] || exit
+sudo sh -c "echo '$me ALL=($id_usr) NOPASSWD: ALL' > /etc/sudoers.d/$id_usr" || exit
+[ -f /etc/sudoers.d/$id_usr ] || exit
+
+[ ! -f "$root/data/$id" ] || exit
+ln -s "/home/$id_usr" "$root/data/$id" || exit
+[ -d "$root/data/$id" ] || exit
+
+[ ! -f "$root/bin/$app" ] || exit
+echo "#!/bin/sh
+xhost si:localuser:$id_usr
+sudo -i -u $id_usr 'sh' -c \"XMODIFIERS='\$XMODIFIERS' $app\"
+" > "$root/bin/$app"
+[ -f "$root/bin/$app" ] || exit
+chmod +x "$root/bin/$app"
+
+[ ! -f "$root/uninstall/$app" ] || exit
+echo "#!/bin/sh
+sudo userdel $id_usr || exit
+sudo rm -fr '/etc/sudoers.d/$id_usr' '$root/data/$id' '/home/$id_usr' '$root/bin/$app' \"\$0\"
+" > "$root/uninstall/$app"
+[ -f "$root/uninstall/$app" ] || exit
+chmod +x "$root/uninstall/$app"

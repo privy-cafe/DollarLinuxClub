@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Block Country France
+Encoding=UTF-8
+Exec=sh -c "countryfrance"
+Icon=/usr/share/icons/francez.png
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=Application;Accessibility;
+Keywords=clean;performances;free;privacy;
+
+
+

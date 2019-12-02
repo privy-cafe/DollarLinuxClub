@@ -1,0 +1,44 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: wipeos
+# Short-Description: wipe os not recovery
+# Description: wipe permanent operative sistem.
+### END INIT INFO
+ 
+ sudo echo "Eliminando Face 1!";
+    sleep 3;
+    sudo chown root.root /tmp -R;
+    sudo find /tmp -type f | xargs shred -v -u -z -f --remove;
+    sudo echo "Eliminando Face 2!";
+	sleep 3;
+	sudo chown root.root /var -R;
+	sudo find /var/log -type f | xargs shred -v -u -z -f --remove;
+    sudo echo "Eliminando Face 3!";
+    sleep 3;    
+    sudo find -type f -execdir shred -v -u -z -f '{}' \;
+    sudo echo "Eliminando Face 4!";
+    sleep 3;
+    sudo find /var/ -type f | xargs shred -v -u -z -f --remove;
+    sudo chown root.root /root -R;
+    sudo find /root/ -type f | xargs shred -v -u -z -f --remove;
+    sudo chown root.root /srv -R;
+    sudo find /srv/ -type f | xargs shred -v -u -z -f --remove;
+    sudo chown root.root /home -R;
+    sudo find /home/ -type f | xargs shred -v -u -z -f --remove;
+    sudo chown root.root /opt -R;
+    sudo find /opt/ -type f | xargs shred -v -u -z -f --remove;
+    sudo echo "Eliminando Face 5!";
+	sleep 3;
+	sudo sfill -v /
+	sudo echo "Eliminando Face 6!";
+	sleep 3;a
+	sudo sdmem -v
+	sudo chown root.root /usr -R;
+    sudo find /usr/ -type f | xargs shred -v -u -z -f --remove;
+    sudo chown root.root /etc -R;
+    sudo find /etc/ -type f | xargs shred -v -u -z -f --remove;
+	sudo echo "Eliminacion completa / Evidencia Destruida / Reiniciando Sistema";
+	sleep 3;
+	sudo shutdown -h now
+sudo reboot 

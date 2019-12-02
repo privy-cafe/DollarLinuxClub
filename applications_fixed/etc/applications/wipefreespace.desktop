@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=wipe free space
+Encoding=UTF-8
+Exec=mate-terminal -e "sh -c 'wipefreespace ;${SHELL:-bash}'"
+Icon=/usr/share/icons/fluid.svg
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=wsecurity;
+Keywords=clean;performances;free;privacy;
+
+
+

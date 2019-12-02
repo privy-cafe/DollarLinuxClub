@@ -1,0 +1,21 @@
+#! /bin/sh
+echo "dnsserver"
+
+
+rm /etc/AdGuard/data/*.json.1
+rm /var/log/nginx/*log.*
+
+#wget https://www.internic.net/domain/named.root -O /etc/unbound/root.hints
+
+
+/bin/sh /etc/cron.daily/dnscrypt-keys
+
+/bin/sh /etc/cron.weekly/dnscrypt-keys
+
+echo "crypto keys generated"
+
+sudo service dnscrypt-8440 restart
+sudo service dnscrypt-8441 restart
+sudo service dnscrypt-8442 restart
+
+echo "finished @" $(date) 

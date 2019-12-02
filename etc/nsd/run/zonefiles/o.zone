@@ -1,0 +1,106 @@
+; zone o written by NSD 4.1.27 on Sat Jun 22 01:00:01 2019
+; received update to serial 1561164338 at 2019-06-22T00:49:56 from 45.56.115.189
+$ORIGIN .
+o	7200	IN	SOA	ns11.opennic.glue. jonah.opennic.org. (
+		1561164338 300 180 604800 3600 )
+	7200	IN	NS	ns2.opennic.glue.
+	7200	IN	NS	ns6.opennic.glue.
+	7200	IN	NS	ns8.opennic.glue.
+	7200	IN	NS	ns9.opennic.glue.
+	7200	IN	NS	ns11.opennic.glue.
+$ORIGIN o.
+a	7200	IN	NS	dns-a.jda.mn.
+	7200	IN	NS	dns-b.jda.mn.
+aragon	7200	IN	NS	dns-a.jda.mn.
+	7200	IN	NS	dns-b.jda.mn.
+beck	7200	IN	NS	ns1.he.net.
+	7200	IN	NS	ns2.he.net.
+	7200	IN	NS	ns3.he.net.
+	7200	IN	NS	ns4.he.net.
+	7200	IN	NS	ns5.he.net.
+blg	7200	IN	NS	ns1.foxnic.rfx.fi.
+	7200	IN	NS	ns2.foxnic.rfx.fi.
+blog	7200	IN	NS	dns-a.jda.mn.
+	7200	IN	NS	dns-b.jda.mn.
+blueberrycooks	7200	IN	NS	ns1.epizy.com.
+	7200	IN	NS	ns2.epizy.com.
+c0de	7200	IN	CNAME	c0de.cyb.
+caviidae	7200	IN	NS	ns1.cavy.dev.
+	7200	IN	NS	ns2.cavy.dev.
+caviinae	7200	IN	NS	ns1.cavy.dev.
+	7200	IN	NS	ns2.cavy.dev.
+cavy	7200	IN	NS	ns1.cavy.dev.
+	7200	IN	NS	ns2.cavy.dev.
+code	7200	IN	NS	dns-a.jda.mn.
+	7200	IN	NS	dns-b.jda.mn.
+criptotrem	7200	IN	CNAME	criptotrem.org.
+deeg05	7200	IN	A	91.77.31.48
+dns	7200	IN	NS	dns-a.jda.mn.
+	7200	IN	NS	dns-b.jda.mn.
+example	7200	IN	NS	dns-a.jda.mn.
+	7200	IN	NS	dns-b.jda.mn.
+foxnic	7200	IN	NS	ns1.foxnic.rfx.fi.
+	7200	IN	NS	ns2.foxnic.rfx.fi.
+freenic	7200	IN	NS	dns-a.jda.mn.
+	7200	IN	NS	dns-b.jda.mn.
+getssl	7200	IN	NS	ns1.digitalocean.com.
+	7200	IN	NS	ns2.digitalocean.com.
+	7200	IN	NS	ns3.digitalocean.com.
+git	7200	IN	NS	dns-a.jda.mn.
+	7200	IN	NS	dns-b.jda.mn.
+gr33n	7200	IN	NS	ns1.he.net.
+	7200	IN	NS	ns2.he.net.
+	7200	IN	NS	ns3.he.net.
+	7200	IN	NS	ns4.he.net.
+	7200	IN	NS	ns5.he.net.
+iamalsoandy	7200	IN	A	81.174.166.128
+$ORIGIN iamalsoandy.o.
+www	7200	IN	CNAME	iamalsoandy.o.
+$ORIGIN o.
+jasbri	7200	IN	A	104.248.32.109
+$ORIGIN jasbri.o.
+www	7200	IN	CNAME	jasbri.o.
+$ORIGIN o.
+jmp	7200	IN	A	212.227.81.67
+jonaharagon	7200	IN	NS	dns-a.jda.mn.
+	7200	IN	NS	dns-b.jda.mn.
+libgen	7200	IN	A	185.39.10.101
+localhost	7200	IN	A	127.0.0.1
+marc	7200	IN	NS	ns1.cyon.ch.
+	7200	IN	NS	ns2.cyon.ch.
+moderntld	7200	IN	NS	dns-a.jda.mn.
+	7200	IN	NS	dns-b.jda.mn.
+mot	7200	IN	CNAME	martin-m.org.
+olbat	7200	IN	CNAME	olbat.net.
+opennic	7200	IN	NS	dns-a.jda.mn.
+	7200	IN	NS	dns-b.jda.mn.
+porn	7200	IN	NS	ns31.cloudns.net.
+	7200	IN	NS	ns32.cloudns.net.
+post	7200	IN	NS	ns31.cloudns.net.
+	7200	IN	NS	ns34.cloudns.net.
+quoque	7200	IN	NS	ns21.cloudns.net.
+	7200	IN	NS	ns22.cloudns.net.
+register	7200	IN	NS	dns-a.jda.mn.
+	7200	IN	NS	dns-b.jda.mn.
+rf	7200	IN	NS	ns1.foxnic.rfx.fi.
+	7200	IN	NS	ns2.foxnic.rfx.fi.
+rospogrigio	7200	IN	NS	ns1.rospogrigio.libre.
+	7200	IN	NS	ns2.rospogrigio.libre.
+ryuk	7200	IN	A	185.10.68.99
+$ORIGIN ryuk.o.
+www	7200	IN	CNAME	ryuk.o.
+$ORIGIN o.
+samip	7200	IN	NS	ns1.samip.fi.
+shop	7200	IN	NS	ns1.hostular.com.
+	7200	IN	NS	ns2.hostular.com.
+slipp	7200	IN	CNAME	383d419f-09cf-458d-8783-47dc69452572.repl.co.
+social	7200	IN	NS	dns-a.jda.mn.
+	7200	IN	NS	dns-b.jda.mn.
+status	7200	IN	A	51.75.173.177
+tld	7200	IN	NS	dns-a.jda.mn.
+	7200	IN	NS	dns-b.jda.mn.
+wki	7200	IN	NS	ns1.foxnic.rfx.fi.
+	7200	IN	NS	ns2.foxnic.rfx.fi.
+xsen	7200	IN	NS	ns1.contabo.net.
+	7200	IN	NS	ns2.contabo.net.
+	7200	IN	NS	ns3.contabo.net.

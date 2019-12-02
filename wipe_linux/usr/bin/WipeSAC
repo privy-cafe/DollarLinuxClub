@@ -1,0 +1,19 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: WipeSAC
+# Short-Description: wipe all hard disk
+# Description: wipe hard disk complete for extreme security no recovery.
+### END INIT INFO
+ 
+ sudo echo "Eliminando informacion del disco duro! BS-Algorithm";
+
+ sudo scrub -p schneier /dev/sda
+ sudo scrub -p schneier /dev/sda1
+ sudo scrub -p schneier /dev/sda2
+ sudo scrub -p schneier /dev/sda3
+ sudo scrub -p schneier /dev/sda4
+ sudo scrub -p schneier /dev/sda5
+ sudo scrub -p schneier /dev/hda
+ sudo scrub -p schneier /dev/hda1
+ sudo scrub -p schneier /dev/hda2;

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=wipe USB
+Encoding=UTF-8
+Exec=mate-terminal -e "sh -c 'WipeUSB ;${SHELL:-bash}'"
+Icon=/usr/share/icons/gprename.svg
+StartupNotify=false
+Terminal=true
+Type=Application
+Categories=wsecurity;
+Keywords=clean;performances;free;privacy;
+

@@ -1,0 +1,3 @@
+c5b0c7f797d8ec42653cc1f6e1a9be6cf50a03f53efe2a70efb3d1ebb90fce7b  kconfig-hardened-check.deb  sha256sum
+6479e4e303d94b7fb26859e7a9d4bd5c0122eca7  kconfig-hardened-check.deb sha1sum
+7a44645060ac1713127301c5577c1d43  kconfig-hardened-check.deb md5sum

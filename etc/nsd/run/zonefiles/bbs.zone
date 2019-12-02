@@ -1,0 +1,85 @@
+; zone bbs written by NSD 4.1.27 on Sun Jun  9 21:57:54 2019
+; received update to serial 2016111002 at 2019-06-09T19:20:36 from 45.56.115.189
+$ORIGIN .
+bbs	86400	IN	SOA	ns6.opennic.glue. texnofobix.gmail.com. (
+		2016111002 10800 3600 604800 38400 )
+	86400	IN	NS	ns2.opennic.glue.
+	86400	IN	NS	ns3.opennic.glue.
+	86400	IN	NS	ns4.opennic.glue.
+	86400	IN	NS	ns5.opennic.glue.
+	86400	IN	NS	ns6.opennic.glue.
+	86400	IN	NS	ns7.opennic.glue.
+	86400	IN	NS	ns8.opennic.glue.
+	86400	IN	NS	ns10.opennic.glue.
+	86400	IN	TXT	"Bulletin Board System"
+$ORIGIN bbs.
+1984	86400	IN	A	64.150.165.47
+2400baud	86400	IN	CNAME	triton.2400baud.net.
+allmystery	86400	IN	A	188.40.33.215
+blogbeam	86400	IN	A	86.8.106.90
+catsci	86400	IN	A	89.101.223.77
+ccplz	86400	IN	CNAME	ccplz.net.opennic.bbs.
+crumax	86400	IN	CNAME	crumax.tel.
+dyndns	86400	IN	NS	ns1.fnup.de.
+	86400	IN	NS	ns2.fnup.de.
+enchantress	86400	IN	A	89.101.223.77
+example	86400	IN	CNAME	opennic.opennic.bbs.
+freedom	86400	IN	NS	ns1.freedom.bbs.
+	86400	IN	NS	ns2.freedom.bbs.
+$ORIGIN freedom.bbs.
+ns1	86400	IN	A	208.53.152.178
+ns2	86400	IN	A	67.159.2.50
+$ORIGIN bbs.
+frostedside	86400	IN	NS	ns1.fluidhosting.com.
+	86400	IN	NS	ns2.fluidhosting.com.
+$ORIGIN games.bbs.
+nethack	86400	IN	A	80.244.90.85
+$ORIGIN bbs.
+hell-chan	86400	IN	CNAME	hell-chan.alwaysdata.net.
+inetbbs	86400	IN	A	217.124.184.201
+jonasmoeller	86400	IN	NS	ns1.php-friends.de.
+	86400	IN	NS	ns2.php-friends.de.
+linux	86400	IN	A	93.186.196.44
+	86400	IN	LOC \# 16 0000161387f3e7689487b2c40098a4f4
+$ORIGIN linux.bbs.
+www	86400	IN	CNAME	linux.bbs.
+$ORIGIN bbs.
+localhost	86400	IN	A	127.0.0.1
+maze	86400	IN	NS	dns1.maze.io.
+	86400	IN	NS	dns2.maze.io.
+	86400	IN	NS	dns3.maze.io.
+menga	86400	IN	NS	ns1.fluidhosting.com.
+	86400	IN	NS	ns2.fluidhosting.com.
+multi-vpn	86400	IN	A	195.211.221.49
+multivpn	86400	IN	CNAME	multi-vpn.bbs.
+opennic	86400	IN	A	207.192.71.13
+	86400	IN	MX	10 darkdna.net.
+$ORIGIN opennic.bbs.
+example	86400	IN	CNAME	opennic.bbs.
+www	86400	IN	CNAME	opennic.bbs.
+$ORIGIN bbs.
+opennictest	86400	IN	A	202.83.95.228
+$ORIGIN opennictest.bbs.
+www	86400	IN	CNAME	opennictest.bbs.
+$ORIGIN bbs.
+orcinus	86400	IN	CNAME	hosting.orcinus.ru.
+register	86400	IN	CNAME	opennic.bbs.
+$ORIGIN register.bbs.
+www	86400	IN	CNAME	opennic.bbs.
+$ORIGIN bbs.
+testencrypt	86400	IN	A	24.209.54.108
+undernet	86400	IN	A	208.144.159.227
+whitebear	86400	IN	NS	ns0.whitebear.bbs.
+	86400	IN	NS	ns1.whitebear.bbs.
+$ORIGIN whitebear.bbs.
+ns0	86400	IN	A	91.135.150.198
+ns1	86400	IN	A	91.135.151.168
+$ORIGIN bbs.
+willie	86400	IN	CNAME	willie.io.
+www	86400	IN	CNAME	opennic.opennic.bbs.
+x84	86400	IN	NS	dns1.maze.io.
+	86400	IN	NS	dns2.maze.io.
+	86400	IN	NS	dns3.maze.io.
+xodus	86400	IN	NS	ns1.d-host.ca.
+	86400	IN	NS	ns2.d-host.ca.
+zoklet	86400	IN	A	208.98.10.130
