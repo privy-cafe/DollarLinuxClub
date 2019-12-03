@@ -1,0 +1,2 @@
+sudo update-rc.d cpuinfos defaults 10
+sudo service cpuinfos start

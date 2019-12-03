@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+TC_PATH="$(readlink -e $(dirname "$0"))"
+env PATH="$TC_PATH":"$PATH" $@

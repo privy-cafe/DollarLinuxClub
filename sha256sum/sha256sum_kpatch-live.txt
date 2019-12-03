@@ -1,0 +1,4 @@
+
+674ec23902393f11d5b4d3dfa9fc53a358d754f72731a053cbda051ef1d8bc87  kpatch-live.deb / sha256sum
+97a93a29ec4bd2bedbd440c17cd3277e477be39d  kpatch-live.deb / sha1sum
+6d5dcf5f81688117f6d4105779ddec76  kpatch-live.deb / md5sum

@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# This file is part of selfrando.
+# Copyright (c) 2015-2016 Tommaso Frassetto, TU Darmstadt.
+# For license information, see the LICENSE file
+# included with selfrando.
+#
+
+set -ue
+
+exec 2> >(tee -a /tmp/tc.log >&2)
+
+TC_PATH="$(readlink -e $(dirname "$0"))"
+SR_PATH='/home/debian/install/selfrando'
+source $TC_PATH/functions.sh
+
+WRAPPER=`basename $0`
+ORIG_LD=`find_original`
+
+exec_traplinker "$SR_PATH/$WRAPPER" -rpath "$SR_PATH" --traplinker-original-linker "$ORIG_LD" --traplinker-static-selfrando --traplinker-selfrando-txtrp-pages "$@"
