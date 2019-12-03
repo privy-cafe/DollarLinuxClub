@@ -1,7 +1,7 @@
 #This repo aim to contain various selections of tools, configurations, sandboxing tools, firewall, softwares to enhance the privacy and security. I do not claim credits for the work all the work,tools,config,softwares,etc here.
 If you wish to collaborate join our matrix room. We aim to provide the tools,configurations file and provide ease of deployment      that you and I need to analyze not only prevent potential threats but render them completely useless agains't  the system.
 In this rare case obfuscations with anti-pattern  can help us but wait abusing of anti-patterns can be really bad for readability  and auditing.  The goal is to be able to quickly blendin/obfuscate the system to fools potential watchers/listenn ers . It is far from perfect and to be finished. 
-Documentation
+Documentation  ---Make sure you do understand what you are doing this is  not a tutorial aimed at novice but a guideline for people with at least one or more years of immersions in a unix like operating system.
 
     HardeningWalkthrough
 
@@ -40,12 +40,13 @@ You should always make sure that your system is ready, compatible and that those
 I do not Own everything in this repository, all credits goes to their original writers
 I will start writing several bash scripts/.toml files to automate specific setup maybe at some point I will have enough scripts to consider writing a frontend to execute/manage/remove those.
 # DollarLinuxClub is slowly progressing, I did few succesfull build based upon different debian based distro such as devuan, miyoLinux(MakeItYourOwn), mx/AntiX and DemonLinux. I was thinking about making those images availables but they are slightly bloated and unstable. Let me know. 
-#999
-999^ kernel, firmware and headers aim to render any kind of fingerprinting imposible and harden the kernel with various patchset
+#9999
+9999^ kernel, firmware and headers aim to render any kind of fingerprinting imposible and harden the kernel with various patchset. Do not try to install it inside vmware/virtual box it simply won't work since those relies on identifying the cpu ,# of cores etc, which could potentially build  a
 
-#Dappersec  patchset is a originally a RHEL Based patchset(Fedora) ##Ported to debian it does content better patch and desktop integration ( break less stuff ) than latest patch grsec released
+#Dappersec  patchset is a originally a RHEL Based patchset(Fedora) ##Ported to debian it does content better patch and desktop integration ( break less stuff ) than latest patch grsec released and the unofficial one.
 
-and the unofficial one.
+**Debian Security Advisories(DSA)**
+ https://www.debian.org/doc/manuals/securing-debian-howto/ch7.en.html
 
 
 	PROCEED AT YOUR OWN RISK !! 
