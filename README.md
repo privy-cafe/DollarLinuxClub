@@ -3,9 +3,40 @@ A guidelines will be availables when i have times to write it.
 https://github.com/privy-cafe/PrivyDebs-extra/tree/master/docs
 
 This repo aim to contain various selections of tools, configurations, sandboxing tools, firewall, softwares to enhance the privacy and security. I do not claim credits for the work all the work,tools,config,softwares,etc here.
-If you wish to collaborate join our matrix room 
+If you wish to collaborate join our matrix room. We aim to provide the tools,configurations file and provide ease of deployment      that you and I need to analyze not only prevent potential threats but render them completely useless agains't  the system.
+In this rare case obfuscations with anti-pattern  can help us but wait abusing of anti-patterns can be really bad for readability  and auditing.  The goal is to be able to quickly blendin/obfuscate the system to fools potential watchers/listenn ers . It is far from perfect and to be finished. 
+Documentation
 
-IMPORTANT!!!!!!!
+    HardeningWalkthrough
+
+    https://wiki.ubuntu.com/CompilerFlags
+
+    http://people.redhat.com/drepper/nonselsec.pdf
+
+    http://www.suse.de/~krahmer/no-nx.pdf
+
+    http://www.neworder.box.sk/newsread.php?newsid=13007
+
+    http://www.hackinthebox.org/modules.php?op=modload&name=News&file=article&sid=15604&mode=thread&order=0&thold=0
+
+    http://www.phrack.org/archives/issues/58/4.txt
+
+    http://insecure.org/sploits/non-executable.stack.problems.html
+
+    http://www.phrack.org/archives/issues/59/9.txt
+
+    http://www.coresecurity.com/files/attachments/Richarte_Stackguard_2002.pdf
+
+    http://www.redhat.com/archives/fedora-tools-list/2004-September/msg00002.html
+
+    http://www.gentoo.org/proj/en/hardened/hardened-toolchain.xml
+
+    https://fedoraproject.org/wiki/Changes/Harden_All_Packages
+
+    http://labs.mwrinfosecurity.com/notices/security_mechanisms_in_linux_environment__part_1___userspace_memory_protection/
+
+    http://labs.mwrinfosecurity.com/notices/assessing_the_tux_strength_part_2_into_the_kernel/
+ IMPORTANT!!!!!!!
 I'm not responsible , nor Privy services, Digital Gansgter, DGA, PDG if you do not use the content properly
 Make sure that you are aware that it is possible that you break your system
 You should always make sure that your system is ready, compatible and that those configs/tools/patch are properly deployed
@@ -22,6 +53,11 @@ and the unofficial one.
 
 
 	PROCEED AT YOUR OWN RISK !! 
+
+
+
+
+Security, what is security ???? 
 
 # Analyze the Threat model
 
@@ -45,6 +81,19 @@ Even if those question does look and sound stupid, narrowing it down to it most 
 - [ ] It is a constant efforts and in depth knowledge of your system and which services run, which ports are used list goes on....
 		
 
+**UEFI Secure Boot*
+*
+Secure Boot is a feature enabled on most PCs that prevents loading unsigned code, protecting against some kinds of bootkit and rootkit.
+
+Debian can now be installed and run on most PCs with Secure Boot enabled.
+
+It is possible to enable Secure Boot on a system that has an existing Debian installation, if it already boots using UEFI. Before doing this, it's necessary to install shim-signed, grub-efi-amd64-signed or grub-efi-ia32-signed, and a Linux kernel package from buster.
+
+Some features of GRUB and Linux are restricted in Secure Boot mode, to prevent modifications to their code.
+
+
+
+
 Linux kernel and its related files are in /boot directory which is by default as read-write. Changing it to read-only reduces the risk of unauthorized modification of critical boot files. We need to edit /etc/fstab file and insert the line below<
 
 It is important to mount couple partitions with specific mount options and their own partitions
@@ -55,7 +104,7 @@ A good example would be the /tmp partition which is often used for privilege esc
 
 proc     /proc     proc     defaults,hidepid=2     0     0         # added by unknown on 2019-07-06 @ 06:49:51
 
-Linux Filesystem Permissions
+***Linux Filesystem Permissions***
  
 systems should be separated into different partitions for this will prevent lot's of unwanted executions and manipulations
 
@@ -67,6 +116,20 @@ systems should be separated into different partitions for this will prevent lot'
      /var
      /opt
 	
+
+**Optional hardening of APT**
+
+#All methods provided by APT (e.g. http, and https) except for cdrom, gpgv, and rsh can make use of seccomp-BPF sandboxing as #supplied by the Linux kernel to restrict the list of allowed system calls, and trap all others with a SIGSYS signal. This #sandboxing is currently opt-in and needs to be enabled with:
+
+      APT::Sandbox::Seccomp is a boolean to turn it on/off
+    
+
+**Two options can be used to configure this further:**
+
+      APT::Sandbox::Seccomp::Trap is a list of names of more syscalls to trap
+      APT::Sandbox::Seccomp::Allow is a list of names of more syscalls to allow
+    
+
 
 # Make sure sensitives files are owned by root and with the rights permissions
 
