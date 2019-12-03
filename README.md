@@ -1,8 +1,4 @@
-# This repo mainly contain files,configs,tools,firmwares,Kernel Images, Kernel Headers, sandboxing tools, firewall, Deep learning solutions for IDS and ultimately resist to fingerprinting. 
-A guidelines will be availables when i have times to write it.
-https://github.com/privy-cafe/PrivyDebs-extra/tree/master/docs
-
-This repo aim to contain various selections of tools, configurations, sandboxing tools, firewall, softwares to enhance the privacy and security. I do not claim credits for the work all the work,tools,config,softwares,etc here.
+#This repo aim to contain various selections of tools, configurations, sandboxing tools, firewall, softwares to enhance the privacy and security. I do not claim credits for the work all the work,tools,config,softwares,etc here.
 If you wish to collaborate join our matrix room. We aim to provide the tools,configurations file and provide ease of deployment      that you and I need to analyze not only prevent potential threats but render them completely useless agains't  the system.
 In this rare case obfuscations with anti-pattern  can help us but wait abusing of anti-patterns can be really bad for readability  and auditing.  The goal is to be able to quickly blendin/obfuscate the system to fools potential watchers/listenn ers . It is far from perfect and to be finished. 
 Documentation
