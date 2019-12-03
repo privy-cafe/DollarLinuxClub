@@ -1,0 +1,57 @@
+version: 1.0.{build}
+
+image: Visual Studio 2015
+
+configuration:
+# - Debug # Broken for VS2015 Update 3
+- Release
+
+platform:
+- x86 # aka. Win32
+- x64 # aka. amd64
+
+before_build:
+- ps: >-
+   If ($env:PLATFORM -Match "x86") {
+        $env:VCVARS_PLATFORM="x86"
+        $env:SR_PLATFORM=""
+        $env:MSBUILD_PLATFORM="Win32"
+   } Else {
+        $env:VCVARS_PLATFORM="amd64"
+        $env:SR_PLATFORM=$env:PLATFORM
+        $env:MSBUILD_PLATFORM=$env:PLATFORM
+   }
+
+# build:
+#   project: self-rando-windows.sln
+#   parallel: true
+#   verbosity: normal
+
+build_script:
+- msbuild %APPVEYOR_BUILD_FOLDER%\self-rando-windows.sln /p:Configuration=%CONFIGURATION% /verbosity:minimal /p:Platform=%MSBUILD_PLATFORM% /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+test_script:
+- cmd: call "%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat" %VCVARS_PLATFORM%
+- cmd: "SET PATH=C:\\Python27;%PATH%"
+- cmd: "python -m pip install mako"
+- cmd: "python %APPVEYOR_BUILD_FOLDER%\\scripts\\trap_msvc_libs.py"
+- cmd: "python %APPVEYOR_BUILD_FOLDER%\\scripts\\gen_scripts.py"
+- ps:  cat $env:APPVEYOR_BUILD_FOLDER\\scripts\\TrapLinker32.props
+# - ps:  dir C:\Projects 
+- cmd: "rmdir /q /s %APPVEYOR_BUILD_FOLDER%\\src\\TrapLinker\\win32\\SimpleRandoTest\\%SR_PLATFORM%\\%CONFIGURATION%"
+- cmd: "msbuild /p:Configuration=%CONFIGURATION% /verbosity:normal /target:SimpleRandoTest /p:Platform=%MSBUILD_PLATFORM%"
+- cmd: "%APPVEYOR_BUILD_FOLDER%\\%SR_PLATFORM%\\%CONFIGURATION%\\SimpleRandoTest.exe"
+- cmd: dumpbin /section:.txtrp  "%APPVEYOR_BUILD_FOLDER%\\%SR_PLATFORM%\\%CONFIGURATION%\\SimpleRandoTest.exe"
+- ps: >- 
+    If ($env:PLATFORM -Match "x86") {
+      & $env:APPVEYOR_BUILD_FOLDER\\tests\win32\python36.ps1 
+    } # Python on x64 is blocked on this https://github.com/immunant/selfrando/issues/59
+
+notifications:
+- provider: Slack
+  auth_token:
+    secure: WuzJD0mLtM12sadwBu33d9wz20w10vIXbfYO2omvQwED4YTqk+DImfrBbYl1lewuiKXMs5ma7BV9d4qCzznZJw==
+  channel: '#selfrando'
+  on_build_success: false
+  on_build_failure: true
+  on_build_status_changed: true

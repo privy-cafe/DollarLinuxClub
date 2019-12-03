@@ -1,0 +1,46 @@
+# Copyright (c) 2015-2019 RunSafe Security Inc.
+from os import path
+
+Import('env')
+
+SOURCES = (['ELF.cpp', 'TrapLinker.cpp',
+            'arch/x86/ELF.cpp',
+            'arch/x86_64/ELF.cpp',
+            'arch/arm/ELF.cpp',
+            'arch/arm64/ELF.cpp'])
+
+traplinker_env = env.Clone()
+traplinker_env.Append(CPPPATH = ['#/src',
+                                 '#/src/TrapInfo',
+                                 '#/src/TrapLinker',
+                                 '#/src/TrapLinker/posix',
+                                 '#/src/Support',
+                                 '#/src/Support/posix',
+                                 '.'])
+traplinker_env.Append(LIBS = ['elf', 'randolib_support'])
+traplinker_env.Append(LIBPATH = ['../../Support/posix'])
+
+traplinker_env.Append(LINKFLAGS = ['-static'])
+
+if 'LIBELF_PATH' in traplinker_env:
+    libelf_inc_path = path.join(traplinker_env['LIBELF_PATH'], "include")
+    libelf_lib_path = path.join(traplinker_env['LIBELF_PATH'], "lib")
+    traplinker_env.Append(CPPPATH = [libelf_inc_path])
+    traplinker_env.Append(LIBPATH = [libelf_lib_path])
+
+traplinker_env.Program('traplinker', SOURCES)
+
+traplinker_env.Command('LinkerOptions.inc',
+                       ['LinkerOptions.table',
+                        'IgnoredOptions.table'],
+                       'src/TrapLinker/posix/gen_options.py $TARGET $SOURCES')
+Depends('traplinker', 'LinkerOptions.inc')
+
+traplinker_env.Command('ld', 'traplinker', 'ln -s ${SOURCE.file} $TARGET')
+traplinker_env.Command('ld.bfd', 'traplinker', 'ln -s ${SOURCE.file} $TARGET')
+traplinker_env.Command('ld.gold', 'traplinker', 'ln -s ${SOURCE.file} $TARGET')
+
+files = [Glob('traplinker'), Glob('ld'), Glob('ld.bfd'), Glob('ld.gold'),
+         Glob('traplinker_script.ld'), Glob('traplinker_id.sh')]
+
+Return('files')

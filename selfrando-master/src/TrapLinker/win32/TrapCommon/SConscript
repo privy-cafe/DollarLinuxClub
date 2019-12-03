@@ -1,0 +1,10 @@
+# Copyright (c) 2015-2019 RunSafe Security Inc.
+Import('env')
+
+lib_env = env.Clone()
+lib_env.Append(CPPPATH = '#/TrapCommon')
+
+lib_env.Library('TrapCommon', ['COFF.cpp'])
+
+files = Glob('TrapCommon.lib')
+Return('files')

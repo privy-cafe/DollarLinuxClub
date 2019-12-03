@@ -1,0 +1,17 @@
+#!/bin/bash
+
+### BEGIN INIT INFO
+# Provides:          bootxid
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Changing bootxid to random value
+# Description:       Changing bootxid to random value
+### END INIT INFO
+
+old=$(cat /etc/bootids)
+new=$(tr -dc 'A-Z0-9' < /dev/urandom | head -c32)
+sed -i "s/$old/$new/g" /etc/bootids
+
+exit 0

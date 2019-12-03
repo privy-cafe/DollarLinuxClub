@@ -1,0 +1,321 @@
+#!/usr/bin/env bash
+#
+##
+# Linux Malware Detect v1.6.4
+#             (C) 2002-2019, R-fx Networks <proj@rfxn.com>
+#             (C) 2019, Ryan MacDonald <ryan@rfxn.com>
+# This program may be freely redistributed under the terms of the GNU GPL v2
+##
+#
+PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+ver=1.6.4
+inspath='/usr/local/maldetect'
+intcnf="$inspath/internals/internals.conf"
+if [ -f "/etc/sysconfig/maldet" ]; then
+        syscnf=/etc/sysconfig/maldet
+elif [ -f "/etc/default/maldet" ]; then
+        syscnf=/etc/default/maldet
+fi
+
+header() {
+	echo "Linux Malware Detect v$ver"
+	echo "            (C) 2002-2019, R-fx Networks <proj@rfxn.com>"
+	echo "            (C) 2019, Ryan MacDonald <ryan@rfxn.com>"
+	echo "This program may be freely redistributed under the terms of the GNU GPL v2"
+	echo ""
+}
+
+if [ -f "$intcnf" ]; then
+	source $intcnf
+else
+	header
+	echo "maldet($$): {glob} \$intcnf not found, aborting."
+	exit 1
+fi
+
+if [ -f "$cnf" ]; then
+	source $cnf
+else
+	header
+	echo "maldet($$): {glob} \$cnf not found, aborting."
+	exit 1
+fi
+
+if [ -f "$intfunc" ]; then
+	source $intfunc
+else
+	header
+	echo "maldet($$): {glob} \$intfunct not found, aborting."
+	exit 1
+fi
+
+if [ -f "$compatcnf" ]; then
+	source $compatcnf
+fi
+
+if [ -f "$syscnf" ]; then
+	source $syscnf
+fi
+
+# prerun operations
+prerun
+
+if [ -z "$1" ]; then
+	header
+	usage_short
+else
+	while [ -n "$1" ]; do
+		case "$1" in
+			--mkpubpaths)
+				if [ "$scan_user_access" == "1" ]; then
+					chmod 711 $userbasedir
+					for user in `cat /etc/passwd | cut -d ':' -f1`; do
+						uid=`id --user $user`
+						if [ -z "$uid" ]; then
+							uid=9
+						fi
+						if [ -z "$scan_user_access_minuid" ]; then
+							scan_user_access_minuid=10
+						fi
+						if [ "$uid" -ge "$scan_user_access_minuid" ] && [ ! -d "$userbasedir/$user" ]; then
+							mkdir -p $userbasedir/$user/quar $userbasedir/$user/sess $userbasedir/$user/tmp
+							touch $userbasedir/$user/event_log
+							chown -R $user $userbasedir/$user
+							chmod 750 $userbasedir/$user $userbasedir/$user/quar $userbasedir/$user/sess $userbasedir/$user/tmp
+							chmod 640 $userbasedir/$user/event_log
+							eout "{glob} created public scanning paths for user $user"
+						fi
+						unset uid user
+					done
+					exit
+				else
+					header
+					echo "public scanning support not enabled in $cnf, aborting."
+					exit
+				fi
+			;;
+			-hscan|--hook-scan|--modsec)
+				hscan=1
+			;;
+			-U|--user)
+				shift
+				user="$1"
+				quardir=$userbasedir/$user/quar
+				sessdir=$userbasedir/$user/sess
+				tmpdir=$userbasedir/$user/tmp
+				maldet_log=$userbasedir/$user/event_log
+			;;
+			-co|--config-option)
+				shift
+				user=`whoami`
+				if [ ! "$user" == "root" ]; then
+					tmpdir=$userbasedir/$user/tmp
+				fi
+				tmpco=$tmpdir/config.cli
+				rm -f $tmpco
+				touch $tmpco
+				echo ,$1 | sed -e 's/-\(-config-option\|co\) //' -e 's/\(, *[a-zA-Z0-9_][a-zA-Z0-9_]*=\)/\n\1\n/g' | sed -e '1d' -e 's/^\([^,].*\|.*[^=]\)$/"\1"/' | sed -e '$!N;s/\n//' -e 's/^, *//' | grep -v "^ *compatcnf" > $tmpco
+				. $tmpco
+				rm -f $tmpco
+				if [ -f "$compatcnf" ]; then
+					source $compatcnf
+				fi
+			;;
+			-qd)
+				shift
+				if [ -d "$1" ];  then
+					eout "{scan} set quarantine path: $1" 1
+					quardir="$1"
+				fi
+			;;
+			-b|--background)
+				set_background=1
+			;;
+			-c|--checkout)
+				shift
+				header
+				checkout "$1"
+			;;
+			-x|--exclude-regex)
+				shift
+				if [ "$1" ]; then
+					exclude_regex="-not -regex \"$1\""
+				fi
+			;;
+			-i|--include-regex)
+				shift
+				if [ "$1" ]; then
+					include_regex="-regex \"$1\""
+				fi
+			;;
+			--wget-proxy|--curl-proxy|--web-proxy)
+				shift
+				if [ "$1" ]; then
+					web_proxy="$1"
+				fi
+			;;
+			--alert-daily|--monitor-report)
+				genalert digest
+			;;
+			-m|--monitor)
+				header
+				shift
+				if [ "$OSTYPE" == "FreeBSD" ]; then
+					eout "{mon} not currently supported under FreeBSD" 1
+				elif [ "$1" == "reload" ] || [ "$1" == "RELOAD" ]; then
+					eout "{mon} queued monitor for configuration reload" 1
+					touch $inspath/reload_monitor
+				else
+					svc=m
+					trap trap_exit 2
+					monitor_init "$1"
+				fi
+			;;
+			-k|--kill-monitor|-kill)
+				header
+				if [ "$OSTYPE" == "FreeBSD" ]; then
+					eout "{mon} not currently supported under FreeBSD" 1
+				else
+					monitorpid=`pgrep -f inotify.paths.[0-9]+`
+					if [ -z "$monitorpid" ]; then
+						eout "{mon} could not find running inotifywait process, are we already dead?" 1
+					else
+						eout "{mon} sent kill to monitor service (pid: $monitorpid)" 1
+						monitor_kill
+					fi
+				fi
+			;;
+			-f|--file-list)
+				shift
+				if [ -z "$hscan" ]; then
+					header
+				fi
+				svc=f
+				trap trap_exit 2
+				file_list="$1"
+				if [ ! -f "$file_list" ]; then
+					eout "{scan} file does not exist ($1)" 1
+					exit 1
+					elif [ ! -s "$file_list" ]; then
+					eout "{scan} file list is empty ($1)" 1
+					exit 1
+				fi
+				if [ "$set_background" == "1" ]; then
+					eout "{scan} launching scan of $spath to background, see $maldet_log for progress" 1
+					scan "$spath" "$file_list" >> /dev/null 2>&1 &
+				else
+					scan "$spath" "$file_list"
+				fi
+			;;
+			-a|--scan-all)
+				shift
+				if [ -z "$hscan" ]; then
+					header
+				fi
+				svc=a
+				trap trap_exit 2
+				spath="$1"
+				hrspath="$1"
+				if [ "$spath" == "" ]; then
+					spath=/home
+				fi
+				if [ "$set_background" == "1" ]; then
+					eout "{scan} launching scan of $spath to background, see $maldet_log for progress" 1
+					scan "$spath" all >> /dev/null 2>&1 &
+				else
+					scan "$spath" all
+				fi
+			;;
+			-r|--scan-recent)
+				header
+				svc=r
+				trap trap_exit 2
+				shift
+				spath="$1"
+				shift
+				days="$1"
+				if [ -z "$spath" ]; then
+					eout "{scan} no path defined" 1
+					exit
+				fi
+				if [ -z "$days" ]; then
+					days=7
+				fi
+				if [ "$set_background" == "1" ]; then
+					eout "{scan} launching scan of $spath changes in last ${days}d to background, see $maldet_log for progress" 1
+					scan "$spath" "$days" >> /dev/null 2>&1 &
+				else
+					scan "$spath" "$days"
+				fi
+			;;
+			-l|--log)
+				header
+				view
+			;;
+			-e|--report)
+				header
+				shift
+				view_report "$1" "$2"
+			;;
+			-p|--purge)
+				header
+				purge
+			;;
+                        -d|--update-ver|--update-version)
+				shift
+                                if [ ! "$1" == "1" ]; then
+                                        header
+				fi
+				if [ "$1" == "--force" ]; then
+					lmdup_force=1
+                                elif [ "$1" == "--beta" ]; then
+					lmdup_beta=1
+				fi
+                                lmdup
+                        ;;
+                        -u|--update|--update-sigs)
+                                shift
+                                if [ ! "$1" == "1" ]; then
+                                        header
+				fi
+				if [ "$1" == "--force" ]; then
+					sigup_force=1
+                                fi
+                                sigup
+                        ;;
+			-s|--restore)
+				header
+				shift
+				if [ -f "$sessdir/session.hits.$1" ]; then
+					restore_hitlist "$1"
+				else
+					restore "$1"
+				fi
+			;;
+			-q|--quarantine)
+				header
+				shift
+				quar_hitlist "$1"
+			;;
+			-n|--clean)
+				header
+				shift
+				clean_hitlist "$1"
+			;;
+			-h|--help)
+				header
+				usage_long | more
+			;;
+			*)
+				header
+				usage_short
+		esac
+		shift
+	done
+fi
+
+# import any remote configuration data
+import_conf
+
+# postrun operations
+postrun

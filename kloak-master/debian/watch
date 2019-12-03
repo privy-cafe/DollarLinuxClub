@@ -1,0 +1,6 @@
+## Copyright (C) 2012 - 2019 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+version=4
+opts=filenamemangle=s/.+\/v?(\d\S+)\.tar\.gz/kloak-$1\.tar\.gz/ \
+  https://github.com/Whonix/kloak/tags .*/v?(\d\S+)\.tar\.gz
