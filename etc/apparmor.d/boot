@@ -1,0 +1,25 @@
+# This file exists only to ensure that all per-container policies
+# listed under /etc/apparmor.d/boot get loaded at boot.  Please do
+# not edit this file.
+
+#include <tunables/global>
+
+  profile boot /lib/systemd/** {
+
+  owner /boot/ r,
+  owner /boot/** rwl,
+  owner /vmlinuz{,.old}{,.[0-9]*} rwl,
+  owner /initrd.img{,.old}{,.[0-9]*} rwl,
+
+  audit deny /**/initramfs-tools/ w,
+  audit deny /**/initramfs-tools/** w,
+  audit deny /**/grub.d/ w,
+  audit deny /**/grub.d/** w,
+  audit deny /**/grub/ w,
+  audit deny /**/grub/** w,
+
+  audit deny /**/vmlinu{,z,x}* rw,
+  audit deny /**/System.map* rw,
+
+
+}

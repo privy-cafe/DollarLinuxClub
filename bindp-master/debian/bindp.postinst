@@ -1,0 +1,55 @@
+#!/bin/bash
+
+## Copyright (C) 2012 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+#### meta start
+#### project Whonix
+#### category networking
+#### workstation_only yes
+#### description
+## Compiles <code>/usr/lib/bindp.c</code> to <code>/usr/lib/libindp.so</code>
+## during package installation using <code>gcc</code>.
+#### meta end
+
+if [ -f /usr/lib/helper-scripts/pre.bsh ]; then
+   source /usr/lib/helper-scripts/pre.bsh
+fi
+
+set -e
+
+true "
+#####################################################################
+## INFO: BEGIN: $DPKG_MAINTSCRIPT_PACKAGE $DPKG_MAINTSCRIPT_NAME $@
+#####################################################################
+"
+
+case "$1" in
+    configure)
+
+        gcc -nostartfiles -fpic -shared --entry main /usr/lib/bindp.c -o /usr/lib/libindp.so -ldl -D_GNU_SOURCE -pie -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/build/bindp-0.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z,relro -Wl,-z,now
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "$DPKG_MAINTSCRIPT_NAME called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+true "INFO: debhelper beginning here."
+
+#DEBHELPER#
+
+true "INFO: Done with debhelper."
+
+true "
+#####################################################################
+## INFO: END  : $DPKG_MAINTSCRIPT_PACKAGE $DPKG_MAINTSCRIPT_NAME $@
+#####################################################################
+"
+
+## Explicitly "exit 0", so eventually trapped errors can be ignored.
+exit 0

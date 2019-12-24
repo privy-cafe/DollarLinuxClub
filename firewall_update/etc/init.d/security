@@ -1,0 +1,138 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides: scriptname
+# Required-Start: $remote_fs $syslog
+# Required-Stop: $remote_fs $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Start daemon at boot time
+# Description: Enable service provided by daemon.
+### END INIT INFO
+ 
+iptables -t filter -A INPUT -p TCP -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -t filter -A INPUT -p UDP -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -t filter -A INPUT -p ICMP -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -t filter -A INPUT -m state --state INVALID -j DROP
+iptables -A INPUT -m recent --name portscan --rcheck --seconds 604800 -j DROP
+iptables -A FORWARD -m recent --name portscan --rcheck --seconds 604800 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags RST RST -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags SYN SYN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags ACK ACK -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags SYN ACK -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags ACK SYN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags SYN RST -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags SYN FIN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags SYN URG -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags RST SYN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags FIN SYN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags SYN PSH -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags PSH SYN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags URG SYN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags URG URG -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags PSH PSH -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags FIN FIN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags ALL NONE -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags ALL ALL  -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags SYN,ACK SYN,ACK -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags SYN,FIN SYN,FIN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags SYN,RST SYN,RST -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags FIN,SYN FIN,SYN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags PSH,ACK,FIN,PSH PSH -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags PSH,ACK PSH,ACK -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags PSH,FIN PSH,FIN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags PSH,RST PSH,RST -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags PSH,SYN PSH,SYN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags ACK,ACK,FIN,PSH ACK -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags ACK,ACK ACK,ACK -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags ACK,FIN ACK,FIN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags ACK,RST ACK,RST -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags ACK,SYN ACK,SYN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags URG,ACK,FIN,PSH URG -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags URG,ACK URG,ACK -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags URG,FIN URG,FIN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags URG,RST URG,RST -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags URG,SYN URG,SYN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,PSH,URG -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,SYN,RST,PSH,ACK,URG -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags ALL SYN,RST,ACK,FIN,URG,PSH -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG NONE -m limit --limit 1/second --limit-burst 1 -j DROP
+iptables -A INPUT -f -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL SYN,FIN -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL SYN,SYN -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL SYN,RST -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL SYN,ACK -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL SYN,URG -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL SYN,PSH -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL FIN,FIN -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL FIN,SYN -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL FIN,RST -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL FIN,ACK -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL FIN,URG -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL FIN,PSH -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL RST,RST -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL RST,ACK -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL RST,SYN -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL RST,URG -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL RST,PSH -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL RST,FIN -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL ACK,ACK -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL ACK,PSH -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL ACK,URG -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL ACK,SYN -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL ACK,RST -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL ACK,FIN -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL URG,URG -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL URG,RST -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL URG,SYN -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL URG,ACK -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL URG,PSH -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL URG,FIN -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL PSH,PSH -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL PSH,FIN -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL PSH,URG -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL PSH,SYN -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL PSH,RST -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL PSH,ACK -j DROP
+iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG NONE -j DROP
+iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,SYN FIN,SYN -j DROP
+iptables -t mangle -A PREROUTING -p tcp --tcp-flags SYN,RST SYN,RST -j DROP
+iptables -t mangle -A PREROUTING -p tcp --tcp-flags SYN,FIN SYN,FIN -j DROP
+iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,RST FIN,RST -j DROP
+iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,ACK FIN -j DROP
+iptables -t mangle -A PREROUTING -p tcp --tcp-flags ACK,URG URG -j DROP
+iptables -t mangle -A PREROUTING -p tcp --tcp-flags ACK,FIN FIN -j DROP
+iptables -t mangle -A PREROUTING -p tcp --tcp-flags ACK,PSH PSH -j DROP
+iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL ALL -j DROP
+iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL NONE -j DROP
+iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL FIN,PSH,URG -j DROP
+iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL SYN,FIN,PSH,URG -j DROP
+iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL SYN,RST,ACK,FIN,URG -j DROP
+iptables -A INPUT -p icmp -m icmp --icmp-type address-mask-request -j DROP
+iptables -A INPUT -p icmp -m icmp --icmp-type timestamp-request -j DROP
+iptables -A INPUT -p udp --dport 53 -j ACCEPT
+iptables -A INPUT -p tcp --dport 53 -j ACCEPT
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+iptables -A INPUT -p tcp --dport 8118 -j ACCEPT
+iptables -A INPUT -p tcp --dport 9050 -j ACCEPT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

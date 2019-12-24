@@ -1,0 +1,21 @@
+## Copyright (C) 2012 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+Source: ipv6-disable
+Section: misc
+Priority: optional
+Maintainer: Patrick Schleizer <adrelanos@riseup.net>
+Build-Depends: debhelper (>= 12), genmkfile
+Homepage: https://github.com/Whonix/ipv6-disable
+Vcs-Browser: https://github.com/Whonix/ipv6-disable
+Vcs-Git: https://github.com/Whonix/ipv6-disable.git
+Standards-Version: 4.3.0
+
+Package: ipv6-disable
+Architecture: all
+Depends: ${misc:Depends}
+Description: Deactivates IPv6 using /etc/sysctl.d/
+ There are no IPv6 Anonymity Distribution Gateways featuring an IPv6 firewall
+ yet. Therefore deactivating it to prevent leaks.
+ .
+ For better security.

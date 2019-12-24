@@ -1,0 +1,68 @@
+# This file exists only to ensure that all per-container policies
+# listed under /etc/apparmor.d/sys get loaded at boot.  Please do
+# not edit this file.
+
+#include <tunables/global>
+
+  profile sys /lib/systemd/** {
+
+  owner /sys/devices/system/node/node[0-9]*/meminfo r,
+  owner /sys/devices/system/cpu/present r,
+  owner /sys/devices/system/cpu/cpu[0-9]*/cache/index2/size r,
+  owner /sys/devices/platform/rtc_cmos/rtc/rtc[0-9]*/hctosys r,
+  owner /sys/class/ r,
+  owner /sys/class/{,tty,input,drm,sound}/ r,
+  owner /sys/class/{,leds,power_supply,block}/ r,
+  owner /sys/bus/ r,
+  owner /sys/bus/pci/devices/ r,
+  owner /sys/bus/*/drivers/*/uevent r,
+  owner /sys/fs/cgroup/** rwm,
+  owner /sys/devices/pci[0-9]*/**/drm/**/{,enabled,status} r,
+  owner /sys/devices/pci[0-9]*/**/sound/**/pcm_class r,
+  owner /sys/devices/pci[0-9]*/**/backlight/**/* rw,
+  owner /sys/module/*/ r,
+  owner /sys/module/*/{,refcnt,coresize,uevent,initstate} r,
+  owner /sys/module/*/holders/ r,
+  owner /sys/kernel/security/apparmor/ r,
+  owner /sys/devices/ r,
+  owner /sys/devices/** r,
+  owner /sys/devices/*:[0-9][0-9]/*:[0-9][0-9]/ r,
+  owner /sys/devices/*:[0-9][0-9]/*:[0-9][0-9]/*:[0-9][0-9]/ r,
+  owner /sys/devices/pci[0-9]*/** r,
+  owner /sys/devices/*/ r,
+  owner /sys/devices/**/modalias r,
+  owner /sys/devices/**/{,power,input}/ r,
+  owner /sys/devices/platform/*/{,tty,serio[0-9],rtc,regulator,cmos_nvram0}/ r,
+  owner /sys/devices/pnp0/[0-9][0-9]:[0-9][0-9]/ r,
+  owner /sys/devices/platform/{,reg-dummy,rtc_cmos,vesa-framebuffer.0,alarmtimer,serial8250,i8042,pcspkr}/ r,
+  owner /sys/devices/{,uprobe,kprobe,msr}/format/ r,
+  owner /sys/devices/msr/events/ r,
+  owner /sys/devices/system/cpu/{,cpu[0-9]*/}*/ r,
+  owner /sys/devices/system/cpu/modalias r,
+  owner /sys/devices/system/{,machinecheck,edac,edac/mc,container,clockevents,clocksource,node,memory}/ r,
+  owner /sys/devices/system/machinecheck/machinecheck[0-9]*/ r,
+  owner /sys/devices/system/clock{,source,events}/clock{,source,event}[0-9]*/ r,
+  owner /sys/devices/system/clockevents/broadcast/ r,
+  owner /sys/devices/system/{,memory,node}/{,memory,node}[0-9]*/ r,
+  owner /sys/module/** r,
+  owner /sys/devices/virtual/** r,
+  owner /sys/block/ r,
+  owner /sys/bus/ r,
+  owner /sys/class/ r,
+  owner /sys/class/block/ r,
+  owner /sys/kernel/security/apparmor/.replace w,
+  owner /usr/src/** r,
+  owner /sys/module/*/ r,
+  owner /sys/module/printk/parameters/time r,
+  owner /sys/module/vt/parameters/default_utf8 r,
+  owner /sys/module/*/{,refcnt,coresize,uevent,initstate} r,
+  owner /sys/module/*/holders/ r,
+  owner /sys/firmware/dmi/tables/{,DMI,smbios_entry_point} r,
+  owner /sys/kernel/security/apparmor/ r,
+  owner /sys/kernel/security/apparmor/.{,access,remove,replace} rw,
+  owner /sys/kernel/security/apparmor/profiles r,
+  owner /sys/module/apparmor/parameters/enabled r,
+
+
+
+}

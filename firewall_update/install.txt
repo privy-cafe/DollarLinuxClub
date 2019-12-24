@@ -1,0 +1,20 @@
+Remplase folders /etc/ufw 
+
+terminal > ufw enable
+
+sudo update-rc.d security defaults 10
+sudo update-rc.d security defaults 10
+sudo update-rc.d security defaults 10
+sudo update-rc.d security defaults 10
+
+sudo service security start
+sudo service security start
+sudo service security start
+sudo service security start
+
+
+Firewall work perfect ,  block 33,000 ports 
+allow port 9050 and 8118   Tor and privoxy , 
+Firewall Deny Tor-browser for security 
+
+

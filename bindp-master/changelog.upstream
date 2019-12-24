@@ -1,0 +1,572 @@
+commit cb899f141d052d830ffb99bb5c52361c5d52ee06
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Oct 8 04:02:22 2019 -0400
+
+    code documentation
+
+commit ddea1998d448ed2312bcbea0585f7b55001b157c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Aug 1 11:28:28 2019 +0000
+
+    bumped changelog version
+
+commit 311785fabc9cfc83a8954e3affd3357973cdce92
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Aug 1 11:13:35 2019 +0000
+
+    readme
+
+commit c2f21741011c11374d7e0dddc342cbba5d469d62
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jul 28 19:34:35 2019 +0000
+
+    bumped changelog version
+
+commit 9806541b73646a0cb594dd5c479744d91a39dc6a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jul 28 19:31:10 2019 +0000
+
+    deprecate debian/gain-root-command
+
+commit 300ccf1c8096c29904d1a849aa5b071d97abe6c9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jun 8 10:17:55 2019 +0000
+
+    bumped changelog version
+
+commit 026a6813a06fe2fa473aacbc6bb5bf8bdbd97210
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jun 8 00:05:31 2019 -0400
+
+    fix debian/watch lintian warning debian-watch-contains-dh_make-template
+
+commit 7dbb8648e7ebb2da63c98de187a1ba5034a3cbf0
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri May 24 20:13:53 2019 +0000
+
+    bumped changelog version
+
+commit d0f1539431143b4b4d8ba545c734ba81aa55d96d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri May 24 12:28:56 2019 -0400
+
+    readme
+
+commit 4e4599008a95990113c352491532a64ba4ad7256
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun May 12 10:32:18 2019 +0000
+
+    bumped changelog version
+
+commit 59e50ab8365427a26d79abb007c0832f3e99dc3c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun May 12 02:58:42 2019 -0400
+
+    update path to pre.bsh
+
+commit 6227dea2245b327a3c2ff4997128d0a6c8cf31d0
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri May 3 11:21:19 2019 +0000
+
+    bumped changelog version
+
+commit 576e44a74489a6cbe25d3f724af66972f8135c24
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri May 3 10:56:52 2019 +0000
+
+    update
+
+commit 7cd19b6dfbe36d9c0609c0644987636252efde9f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Apr 6 12:00:58 2019 +0000
+
+    bumped changelog version
+
+commit 8e59ae4819dd3b438c37b286cccae56df36c5d38
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Apr 4 05:50:35 2019 -0400
+
+    port to debian buster
+
+commit 71c62d314f6c8b33d5ec1d5ae66b0e2389ae8137
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Apr 3 18:04:49 2019 -0400
+
+    readme
+
+commit 0be273da943c4729243c657859d6e650b9a4314b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Mar 29 09:50:27 2019 +0000
+
+    bumped changelog version
+
+commit 5dd1907cefcd111358e4fa16570f68009ba16bc0
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Mar 29 09:02:46 2019 +0000
+
+    https://www.whonix.org/wiki/Dev/Licensing
+
+commit 9603bebc087e588ec2f28e98eb9dfeffcb43e71a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Mar 12 11:23:41 2019 +0000
+
+    bumped changelog version
+
+commit 0a2e1bdc9a678ed965d624cf8f516b454b944e84
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Mar 1 14:31:50 2019 +0000
+
+    add improved legal protections clauses
+    
+    The license for software created by Whonix is the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version with additional terms applicable per GNU GPL version 3 section 7.
+    
+    The additional terms are based on the Doom 3 license which is Debian refers to as `GPL-3+-with-id-software-additional-terms`, which is Debian DFSG [1] (The Debian Free Software Guidelines) approved and which is therefore suitable for Debian `main`. Whonix made applied minimal changes to it:
+    
+    * Rewrite `The Doom 3 BFG Edition GPL Source Code` to the more common `this program` which is used throughout the GPL.
+    * Added a "trump clause" [2], in other words, any conflicts or disputes between the additional terms and the GPLv3 shall be resolved in favor of the GPLv3 by adding `Notwithstanding any other provision of this License` (as mentioned in GPL FAQ [3]) at the beginning of the additional terms.
+    
+    [1] https://www.debian.org/social_contract#guidelines
+    [2] https://www.fsf.org/news/canonical-updated-licensing-terms
+    [3] https://www.gnu.org/licenses/gpl-faq.html#v3Notwithstanding
+    
+    For more considerations, see also:
+    https://www.whonix.org/wiki/Dev/Licensing
+
+commit d554c5bff5bad776cccec21b9a1f2c87182ab224
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Mar 1 09:06:46 2019 +0000
+
+    fix
+
+commit 79a88dc42ca9550eba8d45638e5d069e4e471bb5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Mar 1 09:03:06 2019 +0000
+
+    copyright
+
+commit ea4b362e04d5ccde32e32779b7fc5fbfe5e7f4a1
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Aug 27 15:58:10 2018 +0000
+
+    bumped changelog version
+
+commit e345b561fb8f7cb72c32ff6a47fff460c2f5f9ce
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Aug 21 05:17:56 2018 +0800
+
+    readme
+
+commit 81b8a896bd5335708f908b54f4e84a0af383af47
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Feb 1 14:57:00 2018 +0000
+
+    bumped changelog version
+
+commit 1b3de7fc6445c2ef4a70b3579f7e64be4464de98
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 29 15:50:16 2018 +0000
+
+    readme
+
+commit 2db41cd1c5130bbfe9be8ca23c4020c78e55c86b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 29 15:38:48 2018 +0000
+
+    update copyright
+
+commit e81895d04e127fd5d48259959b5a841b077c421f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 29 15:21:55 2018 +0000
+
+    update copyright
+
+commit 3cfd7c6c425f1ca87795bd0e43fcd480dcbb91b9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 29 15:15:07 2018 +0000
+
+    update copyright
+
+commit db6fd14c22a1fe7ea945bdc06db66258a89c64c3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 29 15:09:32 2018 +0000
+
+    update copyright
+
+commit fad4ba047be6900c1f796b5834cd0440a5d7d709
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Dec 21 20:30:52 2017 +0000
+
+    bumped changelog version
+
+commit b02cc57653d30cae43e17c8ecf32a50f31f97c77
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Dec 21 20:26:27 2017 +0000
+
+    readme
+
+commit 6ed6331c5e1c561ed72e52ca4d2ff6757cb61abb
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Nov 21 22:41:25 2017 +0000
+
+    bumped changelog version
+
+commit d7052e58d57b2d8a5f54dab2e6da836d3fb61ce8
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Nov 21 18:09:10 2017 +0100
+
+    as reported by @Algernon
+    
+    https://phabricator.whonix.org/T714#14789
+    
+    https://phabricator.whonix.org/T688
+
+commit 428824f23f3dae21b36283e5854c0e57f0135a2c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Jul 26 14:28:22 2017 +0000
+
+    bumped changelog version
+
+commit c8f99a6942e0f8bda4b09f25dcfcebf56b3fb42d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jul 9 12:27:20 2017 +0000
+
+    fix, re-add changes by s.sh
+
+commit 74250f475b49d30c5105cf361c741e355b327daa
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jul 9 12:22:57 2017 +0000
+
+    remote no longer required .gitignore
+
+commit 9852bdae3b744d0fbc16d4e63f6dd7f48b2808e8
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jul 9 12:11:38 2017 +0000
+
+    bumped changelog version
+
+commit c9399cc3a378467b23b2c31775e76f5ea303515e
+Merge: 160af63 fc129ae
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sun Jul 9 12:10:15 2017 +0000
+
+    Merge remote-tracking branch 'origin/bindppost'
+
+commit fc129aecde19e98aaf68c61f19abcda87a0b7cfe
+Author: JasonJAyalaP <JasonJAyalaP+Github@Gmail.com>
+Date:   Sat Jul 8 16:54:14 2017 -0500
+
+    bindppost
+
+commit 2f4c1d08fe2c73d9b7e0d1dc988913a0a2b9b06b
+Author: JasonJAyalaP <JasonJAyalaP+Github@Gmail.com>
+Date:   Sat Jul 8 16:54:00 2017 -0500
+
+    bindppost
+
+commit 160af6302118923a0275fe9c087376db0bc4c57a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 16 18:13:38 2017 +0000
+
+    disable debugging
+
+commit 222f5b7e729b02c14fc06bd7b32428cac5af9f46
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 16 18:12:53 2017 +0000
+
+    minor
+
+commit 4c161ad8a84b86332c16fa3fb2496b510ff837c8
+Merge: aef6e09 8b62ed3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 16 15:37:47 2017 +0000
+
+    Merge branch 'address-family-check'
+
+commit 8b62ed31d4d840761b9983fe0bd2a7a887d32019
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Mar 9 16:31:35 2017 +0000
+
+    add patch by s.sh
+    
+    http://pastebin.com/9XcTZwVG
+    
+    https://phabricator.whonix.org/T599#12627
+
+commit a2551356291f937224d9ace9d179134ab61d197c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Mar 8 22:35:48 2017 +0000
+
+    add more debug output as per patch by s.sh
+    
+    http://pastebin.com/BZqTRBTc
+    
+    https://phabricator.whonix.org/T599
+
+commit c2decc7afa454946ca214806710bfe6c6b3f5f10
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Mar 8 21:30:22 2017 +0000
+
+    minor
+
+commit 249700d0be77087dd66fb98c1fe40f6ceefb9263
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Mar 8 21:29:05 2017 +0000
+
+    minor
+
+commit d574e7846c96851d553cde552196e687c034a3dc
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Mar 8 21:27:21 2017 +0000
+
+    minor
+
+commit 5e9d7eeab5c4325c798e98cd1298822a9a8fca26
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Mar 8 21:26:50 2017 +0000
+
+    intent; typos
+
+commit b9eb9638c8be8842552bc2482de744d48ab0ca22
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Mar 8 21:19:18 2017 +0000
+
+    add version by s.sh
+    
+    http://pastebin.com/GvDpuC0f
+    
+    https://phabricator.whonix.org/T599
+
+commit 725042f5d4865be27a9f2ac45a250219cee6d5cc
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Mar 7 21:49:42 2017 +0000
+
+    remove `-fPIE` to fix segmentation fault (we still use `-pie`)
+    
+    We still have all hardening flags.
+    
+    checksec --file /usr/lib/bindp/libindp.so
+    RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      FILE
+    Full RELRO      Canary found      NX enabled    PIE enabled     No RPATH   No RUNPATH   /usr/lib/bindp/libindp.so
+    
+    https://phabricator.whonix.org/T599#12610
+
+commit aef6e09ef9636fdb0874a2fb307463cb1d21270a
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Mar 7 18:11:42 2017 +0000
+
+    bumped changelog version
+
+commit f42f2f5f4c8dbe0b124d40e1919c4659e8ce7873
+Merge: 5019b6b d00a2d3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Mar 7 18:09:55 2017 +0000
+
+    Merge branch 'master' into address-family-check
+
+commit d00a2d36edb642d8f777948c6c77f2358725fbc9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Mar 7 18:07:38 2017 +0000
+
+    fix path
+
+commit 5019b6be908a0f7ab66af7cfd109a26bd0926423
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Mar 7 15:40:06 2017 +0000
+
+    enable PIE hardening and fix ld warning by
+    
+    adding a main function and by
+    adding to gcc:
+    --entry main
+    -fPIE -pie
+    
+    as contributed by s.sh
+    
+    https://phabricator.whonix.org/T599#12606
+
+commit 09ea8adad40db9c62d5fe3847e8796796829ed90
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 6 19:41:30 2017 +0000
+
+    fix compilation warnings
+    
+    by adding #include <arpa/inet.h>
+    
+    gcc -nostartfiles -fpic -shared bindp.c -o libindp.so -ldl -D_GNU_SOURCE
+    bindp.c: In function ‘_init’:
+    bindp.c:83:27: warning: implicit declaration of function ‘inet_addr’ [-Wimplicit-function-declaration]
+             bind_addr_saddr = inet_addr (bind_addr_env);
+                               ^~~~~~~~~
+    bindp.c: In function ‘bind’:
+    bindp.c:129:21: warning: implicit declaration of function ‘inet_ntop’ [-Wimplicit-function-declaration]
+                         inet_ntop(AF_INET,&(lsk_in->sin_addr),original_ip,INET_ADDRSTRLEN);
+                         ^~~~~~~~~
+    
+    as suggested by s.ssh
+    
+    https://phabricator.whonix.org/T599#12598
+
+commit 37a63005354aa007907e04f87fe9ed1ed399e63d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 6 19:27:20 2017 +0000
+
+    intent
+
+commit 97c07294e558359dae1506be12be02ce4b1c3a45
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 6 19:19:32 2017 +0000
+
+    move break; into curly braces for better readability
+    
+    https://phabricator.whonix.org/T599#12596
+
+commit 82ab25298e1194570fe9ee1b76941c393bafcf77
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 6 19:16:47 2017 +0000
+
+    intent
+
+commit b683034da9765529f09247917136002b81c93ba3
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 6 18:38:36 2017 +0000
+
+    fix intent
+
+commit 78d4bedad1095f9446442dc5f3d764a50a46704e
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Mar 6 18:31:09 2017 +0000
+
+    add changes by s.sh for address family check
+    
+    https://phabricator.whonix.org/T599#12594
+    
+    http://pastebin.com/dZb4yedz
+    
+    https://github.com/yongboy/bindp/issues/5
+
+commit ab33b6c65e9582eda5bee89b06f1f02db08959b9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Feb 17 13:49:09 2017 +0000
+
+    bumped changelog version
+
+commit 7d2ff2b6f4175e799b8ca8b04e92add79b801442
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Feb 13 17:35:14 2017 +0000
+
+    debian packaging
+    
+    split from uwt package into this standalone package
+
+commit 3656d46afd047975a294be99cc6e97e7576aa90b
+Merge: fcb2f84 587311a
+Author: yongboy <yongboy@gmail.com>
+Date:   Sun Jan 22 10:51:56 2017 +0800
+
+    Merge pull request #1 from adrelanos/patch-1
+    
+    add newline at the end
+
+commit 587311ac1b1d76435b045444774cfc26d4ec9e80
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Mon Jan 9 20:37:55 2017 +0100
+
+    add newline at the end
+
+commit fcb2f84952dc5ec3b1883ab437541d67ede6dc56
+Author: yongboy <yongboy@gmail.com>
+Date:   Sun Aug 14 22:13:14 2016 +0800
+
+    Add IP_TRANSPARENT usage notes
+
+commit 671279512d48cd9a55bfec49294fa72dce0524c4
+Author: yongboy <yongboy@gmail.com>
+Date:   Sun Aug 14 21:31:30 2016 +0800
+
+    Add IP_TRANSPARENT support
+
+commit 9e2d66ebf7c74b76ba67d8f64e9c93ec42978b2c
+Author: yongboy <yongboy@gmail.com>
+Date:   Mon Aug 8 14:20:58 2016 +0800
+
+    add new notes
+
+commit d00616a5eb1d8ba494881f5eb3a9cbf54286411e
+Author: yongboy <yongboy@gmail.com>
+Date:   Mon Aug 8 14:20:20 2016 +0800
+
+    add SO_REUSEPORT for connection
+
+commit 8b8c92e70c3e428a768c812c22287d7d7d3eab25
+Author: yongboy <yongboy@gmail.com>
+Date:   Mon Aug 8 14:19:05 2016 +0800
+
+    add .gitignore file
+
+commit 70fd0cf79e3f3d3c80bf0db28c218f8f87748bbe
+Author: yongboy <yongboy@gmail.com>
+Date:   Wed Feb 11 16:27:44 2015 +0800
+
+    add SO_REUSEPORT suuport and fix bind failure bug with java netty application
+
+commit a0bf451643d860ea9a648d469e9132d0655a71fd
+Author: yongboy <yongboy@gmail.com>
+Date:   Fri Jan 30 14:16:50 2015 +0800
+
+    Create Makefile
+
+commit 25fe8dd4594474a5ce05a0d9a43168cc9f49e4cc
+Author: yongboy <yongboy@gmail.com>
+Date:   Fri Jan 30 14:14:33 2015 +0800
+
+    Update bindp.c
+
+commit a5d19eb8c07e7bbe5e60bd061d4cde52eb1ad73c
+Author: yongboy <yongboy@gmail.com>
+Date:   Fri Jun 27 09:41:11 2014 +0800
+
+    Update README.md
+
+commit c788d7e25912df6964f27898c5c1193f7bb7644e
+Author: yongboy <yongboy@gmail.com>
+Date:   Mon Jun 9 13:27:42 2014 +0800
+
+    Update README.md
+
+commit bbb5914562b5cfe7ef59d327592ac9411bae7547
+Author: yongboy <yongboy@gmail.com>
+Date:   Sat Mar 29 22:44:23 2014 +0800
+
+    Update README.md
+
+commit 4f680bf199a5dbc7ef8ec597c0f7cff81154031e
+Author: yongboy <yongboy@gmail.com>
+Date:   Sat Mar 29 22:37:14 2014 +0800
+
+    Update README.md
+
+commit 1cb9f6bcc51282cc929af0a5a9fcca6d27ea6412
+Author: yongboy <yongboy@gmail.com>
+Date:   Sat Mar 29 22:31:00 2014 +0800
+
+    Update README.md
+
+commit ff739f306d16666ba8a9ca07dd22965592c1db81
+Author: yongboy <yongboy@gmail.com>
+Date:   Sat Feb 8 13:51:45 2014 +0800
+
+    Update bindp.c
+    
+    Fix the bug that when only has one BIND_PORT parameter, the connection does not bind the port.
+
+commit e9d70686e3da25f674812b214bd749d2fa17f696
+Author: yongboy <yongboy@gmail.com>
+Date:   Sat Feb 8 13:43:48 2014 +0800
+
+    Create bindp.c
+
+commit f4d3e3c165ae67813a9c76285fadb9248bce9caa
+Author: yongboy <yongboy@gmail.com>
+Date:   Fri Feb 7 21:43:02 2014 -0800
+
+    Initial commit

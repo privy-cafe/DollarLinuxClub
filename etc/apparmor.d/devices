@@ -1,0 +1,42 @@
+# This file exists only to ensure that all per-container policies
+# listed under /etc/apparmor.d/devices get loaded at security.  Please do
+# not edit this file.
+
+#include <tunables/global>
+
+  profile devices /lib/systemd/** {
+
+  /dev/ r,
+  /dev/console rw,
+  /dev/random rw,
+  /dev/urandom rw,
+  /dev/null rw,
+  /dev/zero rw,
+  /dev/full rw,
+  /dev/core r,
+  /dev/stdin rw,
+  /dev/stdout r,
+  /dev/stderr rw,
+  /dev/tty rw,
+  /dev/tty[0-9]* rw,
+  /dev/ptmx rw,
+  /dev/pts/ r,
+  /dev/pts/* rw,
+  /dev/input/ r,
+  /dev/input/** rw,
+  /dev/uinput rw,
+  /dev/vbox{,user,guest,sf} rw,
+  /dev/kvm rw,
+  owner /dev/sr0 rwk,
+  /dev/log rw,
+  owner /dev/sd* rwmk,
+  owner /dev/kmsg rw,
+  owner /dev/fb0 rw,
+  owner /dev/vga_arbiter rw,
+  /dev/dri/ r,
+  owner /dev/snd/ r,
+  /dev/snd/* rw,
+  owner /dev/mqueue/ rw,
+  /dev/shm/ r,
+
+}

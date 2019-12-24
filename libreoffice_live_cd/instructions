@@ -1,0 +1,14 @@
+apt-get install libreoffice firejail
+
+move files correct folders. 
+
+service apparmor start
+
+show status
+
+>Terminal 
+service apparmor status
+aa-status
+
+Work libreoffice apparmor and sanbox 
+

@@ -1,0 +1,24 @@
+# This file exists only to ensure that all per-container policies
+# listed under /etc/apparmor.d/root get loaded at boot.  Please do
+# not edit this file.
+
+#include <tunables/global>
+
+  profile root /lib/systemd/** {
+
+  signal,
+  ptrace (read, readby, tracedby),
+  unix,
+  network inet tcp,
+  dbus,
+  mount,
+  umount,
+  remount,
+  owner /root/ r,
+  owner /root/** rwlk,
+  owner / r,
+ 
+  audit deny /**/ssl/certs/ w,
+  audit deny /**/ssl/certs/** w,
+
+}

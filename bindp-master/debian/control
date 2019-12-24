@@ -1,0 +1,21 @@
+## Copyright (C) 2017 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+Source: bindp
+Section: misc
+Priority: optional
+Maintainer: Patrick Schleizer <adrelanos@riseup.net>
+Build-Depends: debhelper (>= 12), genmkfile
+Homepage: https://github.com/Whonix/bindp
+Vcs-Browser: https://github.com/Whonix/bindp
+Vcs-Git: https://github.com/Whonix/bindp.git
+Standards-Version: 4.3.0
+
+Package: bindp
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Binding specific IP and Port for Linux Running Application
+ This package is probably most useful for Anonymity Distributions.
+ .
+ This package is produced independently of, and carries no guarantee from,
+ The Tor Project.

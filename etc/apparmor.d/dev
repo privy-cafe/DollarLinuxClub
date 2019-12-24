@@ -1,0 +1,38 @@
+# This file exists only to ensure that all per-container policies
+# listed under /etc/apparmor.d/dev get loaded at security.  Please do
+# not edit this file.
+
+#include <tunables/global>
+
+  profile dev /lib/systemd/** {
+
+  owner /dev/shm/** rwm,
+  owner /dev/autofs rw,
+  owner /dev/vcs{,a,u} w,
+  owner /dev/vcs{,a,u}[0-9]* w,
+  owner /dev/char/ r,
+  owner /dev/char/[0-9]*:[0-9]* w,
+  owner /dev/sg[0-9]* rwmk,
+  owner /dev/ttyS[0-9]* rw,
+  owner /dev/disk/ r,
+  owner /dev/disk/by-path/pci-*-sas-phy[0-9]-lun-[0-9] w,
+  owner /dev/disk/by-path/pci-*-sas-phy[0-9]-lun-[0-9]-part[0-9] w,
+  owner /dev/disk/by-partuuid/[0-9]*-[0-9]* w,
+  owner /dev/bsg/ r,
+  owner /dev/block/ r,
+  owner /dev/hugepages/ rw,
+  owner /dev/net/ r,
+  owner /dev/mapper/ r,
+  owner /dev/vfio/ r,
+  owner /dev/btrfs-control w,
+  owner /dev/loop-control rw,
+  owner /dev/loop[0-9]* rw,
+  owner /dev/mapper/control rw,
+  owner /dev/dm-0 rw,
+  owner /dev/mapper/swapfile w,
+
+  audit deny /dev/{,k}mem rw,
+  audit deny /dev/port rw,
+
+
+}

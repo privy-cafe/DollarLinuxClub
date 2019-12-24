@@ -1,0 +1,41 @@
+# This file exists only to ensure that all per-container policies
+# listed under /etc/apparmor.d/proc get loaded at boot.  Please do
+# not edit this file.
+
+#include <tunables/global>
+
+  profile proc /proc/** {
+  
+  capability sys_module,
+
+  owner /proc/*/environ r,
+  owner /proc/*/sched r,
+  owner /proc/*/stat r,
+  owner /proc/cmdline r,
+  owner /proc/sys/** w,
+  owner /proc/ r,
+  owner /proc/filesystems r,
+  owner /proc/*/fd/ r,
+  owner /proc/*/{,stat,comm,cmdline} r,
+  owner /proc/*/task/ r,
+  owner /proc/*/{,environ,sched,mountinfo,mounts,loginuid} r,
+  owner /proc/{,cmdline,modules,swaps,devices} r,
+  owner /proc/sys/kernel/random/boot_id r,
+  owner /proc/sys/kernel/osrelease r,
+  owner /proc/mtrr rw,
+  owner /proc/*/{,setgroups,gid_map,uid_map} w,
+  owner /proc/{,kmsg,devices,modules} r,
+  owner /proc/tty/drivers r,
+  owner /etc/modules r,  
+  owner /proc/*/loginuid rw,
+  owner /proc/*/fd/ r,
+  owner /proc/*/task/*/stat r,
+  owner /proc/*/net/ r,
+  owner /proc/*/net/dev r,
+  owner /proc/sys/** r,
+  owner /proc/asound/card[0-9]*/ r,
+  owner /proc/asound/card[0-9]*/pcm[0-9]*/ r,
+  owner /proc/asound/card[0-9]*/pcm[0-9]*/sub[0-9]*/status r,
+
+
+}

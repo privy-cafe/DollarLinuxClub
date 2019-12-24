@@ -1,0 +1,23 @@
+# This file exists only to ensure that all per-container policies
+# listed under /etc/apparmor.d/kernel get loaded at boot.  Please do
+# not edit this file.
+
+#include <tunables/global>
+
+  profile kernel /lib/systemd/** {
+
+  audit deny /etc/ld.so.preload.d/ w,
+  audit deny /etc/ld.so.preload.d/** w,
+  audit deny /etc/ld.so.cache w,
+  audit deny /etc/ld.so.conf w,
+  audit deny /etc/ld.so.conf.d/ w,
+  audit deny /etc/ld.so.conf.d/** w,
+
+  audit deny /sys/kernel/debug/ rw,
+  audit deny /sys/kernel/debug/** rw,
+
+  audit deny /**/systemd/ w,
+  audit deny /**/systemd/** w,
+
+
+}
