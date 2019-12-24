@@ -1,0 +1,4 @@
+1ffd9f8dbf0d4117c19fb8b7f4bc20a53b16e57b521e13be454ea7479b87cc9e  zombieload_security.deb / sha256sum
+77b48313989043ea96c6a6973cd8683fb21276d3  zombieload_security.deb / sha1sum
+b35f3dc3a8eb029515b477dfafc151c5  zombieload_security.deb / md5sum
+
