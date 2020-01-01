@@ -60,6 +60,8 @@ Security, what is security ????
 
 Always ask yourself questions when you are approaching a system to secure.
 Even if those question does look and sound stupid, narrowing it down to it most simplistic form is very important.
+
+By narrowing down your scopes and needs , you will avoid a lot's of mistakes.
     
 - [ ] Why do you want to secure your server & services ?
 - [ ] How much security do you want or not want?
@@ -414,85 +416,9 @@ vm.dirty_ratio = 30 		t
 vm.min_free_kbytes = 65535 		
 vm.mmap_min_addr = 4096 		
 vm.overcommit_ratio = 50 		
-vm.swappiness = 30 		
-
-# Disable privileged io: iopl(2) and ioperm(2)
-# Warning: Xorg needs it to be 0
-kernel.grsecurity.disable_priv_io = 1
-
-# Chroot restrictions
-kernel.grsecurity.chroot_deny_shmat = 1
-kernel.grsecurity.chroot_deny_unix = 1
-kernel.grsecurity.chroot_deny_mount = 0
-kernel.grsecurity.chroot_deny_fchdir = 1
-kernel.grsecurity.chroot_deny_chroot = 1
-kernel.grsecurity.chroot_deny_pivot = 1
-kernel.grsecurity.chroot_enforce_chdir = 1
-kernel.grsecurity.chroot_deny_chmod = 1
-kernel.grsecurity.chroot_deny_mknod = 1
-kernel.grsecurity.chroot_restrict_nice = 1
-kernel.grsecurity.chroot_execlog = 0
-kernel.grsecurity.chroot_caps = 0
-kernel.grsecurity.chroot_deny_sysctl = 1
-kernel.grsecurity.chroot_findtask = 1
-
-# Trusted execution
-# Add users to the 64040 (grsec-tpe) group to enable them to execute binaries
-# from untrusted directories
-kernel.grsecurity.tpe = 1
-kernel.grsecurity.tpe_gid = 64040
-kernel.grsecurity.tpe_invert = 1
-kernel.grsecurity.tpe_restrict_all = 1
-
-# Socket restrictions
-# If the setting is enabled and an user is added to relevant group, she won't
-# be able to open this kind of socket
-kernel.grsecurity.socket_all = 1
-kernel.grsecurity.socket_all_gid = 64041
-kernel.grsecurity.socket_client = 1
-kernel.grsecurity.socket_client_gid = 64042
-kernel.grsecurity.socket_server = 1
-kernel.grsecurity.socket_server_gid = 64043
-
-# Auditing
-kernel.grsecurity.audit_mount = 1
-kernel.grsecurity.dmesg = 1
-kernel.grsecurity.resource_logging = 1
-kernel.grsecurity.exec_logging = 0
-kernel.grsecurity.audit_chdir = 0
-
-# Ptrace
-kernel.grsecurity.audit_ptrace = 1
-kernel.grsecurity.harden_ptrace = 1
-
-# Protect mounts
-kernel.grsecurity.romount_protect = 0
-
-# Prevent symlinks/hardlinks exploits (don't follow symlink on world-writable +t
-# folders)
-kernel.grsecurity.linking_restrictions = 1
-# Prevent writing to fifo not owned in world-writable +t folders
-kernel.grsecurity.fifo_restrictions = 1
-kernel.grsecurity.execve_limiting = 1
-kernel.grsecurity.ip_blackhole = 1
-kernel.grsecurity.lastack_retries = 4
-kernel.grsecurity.signal_logging = 1
-kernel.grsecurity.forkfail_logging = 1
-kernel.grsecurity.timechange_logging = 1
+vm.swappiness = 10 		
 
 
-# PAX
-kernel.pax.softmode = 0
-
-# Disable module loading
-# This is not a grsecurity anymore, but you might still want to disable module
-# loading so no code is inserted into the kernel
-# kernel.modules_disabled=1
-
-# Once you're satisfied with settings, set grsec_lock to 1 so noone can change
-# grsec sysctl on a running system
-kernel.grsecurity.grsec_lock = 0
-```
 
 
 
@@ -1514,102 +1440,5 @@ find /dir -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print
 # echo "blacklist firewire-core" * *  /etc/modprobe.d/firewire.conf
 # echo "blacklist thunderbolt" * *  /etc/modprobe.d/thunderbolt.conf
 sudo dpkg-statoverride --update --add root sudo 4750 /bin/su
-
-
-Checklist
-Checklist	Step		√		To Do		CIS		UT Note		Cat I		Cat II/III		Min Std	
- 		 		Preparation and Installation		 		 		 		 		 	
-1		 		If machine is a new install, protect it from hostile network traffic, until the operating system is installed and hardened.		 		§		!		!		4.5.1	
-2		 		Set a BIOS/firmware password.		 		 		!		 		4.5.1	
-3		 		Configure the device boot order to prevent unauthorized booting from alternate media.		 		 		 		 		 	
-4		 		Use the latest version of RHEL possible.		1,7		 		!		!		4.5.2	
- 		 		Filesystem Configuration		 		 		 		 		 	
-5		 		Create a separate partition with the nodev, nosuid, and noexec options set for /tmp		1.1.1-.4		§		 		 		 	
-6		 		Create separate partitions for /var, /var/log, /var/log/audit, and /home		1.1.{5,7,8,9}		§		 		 		 	
-7		 		Bind mount /var/tmp to /tmp		1.1.6		 		 		 		 	
-8		 		Set nodev option to /home		1.1.10		 		 		 		 	
-9		 		Set nodev, nosuid, and noexec options on /dev/shm		1.1.14-.16		 		 		 		 	
-10		 		Set sticky bit on all world-writable directories.		1.1.17		 		 		 		 	
- 		 		System Updates		 		 		 		 		 	
-11		 		Register with Red Hat Satellite Server so that the system can receive patch updates.		1.2.1		§		!		!		4.5.2	
-12		 		Install the Red Hat GPG key and enable gpgcheck.		1.2.2-.3		 		 		 		 	
- 		 		Secure Boot Settings		 		 		 		 		 	
-13		 		Set user/group owner to root, and permissions to read and write for root only, on /boot/grub2/grub.cfg		1.5.1-.2		§		 		 		 	
-14		 		Set boot loader password.		1.5.3		 		 		 		 	
-15		 		Remove the X window system.		3.2		§		 		 		 	
-16		 		Disable X font server.		 		 		 		 		 	
- 		 		Process Hardening		 		 		 		 		 	
-17		 		Restrict core dumps.		1.6.1		§		 		 		 	
-18		 		Enable randomized virtual memory region placement.		1.6.2		§		!		 		 	
- 		 		OS Hardening		 		 		 		 		 	
-19		 		Remove legacy services (e.g., telnet-server; rsh, rlogin, rcp; ypserv, ypbind; tftp, tftp-server; talk, talk-server).		2.1.{1,3-10}		 		!		!		 	
-20		 		Disable any services and applications started by xinetd or inetd that are not being utilized.		 		§		!		!		4.5.4	
-21		 		Remove xinetd, if possible.		2.1.11		§		!		 		 	
-22		 		Disable legacy services (e.g., chargen-dgram, chargen-stream, daytime-dgram, daytime-stream, echo-dgram, echo-stream, tcpmux-server).		2.1.{12-18}		 		!		!		 	
-23		 		Disable or remove server services that are not going to be utilized (e.g., FTP, DNS, LDAP, SMB, DHCP, NFS, SNMP, etc.).		 		 		!		 		4.5.4	
-24		 		Set daemon umask.		3.1		 		 		 		 	
- 		 		Network Security and Firewall Configuration		 		 		 		 		 	
-25		 		Limit connections to services running on the host to authorized users of the service via firewalls and other access control technologies.		4.7		§		!		!		4.5.5	
-26		 		Disable IP forwarding.		4.1.1		 		 		 		 	
-27		 		Disable send packet redirects.		4.1.2		 		 		 		 	
-28		 		Disable source routed packet acceptance.		4.2.1		 		 		 		 	
-29		 		Disable ICMP redirect acceptance.		4.2.2		 		 		 		 	
-30		 		Enable ignore broadcast requests.		4.2.5		 		 		 		 	
-31		 		Enable bad error message protection.		4.2.6		 		 		 		 	
-32		 		Enable TCP/SYN cookies.		4.2.8		 		 		 		 	
- 		 		Remote Administration Via SSH		 		 		 		 		 	
-33		 		Set SSH protocol to 2.		6.2.1		§		!		!		4.5.6	
-34		 		Set SSH loglevel to INFO.		6.2.2		§		!		!		 	
-35		 		Disable SSH root login.		6.2.8		§		 		 		 	
-36		 		Set SSH permitemptypasswords to no.		6.2.9		 		!		!		 	
- 		 		System Integrity and Intrusion Detection		 		 		 		 		 	
-37		 		Install and configure AIDE.		1.3.1-.2		§		 		 		4.5.8	
-38		 		Configure selinux.		1.4.1-.6		§		 		 		 	
-39		 		Install and configure OSsec HIDS.		 		§		 		 		 	
-40		 		Configure network time protocol (NTP).		3.6		§		!		 		 	
-41		 		Enable system accounting (auditd).		5.2		§		!		 		4.6.1	
-42		 		Install and configure rsyslog.		5.1.1-.4		§		!		 		 	
-43		 		All administrator or root access must be logged.		 		 		!		 		4.6.4	
-44		 		Configure log shipping to separate device/service (e.g. Splunk).		5.1.5		§		 		 		 	
- 		 		Files/Directory Permissions/Access		 		 		 		 		 	
-45		 		Integrity checking of system accounts, group memberships, and their associated privileges should be enabled and tested.		 		§		!		 		4.5.9	
- 		 		PAM Configuration		 		 		 		 		 	
-46		 		Ensure that the configuration files for PAM, /etc/pam.d/* are secure.		6.3		§		!		!		4.5.12	
-47		 		Upgrade password hashing algorithm to SHA-512.		6.3.1		 		!		 		 	
-48		 		Set password creation requirements.		6.3.2		§		!		!		 	
-49		 		Restrict root login to system console.		6.4		§		 		 		 	
- 		 		Warning Banners		 		 		 		 		 	
-50		 		If network or physical access services are running, ensure the university warning banner is displayed.		6.2.14, 8.1		§		!		!		4.5.10	
-51		 		If the system allows logins via a graphical user interface, ensure the university warning banner is displayed prior to login.		8.3		§		!		 		 	
- 		 		Anti-Virus Considerations		 		 		 		 		 	
-52		 		Install and enable anti-virus software.		 		§		 		 		4.3.1	
-53		 		Configure to update signature daily on AV.		 		§		 		 		4.3.3	
- 		 		Additional Security Notes		 		 		 		 		 	
-54		 		Systems will provide secure storage for Confidential (Category-I) University Data as required. Security can be provided by means such as, but not limited to, encryption, access controls, filesystem audits, physically securing the storage media, or any combination thereof as deemed appropriate.		 		 		 		 		 
-
-
- sudo chkconfig off
-
-To check what services are listening use: 
-
-$ lsof  \| grep '*:'&nbsp;
-
-or
-
-$ sudo netstat \--tulp
-
- 
-
-Much more detailed information regarding services is available in the CIS benchmark documents.
-
-
-Red Hat also provides a text-based interface for changing startup services: ntsysv
-
-For example, the command
-
-ntsysv \--level 345
-
-configures runlevels 3, 4, and 5.
-
-sudo service xinetd stop; sudo chkconfig xinetd off
+		
 
