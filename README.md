@@ -97,14 +97,6 @@ Linux kernel and its related files are in /boot directory which is by default as
 
 It is important to mount couple partitions with specific mount options and their own partitions
 A good example would be the /tmp partition which is often used for privilege escalations 
-
-
-* LABEL=/boot     /boot     ext2     defaults,ro     1 2
-
-proc     /proc     proc     defaults,hidepid=2     0     0         # added by unknown on 2019-07-06 @ 06:49:51
-
-***Linux Filesystem Permissions***
- 
 systems should be separated into different partitions for this will prevent lot's of unwanted executions and manipulations
 
      /
@@ -115,6 +107,29 @@ systems should be separated into different partitions for this will prevent lot'
      /var
      /opt
 	
+
+* LABEL=/boot     /boot     ext2     defaults,ro     1 2
+
+proc     /proc     proc     defaults,hidepid=2     0     0         # added by unknown on 2019-07-06 @ 06:49:51
+
+***Linux Filesystem Permissions***
+ ***Make a backup of fstab and apply secure setting for proc and others***
+
+    sudo cp --preserve /etc/fstab /etc/fstab.$(date +"%Y%m%d%H%M%S")
+echo -e "\nproc     /proc     proc     defaults,hidepid=2     0     0         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /etc/fstab
+
+dd if=/dev/zero of=/usr/tmpDISK bs=1024 count=2048000
+
+mkdir /tmpbackup
+      cp -Rpf /tmp /tmpbackup
+      mount -t tmpfs -o loop,noexec,nosuid,rw /usr/tmpDISK /tmp
+      chmod 1777 /tmp
+      cp -Rpf /tmpbackup/* /tmp/
+      rm -rf /tmpbackup
+      echo "/usr/tmpDISK  /tmp    tmpfs   loop,nosuid,nodev,noexec,rw  0 0" >> /etc/fstab
+      sudo mount -o remount /tmp
+      echo "/dev/sda4   /tmp   tmpfs  loop,nosuid,noexec,rw  0 0 "
+
 
 **Optional hardening of APT**
 
@@ -419,7 +434,45 @@ vm.overcommit_ratio = 50
 vm.swappiness = 10 		
 
 
+#profile mask setting
+sudo cp --preserve /etc/profile /etc/profile.$(date +"%Y%m%d%H%M%S")
+sudo cp --preserve /etc/bash.bashrc /etc/bash.bashrc.$(date +"%Y%m%d%H%M%S")
+sudo cp --preserve /etc/login.defs /etc/login.defs.$(date +"%Y%m%d%H%M%S")
+sudo cp --preserve /root/.bashrc /root/.bashrc.$(date +"%Y%m%d%H%M%S")
+echo -e "\numask 0027         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /etc/profile /etc/bash.bashrc
+echo -e "\nUMASK 0027         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /etc/login.defs
+echo -e "\numask 0077         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /root/.bashrc
 
+
+
+Install ntp if you need it.
+
+On Debian based systems:
+
+sudo apt install ntp
+
+Make a backup of the NTP client's configuration file /etc/ntp.conf:
+
+sudo cp --preserve /etc/ntp.conf /etc/ntp.conf.$(date +"%Y%m%d%H%M%S")
+
+
+sudo sed -i -r -e "s/^((server|pool).*)/# \1         # commented by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")/" /etc/ntp.conf
+echo -e "\npool pool.ntp.org iburst         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /etc/ntp.conf
+
+sudo service ntp restart
+
+# Configure TimeZone
+config_timezone(){
+   clear
+   f_banner
+   echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
+   echo -e "\e[93m[+]\e[00m We will now Configure the TimeZone"
+   echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
+   echo ""
+   sleep 10
+   dpkg-reconfigure tzdata
+   say_done
+}
 
 
 
@@ -555,6 +608,15 @@ mkdir ~/.ssh; nano ~/.ssh/authorized_keys
 mkdir -p ~/.ssh && sudo chmod -R 700 ~/.ssh/
 ```
 
+$ sudo iptables --flush  # start again
+$  do iptables --new-chain RATE-LIMIT
+$ sudo iptables --append RATE-LIMIT \
+    --match hashlimit \
+    --hashlimit-upto 50/sec \
+    --hashlimit-burst 20 \
+    --hashlimit-name conn_rate_limit \
+    --jump ACCEPT
+$ sudo iptables --append RATE-LIMIT --jump DROP
 
 
 
@@ -738,35 +800,6 @@ Remove short moduli:
 sudo awk '$5 * = 3071' /etc/ssh/moduli | sudo tee /etc/ssh/moduli.tmp
 sudo mv /etc/ssh/moduli.tmp /etc/ssh/moduli
 
-
-
-
-
-
-Install ntp if you need it.
-
-On Debian based systems:
-
-sudo apt install ntp
-
-Make a backup of the NTP client's configuration file /etc/ntp.conf:
-
-sudo cp --preserve /etc/ntp.conf /etc/ntp.conf.$(date +"%Y%m%d%H%M%S")
-
-
-sudo sed -i -r -e "s/^((server|pool).*)/# \1         # commented by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")/" /etc/ntp.conf
-echo -e "\npool pool.ntp.org iburst         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /etc/ntp.conf
-
-sudo service ntp restart
-
-
-Steps
-
-    Make a backup of /etc/fstab:
-
-    sudo cp --preserve /etc/fstab /etc/fstab.$(date +"%Y%m%d%H%M%S")
-echo -e "\nproc     /proc     proc     defaults,hidepid=2     0     0         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /etc/fstab
-
 sudo sed -i -r -e "s/^(password\s+requisite\s+pam_pwquality.so)(.*)$/# \1\2         # commented by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")\n\1 retry=3 minlen=10 difok=3 ucredit=-1 lcredit=-1 dcredit=-1 ocredit=-1 maxrepeat=3 gecoschec         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")/" /etc/pam.d/common-password
 
 
@@ -902,177 +935,7 @@ If you really want EVERY Bash/Zsh prompt (even within X) to timeout, use:
 
 $ export TMOUT="$(( 60*10 ))";
 
-It's possible to bind it and listen on port 53 (TCP/UDP) with mac_portacl(4)
-kernel module (network port access control policy). For this add
-dnscrypt_proxy_mac_portacl_enable=YES in your rc.conf. The dnscrypt-proxy
-startup script will load mac_portacl and add a rule where _dnscrypt-proxy user will
-be able to bind on port 53 (TCP/UDP). This port can be changed by
-dnscrypt_proxy_mac_portacl_port variable in your rc.conf. You also need to
-change dnscrypt-proxy config file to use port 53.
 
-Below are a few examples on how to redirect local connections from port
-5353 to 53.
-
-[ipfw]
-
-  ipfw nat 1 config if lo0 reset same_ports \
-    redirect_port tcp 127.0.0.1:5353 53 \
-    redirect_port udp 127.0.0.1:5353 53
-  ipfw add nat 1 ip from any to 127.0.0.1 via lo0
-
-  /etc/rc.conf:
-    firewall_enable="YES"
-    firewall_nat_enable="YES"
-
-  /etc/sysctl.conf:
-    net.inet.ip.fw.one_pass=0
-
-[pf]
-
-  set skip on lo0
-  rdr pass on lo0 proto { tcp udp } from any to port 53 -*  127.0.0.1 port 5353
-
-  /etc/rc.conf:
-    pf_enable="YES"
-
-[unbound]
-
-  /etc/rc.conf:
-    local_unbound_enable="YES"
-
-  /var/unbound/unbound.conf:
-    server:
-      interface: 127.0.0.1
-      do-not-query-localhost: no
-
-  /var/unbound/forward.conf:
-    forward-zone:
-      name: "."
-      forward-addr: 127.0.0.1@5353
-
-  If you are using local_unbound, DNSSEC is enabled by default. You should
-  comment the "auto-trust-anchor-file" line or change dnscrypt-proxy to use
-  servers with DNSSEC support only.
-
-ALL THE FOLLOWING CHROOTING ARE EXAMPLE, YOU SHOULD ALWAYS VERIFY IF IT SUITABLES FOR YOU.
-IMAGES MIGHT BE OUT OF DATE & MAKE SURE IT IS RLY WHAT U NEED.
-THIS IS MULTIPLE WAY TO CHROOT STUFF.
-
-
-Chroot informations
-wget http://www.archlinux.org/packages/community/i686/busybox/download/ -O busybox.pkg.tar.xz
-wget http://www.archlinux.org/packages/core/i686/glibc/download/ -O glibc.pkg.tar.xz
-( assuming that u did wget  both up to date ) 
-mkdir -p ~/chroot/usr/bin/ ~/chroot/{dev,proc,root,etc}
-for i in *.pkg.tar.xz;do
-bsdtar xfJ $i -C ~/chroot
-done
-cp /etc/resolv.conf ~/chroot/etc/
-ln -s /bin/busybox ~/chroot/bin/sh
-ln -s /bin/busybox ~/chroot/bin/ln
-sudo chroot ~/chroot/ /bin/sh
-for i in $(busybox --list);do ln -s /bin/busybox /usr/bin/$i;done
-
-
-
-mkdir ~/chroot
-cd ~/chroot
-tar -xvf stage3-*.tar.xz
-tar -xvf portage-latest.tar.xz
-mv portage usr
-sudo mount --bind /dev dev
-sudo mount --bind /sys sys
-sudo mount -t proc proc proc
-cp /etc/resolv.conf etc
-sudo chroot . /bin/bash
-
-
- mkdir ~/chroot && cd ~/chroot
- curl -O https://mirrors.edge.kernel.org/archlinux/iso/latest/archlinux-bootstrap-2019.02.01-x86_64.tar.gz
- sudo tar xzf archlinux-bootstrap-2019.02.01-x86_64.tar.gz && rm archlinux-bootstrap-2019.02.01-x86_64.tar.gz
- sudo sed -i '/evowise/s/^#//' root.x86_64/etc/pacman.d/mirrorlist
- sudo sed -i '/CheckSpace/s/^/#/' root.x86_64/etc/pacman.conf
- sudo arch-chroot root.x86_64
- [chroot]# pacman-key --init
- [chroot]# pacman-key --populate archlinux
-
-
- sudo apk add debootstrap
- for i in /proc/sys/kernel/grsecurity/chroot_*; do echo 0 | sudo tee $i; done
- mkdir ~/chroot
- sudo debootstrap --arch=i386 wheezy ~/chroot http://http.debian.net/debian/
- for i in /proc/sys/kernel/grsecurity/chroot_*; do echo 1 | sudo tee $i; done
- sudo chroot ~/chroot /bin/bash
-
-
-wget http://www.archlinux.org/packages/community/i686/busybox/download/ -O busybox.pkg.tar.xz
-wget http://www.archlinux.org/packages/core/i686/glibc/download/ -O glibc.pkg.tar.xz
-wget http://www.archlinux.org/packages/core/i686/tar/download/ -O tar.pkg.tar.xz
-mkdir -p ~/chroot/usr/bin/ ~/chroot/{dev,proc,root,etc}
-for i in *.pkg.tar.xz;do
-bsdtar xfJ $i -C ~/chroot
-done
-cp /etc/resolv.conf ~/chroot/etc/
-ln -s /bin/busybox ~/chroot/bin/sh
-ln -s /bin/busybox ~/chroot/bin/ln
-sudo chroot ~/chroot/ /bin/sh
-
-
-Fix PAX flags on Skype binary - linux-grsec only.
-
-ELF marking with paxctl cannot be used because Skype binary refuses to run if modified.
-
-CONFIG_PAX_XATTR_PAX_FLAGS is NOT yet available in linux-grsec.
-
- sudo apk add attr
- sudo setfattr -n user.pax.flags -v "em" ~/chroot/usr/bin/skype
-
-Mount needed directories in the chroot read-only to limit access to the system devices.
-
-Give write access to /dev/v4l and to /dev/snd in order to let Skype use the webcam device: Skype is not compatible with Alsa anymore and requires Pulseaudio to be running.
-
- sudo mount -o bind /proc ~/chroot/proc
- sudo mount -o bind,ro,remount /proc ~/chroot/proc
- sudo mount -o bind /sys ~/chroot/sys
- sudo mount -o bind,ro,remount /sys ~/chroot/sys
- sudo mount -o bind /dev ~/chroot/dev
- sudo mount -o bind,ro,remount /dev ~/chroot/dev
- sudo mount -o bind /dev/v4l ~/chroot/dev/v4l
- sudo mount -t tmpfs -o nodev,nosuid,noexec shm $CHROOT_PATH/dev/shm
-
-Enter the chroot and create a user:
-
- sudo chroot ~/chroot
- useradd -G audio,video <username* 
- exit
-
-Then run Skype as your newly created user:
-
- sudo chroot ~/chroot /bin/su - <username*  -c /usr/bin/skype
-
-"""""""""""""""
-
-Fix PAX flags on Skype binary - linux-grsec only.
-
-ELF marking with paxctl cannot be used because Skype binary refuses to run if modified.
-
-CONFIG_PAX_XATTR_PAX_FLAGS is NOT yet available in linux-grsec.
-
- sudo apk add attr
- sudo setfattr -n user.pax.flags -v "em" ~/chroot/usr/bin/skype
-
-Mount needed directories in the chroot read-only to limit access to the system devices.
-
-Give write access to /dev/v4l and to /dev/snd in order to let Skype use the webcam device: Skype is not compatible with Alsa anymore and requires Pulseaudio to be running.
-
- sudo mount -o bind /proc ~/chroot/proc
- sudo mount -o bind,ro,remount /proc ~/chroot/proc
- sudo mount -o bind /sys ~/chroot/sys
- sudo mount -o bind,ro,remount /sys ~/chroot/sys
- sudo mount -o bind /dev ~/chroot/dev
- sudo mount -o bind,ro,remount /dev ~/chroot/dev
- sudo mount -o bind /dev/v4l ~/chroot/dev/v4l
- sudo mount -t tmpfs -o nodev,nosuid,noexec shm $CHROOT_PATH/dev/shm
 
 Enter the chroot and create a user:
 
@@ -1089,69 +952,7 @@ bash
 
 !/bin/bash CHROOT_PATH="/home/$USER/chroot" cd $CHROOT_PATH mount | grep $CHROOT_PATH/dev || sudo mount --bind /dev dev mount | grep $CHROOT_PATH/sys || sudo mount --bind /sys sys mount | grep $CHROOT_PATH/proc || sudo mount -t proc proc proc cp /etc/resolv.conf etc sudo chroot --userspec=$USER:users . /bin/bash echo "You must manually unmount $CHROOT_PATH/dev, $CHROOT_PATH/sys, $CHROOT_PATH/proc." 
 
-
-SCREENRC
-
-.screenrc (example)
-
-#hardstatus off
-hardstatus alwayslastline '%{= kG}[ %{y}%H%? %1`%?%{g} ][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][ %{y}%l %{g}][%{W}%c:%s %{g}]'
-msgwait 1
-vbell off
-
-# Huge scrollback buffer
-defscrollback 5000
-
-# No welcome message
-startup_message off
-
-# Clear the screen after closing some programs
-altscreen on
-
-# Get rid of the vertical bars
-rendition so =00
-caption string "%{03} "
-
-# 256 colors
-term screen-256color
-terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
-termcapinfo xterm* ti@:te@
-attrcolor b ".I" 
-
-# UTF-8
-#defutf8 on
-#utf8 on
-
-# Default Windows
-
-# Switch windows with F3 (prev) and F4 (next)
-bindkey "^[OR" prev
-bindkey "^[OS" next
-
-# Get rid of silly xoff stuff
-bind s split
-bind c screen 1
-bind ^c screen 1
-bind 0 select 10                                                            
-screen 1
-
 # remove some stupid / dangerous key bindings
-bind k
-bind ^k
-bind .
-bind ^\
-bind \\
-bind ^h
-bind h  hardcopy
-bind 'K' kill
-bind '}' history
-
-bind L screen -t dmesg 10 watch "dmesg | tail -n $((LINES-42))"
-bind T screen -t htop 11 htop
-bind A screen -t atop 12 atop
-bind N screen -t nethogs 15 nethogs
-bind V screen -t vnstat 16 vnstat
-bind S screen -t ss 17 ss -s
 
 
 
