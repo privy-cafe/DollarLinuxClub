@@ -214,7 +214,58 @@ chmod og-rwx /etc/cron.monthly
 chown root:root /etc/cron.d
 chmod og-rwx /etc/cron.d
 ```
+````
+Only root account have UID 0 with full permissions to access the system. Type the following command to display all accounts with UID set to 0:
+# awk -F: '($3 == "0") {print}' /etc/passwd
 
+
+
+#See all set user id files:
+find / -perm +4000
+# See all group id files
+find / -perm +2000
+# Or combine both in a single command
+find / \( -perm -4000 -o -perm -2000 \) -print
+find / -path -prune -o -type f -perm +6000 -ls
+
+
+find /dir -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print
+ echo 'install usb-storage /bin/true' * *  /etc/modprobe.d/disable-usb-storage.conf
+# echo "blacklist firewire-core" * *  /etc/modprobe.d/firewire.conf
+# echo "blacklist thunderbolt" * *  /etc/modprobe.d/thunderbolt.conf
+sudo dpkg-statoverride --update --add root sudo 4750 /bin/su
+		
+find / -xdev \( -perm -4000 -o -perm -2000 \) -type f | awk '{print \
+"-a always,exit -F path=" $1 " -F perm=x -F auid>=1000 -F auid!=4294967295 \
+-k privileged" } ' >> /etc/audit/audit.rules
+
+echo " " >> /etc/audit/audit.rules
+echo "#End of Audit Rules" >> /etc/audit/audit.rules
+echo "-e 2" >>/etc/audit/audit.rules
+
+cp /etc/audit/audit.rules /etc/audit/rules.d/audit.rules
+
+chown root:root /boot/grub/grub.cfg
+chmod og-rwx /boot/grub/grub.cfg
+chown root:root /boot/grub/grub.cfg
+chmod og-rwx /boot/grub/grub.cfg
+
+
+chown root:root /etc/cron*
+chmod og-rwx /etc/cron*
+
+#5.1.8 Ensure at/cron is restricted to authorized users (Scored)
+
+touch /etc/cron.allow
+touch /etc/at.allow
+
+chmod og-rwx /etc/cron.allow /etc/at.allow
+chown root:root /etc/cron.allow /etc/at.allow
+chmod -R g-wx,o-rwx /var/log/*
+
+
+
+chown root:root /etc/cron*```
 
 Afters system, files and other permissions we will edit out kernel setting in `/etc/sysctl.conf`
 
@@ -475,7 +526,25 @@ config_timezone(){
 }
 
 
+#Ensure system accounts are non-login 
 
+for user in `awk -F: '($3 < 1000) {print $1 }' /etc/passwd`; do
+  if [ $user != "root" ]; then
+    usermod -L $user
+  if [ $user != "sync" ] && [ $user != "shutdown" ] && [ $user != "halt" ]; then
+    usermod -s /usr/sbin/nologin $user
+  fi
+  fi
+done
+
+#Ensure default group for the root account is GID 0 
+
+usermod -g 0 root
+
+#Ensure default user umask is 027 or more restrictive 
+
+sed -i s/umask\ 022/umask\ 027/g /etc/init.d/rc
+`
 # Create an Ed25519 key with ssh-keygen instead of using RSA :
 
 ```
@@ -491,6 +560,27 @@ sudo sed -i -r -e '/^#|^$/ d' /etc/ssh/sshd_config
 %sudousers   ALL=(ALL:ALL) ALL
 ```
 
+ echo tty1 > /etc/securetty
+    chmod 0600 /etc/securetty
+    chmod 700 /root
+    chmod 600 /boot/grub/grub.cfg
+    #Remove AT and Restrict Cron
+    apt purge at
+    apt install -y libpam-cracklib
+    echo ""
+    echo " Securing Cron "
+    spinner
+    touch /etc/cron.allow
+    chmod 600 /etc/cron.allow
+    awk -F: '{print $1}' /etc/passwd | grep -v root > /etc/cron.deny
+    echo ""
+    echo -n " Do you want to Disable USB Support for this Server? (y/n): " ; read usb_answer
+    if [ "$usb_answer" == "y" ]; then
+       echo ""
+       echo "Disabling USB Support"
+       spinner
+       echo "blacklist usb-storage" | sudo tee -a /etc/modprobe.d/blacklist.conf
+       update-initramfs -u
 
 
 
@@ -1150,36 +1240,6 @@ fi
     root@mine:/# dd if=/dev/zero of=/home/exported/trial.img count=256 bs=1024k
     root@mine:/# mkfs.ext3 /home/exported/trial.img
 
-    Starting the server should be simple, but I found that it immediately segfaulted on my machine - so we'll demonstrate two commands for this:
-
-    root@mine:/# nbd-server 1234 /home/exported/trial.img
-
-    If this errors like mine did run this instead:
-
-    root@mine:/# touch /root/empty
-    root@mine:/# nbd-server 1234 /home/exported/trial.img -C /root/empty
-
-    (There is a global configuration which can be used to list exports /etc/nbd-server/config - however everytime I tried to use this file I received a segfault from the server process so I can't tell you anything useful about it.)
-
-Setup The Client
-
-    Setting up the client is very similar to setting up the server, we need to install the relevant software then mount the remote image.
-
-    root@yours:/# apt-get install nbd-client
-
-    To mount the system we'll run:
-
-    root@yours:~# nbd-client mine.my.flat 1234 /dev/nbd0
-    Negotiation: ..size = 262144KB
-    bs=1024, sz=262144
-
-    root@yours:~# mkdir /mnt/remote
-    root@yours:~#  mount /dev/nbd0 /mnt/remote
-
-    Now we can play:
-
-    for i in $(seq 1 100) ; do echo $i *  /mnt/remote/$i; done
-
     Unmount the volume:
 
     root@yours:/# umount /mnt/remote 
@@ -1222,24 +1282,4 @@ Third, enable randomized Virtual Memory Region Placement by:
 
     Adding kernel.randomize_va_space = 2 to the “/etc/sysctl.conf” file
 
-Only root account have UID 0 with full permissions to access the system. Type the following command to display all accounts with UID set to 0:
-# awk -F: '($3 == "0") {print}' /etc/passwd
-
-
-
-#See all set user id files:
-find / -perm +4000
-# See all group id files
-find / -perm +2000
-# Or combine both in a single command
-find / \( -perm -4000 -o -perm -2000 \) -print
-find / -path -prune -o -type f -perm +6000 -ls
-
-
-find /dir -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print
- echo 'install usb-storage /bin/true' * *  /etc/modprobe.d/disable-usb-storage.conf
-# echo "blacklist firewire-core" * *  /etc/modprobe.d/firewire.conf
-# echo "blacklist thunderbolt" * *  /etc/modprobe.d/thunderbolt.conf
-sudo dpkg-statoverride --update --add root sudo 4750 /bin/su
-		
 
