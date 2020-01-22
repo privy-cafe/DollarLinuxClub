@@ -218,6 +218,12 @@ chmod og-rwx /etc/cron.d
 Only root account have UID 0 with full permissions to access the system. Type the following command to display all accounts with UID set to 0:
 # awk -F: '($3 == "0") {print}' /etc/passwd
 
+df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -type d -perm -0002 2>/dev/null | xargs chmod a+t
+
+
+
+echo "* hard core 0" >> /etc/security/limits.conf
+
 
 
 #See all set user id files:
@@ -364,6 +370,35 @@ net.ipv4.conf.eth0.rp_filter = 1
 net.ipv4.conf.eth0.log_martians = 0
 kernel.unprivileged_userns_clone = 1
 
+net.ipv6.conf.eth0.accept_ra_rtr_pref = 0
+net.netfilter.nf_conntrack_max = 2000000
+net.netfilter.nf_conntrack_tcp_loose = 0
+
+# increase system file descriptor limit    
+fs.file-max = 65535
+ 
+#Allow for more PIDs 
+kernel.pid_max = 65536
+ 
+#Increase system IP port limits
+net.ipv4.ip_local_port_range = 2000 65000
+
+net.ipv4.tcp_wmem = 8192 65536 16777216
+net.ipv4.udp_rmem_min = 16384
+net.ipv4.udp_wmem_min = 16384
+net.ipv4.tcp_tw_recycle = 0
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_slow_start_after_idle = 0
+net.ipv4.tcp_sack = 0
+net.ipv4.tcp_reordering = 3
+net.ipv4.tcp_no_metrics_save = 1
+net.ipv4.tcp_moderate_rcvbuf = 1
+net.ipv4.tcp_orphan_retries = 0
+net.ipv4.icmp_echo_ignore_broadcasts = 1
+net.ipv4.conf.lo.rp_filter = 1
+net.ipv4.conf.lo.log_martians = 0
+net.ipv4.conf.eth0.rp_filter = 1
+net.ipv4.conf.eth0.log_martians = 0
 net.core.bpf_jit_harden=2
 kernel.dmesg_restrict=1
 kernel.kptr_restrict=1
@@ -966,7 +1001,25 @@ password    required    pam_deny.so
 
 kernel hardening 
 
+#disabling compiller
+chmod 000 /usr/bin/as >/dev/null 2>&1
+    chmod 000 /usr/bin/byacc >/dev/null 2>&1
+    chmod 000 /usr/bin/yacc >/dev/null 2>&1
+    chmod 000 /usr/bin/bcc >/dev/null 2>&1
+    chmod 000 /usr/bin/kgcc >/dev/null 2>&1
+    chmod 000 /usr/bin/cc >/dev/null 2>&1
+    chmod 000 /usr/bin/gcc >/dev/null 2>&1
+    chmod 000 /usr/bin/*c++ >/dev/null 2>&1
+    chmod 000 /usr/bin/*g++ >/dev/null 2>&1
 
+
+
+  chmod 750 /etc/apache2/conf* >/dev/null 2>&1
+     chmod 511 /usr/sbin/apache2 >/dev/null 2>&1
+     chmod 750 /var/log/apache2/ >/dev/null 2>&1
+     chmod 640 /etc/apache2/conf-available/* >/dev/null 2>&1
+     chmod 640 /etc/apache2/conf-enabled/* >/dev/null 2>&1
+     chmod 640 /etc/apache2/apache2.conf >/dev/null 2>&1
 
 
 
@@ -1026,134 +1079,42 @@ If you really want EVERY Bash/Zsh prompt (even within X) to timeout, use:
 $ export TMOUT="$(( 60*10 ))";
 
 
-
-Enter the chroot and create a user:
-
- sudo chroot ~/chroot
- useradd -G audio,video <username* 
- exit
-
-Then run Skype as your newly created user:
-
- sudo chroot ~/chroot /bin/su - <username*  -c /usr/bin/skype
-:::::::::::::
-
-bash
-
-!/bin/bash CHROOT_PATH="/home/$USER/chroot" cd $CHROOT_PATH mount | grep $CHROOT_PATH/dev || sudo mount --bind /dev dev mount | grep $CHROOT_PATH/sys || sudo mount --bind /sys sys mount | grep $CHROOT_PATH/proc || sudo mount -t proc proc proc cp /etc/resolv.conf etc sudo chroot --userspec=$USER:users . /bin/bash echo "You must manually unmount $CHROOT_PATH/dev, $CHROOT_PATH/sys, $CHROOT_PATH/proc." 
-
-# remove some stupid / dangerous key bindings
+sudo cp --preserve /etc/exim4/exim4.conf.template /etc/exim4/exim4.conf.template.$(date +"%Y%m%d%H%M%S")
+cat << EOF | sudo tee /etc/exim4/exim4.conf.localmacros
+MAIN_TLS_ENABLE = 1
+REMOTE_SMTP_SMARTHOST_HOSTS_REQUIRE_TLS = *
+TLS_ON_CONNECT_PORTS = 465
+REQUIRE_PROTOCOL = smtps
+IGNORE_SMTP_LINE_LENGTH_LIMIT = true
+EOF
 
 
+sudo sed -i -r -e "/\.ifdef MAIN_TLS_ENABLE/ a # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")\n.ifdef TLS_ON_CONNECT_PORTS\n    tls_on_connect_ports
+ = TLS_ON_CONNECT_PORTS\n.endif\n# end add" /etc/exim4/exim4.conf.template
 
 
-systemctl , kernel configuration
-kernel.sysrq = 0
-kernel.core_uses_pid = 1
-kernel.dmesg_restrict = 1
-kernel.panic = 60
-kernel.panic_on_oops = 60
-kernel.perf_event_paranoid = 2
-kernel.randomize_va_space = 2
-kernel.yama.ptrace_scope = 2
-vm.dirty_background_ratio = 5
-vm.dirty_ratio = 10
-net.core.default_qdisc = fq
-net.ipv4.tcp_congestion_control=htcp
-kernel.maps_protect = 1
-kernel.ctrl-alt-del = 0
+cat << EOF | sudo tee /etc/ufw/applications.d/smtptls
+[SMTPTLS]
+title=SMTP through TLS
+description=This opens up the TLS port 465 for use with SMPT to send e-mails.
+ports=465/tcp
+EOF
 
-fs.file-max = 100000
-net.core.netdev_max_backlog = 100000
-net.core.netdev_budget = 50000
-net.core.netdev_budget_usecs = 5000
-net.core.somaxconn = 1024
-net.core.rmem_default = 1048576
-net.core.rmem_max = 16777216
-net.core.wmem_default = 1048576
-net.core.wmem_max = 16777216
-net.core.optmem_max = 65536
-net.ipv4.tcp_rmem = 4096 1048576 2097152
-net.ipv4.tcp_wmem = 4096 65536 16777216
-net.ipv4.udp_rmem_min = 8192
-net.ipv4.udp_wmem_min = 8192
-net.ipv4.tcp_fastopen = 3
-net.ipv4.tcp_max_tw_buckets = 2000000
-net.ipv4.tcp_fin_timeout = 10
-net.ipv4.tcp_slow_start_after_idle = 0
-net.ipv4.tcp_keepalive_time = 60
-net.ipv4.tcp_keepalive_intvl = 10
-net.ipv4.tcp_keepalive_probes = 6
-net.ipv4.tcp_mtu_probing = 1
-net.ipv4.tcp_syncookies = 1
-net.ipv4.tcp_rfc1337 = 1
-net.ipv4.tcp_fin_timeout = 10
-vm.overcommit_ratio = 50
-vm.overcommit_memory = 0
-vm.mmap_min_addr = 4096
-vm.min_free_kbytes = 65535
-net.unix.max_dgram_qlen = 50
-net.ipv4.conf.default.log_martians = 1
-net.ipv4.conf.all.log_martians = 1
-net.ipv4.conf.all.accept_redirects = 0
-net.ipv4.conf.default.accept_redirects = 0
-net.ipv4.conf.all.secure_redirects = 0
-net.ipv4.conf.default.secure_redirects = 0
-net.ipv6.conf.all.accept_redirects = 0
-net.ipv6.conf.default.accept_redirects = 0
-net.ipv4.icmp_echo_ignore_all = 1
-vm.dirty_background_bytes = 4194304
-vm.dirty_bytes = 4194304
-kernel.kptr_restrict = 2
-fs.protected_hardlinks = 1
-fs.protected_symlinks = 1
-fs.suid_dumpable = 0
-net.ipv4.icmp_ignore_bogus_error_responses = 1
-net.ipv4.tcp_challenge_ack_limit = 1000000
-net.ipv4.tcp_invalid_ratelimit = 500
-net.ipv4.tcp_synack_retries = 2
-net.ipv6.conf.all.accept_ra = 0
-net.ipv6.conf.all.accept_redirects = 0
-net.ipv6.conf.all.use_tempaddr = 2
-net.ipv6.conf.default.accept_ra = 0
-net.ipv6.conf.default.accept_ra_defrtr = 0
-net.ipv6.conf.default.accept_ra_pinfo = 0
-net.ipv6.conf.default.accept_redirects = 0
-net.ipv6.conf.default.accept_source_route = 0
-net.ipv6.conf.default.autoconf = 0
-net.ipv6.conf.default.dad_transmits = 0
-net.ipv6.conf.default.max_addresses = 1
-net.ipv6.conf.default.router_solicitations = 0
-net.ipv6.conf.default.use_tempaddr = 2
-net.ipv6.conf.eth0.accept_ra_rtr_pref = 0
-net.netfilter.nf_conntrack_max = 2000000
-net.netfilter.nf_conntrack_tcp_loose = 0
+sudo ufw allow out smtptls comment 'open TLS port 465 for use with SMPT to send e-mails'
+cat << EOF | sudo tee /etc/rsyslog.d/10-iptables.conf
+:msg, contains, "[IPTABLES] " /var/log/iptables.log
+& stop
+EOF
 
-# increase system file descriptor limit    
-fs.file-max = 65535
- 
-#Allow for more PIDs 
-kernel.pid_max = 65536
- 
-#Increase system IP port limits
-net.ipv4.ip_local_port_range = 2000 65000
+sudo sed -i -r -e "s/^(IPT_SYSLOG_FILE\s+)([^;]+)(;)$/# \1\2\3       # commented by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")\n\1\/var\/log\/iptables.log\3       # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")/" /etc/psad/psad.conf
+sudo psad -R
+sudo psad --sig-update
+sudo psad -H
+sudo service rsyslog restart
 
-net.ipv4.tcp_wmem = 8192 65536 16777216
-net.ipv4.udp_rmem_min = 16384
-net.ipv4.udp_wmem_min = 16384
-net.ipv4.tcp_tw_recycle = 0
-net.ipv4.tcp_tw_reuse = 1
-net.ipv4.tcp_slow_start_after_idle = 0
-net.ipv4.tcp_sack = 0
-net.ipv4.tcp_reordering = 3
-net.ipv4.tcp_no_metrics_save = 1
-net.ipv4.tcp_moderate_rcvbuf = 1
-net.ipv4.tcp_orphan_retries = 0
-net.ipv4.icmp_echo_ignore_broadcasts = 1
-net.ipv4.conf.lo.rp_filter = 1
-net.ipv4.conf.lo.log_martians = 0
-net.ipv4.conf.eth0.rp_filter = 1
-net.ipv4.conf.eth0.log_martians = 0
+echo -e ""
+echo -e "Setting Sticky bit on all world-writable directories"
+
 
 
 
