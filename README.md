@@ -148,6 +148,256 @@ mkdir /tmpbackup
 # Make sure sensitives files are owned by root and with the rights permissions
 
 ```
+
+chmod -f 0700 /etc/cron.monthly/*
+chmod -f 0700 /etc/cron.weekly/*
+chmod -f 0700 /etc/cron.daily/*
+chmod -f 0700 /etc/cron.hourly/*
+chmod -f 0700 /etc/cron.d/*
+chmod -f 0400 /etc/cron.allow
+chmod -f 0400 /etc/cron.deny
+chmod -f 0400 /etc/crontab
+chmod -f 0400 /etc/at.allow
+chmod -f 0400 /etc/at.deny
+chmod -f 0700 /etc/cron.daily
+chmod -f 0700 /etc/cron.weekly
+chmod -f 0700 /etc/cron.monthly
+chmod -f 0700 /etc/cron.hourly
+chmod -f 0700 /var/spool/cron
+chmod -f 0600 /var/spool/cron/*
+chmod -f 0700 /var/spool/at
+chmod -f 0600 /var/spool/at/*
+chmod -f 0400 /etc/anacrontab
+
+
+#File permissions and ownerships
+chmod -f 1777 /tmp
+chown -f root:root /var/crash
+chown -f root:root /var/cache/mod_proxy
+chown -f root:root /var/lib/dav
+chown -f root:root /usr/bin/lockfile
+chown -f rpcuser:rpcuser /var/lib/nfs/statd
+chown -f adm:adm /var/adm
+chmod -f 0600 /var/crash
+chown -f root:root /bin/mail
+chmod -f 0700 /sbin/reboot
+chmod -f 0700 /sbin/shutdown
+chmod -f 0600 /etc/ssh/ssh*config
+chown -f root:root /root
+chmod -f 0700 /root
+chmod -f 0500 /usr/bin/ypcat
+chmod -f 0700 /usr/sbin/usernetctl
+chmod -f 0700 /usr/bin/rlogin
+chmod -f 0700 /usr/bin/rcp
+chmod -f 0640 /etc/pam.d/system-auth*
+chmod -f 0640 /etc/login.defs
+chmod -f 0750 /etc/security
+chmod -f 0600 /etc/audit/audit.rules
+chown -f root:root /etc/audit/audit.rules
+chmod -f 0600 /etc/audit/auditd.conf
+chown -f root:root /etc/audit/auditd.conf
+chmod -f 0600 /etc/auditd.conf
+chmod -f 0744 /etc/rc.d/init.d/auditd
+chown -f root /sbin/auditctl
+chmod -f 0750 /sbin/auditctl
+chown -f root /sbin/auditd
+chmod -f 0750 /sbin/auditd
+chmod -f 0750 /sbin/ausearch
+chown -f root /sbin/ausearch
+chown -f root /sbin/aureport
+chmod -f 0750 /sbin/aureport
+chown -f root /sbin/autrace
+chmod -f 0750 /sbin/autrace
+chown -f root /sbin/audispd
+chmod -f 0750 /sbin/audispd
+chmod -f 0444 /etc/bashrc
+chmod -f 0444 /etc/csh.cshrc
+chmod -f 0444 /etc/csh.login
+chmod -f 0600 /etc/cups/client.conf
+chmod -f 0600 /etc/cups/cupsd.conf
+chown -f root:sys /etc/cups/client.conf
+chown -f root:sys /etc/cups/cupsd.conf
+chmod -f 0600 /etc/grub.conf
+chown -f root:root /etc/grub.conf
+chmod -f 0600 /boot/grub2/grub.cfg
+chown -f root:root /boot/grub2/grub.cfg
+chmod -f 0600 /boot/grub/grub.cfg
+chown -f root:root /boot/grub/grub.cfg
+chmod -f 0444 /etc/hosts
+chown -f root:root /etc/hosts
+chmod -f 0600 /etc/inittab
+chown -f root:root /etc/inittab
+chmod -f 0444 /etc/mail/sendmail.cf
+chown -f root:bin /etc/mail/sendmail.cf
+chmod -f 0600 /etc/ntp.conf
+chmod -f 0640 /etc/security/access.conf
+chmod -f 0600 /etc/security/console.perms
+chmod -f 0600 /etc/security/console.perms.d/50-default.perms
+chmod -f 0600 /etc/security/limits
+chmod -f 0444 /etc/services
+chmod -f 0444 /etc/shells
+chmod -f 0644 /etc/skel/.*
+chmod -f 0600 /etc/skel/.bashrc
+chmod -f 0600 /etc/skel/.bash_profile
+chmod -f 0600 /etc/skel/.bash_logout
+chmod -f 0440 /etc/sudoers
+chown -f root:root /etc/sudoers
+chmod -f 0600 /etc/sysctl.conf
+chown -f root:root /etc/sysctl.conf
+chown -f root:root /etc/sysctl.d/*
+chmod -f 0700 /etc/sysctl.d
+chmod -f 0600 /etc/sysctl.d/*
+chmod -f 0600 /etc/syslog.conf
+chmod -f 0600 /var/yp/binding
+chown -f root:$AUDIT /var/log
+chown -Rf root:$AUDIT /var/log/*
+chmod -Rf 0640 /var/log/*
+chmod -Rf 0640 /var/log/audit/*
+chmod -f 0755 /var/log
+chmod -f 0750 /var/log/syslog /var/log/audit
+chmod -f 0600 /var/log/lastlog*
+chmod -f 0600 /var/log/cron*
+chmod -f 0600 /var/log/btmp
+chmod -f 0660 /var/log/wtmp
+chmod -f 0444 /etc/profile
+chmod -f 0700 /etc/rc.d/rc.local
+chmod -f 0400 /etc/securetty
+chmod -f 0700 /etc/rc.local
+chmod -f 0750 /usr/bin/wall
+chown -f root:tty /usr/bin/wall
+chown -f root:users /mnt
+chown -f root:users /media
+chmod -f 0644 /etc/.login
+chmod -f 0644 /etc/profile.d/*
+chown -f root /etc/security/environ
+chown -f root /etc/xinetd.d
+chown -f root /etc/xinetd.d/*
+chmod -f 0750 /etc/xinetd.d
+chmod -f 0640 /etc/xinetd.d/*
+chmod -f 0640 /etc/selinux/config
+chmod -f 0750 /usr/bin/chfn
+chmod -f 0750 /usr/bin/chsh
+chmod -f 0750 /usr/bin/write
+chmod -f 0750 /sbin/mount.nfs
+chmod -f 0750 /sbin/mount.nfs4
+chmod -f 0700 /usr/bin/ldd #0400 FOR SOME SYSTEMS
+chmod -f 0700 /bin/traceroute
+chown -f root:root /bin/traceroute
+chmod -f 0700 /usr/bin/traceroute6*
+chown -f root:root /usr/bin/traceroute6
+chmod -f 0700 /bin/tcptraceroute
+chmod -f 0700 /sbin/iptunnel
+chmod -f 0700 /usr/bin/tracpath*
+chmod -f 0644 /dev/audio
+chown -f root:root /dev/audio
+chmod -f 0644 /etc/environment
+chown -f root:root /etc/environment
+chmod -f 0600 /etc/modprobe.conf
+chown -f root:root /etc/modprobe.conf
+chown -f root:root /etc/modprobe.d
+chown -f root:root /etc/modprobe.d/*
+chmod -f 0700 /etc/modprobe.d
+chmod -f 0600 /etc/modprobe.d/*
+chmod -f o-w /selinux/*
+#umask 077 /etc/*
+chmod -f 0755 /etc
+chmod -f 0644 /usr/share/man/man1/*
+chmod -Rf 0644 /usr/share/man/man5
+chmod -Rf 0644 /usr/share/man/man1
+chmod -f 0600 /etc/yum.repos.d/*
+chmod -f 0640 /etc/fstab
+chmod -f 0755 /var/cache/man
+chmod -f 0755 /etc/init.d/atd
+chmod -f 0750 /etc/ppp/peers
+chmod -f 0755 /bin/ntfs-3g
+chmod -f 0750 /usr/sbin/pppd
+chmod -f 0750 /etc/chatscripts
+chmod -f 0750 /usr/local/share/ca-certificates
+
+
+#ClamAV permissions and ownership
+if [[ -d /usr/local/share/clamav ]]; then
+  passwd -l clamav 2>/dev/null
+  usermod -s /sbin/nologin clamav 2>/dev/null
+  chmod -f 0755 /usr/local/share/clamav
+  chown -f root:clamav /usr/local/share/clamav
+  chown -f root:clamav /usr/local/share/clamav/*.cvd
+  chmod -f 0664 /usr/local/share/clamav/*.cvd
+  mkdir -p /var/log/clamav
+  chown -f root:$AUDIT /var/log/clamav
+  chmod -f 0640 /var/log/clamav
+fi
+if [[ -d /var/clamav ]]; then
+  passwd -l clamav 2>/dev/null
+  usermod -s /sbin/nologin clamav 2>/dev/null
+  chmod -f 0755 /var/clamav
+  chown -f root:clamav /var/clamav
+  chown -f root:clamav /var/clamav/*.cvd
+  chmod -f 0664 /var/clamav/*.cvd
+  mkdir -p /var/log/clamav
+  chown -f root:$AUDIT /var/log/clamav
+  chmod -f 0640 /var/log/clamav
+fi
+
+
+#DISA STIG file ownsership
+chmod -f 0755 /bin/csh
+chmod -f 0755 /bin/jsh
+chmod -f 0755 /bin/ksh
+chmod -f 0755 /bin/rsh
+chmod -f 0755 /bin/sh
+chmod -f 0640 /dev/kmem
+chown -f root:sys /dev/kmem
+chmod -f 0640 /dev/mem
+chown -f root:sys /dev/mem
+chmod -f 0666 /dev/null
+chown -f root:sys /dev/null
+chmod -f 0755 /etc/csh
+chmod -f 0755 /etc/jsh
+chmod -f 0755 /etc/ksh
+chmod -f 0755 /etc/rsh
+chmod -f 0755 /etc/sh
+chmod -f 0644 /etc/aliases
+chown -f root:root /etc/aliases
+chmod -f 0640 /etc/exports
+chown -f root:root /etc/exports
+chmod -f 0640 /etc/ftpusers
+chown -f root:root /etc/ftpusers
+chmod -f 0664 /etc/host.lpd
+chmod -f 0440 /etc/inetd.conf
+chown -f root:root /etc/inetd.conf
+chmod -f 0644 /etc/mail/aliases
+chown -f root:root /etc/mail/aliases
+chmod -f 0644 /etc/passwd
+chown -f root:root /etc/passwd
+chmod -f 0400 /etc/shadow
+chown -f root:root /etc/shadow
+chmod -f 0600 /etc/uucp/L.cmds
+chown -f uucp:uucp /etc/uucp/L.cmds
+chmod -f 0600 /etc/uucp/L.sys
+chown -f uucp:uucp /etc/uucp/L.sys
+chmod -f 0600 /etc/uucp/Permissions
+chown -f uucp:uucp /etc/uucp/Permissions
+chmod -f 0600 /etc/uucp/remote.unknown
+chown -f root:root /etc/uucp/remote.unknown
+chmod -f 0600 /etc/uucp/remote.systems
+chmod -f 0600 /etc/uccp/Systems
+chown -f uucp:uucp /etc/uccp/Systems
+chmod -f 0755 /sbin/csh
+chmod -f 0755 /sbin/jsh
+chmod -f 0755 /sbin/ksh
+chmod -f 0755 /sbin/rsh
+chmod -f 0755 /sbin/sh
+chmod -f 0755 /usr/bin/csh
+chmod -f 0755 /usr/bin/jsh
+chmod -f 0755 /usr/bin/ksh
+chmod -f 0755 /usr/bin/rsh
+chmod -f 0755 /usr/bin/sh
+chmod -f 1777 /var/mail
+chmod -f 1777 /var/spool/uucppublic
+#or thisset of perm is possible adjust it for your need
+#Set all files in ``.ssh`` to ``600``
+chmod 700 ~/.ssh && chmod 600 ~/.ssh/*
 chmod o= /etc/ftpusers 
 chmod o= /etc/group 
 chmod o= /etc/hosts
@@ -214,6 +464,69 @@ chmod og-rwx /etc/cron.monthly
 chown root:root /etc/cron.d
 chmod og-rwx /etc/cron.d
 ```
+````
+
+````
+#Disable ctrl-alt-delete RHEL 6+
+if [[ -f /etc/init/control-alt-delete.conf ]]; then
+  if [[ `grep ^exec /etc/init/control-alt-delete.conf` != "" ]]; then
+    sed -i 's/^exec/#exec/g' /etc/init/control-alt-delete.conf
+  fi
+fi
+```
+```
+#Disable ctrl-alt-delete RHEL 5+
+if [[ -f /etc/inittab ]]; then
+  if [[ `grep ^ca:: /etc/inittab` != "" ]]; then
+    sed -i 's/^ca::/#ca::/g' /etc/inittab
+  fi
+fi
+```
+```
+#if u got rpm 
+#Remove security related packages
+if [[ -f /bin/rpm ]]; then
+  rpm -ev nc 2>/dev/null
+  rpm -ev vsftpd 2>/dev/null
+  rpm -ev nmap 2>/dev/null
+  rpm -ev telnet-server 2>/dev/null
+  rpm -ev rdate 2>/dev/null
+  rpm -ev tcpdump 2>/dev/null
+  rpm -ev vnc-server 2>/dev/null
+  rpm -ev tigervnc-server 2>/dev/null
+  rpm -ev wireshark 2>/dev/null
+  rpm -ev --allmatches --nodeps wireless-tools 2>/dev/null
+
+
+#remove unwanted stuff***CAN REMOVE IMPORTANT STUFF DUE TO DEPENDENCIES***
+  apt-get autoremove -y vsftpd 2>/dev/null
+  apt-get autoremove -y nmap 2>/dev/null
+  apt-get autoremove -y telnetd 2>/dev/null
+  apt-get autoremove -y rdate 2>/dev/null
+  apt-get autoremove -y tcpdump 2>/dev/null
+  apt-get autoremove -y vnc4server 2>/dev/null
+  apt-get autoremove -y vino 2>/dev/null
+  apt-get autoremove -y wireshark 2>/dev/null
+  apt-get autoremove -y bind9-host 2>/dev/null
+  apt-get autoremove -y libbind9-90 2>/dev/null
+
+#Account management and cleanup
+
+  userdel -f games 2>/dev/null
+  userdel -f news 2>/dev/null
+  userdel -f gopher 2>/dev/null
+  userdel -f tcpdump 2>/dev/null
+  userdel -f shutdown 2>/dev/null
+  userdel -f halt 2>/dev/null
+  userdel -f sync 2>/dev/null
+  userdel -f ftp 2>/dev/null
+  userdel -f operator 2>/dev/null
+  userdel -f lp 2>/dev/null
+  userdel -f uucp 2>/dev/null
+  userdel -f irc 2>/dev/null
+  userdel -f gnats 2>/dev/null
+  userdel -f pcap 2>/dev/null
+  userdel -f netdump 2>/dev/null
 ````
 Only root account have UID 0 with full permissions to access the system. Type the following command to display all accounts with UID set to 0:
 # awk -F: '($3 == "0") {print}' /etc/passwd
