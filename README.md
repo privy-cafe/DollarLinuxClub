@@ -538,6 +538,13 @@ df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -typ
 echo "* hard core 0" >> /etc/security/limits.conf
 
 
+#GDM user RHEL 5 is unlocked out-of-the-box
+passwd -l gdm 2>/dev/null
+
+
+#Set password settings for all accounts in shadow
+#sed -i 's/0:99999:7/'"$PASS_CHANG:$PASS_EXP:$PASS_WARN"'/' /etc/shadow
+
 
 #See all set user id files:
 find / -perm +4000
@@ -1142,6 +1149,24 @@ echo ALL * * /etc/cron.deny
 
     sudo cp --preserve /etc/ssh/sshd_config /etc/ssh/sshd_config.$(date +"%Y%m%d%H%M%S")
     sudo sed -i -r -e '/^#|^$/ d' /etc/ssh/sshd_config
+#Change mount point security to nodev, noexec, nosuid (only tested on RHEL)
+#/boot
+#sed -i "s/\( \/boot.*`grep " \/boot " /etc/fstab | awk '{print $4}'`\)/\1,nodev,noexec,nosuid/" /etc/fstab
+
+#/dev/shm
+#sed -i "s/\( \/dev\/shm.*`grep " \/dev\/shm " /etc/fstab | awk '{print $4}'`\)/\1,nodev,noexec,nosuid/" /etc/fstab
+
+#/var
+#sed -i "s/\( \/var\/log.*`grep " \/var " /etc/fstab | awk '{print $4}'`\)/\1,nodev,noexec,nosuid/" /etc/fstab
+
+#/var/log
+#sed -i "s/\( \/var\/log.*`grep " \/var\/log " /etc/fstab | awk '{print $4}'`\)/\1,nodev,noexec,nosuid/" /etc/fstab
+
+#/tmp
+#sed -i "s/\( \/tmp.*`grep " \/tmp " /etc/fstab | awk '{print $4}'`\)/\1,nodev,noexec,nosuid/" /etc/fstab
+
+#/home
+#sed -i "s/\( \/home.*`grep " \/home " /etc/fstab | awk '{print $4}'`\)/\1,nodev,nosuid/" /etc/fstab
 
 
 Create a group:
