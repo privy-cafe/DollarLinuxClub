@@ -633,7 +633,6 @@ cp /etc/audit/audit.rules /etc/audit/rules.d/audit.rules
 ```
 #Afters system, files and other permissions we will edit out kernel setting in `/etc/sysctl.conf`
 ````
-
 fs.file-max = 65535 		
 fs.protected_hardlinks = 1 		
 fs.protected_symlinks = 1 		
@@ -653,10 +652,6 @@ kernel.panic_on_oops = 60
 kernel.perf_event_paranoid = 2
 kernel.randomize_va_space = 2
 kernel.yama.ptrace_scope = 2
-kernel.unprivileged_userns_clone=1
-vm.dirty_background_ratio = 5
-vm.dirty_ratio = 10
-net.core.default_qdisc = fq
 net.ipv4.tcp_congestion_control=htcp
 kernel.maps_protect = 1
 kernel.ctrl-alt-del = 0
@@ -726,7 +721,6 @@ net.ipv4.conf.lo.rp_filter = 1
 net.ipv4.conf.lo.log_martians = 0
 net.ipv4.conf.eth0.rp_filter = 1
 net.ipv4.conf.eth0.log_martians = 0
-kernel.unprivileged_userns_clone = 1
 
 net.ipv6.conf.eth0.accept_ra_rtr_pref = 0
 net.netfilter.nf_conntrack_max = 2000000
@@ -734,10 +728,6 @@ net.netfilter.nf_conntrack_tcp_loose = 0
 
 # increase system file descriptor limit    
 fs.file-max = 65535
- 
-#Allow for more PIDs 
-kernel.pid_max = 65536
- 
 #Increase system IP port limits
 net.ipv4.ip_local_port_range = 2000 65000
 
@@ -747,7 +737,6 @@ net.ipv4.udp_wmem_min = 16384
 net.ipv4.tcp_tw_recycle = 0
 net.ipv4.tcp_tw_reuse = 1
 net.ipv4.tcp_slow_start_after_idle = 0
-net.ipv4.tcp_sack = 0
 net.ipv4.tcp_reordering = 3
 net.ipv4.tcp_no_metrics_save = 1
 net.ipv4.tcp_moderate_rcvbuf = 1
@@ -795,19 +784,14 @@ net.ipv4.conf.default.forwarding = 0
 net.ipv4.conf.default.log_martians = 1 		
 net.ipv4.conf.default.rp_filter = 1 		
 net.ipv4.conf.default.secure_redirects = 0 		
-net.ipv4.conf.default.send_redirects = 0 		
-net.ipv4.conf.eth0.accept_redirects = 0 	change eth0 to your network interface 	
-net.ipv4.conf.eth0.accept_source_route = 0 	change eth0 to your network interface 	
-net.ipv4.conf.eth0.log_martians = 0 	change eth0 to your network interface 	
-net.ipv4.conf.eth0.rp_filter = 1 	change eth0 to your network interface 	
+net.ipv4.conf.default.send_redirects = 0 			
 net.ipv4.conf.lo.accept_redirects = 0 		
 net.ipv4.conf.lo.accept_source_route = 0 		
 net.ipv4.conf.lo.log_martians = 0 		
 net.ipv4.conf.lo.rp_filter = 1 		
 net.ipv4.icmp_echo_ignore_all = 1 		
 net.ipv4.icmp_echo_ignore_broadcasts = 1 		
-net.ipv4.icmp_ignore_bogus_error_responses = 1 		
-net.ipv4.ip_forward = 0 		
+net.ipv4.icmp_ignore_bogus_error_responses = 1 			
 net.ipv4.ip_local_port_range = 2000 65000 		
 net.ipv4.ipfrag_high_thresh = 262144 		
 net.ipv4.ipfrag_low_thresh = 196608 		
@@ -817,9 +801,7 @@ net.ipv4.neigh.default.gc_thresh2 = 1024
 net.ipv4.neigh.default.gc_thresh3 = 2048 		
 net.ipv4.neigh.default.proxy_qlen = 96 		
 net.ipv4.neigh.default.unres_qlen = 6 		
-net.ipv4.route.flush = 1 		
-net.ipv4.tcp_congestion_control = htcp 		
-net.ipv4.tcp_ecn = 1 		
+net.ipv4.route.flush = 1 			
 net.ipv4.tcp_fastopen = 3 		
 net.ipv4.tcp_fin_timeout = 15 		
 net.ipv4.tcp_keepalive_intvl = 15 		
@@ -835,8 +817,7 @@ net.ipv4.tcp_reordering = 3
 net.ipv4.tcp_retries1 = 3 		
 net.ipv4.tcp_retries2 = 15 		
 net.ipv4.tcp_rfc1337 = 1 		
-net.ipv4.tcp_rmem = 8192 87380 16777216 		
-net.ipv4.tcp_sack = 0 		
+net.ipv4.tcp_rmem = 8192 87380 16777216 				
 net.ipv4.tcp_slow_start_after_idle = 0 		
 net.ipv4.tcp_syn_retries = 5 		
 net.ipv4.tcp_synack_retries = 2 		
