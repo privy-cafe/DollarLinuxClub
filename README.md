@@ -119,7 +119,7 @@ proc     /proc     proc     defaults,hidepid=2     0     0         # added by un
 echo -e "\nproc     /proc     proc     defaults,hidepid=2     0     0         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /etc/fstab
 
 dd if=/dev/zero of=/usr/tmpDISK bs=1024 count=2048000
-``````
+
 mkdir /tmpbackup
       cp -Rpf /tmp /tmpbackup
       mount -t tmpfs -o loop,noexec,nosuid,rw /usr/tmpDISK /tmp
@@ -314,32 +314,6 @@ chmod -f 0750 /usr/sbin/pppd
 chmod -f 0750 /etc/chatscripts
 chmod -f 0750 /usr/local/share/ca-certificates
 
-
-#ClamAV permissions and ownership
-if [[ -d /usr/local/share/clamav ]]; then
-  passwd -l clamav 2>/dev/null
-  usermod -s /sbin/nologin clamav 2>/dev/null
-  chmod -f 0755 /usr/local/share/clamav
-  chown -f root:clamav /usr/local/share/clamav
-  chown -f root:clamav /usr/local/share/clamav/*.cvd
-  chmod -f 0664 /usr/local/share/clamav/*.cvd
-  mkdir -p /var/log/clamav
-  chown -f root:$AUDIT /var/log/clamav
-  chmod -f 0640 /var/log/clamav
-fi
-if [[ -d /var/clamav ]]; then
-  passwd -l clamav 2>/dev/null
-  usermod -s /sbin/nologin clamav 2>/dev/null
-  chmod -f 0755 /var/clamav
-  chown -f root:clamav /var/clamav
-  chown -f root:clamav /var/clamav/*.cvd
-  chmod -f 0664 /var/clamav/*.cvd
-  mkdir -p /var/log/clamav
-  chown -f root:$AUDIT /var/log/clamav
-  chmod -f 0640 /var/log/clamav
-fi
-
-
 #DISA STIG file ownsership
 chmod -f 0755 /bin/csh
 chmod -f 0755 /bin/jsh
@@ -463,10 +437,55 @@ chown root:root /etc/cron.monthly
 chmod og-rwx /etc/cron.monthly
 chown root:root /etc/cron.d
 chmod og-rwx /etc/cron.d
-```
-````
+chown root:root /boot/grub/grub.cfg
+chmod og-rwx /boot/grub/grub.cfg
+chown root:root /boot/grub/grub.cfg
+chmod og-rwx /boot/grub/grub.cfg
 
-````
+
+chown root:root /etc/cron*
+chmod og-rwx /etc/cron*
+#Ensure at/cron is restricted to authorized users 
+
+touch /etc/cron.allow
+touch /etc/at.allow
+
+chmod og-rwx /etc/cron.allow /etc/at.allow
+chown root:root /etc/cron.allow /etc/at.allow
+chmod -R g-wx,o-rwx /var/log/*
+
+
+
+chown root:root /etc/cron
+```
+```
+#ClamAV permissions and ownership
+if [[ -d /usr/local/share/clamav ]]; then
+  passwd -l clamav 2>/dev/null
+  usermod -s /sbin/nologin clamav 2>/dev/null
+  chmod -f 0755 /usr/local/share/clamav
+  chown -f root:clamav /usr/local/share/clamav
+  chown -f root:clamav /usr/local/share/clamav/*.cvd
+  chmod -f 0664 /usr/local/share/clamav/*.cvd
+  mkdir -p /var/log/clamav
+  chown -f root:$AUDIT /var/log/clamav
+  chmod -f 0640 /var/log/clamav
+fi
+if [[ -d /var/clamav ]]; then
+  passwd -l clamav 2>/dev/null
+  usermod -s /sbin/nologin clamav 2>/dev/null
+  chmod -f 0755 /var/clamav
+  chown -f root:clamav /var/clamav
+  chown -f root:clamav /var/clamav/*.cvd
+  chmod -f 0664 /var/clamav/*.cvd
+  mkdir -p /var/log/clamav
+  chown -f root:$AUDIT /var/log/clamav
+  chmod -f 0640 /var/log/clamav
+fi
+```
+
+
+```
 #Disable ctrl-alt-delete RHEL 6+
 if [[ -f /etc/init/control-alt-delete.conf ]]; then
   if [[ `grep ^exec /etc/init/control-alt-delete.conf` != "" ]]; then
@@ -509,7 +528,8 @@ if [[ -f /bin/rpm ]]; then
   apt-get autoremove -y wireshark 2>/dev/null
   apt-get autoremove -y bind9-host 2>/dev/null
   apt-get autoremove -y libbind9-90 2>/dev/null
-
+```
+```
 #Account management and cleanup
 
   userdel -f games 2>/dev/null
@@ -534,11 +554,24 @@ Only root account have UID 0 with full permissions to access the system. Type th
 
 df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -type d -perm -0002 2>/dev/null | xargs chmod a+t
 
+```
+```
+First, Restrict Core Dumps by:
+
+    Adding hard core 0 to the “/etc/security/limits.conf” file
+    Adding fs.suid_dumpable = 0 to the “/etc/sysctl.conf” file
+
+Second, configure Exec Shield by:
+
+    Adding kernel.exec-shield = 1 to the “/etc/sysctl.conf” file
+
+Third, enable randomized Virtual Memory Region Placement by:
+
+    Adding kernel.randomize_va_space = 2 to the “/etc/sysctl.conf” file
 
 
-echo "* hard core 0" >> /etc/security/limits.conf
-
-
+```
+```
 #GDM user RHEL 5 is unlocked out-of-the-box
 passwd -l gdm 2>/dev/null
 
@@ -546,8 +579,7 @@ passwd -l gdm 2>/dev/null
 #Set password settings for all accounts in shadow
 #sed -i 's/0:99999:7/'"$PASS_CHANG:$PASS_EXP:$PASS_WARN"'/' /etc/shadow
 ```
-````
-````
+```
 #See all set user id files:
 find / -perm +4000
 # See all group id files
@@ -555,8 +587,8 @@ find / -perm +2000
 # Or combine both in a single command
 find / \( -perm -4000 -o -perm -2000 \) -print
 find / -path -prune -o -type f -perm +6000 -ls
-
-
+```
+```
 find /dir -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print
  echo 'install usb-storage /bin/true' * *  /etc/modprobe.d/disable-usb-storage.conf
 # echo "blacklist firewire-core" * *  /etc/modprobe.d/firewire.conf
@@ -566,38 +598,19 @@ sudo dpkg-statoverride --update --add root sudo 4750 /bin/su
 find / -xdev \( -perm -4000 -o -perm -2000 \) -type f | awk '{print \
 "-a always,exit -F path=" $1 " -F perm=x -F auid>=1000 -F auid!=4294967295 \
 -k privileged" } ' >> /etc/audit/audit.rules
-
+```
+```
 echo " " >> /etc/audit/audit.rules
 echo "#End of Audit Rules" >> /etc/audit/audit.rules
 echo "-e 2" >>/etc/audit/audit.rules
 
 cp /etc/audit/audit.rules /etc/audit/rules.d/audit.rules
 
-chown root:root /boot/grub/grub.cfg
-chmod og-rwx /boot/grub/grub.cfg
-chown root:root /boot/grub/grub.cfg
-chmod og-rwx /boot/grub/grub.cfg
-
-
-chown root:root /etc/cron*
-chmod og-rwx /etc/cron*
-
-#5.1.8 Ensure at/cron is restricted to authorized users (Scored)
-
-touch /etc/cron.allow
-touch /etc/at.allow
-
-chmod og-rwx /etc/cron.allow /etc/at.allow
-chown root:root /etc/cron.allow /etc/at.allow
-chmod -R g-wx,o-rwx /var/log/*
-
-
-
-chown root:root /etc/cron*```
-
-Afters system, files and other permissions we will edit out kernel setting in `/etc/sysctl.conf`
+*```
 ```
-```
+#Afters system, files and other permissions we will edit out kernel setting in `/etc/sysctl.conf`
+````
+
 fs.file-max = 65535 		
 fs.protected_hardlinks = 1 		
 fs.protected_symlinks = 1 		
@@ -1173,7 +1186,7 @@ HostKey /etc/ssh/ssh_host_ecdsa_key
 
 KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group-exchange-sha256
 Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
-
+```
 MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com
 
 # LogLevel VERBOSE logs user's key fingerprint on login. Needed to have a clear audit track of which key was using to log in.
@@ -1229,7 +1242,8 @@ permittunnel no
 ipqos lowdelay throughput
 rekeylimit 0 0
 permitopen any
-
+```
+```
 sudo cp --preserve /etc/ssh/moduli /etc/ssh/moduli.$(date +"%Y%m%d%H%M%S")
 
 Remove short moduli:
@@ -1239,7 +1253,7 @@ sudo mv /etc/ssh/moduli.tmp /etc/ssh/moduli
 
 sudo sed -i -r -e "s/^(password\s+requisite\s+pam_pwquality.so)(.*)$/# \1\2         # commented by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")\n\1 retry=3 minlen=10 difok=3 ucredit=-1 lcredit=-1 dcredit=-1 ocredit=-1 maxrepeat=3 gecoschec         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")/" /etc/pam.d/common-password
 
-
+```
 sudo psad -R
 sudo psad --sig-update
 sudo psad -H
@@ -1249,9 +1263,10 @@ sudo cp -p /etc/default/aide /etc/default/aide.$(date +"%Y%m%d%H%M%S")
 sudo cp -pr /etc/aide /etc/aide.$(date +"%Y%m%d%H%M%S")
 sudo aideinit
 sudo aide.wrapper --check
-
+````
 
 # if you are not sure the change worked , verify the configuration with this
+```
 sudo touch /etc/test.sh
 sudo touch /root/test.sh
 sudo aide.wrapper --check
@@ -1259,10 +1274,7 @@ sudo rm /etc/test.sh
 sudo rm /root/test.sh
 sudo aideinit -y -f
 
-    	
-
-46		
-
+```
 Ensure the following are set in /etc/pam.d/other:
 
     auth  required pam_deny.so
@@ -1311,7 +1323,7 @@ password    sufficient  pam_unix.so sha512 shadow try_first_pass use_authtok rem
 password    required    pam_deny.so
 
 
-kernel hardening 
+#kernel hardening 
 
 #disabling compiller
 chmod 000 /usr/bin/as >/dev/null 2>&1
@@ -1440,119 +1452,3 @@ f.) deny root login and port forwarding/X11 forwarding in /etc/ssh/sshd_config, 
 g.) in /etc/fstab mount /usr ro, and /tmp,/var,/home with noexec Consider whether your user can log into an rksh shell.
 
 cat /dev/srandom | tr -dc [:print:] | fold -w PWD_LENGTH | head -n NUM_OF_PWDS
-
-
-
-L2 Tunnel bash
-
-#!/bin/bash
-
-# prereqs:
-# remote host's sshd_config must have "PermitRootLogin=no", "AllowUsers user", and "PermitTunnel=yes"
-# "tunctl", in debians it is found in uml-utils, redhats another (dont remember but "yum provides tunctl" must tell)
-# remote user must be able to sudo-as-root
-# can opt by routing as in this case or soft bridge with brctl and you get full remote ethernet segment membership :D
-# that last i think i'll implement later as an option
-# other stuff to do is error checking, etcetc, this is just as came from the oven
-
-userhost='user@host'
-sshflags='-Ap 2020 -i /path/to/some/authkey'
-vpn='10.0.0.0/24'
-rnet=192.168.40.0/24
-
-# START VPN
-if [ "$1" == "start" ]; then
-echo setting up local tap ...
-ltap=$(tunctl -b)
-ifconfig $ltap ${vpn%%?/*}2/${vpn##*/} up
-
-echo setting remote configuration and enabling root login ...
-rtap="ssh $sshflags $userhost sudo 'bash -c \"rtap=\\\$(tunctl -b); echo \\\$rtap; ifconfig \\\$rtap ${vpn%%?/*}1/${vpn##*/} up; iptables -A FORWARD -i \\\$rtap -j ACCEPT; iptables -A FORWARD -o \\\$rtap -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -s ${vpn%%?/*}2 -j SNAT --to \\\$(ip r | grep $rnet | sed \\\"s/^.*src \\\(.*\\\$\\\)/\1/g\\\"); sed -i -e \\\"s/\\\(PermitRootLogin\\\).*\\\$/\1 without-password/g\\\" -e \\\"s/\\\(AllowUsers.*\\\)\\\$/\1 root/g\\\" /etc/ssh/sshd_config; /usr/sbin/sshd -t\"'"
-rtap=$(sh -c "$rtap")
-
-echo setting up local routes ...
-# since my ISP sucks with transparent filters (i can't opt for another where i live), i'll just use my work net as gateway
-ip r a $(ip r | grep default | sed "s/default/${userhost##*@}/")
-ip r c default via ${vpn%%?/*}1 dev $ltap
-
-echo bringing up the tunnel and disabling root login ...
-ssh $sshflags -f -w ${ltap##tap}:${rtap##tap} -o Tunnel=ethernet -o ControlMaster=yes -o ControlPath=/root/.ssh/vpn-$userhost-l$ltap-r$rtap root@${userhost##*@} bash -c "\"sed -i -e 's/\(PermitRootLogin\).*\$/\1 no/g' -e 's/\(AllowUsers.*\) root\$/\1/g' /etc/ssh/sshd_config; /usr/sbin/sshd -t\""
-
-echo connected.
-
-# STOP VPN
-elif [ "$1" == "stop" ]; then
-echo searching control socket and determining configuration ...
-controlpath=$(echo /root/.ssh/vpn-$userhost*)
-ltap=${controlpath%%-rtap*} && ltap=tap${ltap##*-ltap}
-rtap=${controlpath##*rtap} && rtap=tap${rtap%%-*}
-
-echo bringing the tunnel down ...
-ssh $sshflags -o ControlPath=$controlpath -O exit $userhost
-
-echo restoring local routes ...
-ip r c default $(ip r | grep ${userhost##*@} | sed "s/${userhost##*@}\(.*$\)/\1/g")
-ip r d ${userhost##*@}
-
-echo restoring remote configuration ...
-sh -c "ssh $sshflags $userhost sudo 'bash -c \"tunctl -d $rtap; iptables -D FORWARD -i $rtap -j ACCEPT; iptables -D FORWARD -o $rtap -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -s ${vpn%%?/*}2 -j SNAT --to \$(ip r | grep $rnet | sed \"s/^.*src \(.*\$\)/\1/g\")\"'"
-
-echo deleting local tap ...
-tunctl -d $ltap
-
-echo disconnected.
-fi
-
-
-    root@mine:/# apt-get install nbd-server
-
-    Now we'll create a file to export:
-
-    root@mine:/# modprobe nbd
-    root@mine:/# mkdir -p /home/exported
-    root@mine:/# dd if=/dev/zero of=/home/exported/trial.img count=256 bs=1024k
-    root@mine:/# mkfs.ext3 /home/exported/trial.img
-
-    Unmount the volume:
-
-    root@yours:/# umount /mnt/remote 
-
-    Now try mounting it back upon the server, to make sure that those files have persisted and been created as we expect:
-
-    root@vain:~#  nbd-client 127.0.0.1 1234 /dev/nbd0
-    root@vain:~# mkdir /tmp/foo
-    root@vain:~#  mount /dev/nbd0 /tmp/foo
-    root@vain:~#  ls /tmp/foo/
-    1    14  2   25  30  36  41  47  52  58  63  69  74  8   85  90  96
-    10   15  20  26  31  37  42  48  53  59  64  7   75  80  86  91  97
-    100  16  21  27  32  38  43  49  54  6   65  70  76  81  87  92  98
-    11   17  22  28  33  39  44  5   55  60  66  71  77  82  88  93  99
-    12   18  23  29  34  4   45  50  56  61  67  72  78  83  89  94  
-    13   19  24  3   35  40  46  51  57  62  68  73  79  84  9   95  lost+found
-
-    Fun, huh?
-
-Working With Xen
-
-    I spent a while trying to get this working with Xen, but only found success when using the /dev/nbdN devices.
-
-    For this to work I had to use the following Xen configuration, which is less than ideal:
-
-    disk        = [ 'phy:vain-vol/etch-builder.my.flat-disk,sda1,w', 
-                    'phy:vain-vol/etch-builder.my.flat-swap,sda2,w',
-                    'phy:/dev/nbd0,sda3,w' ]
-
-First, Restrict Core Dumps by:
-
-    Adding hard core 0 to the “/etc/security/limits.conf” file
-    Adding fs.suid_dumpable = 0 to the “/etc/sysctl.conf” file
-
-Second, configure Exec Shield by:
-
-    Adding kernel.exec-shield = 1 to the “/etc/sysctl.conf” file
-
-Third, enable randomized Virtual Memory Region Placement by:
-
-    Adding kernel.randomize_va_space = 2 to the “/etc/sysctl.conf” file
-
-
