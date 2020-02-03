@@ -547,6 +547,7 @@ passwd -l gdm 2>/dev/null
 #sed -i 's/0:99999:7/'"$PASS_CHANG:$PASS_EXP:$PASS_WARN"'/' /etc/shadow
 ```
 ````
+````
 #See all set user id files:
 find / -perm +4000
 # See all group id files
