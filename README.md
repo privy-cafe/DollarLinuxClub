@@ -130,6 +130,29 @@ mkdir /tmpbackup
       sudo mount -o remount /tmp
       echo "/dev/sda4   /tmp   tmpfs  loop,nosuid,noexec,rw  0 0 "
 
+
+#Make a backup of OpenSSH server's configuration file /etc/ssh/sshd_config and remove comments to make it easier to read:
+
+    sudo cp --preserve /etc/ssh/sshd_config /etc/ssh/sshd_config.$(date +"%Y%m%d%H%M%S")
+    sudo sed -i -r -e '/^#|^$/ d' /etc/ssh/sshd_config
+#Change mount point security to nodev, noexec, nosuid (only tested on RHEL)
+#/boot
+#sed -i "s/\( \/boot.*`grep " \/boot " /etc/fstab | awk '{print $4}'`\)/\1,nodev,noexec,nosuid/" /etc/fstab
+
+#/dev/shm
+#sed -i "s/\( \/dev\/shm.*`grep " \/dev\/shm " /etc/fstab | awk '{print $4}'`\)/\1,nodev,noexec,nosuid/" /etc/fstab
+
+#/var
+#sed -i "s/\( \/var\/log.*`grep " \/var " /etc/fstab | awk '{print $4}'`\)/\1,nodev,noexec,nosuid/" /etc/fstab
+
+#/var/log
+#sed -i "s/\( \/var\/log.*`grep " \/var\/log " /etc/fstab | awk '{print $4}'`\)/\1,nodev,noexec,nosuid/" /etc/fstab
+
+#/tmp
+#sed -i "s/\( \/tmp.*`grep " \/tmp " /etc/fstab | awk '{print $4}'`\)/\1,nodev,noexec,nosuid/" /etc/fstab
+
+#/home
+#sed -i "s/\( \/home.*`grep " \/home " /etc/fstab | awk '{print $4}'`\)/\1,nodev,nosuid/" /etc/fstab
 ```
 **Optional hardening of APT**
 
