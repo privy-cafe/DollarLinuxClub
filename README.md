@@ -114,12 +114,12 @@ proc     /proc     proc     defaults,hidepid=2     0     0         # added by un
 
 ***Linux Filesystem Permissions***
  ***Make a backup of fstab and apply secure setting for proc and others***
-
+```
     sudo cp --preserve /etc/fstab /etc/fstab.$(date +"%Y%m%d%H%M%S")
 echo -e "\nproc     /proc     proc     defaults,hidepid=2     0     0         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /etc/fstab
 
 dd if=/dev/zero of=/usr/tmpDISK bs=1024 count=2048000
-
+``````
 mkdir /tmpbackup
       cp -Rpf /tmp /tmpbackup
       mount -t tmpfs -o loop,noexec,nosuid,rw /usr/tmpDISK /tmp
@@ -130,7 +130,7 @@ mkdir /tmpbackup
       sudo mount -o remount /tmp
       echo "/dev/sda4   /tmp   tmpfs  loop,nosuid,noexec,rw  0 0 "
 
-
+```
 **Optional hardening of APT**
 
 #All methods provided by APT (e.g. http, and https) except for cdrom, gpgv, and rsh can make use of seccomp-BPF sandboxing as #supplied by the Linux kernel to restrict the list of allowed system calls, and trap all others with a SIGSYS signal. This #sandboxing is currently opt-in and needs to be enabled with:
@@ -527,7 +527,8 @@ if [[ -f /bin/rpm ]]; then
   userdel -f gnats 2>/dev/null
   userdel -f pcap 2>/dev/null
   userdel -f netdump 2>/dev/null
-````
+```
+```
 Only root account have UID 0 with full permissions to access the system. Type the following command to display all accounts with UID set to 0:
 # awk -F: '($3 == "0") {print}' /etc/passwd
 
@@ -544,8 +545,8 @@ passwd -l gdm 2>/dev/null
 
 #Set password settings for all accounts in shadow
 #sed -i 's/0:99999:7/'"$PASS_CHANG:$PASS_EXP:$PASS_WARN"'/' /etc/shadow
-
-
+```
+````
 #See all set user id files:
 find / -perm +4000
 # See all group id files
@@ -594,7 +595,7 @@ chmod -R g-wx,o-rwx /var/log/*
 chown root:root /etc/cron*```
 
 Afters system, files and other permissions we will edit out kernel setting in `/etc/sysctl.conf`
-
+```
 ```
 fs.file-max = 65535 		
 fs.protected_hardlinks = 1 		
@@ -826,8 +827,6 @@ net.ipv6.conf.default.dad_transmits = 0
 net.ipv6.conf.default.forwarding = 0 		
 net.ipv6.conf.default.max_addresses = 1 		
 net.ipv6.conf.default.router_solicitations = 0 		
-net.ipv6.conf.eth0.accept_ra=0 	change eth0 to your network interface 	
-net.ipv6.conf.eth0.autoconf = 0 	change eth0 to your network interface 	
 net.ipv6.ip6frag_high_thresh = 262144 		
 net.ipv6.ip6frag_low_thresh = 196608 		
 net.ipv6.route.flush = 1 		
@@ -838,34 +837,8 @@ vm.min_free_kbytes = 65535
 vm.mmap_min_addr = 4096 		
 vm.overcommit_ratio = 50 		
 vm.swappiness = 10 		
-
-
-#profile mask setting
-sudo cp --preserve /etc/profile /etc/profile.$(date +"%Y%m%d%H%M%S")
-sudo cp --preserve /etc/bash.bashrc /etc/bash.bashrc.$(date +"%Y%m%d%H%M%S")
-sudo cp --preserve /etc/login.defs /etc/login.defs.$(date +"%Y%m%d%H%M%S")
-sudo cp --preserve /root/.bashrc /root/.bashrc.$(date +"%Y%m%d%H%M%S")
-echo -e "\numask 0027         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /etc/profile /etc/bash.bashrc
-echo -e "\nUMASK 0027         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /etc/login.defs
-echo -e "\numask 0077         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /root/.bashrc
-
-
-
-Install ntp if you need it.
-
-On Debian based systems:
-
-sudo apt install ntp
-
-Make a backup of the NTP client's configuration file /etc/ntp.conf:
-
-sudo cp --preserve /etc/ntp.conf /etc/ntp.conf.$(date +"%Y%m%d%H%M%S")
-
-
-sudo sed -i -r -e "s/^((server|pool).*)/# \1         # commented by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")/" /etc/ntp.conf
-echo -e "\npool pool.ntp.org iburst         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /etc/ntp.conf
-
-sudo service ntp restart
+```
+```
 
 # Configure TimeZone
 config_timezone(){
@@ -1167,7 +1140,7 @@ echo ALL * * /etc/cron.deny
 
 #/home
 #sed -i "s/\( \/home.*`grep " \/home " /etc/fstab | awk '{print $4}'`\)/\1,nodev,nosuid/" /etc/fstab
-
+	
 
 Create a group:
 
