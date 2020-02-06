@@ -129,7 +129,9 @@ mkdir /tmpbackup
       echo "/usr/tmpDISK  /tmp    tmpfs   loop,nosuid,nodev,noexec,rw  0 0" >> /etc/fstab
       sudo mount -o remount /tmp
       echo "/dev/sda4   /tmp   tmpfs  loop,nosuid,noexec,rw  0 0 "
-
+       
+       ***another example***
+          echo "/dev/sda4   /tmp   tmpfs  loop,nosuid,noexec,rw  0 0 "
 
 #Make a backup of OpenSSH server's configuration file /etc/ssh/sshd_config and remove comments to make it easier to read:
 
@@ -630,8 +632,42 @@ echo "-e 2" >>/etc/audit/audit.rules
 cp /etc/audit/audit.rules /etc/audit/rules.d/audit.rules
 
 *```
+
+sudo /usr/sbin/logwatch --output stdout --format text --range yesterday --service all
+sudo cp --preserve /etc/cron.daily/00logwatch /etc/cron.daily/00logwatch.$(date +"%Y%m%d%H%M%S")
+sudo chmod -x /etc/cron.daily/00logwatch.*
+sudo sed -i -r -e "s,^($(sudo which logwatch).*?),# \1         # commented by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")\n$(sudo which logwatch) --output mail --format html --mailto root --range yesterday --service all         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")," /etc/cron.daily/00logwatch
+sudo apt install apt-transport-https ca-certificates host
+sudo wget -O - https://packages.cisofy.com/keys/cisofy-software-public.key | sudo apt-key add -
+sudo echo "deb https://packages.cisofy.com/community/lynis/deb/ stable main" | sudo tee /etc/apt/sources.list.d/cisofy-lynis.list
+sudo apt update
+sudo apt install lynis host
+cat << EOF | sudo tee /etc/rsyslog.d/10-iptables.conf
+:msg, contains, "[IPTABLES] " /var/log/iptables.log
+& stop
+EOF
+
+sudo sed -i -r -e "s/^(IPT_SYSLOG_FILE\s+)([^;]+)(;)$/# \1\2\3       # commented by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")\n\1\/var\/log\/iptables.log\3       # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")/" /etc/psad/psad.conf
+sudo psad -R
+sudo psad --sig-update
+sudo psad -H
+sudo service rsyslog restart
+
+sudo cp --preserve /etc/profile /etc/profile.$(date +"%Y%m%d%H%M%S")
+sudo cp --preserve /etc/bash.bashrc /etc/bash.bashrc.$(date +"%Y%m%d%H%M%S")
+sudo cp --preserve /etc/login.defs /etc/login.defs.$(date +"%Y%m%d%H%M%S")
+sudo cp --preserve /root/.bashrc /root/.bashrc.$(date +"%Y%m%d%H%M%S")
+echo -e "\numask 0027         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /etc/profile /etc/bash.bashrc
+echo -e "\nUMASK 0027         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /etc/login.defs
+echo -e "\numask 0077         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /root/.bashrc
+
 ```
-#Afters system, files and other permissions we will edit out kernel setting in `/etc/sysctl.conf`
+```
+#echo "* hard core 0" >> /etc/security/limits.conf
+cp templates/sysctl-CIS.conf /etc/sysctl.conf
+sysctl -e -p
+Afters system, files and other permissions we will edit out kernel setting in `/etc/sysctl.conf`
+```
 ````
 fs.file-max = 65535 		
 fs.protected_hardlinks = 1 		
@@ -894,16 +930,7 @@ sed -i s/umask\ 022/umask\ 027/g /etc/init.d/rc
 # Create an Ed25519 key with ssh-keygen instead of using RSA :
 
 ```
-ssh-keygen -t ed25519
-sudo groupadd sudousers
-sudo groupadd jailedusers
-sudo groupadd sshusers
-sudo usermod -a -G sshusers user1
-sudo cp --preserve /etc/sudoers /etc/sudoers.$(date +"%Y%m%d%H%M%S")
-sudo visudo
-sudo cp --preserve /etc/ssh/sshd_config /etc/ssh/sshd_config.$(date +"%Y%m%d%H%M%S")
-sudo sed -i -r -e '/^#|^$/ d' /etc/ssh/sshd_config
-%sudousers   ALL=(ALL:ALL) ALL
+
 ```
 
  echo tty1 > /etc/securetty
@@ -993,7 +1020,20 @@ done
 modprobe -r usb_storage
 exit 0
 ```
+```
+```
+#set some audit rules
+find / -xdev \( -perm -4000 -o -perm -2000 \) -type f | awk '{print \
+"-a always,exit -F path=" $1 " -F perm=x -F auid>=1000 -F auid!=4294967295 \
+-k privileged" } ' >> /etc/audit/audit.rules
 
+echo " " >> /etc/audit/audit.rules
+echo "#End of Audit Rules" >> /etc/audit/audit.rules
+echo "-e 2" >>/etc/audit/audit.rules
+
+cp /etc/audit/audit.rules /etc/audit/rules.d/audit.rules
+```
+````
 
 # Removing root user access, tty and login capabilities.
 
@@ -1015,7 +1055,29 @@ exit 0
 ```
 passwd -l  root
 sed -i -e 's/^root::/root:!:/' /etc/shadow
+`
+useradd -D -f 30
+
+#Ensure system accounts are non-login (Scored)
+
+for user in `awk -F: '($3 < 1000) {print $1 }' /etc/passwd`; do
+  if [ $user != "root" ]; then
+    usermod -L $user
+  if [ $user != "sync" ] && [ $user != "shutdown" ] && [ $user != "halt" ]; then
+    usermod -s /usr/sbin/nologin $user
+  fi
+  fi
+done
+
+#Ensure default group for the root account is GID 0 
+
+usermod -g 0 root
+
+#5.4.4 Ensure default user umask is 027 or more restrictive
+
+sed -i s/umask\ 022/umask\ 027/g /etc/init.d/rc
 ```
+##############################################################################################################``
 
 ```
 echo *  /etc/secu
@@ -1140,25 +1202,6 @@ echo ALL * * /etc/cron.deny
 
     sudo cp --preserve /etc/ssh/sshd_config /etc/ssh/sshd_config.$(date +"%Y%m%d%H%M%S")
     sudo sed -i -r -e '/^#|^$/ d' /etc/ssh/sshd_config
-#Change mount point security to nodev, noexec, nosuid (only tested on RHEL)
-#/boot
-#sed -i "s/\( \/boot.*`grep " \/boot " /etc/fstab | awk '{print $4}'`\)/\1,nodev,noexec,nosuid/" /etc/fstab
-
-#/dev/shm
-#sed -i "s/\( \/dev\/shm.*`grep " \/dev\/shm " /etc/fstab | awk '{print $4}'`\)/\1,nodev,noexec,nosuid/" /etc/fstab
-
-#/var
-#sed -i "s/\( \/var\/log.*`grep " \/var " /etc/fstab | awk '{print $4}'`\)/\1,nodev,noexec,nosuid/" /etc/fstab
-
-#/var/log
-#sed -i "s/\( \/var\/log.*`grep " \/var\/log " /etc/fstab | awk '{print $4}'`\)/\1,nodev,noexec,nosuid/" /etc/fstab
-
-#/tmp
-#sed -i "s/\( \/tmp.*`grep " \/tmp " /etc/fstab | awk '{print $4}'`\)/\1,nodev,noexec,nosuid/" /etc/fstab
-
-#/home
-#sed -i "s/\( \/home.*`grep " \/home " /etc/fstab | awk '{print $4}'`\)/\1,nodev,nosuid/" /etc/fstab
-	
 
 Create a group:
 
@@ -1368,7 +1411,22 @@ auth optional pam_faildelay.so delay=4000000
 
 auth required pam_tally2.so deny=3 unlock_time=600 onerr=succeed file=/var/log/tallylog
 
-
+````
+#Artillery setup
+````
+ git clone https://github.com/BinaryDefense/artillery
+    cd artillery/
+    python setup.py
+    cd ..
+    echo ""
+    echo "Setting Iptable rules for artillery"
+    spinner
+    for port in 22 1433 8080 21 5900 53 110 1723 1337 10000 5800 44443 16993; do
+      echo "iptables -A INPUT -p tcp -m tcp --dport $port -j ACCEPT" >> /etc/init.d/iptables.sh
+    done
+    echo ""
+    echo "Artillery configuration file is /var/artillery/config"
+```
 
 /etc/security/limits.conf
 * soft nproc 100
